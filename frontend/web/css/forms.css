@@ -1,0 +1,482 @@
+
+
+.embed-link {
+
+    text-align: right;
+    margin: 10px 10px;
+
+}
+
+.embed-code{
+
+    padding-left: 20px;
+    background: #dcdcdc59;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 10px;
+
+}
+
+.form-embed{
+
+    text-align: -webkit-center;
+    text-align: -moz-center;
+}
+
+.select-extended-embed{
+
+    width:400px;
+
+}
+
+.form-embed-label{
+
+    font-weight: normal!important;
+
+}
+
+
+
+
+/* Формы кальуляторов беременности */
+
+.pregnancy-calculator-form-extended{
+
+    border: 0px solid #bebebe;
+
+    color: #363636;
+    max-width: 500px;
+    background: #fff;
+    margin: 50px auto;
+   /* padding: 8px 15px;*/
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 6px;
+    text-align: center;
+
+}
+
+
+
+
+.pregnancy-form-date-picker-extended{
+    width: 233px;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.pregnancy-form-label {
+
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.pregnancy-form-method{
+
+    font-size: 16px;
+    margin-bottom: 10px;
+
+}
+
+
+.pregnancy-form-radio{
+
+    vertical-align: middle;
+
+}
+
+
+
+.pregnancy-form-choose-date-text-2{
+
+    display: none;
+
+}
+
+.pregnancy-form-button{
+
+    width: 230px;
+
+}
+
+
+
+.pregnancy-calculator-title{
+
+    background-color: #ffadad;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 2px solid #c61001;
+    padding: 20px 15px;
+
+}
+
+.pregnancy-form-button-div{
+
+    padding: 0px 10px 20px 10px;
+
+}
+
+
+.pregnancy-form-button-div-no-bottom-padding{
+
+    padding: 0px 10px 0px 10px;
+
+}
+
+
+
+.pregnancy-form-result-div-on{
+
+    /*display: inline-flex;*/
+
+    padding: 0px 0px;
+
+}
+
+
+.pregnancy-form-result-div-off{
+
+    display: none;
+
+    padding: 0px 0px;
+
+}
+
+
+.pregnancy-form-result-div-right {
+
+    display: inline-block;
+    padding: 0px 20px 20px 20px;
+
+
+}
+
+.pregnancy-form-result-pre-text{
+
+    font-size: 13px;
+    color: #5d625c;
+
+}
+
+
+.pregnancy-form-result-result-text {
+
+    font-size: 27px;
+
+}
+
+/* Конец Формы калькуляторв беременности*/
+
+
+/* Калькулятор овуляции*/
+.ovulation-calculator-form-extended{
+
+    border: 0px solid #bebebe;
+    color: #363636;
+    max-width: 600px;
+    background: #fff;
+    margin: 50px auto;
+    /* padding: 8px 15px;*/
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 6px;
+    text-align: center;
+
+}
+
+
+.ovulation-form-menstrual-yellow-div {
+
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+
+}
+
+
+.ovulation-form-menstrual-yellow-pre-text{
+
+    font-size: 14px;
+    color: #5d625c;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: block;
+
+}
+
+.cycle-length{
+
+    display: inline-flex;
+
+}
+
+.ovulation-form-cycle-length {
+
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+
+}
+
+
+.select-cycle-length{
+
+    min-width: 200px;
+
+}
+
+.ovulation-form-cycle-length-pre-text{
+
+    font-size: 13px;
+    color: #85827a;
+
+}
+
+.ovulation-form-cycle-length-pre-text-middle{
+
+    vertical-align: top;
+    margin-top: 7px;
+}
+
+.ovulation-form-cycle-length-select-span{
+
+    font-size: 15px;
+
+}
+
+.select-extended {
+
+    width: 210px;
+    margin-bottom: 5px;
+
+}
+
+
+/*
+Новые формы для калькуляторов
+*/
+
+@media (max-width: 1200px) {
+    .form-right {
+        display:none
+
+    }
+
+    .calendar-ovulation-one-month{
+
+        margin: 10px 10px;
+
+    }
+
+}
+
+
+@media (min-width: 1200px) {
+
+    .calendar-ovulation-one-month{
+
+        margin: 10px 1.2px;
+
+    }
+
+}
+
+@media (min-width: 767px) {
+    .form-hr-xs-block {
+
+        display:none;
+
+    }
+}
+
+@media (max-width: 767px) {
+    .form-hr-xs-block {
+
+        display:block;
+        border-top: 1px solid burlywood;
+    }
+
+    .xs-align-mid{
+
+        text-align: -webkit-center;
+        text-align: -moz-center;
+        position: static;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+.form-left {
+
+    /*border:1px solid #0a73bb;
+    width:100%;*/
+    padding-top:20px;
+    background-color: antiquewhite;
+    border-top: 2px solid burlywood;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+
+.form-right {
+
+    /*border:1px solid #0a73bb;*/
+    text-align: -webkit-center;
+
+}
+
+.form-left-title{
+
+    font-size: 16px;
+    margin-bottom: 10px;
+
+}
+
+
+.form-left-label {
+
+    font-weight: normal;
+    font-size: 13px;
+
+}
+
+
+.form-radio{
+
+    vertical-align: middle;
+
+}
+
+
+.form-choose-date-text-2{
+    font-size: 16px;
+    display: none;
+
+}
+
+
+.form-element-title{
+
+    font-size: 16px;
+    padding-bottom: 5px;
+
+}
+
+
+.form-choose-date-text-1{
+
+    font-size: 16px;
+
+}
+
+
+
+.form-date-picker-extended{
+    width: 233px;
+    background-color: #fff;
+    margin-top: 5px;
+
+}
+
+.form-ad{
+
+    text-align: -webkit-center;
+
+}
+
+.form-button{
+
+    width: 230px;
+
+}
+
+.form-button-div{
+
+    text-align: -webkit-center;
+    text-align: -moz-center;
+
+}
+
+.div-left {
+
+    padding: 0;
+    position: static;
+
+}
+
+
+.result-div-on{
+
+    /*display: inline-flex;*/
+    text-align: -moz-center;
+    text-align: -webkit-center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: darkseagreen;
+    color: white;
+    border-top: 3px solid #7f3d3d;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.result-div-off{
+
+    display: none;
+
+    padding: 0px 0px;
+
+}
+
+.form-result {
+    font-size: 25px;
+
+}
+
+
+.result-div-text {
+
+    display: inline-block;
+    padding: 0px 20px 20px 20px;
+
+
+}
+
+.result-pre-text{
+
+    font-size: 13px;
+
+}
+
+.result-main-text{
+
+    font-size: 27px;
+
+}
+
+.margin-top{
+
+    margin-top: 30px;
+
+}
+
+.align-mid{
+
+    text-align: -webkit-center;
+    text-align: -moz-center;
+
+}
+
+.form-content{
+
+    display: flow-root;
+
+
+}

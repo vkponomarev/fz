@@ -1,0 +1,588 @@
+
+
+
+/* Календарь */
+
+.calendar {
+    margin: 0px 0px 0px 0px;
+    width:280px;
+    background-color: white;
+    display: inline-block;
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+}
+/*
+.calendar-one-month {
+    margin: 10px 10px;
+    width: 280px;
+
+    display: inline-block;
+}*/
+
+.calendar-one-month-days-name{
+     margin: 0px 0px;
+     width: 280px;
+
+ }
+
+.calendar-one-month-weeks{
+    margin: 0px 0px;
+    width: 280px;
+
+}
+
+
+.calendar-day-new  {
+     font-family: 'Roboto', sans-serif;
+     width: 14.28571428571429%;
+     /*width:40px;*/
+     border: 1px solid rgb(237, 237, 237);
+     border-right-width: 0px;
+     border-bottom-width: 0px;
+     min-height: 40px;
+ }
+
+.calendar-day-name  {
+    font-family: 'Roboto', sans-serif;
+    width: 14.28571428571429%;
+    border: 0px solid rgb(255, 173, 173);
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    min-height: 30px;
+    text-align: center;
+    background-color: #ffadad;
+    padding-top: 4px;
+}
+/*
+.calendar-month-name  {
+    font-family: 'Roboto', sans-serif;
+
+    border: 0px solid rgb(255, 173, 173);
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    min-height: 25px;
+    text-align: center;
+    background-color: #ffffff;
+    padding-top: 4px;
+}
+*/
+
+.calendar-day-name:last-child {
+    border-right-width: 0px;
+}
+
+.calendar-no-current-month {
+    color: rgb(200, 200, 200);
+}
+.calendar-day-new:last-child {
+    border-right-width: 1px;
+}
+
+[data-toggle="calendar"] > .row:last-child > .calendar-day-new {
+    border-bottom-width: 1px;
+}
+
+.calendar-day-span {
+     position: absolute;
+     display: block;
+     bottom: 0px;
+     left: 0px;
+     font-size: 14px;
+     font-weight: 300;
+     width: 100%;
+     padding: 10px 10px 3px 0px;
+     text-align: right;
+ }
+
+.calendar-day-name-span {
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    left: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    width: 100%;
+    padding: 10px 0px 6px 0px;
+    text-align: center;
+}
+
+.calendar-month-name-span {
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    left: 0px;
+    font-size: 15px;
+    font-weight: 300;
+    width: 100%;
+    padding: 10px 0px 3px 0px;
+    text-align: center;
+}
+
+.calendar-year {
+    text-align: center;
+}
+
+/* end Календарь */
+
+/*
+Календарь овуляции
+*/
+
+.calendar-center {
+
+    text-align: -webkit-center;
+    text-align: -moz-center;
+
+}
+
+.legend-center {
+    text-align: -webkit-center;
+    text-align: -moz-center;
+}
+
+
+
+@media (max-width: 1200px) {
+
+
+    .calendar-one-month{
+
+        margin: 10px 10px;
+
+    }
+
+    .calendar-chinese-one-month {
+
+        margin: 10px 10px;
+
+    }
+
+}
+
+
+@media (min-width: 1200px) {
+
+    .calendar-one-month{
+
+        margin: 10px 1.2px;
+
+    }
+
+    .calendar-chinese-one-month {
+
+        margin: 10px 1.2px;
+
+    }
+
+}
+
+
+.calendar-one-month {
+    /*margin: 10px 10px;*/
+    width: 280px;
+    display: inline-block;
+    padding: 5px 5px;
+    background-color: white;
+    border-radius: 8px;
+    height: 355px;
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    vertical-align: top;
+}
+
+
+.calendar-chinese-one-month {
+    /*margin: 10px 10px;*/
+    width: 280px;
+    display: inline-block;
+    padding: 5px 5px;
+    background-color: white;
+    border-radius: 8px;
+
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    vertical-align: top;
+}
+
+@media only screen and (max-width: 500px) {
+    .calendar-one-month {
+        margin: 10px 0px;
+        width: 280px;
+        display: inline-block;
+        padding: 5px 5px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    }
+}
+
+
+
+.calendar-one-month:hover,.calendar-chinese-one-month:hover {
+
+    box-shadow: 0 1px 8px rgba(202, 17, 49, 0.32);
+}
+
+
+.calendar-month-name {
+
+    min-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 19px;
+    font-weight: bold;
+
+}
+
+
+
+
+.calendar-one-day-name {
+
+    width: 14.28571428571429%;
+    /* width: 32.5749px; */
+    min-height: 32px;
+    font-weight: bold;
+    padding: 6px 0 0 0;
+    margin: 0px 0px 0px 0px;
+    /* align-items: center; */
+    text-align: center;
+    border-radius: 19px;
+}
+
+.calendar-days-name {
+
+    margin: 0 0 7px 0;
+    display: inline-block;
+    width: 100%;
+
+}
+
+.calendar-one-week{
+
+    margin: 0 0 3px 0;
+    display: inline-block;
+    width: 100%;
+
+}
+
+
+.calendar-one-day{
+
+    /* width: 32.5749px; */
+    min-height: 32px;
+    padding: 7px 0 0 0;
+    margin: 0px 1px 0 1.7px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 13.28571428571429%;
+
+}
+
+.conception-bad-day {
+
+    background-color: #dfe4d8;
+
+}
+
+.conception-negative-day {
+
+    background-color: #eaefe6;
+
+}
+
+.conception-safe-day {
+
+    background-color: #bdf8c7;
+
+}
+
+
+.conception-safe-day:hover::before {
+
+    content: attr(data-title);
+    /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background-color: #bdf8c7;
+    font-size: 13px; /* Размер текста подсказки */
+    left: 0;
+    bottom: 40px;
+    padding: 5px 10px; /* Поля */
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 5px;
+
+}
+
+.conception-negative-day:hover::before {
+
+    content: attr(data-title);
+    /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background-color: #eaefe6;
+    font-size: 13px; /* Размер текста подсказки */
+    left: 0;
+    bottom: 40px;
+    padding: 5px 10px; /* Поля */
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 5px;
+
+}
+
+
+.conception-bad-day:hover::before {
+
+    content: attr(data-title);
+    /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background-color: #dfe4d8;
+    font-size: 13px; /* Размер текста подсказки */
+    left: 0;
+    bottom: 40px;
+    padding: 5px 10px; /* Поля */
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 5px;
+
+}
+
+.menstruation-day {
+
+    background-color: #ffb0af;
+
+}
+
+.ovulation-day {
+
+    background-color: #c4f097;
+
+}
+
+.ovulation-middle-day {
+
+    background-color: #63bc66;
+
+}
+.conception-girl-day-legend{
+
+    background-image: url(/files/baby-girl-icon.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    width: 32.5749px;
+}
+.conception-girl-day{
+
+    /* background-color: #c4f097; */
+    background-image: url(/files/baby-girl-icon.png);
+    background-size: 23px 23px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    width: 32.5749px;
+    min-height: 32px;
+    /* padding: 0 0 0 0; */
+    padding-left: 17px;
+    margin: 0px 3px 0 3px;
+    text-align: center;
+    /* border-radius: 19px; */
+    cursor: pointer;
+}
+
+
+.conception-boy-day-legend{
+
+    background-image: url(/files/baby-boy-icon.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    width: 32.5749px;
+}
+.conception-boy-day{
+
+    /* background-color: #c4f097; */
+    background-image: url(/files/baby-boy-icon.png);
+    background-size: 23px 23px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    width: 32.5749px;
+    min-height: 32px;
+    /* padding: 0 0 0 0; */
+    padding-left: 17px;
+    margin: 0px 3px 0 3px;
+    text-align: center;
+    /* border-radius: 19px; */
+    cursor: pointer;
+}
+
+
+.menstruation-day:hover::before {
+
+    content: attr(data-title);
+     /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background-color: #ffb0af;
+    font-size: 13px; /* Размер текста подсказки */
+    left: 0;
+    bottom: 40px;
+    padding: 5px 10px; /* Поля */
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 5px;
+
+}
+
+.calendar-legend {
+
+    display: contents;
+    display: inline-block;
+
+}
+
+
+.calendar-legend-image{
+
+    width: 32.5749px;
+    min-height: 32px;
+    padding: 7px 0 0 0;
+    margin: 0px 3px 0 3px;
+    text-align: center;
+    border-radius: 19px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.calendar-legend-text{
+
+    width: 200px;
+    min-height: 32px;
+    /*   padding: 7px 0 0 0;
+       margin: 0px 3px 0 3px;*/
+    text-align: left;
+    border-radius: 19px;
+    cursor: pointer;
+    display: contents;
+    vertical-align: middle;
+
+}
+
+
+
+
+.menstruation-day-legend {
+
+    background-color: #ffb0af;
+
+}
+
+.ovulation-day-legend {
+
+    background-color: #c4f097;
+
+}
+
+.ovulation-middle-day-legend {
+
+    background-color: #63bc66;
+
+}
+
+.conception-negative-day-legend{
+
+    background-color: #c7ccc3;
+
+}
+
+.conception-safe-day-legend{
+
+    background-color: #bdf8c7;
+
+}
+
+/*
+Календарь овуляции
+*/
+
+
+/*Каленьдарь беременности*/
+
+.pregnancy-day-odd {
+
+    background-color: #f1e2f1;
+
+}
+
+.pregnancy-day-even {
+
+    background-color: #c3b4c3;
+
+}
+
+.pregnancy-today-day,.today-day-legend{
+
+    background-color: #c4f097;
+
+}
+
+
+.pregnancy-trimester-two-day,.second-trimester-day-legend {
+
+    background-color: #bedafa;
+
+}
+
+.pregnancy-trimester-three-day,.third-trimester-day-legend {
+
+    background-color: #adbdda;
+
+}
+
+.pregnancy-due-date,.due-date-day-legend{
+
+    background-color: #eea5e6;
+
+}
+
+.not-this-month-day{
+
+    color: #c0c0c0;
+
+}
+
+
+
+.pregnancy-day-even:hover::before,
+.pregnancy-today-day:hover::before,
+.pregnancy-day-odd:hover::before,
+.conception-girl-day:hover::before,
+.conception-boy-day:hover::before,
+.ovulation-day:hover::before,
+.pregnancy-trimester-two-day:hover::before,
+.pregnancy-trimester-three-day:hover::before,
+.pregnancy-due-date:hover::before,
+.ovulation-middle-day:hover::before{
+
+    content: attr(data-title);
+    /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background-color: #c4f097;
+    font-size: 13px; /* Размер текста подсказки */
+    left: 0;
+    bottom: 40px;
+    padding: 5px 10px; /* Поля */
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 5px;
+
+}
+
+
+.calendar-month-icon{
+
+    margin-right: 5px;
+    font-size: 17px;
+
+}
+

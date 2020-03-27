@@ -1,0 +1,1067 @@
+
+
+@media only screen and (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .container-extended {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+}
+
+
+
+.dropdown-extended {
+
+    border: 0px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+    border-top: 3px solid #c61001!important;
+    padding: 8px 8px!important;
+    width:300px;
+}
+
+.dropdown-a-extended {
+
+    color: #2c2c2c !important;
+    font-size: 13px;
+   /*padding: 1.55rem!important;*/
+}
+
+.dropdown-a-extended:hover {
+
+    color: #c61001 !important;
+    background-color: #da4a34;
+
+}
+
+.dropdown-li-extended {
+    padding: 8px 0px;
+
+    border-bottom: 1px solid #ecf2f8;
+}
+
+
+.dropdown-li-a-extended{
+
+    white-space: normal!important;
+    color: #2c2c2c !important;
+    font-size: 13px;
+
+
+
+}
+
+
+.dropdown-li-a-extended:hover {
+
+    background-color: #f4f4f4 !important;
+    border-radius: 4px !important;
+    color: #c61001 !important;
+
+}
+
+.dropdown-menu-hover:hover {
+
+    background-color: #f8f6f6;
+
+}
+
+.brand-link-extended {
+
+    font-size: 13px;
+    padding-top: 6px;
+
+}
+
+
+.nav-shadow{
+    background-color: #fff;
+    box-shadow: 0 3px 6px 0 rgba(50,50,50,.3);
+   /* background:
+            linear-gradient(to right, #f2e1ff, #fffaf9 )*/
+
+
+}
+
+.container-no-top-padding-extended{
+
+    padding: 10px 15px 20px!important;
+
+}
+
+.main-pages-extended{
+    padding-left: 0px;
+    padding-right: 0px;
+
+}
+
+/*
+Делает плитку одинаковой высоты и ширины.
+*/
+.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+   /* padding-left: 15px;
+    padding-right: 15px;*/
+
+}
+
+
+.row-padding{
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+
+/* vertical spacing between columns */
+
+[class*="col-"] {
+  /* margin-bottom: 30px;*/
+}
+
+.plates {
+    min-height: 20px;
+    height: 250px;
+    padding: 19px;
+   /* margin-bottom: 20px;*/
+    background-color: #fff;
+    border: 0.01rem solid #f7f7f7;
+
+    border-radius: 0px;
+}
+
+.plates:hover {
+    background-color: #f5f5f5;
+-webkit-transition: all 0.3s ease;
+}
+
+.plates-title {
+
+    color: #131415;
+}
+
+.plates-under-title {
+    font-size: 12px;
+    color: #82878f;
+}
+
+
+body {
+
+    background-color: #ededed !important;
+    font-family: Arial;
+
+}
+
+
+h1 {
+
+    font-size: 24px;
+
+}
+
+h2 {
+
+    font-size: 20px;
+
+}
+
+p{
+
+    color: #7a7a7a;
+    font-size: 13px;
+
+}
+
+
+a:hover{
+
+    text-decoration: none;
+
+}
+
+
+a{
+
+    text-decoration: none;
+
+}
+
+
+
+img.brand-image{
+
+    display: inline;
+
+    vertical-align: bottom;
+
+}
+
+.brand-div{
+
+    display: inline-block;
+    padding-left: 8px;
+
+}
+
+
+/*
+
+Footer
+
+*/
+
+footer{
+    background-color: #fff;
+    padding:0px 0px;
+}
+
+footer .fa:hover{
+/*    color:#675f5f;*/
+}
+
+.logo{
+    color:#FFF;
+   /* font-weight:800;*/
+    font-size:30px;
+}
+
+.adress span , .contact span , .social span , .header-form{
+    color:#675f5f;
+  /*  font-weight: 800;*/
+    padding-top:20px;
+    padding-bottom:20px;
+    display: block;
+   /* text-transform: uppercase;*/
+    font-size: 13px;
+   /* letter-spacing: 3px;*/
+}
+
+.adress li p , .contact li a , .social li a{
+    color:#675f5f;
+  /*  letter-spacing: 2px;*/
+    text-decoration:none;
+    font-size:13px;
+}
+
+.adress, .contact , .social{
+   list-style: none;
+    padding-left:0px;
+}
+
+.social li{
+    float:left;
+}
+
+.fa{
+    color:#9c9c9c;
+    margin-right: 10px;
+    font-size:14px;
+}
+
+.btn-search{
+    background: #484848;
+    border: none;
+    color: #FFF;
+    padding: 5px 15px;
+}
+
+.input-search{
+    border: none;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.globe-size {
+
+    font-size: 20px;
+    color: #687997;
+    margin-right: 6px;
+}
+
+
+.choose-languages {
+
+    cursor: pointer;
+    padding-top: 19px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    width: 90px;
+
+}
+
+.sort-down-languages {
+
+    padding-bottom: 6px;
+    padding-left: 5px;
+
+}
+
+
+.choose-languages:hover .languages-dropdown {
+    display: block;
+}
+
+
+.languages-dropdown {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    z-index: 9;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .35);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .35);
+    background-color: #fff;
+    padding: 12px 14px 12px;
+    border-radius: 6px;
+    display: none;
+    font-size: 13px;
+    max-height: 80vh;
+    width: 350px;
+    overflow: auto;
+    margin-left: 16px;
+    column-count: 3;
+
+
+}
+
+@media (min-width: 768px) {
+    .text-md-left {
+        text-align: left!important;
+    }
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.show-only-small-resolution {
+
+    display: none;
+
+}
+
+
+@media (max-width: 768px) {
+    .show-only-small-resolution {
+        display: block;
+    }
+}
+
+
+
+/* Формы кальуляторов беременности */
+
+.pregnancy-calculator-form-extended{
+
+    border: 0px solid #bebebe;
+
+    color: #363636;
+    max-width: 500px;
+    background: #fff;
+    margin: 50px auto;
+   /* padding: 8px 15px;*/
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 6px;
+    text-align: center;
+
+}
+
+
+
+
+.pregnancy-form-date-picker-extended{
+    width: 233px;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.pregnancy-form-label {
+
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.pregnancy-form-method{
+
+    font-size: 16px;
+    margin-bottom: 10px;
+
+}
+
+
+.pregnancy-form-radio{
+
+    vertical-align: middle;
+
+}
+
+
+
+.pregnancy-form-choose-date-text-2{
+
+    display: none;
+
+}
+
+.pregnancy-form-button{
+
+    width: 230px;
+
+}
+
+
+
+.pregnancy-calculator-title{
+
+    background-color: #ffadad;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 2px solid #c61001;
+    padding: 20px 15px;
+
+}
+
+.pregnancy-form-button-div{
+
+    padding: 0px 10px 20px 10px;
+
+}
+
+
+.pregnancy-form-button-div-no-bottom-padding{
+
+    padding: 0px 10px 0px 10px;
+
+}
+
+
+
+.pregnancy-form-result-div-on{
+
+    /*display: inline-flex;*/
+
+    padding: 0px 0px;
+
+}
+
+
+.pregnancy-form-result-div-off{
+
+    display: none;
+
+    padding: 0px 0px;
+
+}
+
+
+.pregnancy-form-result-div-right {
+
+    display: inline-block;
+    padding: 0px 20px 20px 20px;
+
+
+}
+
+.pregnancy-form-result-pre-text{
+
+    font-size: 13px;
+    color: #5d625c;
+
+}
+
+
+.pregnancy-form-result-result-text {
+
+    font-size: 27px;
+
+}
+
+/* Конец Формы калькуляторв беременности*/
+
+
+/* Календарь */
+.calendar {
+    margin: 0px 0px 0px 0px;
+    width:280px;
+    background-color: white;
+    display: inline-block;
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+}
+
+.calendar-one-month {
+    margin: 10px 10px;
+    width: 280px;
+
+    display: inline-block;
+}
+
+.calendar-one-month-days-name{
+     margin: 0px 0px;
+     width: 280px;
+
+ }
+
+.calendar-one-month-weeks{
+    margin: 0px 0px;
+    width: 280px;
+
+}
+
+
+.calendar-day-new  {
+     font-family: 'Roboto', sans-serif;
+     width: 14.28571428571429%;
+     /*width:40px;*/
+     border: 1px solid rgb(237, 237, 237);
+     border-right-width: 0px;
+     border-bottom-width: 0px;
+     min-height: 40px;
+ }
+
+.calendar-day-name  {
+    font-family: 'Roboto', sans-serif;
+    width: 14.28571428571429%;
+    border: 0px solid rgb(255, 173, 173);
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    min-height: 30px;
+    text-align: center;
+    background-color: #ffadad;
+    padding-top: 4px;
+}
+
+.calendar-month-name  {
+    font-family: 'Roboto', sans-serif;
+    /*width:40px;*/
+    border: 0px solid rgb(255, 173, 173);
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    min-height: 25px;
+    text-align: center;
+    background-color: #ededed;
+    padding-top: 4px;
+}
+
+.calendar-day-name:last-child {
+    border-right-width: 0px;
+}
+
+.calendar-no-current-month {
+    color: rgb(200, 200, 200);
+}
+.calendar-day-new:last-child {
+    border-right-width: 1px;
+}
+
+[data-toggle="calendar"] > .row:last-child > .calendar-day-new {
+    border-bottom-width: 1px;
+}
+
+.calendar-day-span {
+     position: absolute;
+     display: block;
+     bottom: 0px;
+     left: 0px;
+     font-size: 14px;
+     font-weight: 300;
+     width: 100%;
+     padding: 10px 10px 3px 0px;
+     text-align: right;
+ }
+
+.calendar-day-name-span {
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    left: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    width: 100%;
+    padding: 10px 0px 6px 0px;
+    text-align: center;
+}
+
+.calendar-month-name-span {
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    left: 0px;
+    font-size: 15px;
+    font-weight: 300;
+    width: 100%;
+    padding: 10px 0px 3px 0px;
+    text-align: center;
+}
+
+.calendar-year {
+    text-align: center;
+}
+
+/* end Календарь */
+
+/* Калькулятор овуляции*/
+.ovulation-calculator-form-extended{
+
+    border: 0px solid #bebebe;
+    color: #363636;
+    max-width: 600px;
+    background: #fff;
+    margin: 50px auto;
+    /* padding: 8px 15px;*/
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 6px;
+    text-align: center;
+
+}
+
+
+.ovulation-form-menstrual-yellow-div {
+
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+
+}
+
+
+.ovulation-form-menstrual-yellow-pre-text{
+
+    font-size: 14px;
+    color: #5d625c;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: block;
+
+}
+
+.cycle-length{
+
+    display: inline-flex;
+
+}
+
+.ovulation-form-cycle-length {
+
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+
+}
+
+
+.select-cycle-length{
+
+    min-width: 200px;
+
+}
+
+.ovulation-form-cycle-length-pre-text{
+
+    font-size: 13px;
+    color: #85827a;
+
+}
+
+.ovulation-form-cycle-length-pre-text-middle{
+
+    vertical-align: top;
+    margin-top: 7px;
+}
+
+.ovulation-form-cycle-length-select-span{
+
+    font-size: 15px;
+
+}
+
+.select-extended {
+
+    width: 210px;
+
+}
+
+
+
+/*
+Календарь овуляции
+*/
+
+.calendar-ovulation {
+    text-align: -webkit-center;
+
+}
+
+
+.calendar-ovulation-one-month {
+    margin: 10px 10px;
+    width: 280px;
+    display: inline-block;
+    padding: 5px 5px;
+    background-color: white;
+    border-radius: 8px;
+    height: 355px;
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    vertical-align: top;
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+    .calendar-ovulation-one-month {
+        margin: 10px 0px;
+        width: 280px;
+        display: inline-block;
+        padding: 5px 5px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    }
+}
+
+
+
+
+.calendar-ovulation-one-month:hover {
+
+    box-shadow: 0 1px 8px rgba(202, 17, 49, 0.32);
+}
+
+
+.calendar-ovulation-month-name {
+
+    min-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 19px;
+    font-weight: bold;
+
+}
+
+.calendar-ovulation-one-day-name {
+
+    /* width: 14.28571428571429%; */
+    width: 32.5749px;
+    min-height: 32px;
+    font-weight: bold;
+    padding: 6px 0 0 0;
+    margin: 0px 3px 0 3px;
+    /* align-items: center; */
+    text-align: center;
+
+    border-radius: 19px;
+}
+
+.calendar-ovulation-days-name {
+
+    margin: 0 0 7px 0;
+    display: inline-block;
+
+}
+
+
+
+
+.calendar-ovulation-one-week{
+
+    margin: 0 0 3px 0;
+    display: inline-block;
+
+}
+
+
+.calendar-ovulation-one-day{
+
+    width: 32.5749px;
+    min-height: 32px;
+    padding: 7px 0 0 0;
+    margin: 0px 3px 0 3px;
+    text-align: center;
+    border-radius: 19px;
+    cursor: pointer;
+
+}
+
+.conception-bad-day {
+
+    background-color: #dfe4d8;
+
+}
+
+.conception-negative-day {
+
+    background-color: #eaefe6;
+
+}
+
+
+.conception-negative-day:hover::before {
+
+    content: attr(data-title);
+    /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background-color: #eaefe6;
+    font-size: 13px; /* Размер текста подсказки */
+    left: 0;
+    bottom: 40px;
+    padding: 5px 10px; /* Поля */
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 5px;
+
+}
+
+
+.conception-bad-day:hover::before {
+
+    content: attr(data-title);
+    /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background-color: #dfe4d8;
+    font-size: 13px; /* Размер текста подсказки */
+    left: 0;
+    bottom: 40px;
+    padding: 5px 10px; /* Поля */
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 5px;
+
+}
+
+.menstruation-day {
+
+    background-color: #ffb0af;
+
+}
+
+.ovulation-day {
+
+    background-color: #c4f097;
+
+}
+
+.ovulation-middle-day {
+
+    background-color: #63bc66;
+
+}
+.conception-girl-day-legend{
+
+    background-image: url(/files/baby-girl-icon.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    width: 32.5749px;
+}
+.conception-girl-day{
+
+    /* background-color: #c4f097; */
+    background-image: url(/files/baby-girl-icon.png);
+    background-size: 23px 23px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    width: 32.5749px;
+    min-height: 32px;
+    /* padding: 0 0 0 0; */
+    padding-left: 17px;
+    margin: 0px 3px 0 3px;
+    text-align: center;
+    /* border-radius: 19px; */
+    cursor: pointer;
+}
+
+
+.conception-boy-day-legend{
+
+    background-image: url(/files/baby-boy-icon.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    width: 32.5749px;
+}
+.conception-boy-day{
+
+    /* background-color: #c4f097; */
+    background-image: url(/files/baby-boy-icon.png);
+    background-size: 23px 23px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    width: 32.5749px;
+    min-height: 32px;
+    /* padding: 0 0 0 0; */
+    padding-left: 17px;
+    margin: 0px 3px 0 3px;
+    text-align: center;
+    /* border-radius: 19px; */
+    cursor: pointer;
+}
+
+
+.menstruation-day:hover::before {
+
+    content: attr(data-title);
+     /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background-color: #ffb0af;
+    font-size: 13px; /* Размер текста подсказки */
+    left: 0;
+    bottom: 40px;
+    padding: 5px 10px; /* Поля */
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 5px;
+
+}
+
+
+.calendar-ovulation-legend {
+
+    display: block;
+
+/*    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);*/
+}
+
+.calendar-ovulation-legend-image{
+
+    width: 32.5749px;
+    min-height: 32px;
+    padding: 7px 0 0 0;
+    margin: 0px 3px 0 3px;
+    text-align: center;
+    border-radius: 19px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.calendar-ovulation-legend-text{
+
+    width: 200px;
+    min-height: 32px;
+ /*   padding: 7px 0 0 0;
+    margin: 0px 3px 0 3px;*/
+    text-align: left;
+    border-radius: 19px;
+    cursor: pointer;
+    display: inline-block;
+   vertical-align: middle;
+
+}
+
+
+.menstruation-day-legend {
+
+    background-color: #ffb0af;
+
+}
+
+.ovulation-day-legend {
+
+    background-color: #c4f097;
+
+}
+
+.ovulation-middle-day-legend {
+
+    background-color: #63bc66;
+
+}
+
+.conception-negative-day-legend{
+
+    background-color: #c7ccc3;
+
+}
+
+
+/*
+Календарь овуляции
+*/
+
+
+/*Каленьдарь беременности*/
+
+.pregnancy-day-odd {
+
+    background-color: #f1e2f1;
+
+}
+
+.pregnancy-day-even {
+
+    background-color: #c3b4c3;
+
+}
+
+.pregnancy-today-day{
+
+    background-color: #c4f097;
+
+}
+
+
+.pregnancy-trimester-two-day {
+
+    background-color: #bedafa;
+
+}
+
+.pregnancy-trimester-three-day {
+
+    background-color: #adbdda;
+
+}
+
+
+.not-this-month-day{
+
+    color: #c0c0c0;
+
+}
+
+
+
+.pregnancy-day-even:hover::before,
+.pregnancy-today-day:hover::before,
+.pregnancy-day-odd:hover::before,
+.conception-girl-day:hover::before,
+.conception-boy-day:hover::before,
+.ovulation-day:hover::before,
+.pregnancy-trimester-two-day:hover::before,
+.pregnancy-trimester-three-day:hover::before,
+.ovulation-middle-day:hover::before{
+
+    content: attr(data-title);
+    /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background-color: #c4f097;
+    font-size: 13px; /* Размер текста подсказки */
+    left: 0;
+    bottom: 40px;
+    padding: 5px 10px; /* Поля */
+    box-shadow: 0 1px 5px rgba(118, 118, 118, 0.32);
+    border-radius: 5px;
+
+}
+
