@@ -54,6 +54,7 @@ $this->title = 'My Yii Application';
 
 
 ?>
+test
 <div class="site-index">
 
     <div class="jumbotron">
