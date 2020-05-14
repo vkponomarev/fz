@@ -8,24 +8,38 @@ use yii\web\NotFoundHttpException;
 class Artists
 {
 
-    var $artist;
+    var $artist; // Основная информация об артисте.
+    var $albums; // Список альбомов.
+    var $songs; // Список песен.
 
-    function __construct($id)
+    function __construct($id = 0)
     {
 
-        $this->artist = $this->getArtist($id);
+    }
+
+    function data($id){
+
+    return (new ArtistsData())->artistsData($id);
 
     }
 
+    function albums($id){
 
-
-    function getArtist($id){
-
-    return (new ArtistsGetArtist())->artistsGetArtist($id);
+        return (new ArtistsAlbums())->artistsAlbums($id);
 
     }
 
+    function songs($id){
 
+        return (new ArtistsSongs())->artistsSongs($id);
+
+    }
+
+    function breadcrumbs($id = 0, $artist = 0){
+
+        (new ArtistsBreadcrumbs($id, $artist));
+
+    }
 
     public function showTestTable()
     {
@@ -38,6 +52,7 @@ class Artists
             url
             from
             m_artists
+            limit 0,30
             ')
             ->queryAll();
 

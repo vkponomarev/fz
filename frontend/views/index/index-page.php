@@ -44,3 +44,8 @@ $this->title = 'My Yii Application';
     </div>
 
 </div>
+
+
+<?=$this->render('/partials/breadcrumbs/_artists-index-first-letter-breadcrumbs',[
+    'artistsIndexLinksLetterName' => $artistsIndexLinksLetterName
+]);?>

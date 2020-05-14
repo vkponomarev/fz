@@ -57,8 +57,8 @@ return [
                 '/songs/' => 'songs/index',
                 '/songs/<url>/' => 'songs/song-page',
 
-                '/index/artists/' => 'index/index',
-                '/index/artists/<url>' => 'index/index-page',
+                '/artists/index/' => 'index/index',
+                '/artists/index/<url>' => 'index/index-page',
 
                 '/artists/' => 'artists/index',
                 '/artists/<url>/' => 'artists/artist-page',
@@ -70,6 +70,8 @@ return [
                 '/script/years' => 'scripts/years',
                 '/script/albums' => 'scripts/albums',
                 '/script/artists' => 'scripts/artists',
+                '/script/artists-show' => 'scripts/artists-show',
+                '/script/artists-work' => 'scripts/artists-work',
                 //'/<url>' => 'pages/one',
                 //'/print/<url>' => 'pages/print',
                 //'<action:(contact|login|logout|language|about|signup)>' => 'site/<action>',

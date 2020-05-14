@@ -1,18 +1,11 @@
 <?php
+
 namespace frontend\controllers;
 
-use common\models\components\FlowPageAlbums;
-use common\models\components\FlowPageSongs;
-use common\models\components\WomanCalendars;
-use common\models\Mail;
-use common\models\mainPagesData\MainPagesData;
-use common\models\Pages;
-use common\models\Advertising;
-use common\models\components\WomanCalculators;
-use Yii;
-use yii\data\ActiveDataProvider;
+use common\components\mainPagesData\MainPagesData;
+use common\components\song\Song;
+use common\components\songs\Songs;
 use yii\web\Controller;
-use yii\web\NotFoundHttpException;
 
 /**
  * Main controller
@@ -29,13 +22,14 @@ class SongsController extends Controller
     public function actionIndex()
     {
 
-        $mainPagesData = new MainPagesData('1',0, 0);
+        $mainPagesData = new MainPagesData('1', 0, 0);
 
-
+        $songs = new Songs();
+        $songsByRandom = $songs->byRandom();
 
         return $this->render('index', [
 
-            'showTestTable' => FlowPageSongs::showTestTable(),
+            'songsByRandom' => $songsByRandom,
 
         ]);
 
@@ -44,15 +38,19 @@ class SongsController extends Controller
     public function actionSongPage($url)
     {
 
-        $mainPagesData = new MainPagesData('1',$url, 'm_songs');
+        $mainPagesData = new MainPagesData('1', $url, 'm_songs');
 
+        $song = new Song();
+
+        $songData = $song->data($mainPagesData->pageId);
 
         return $this->render('song-page', [
+
+            'songData' => $songData,
 
         ]);
 
     }
-
 
 
 }

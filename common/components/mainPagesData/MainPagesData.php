@@ -54,7 +54,7 @@ class MainPagesData
 {
 
 
-    function __construct($pageId,$givenUrl,$tableName){
+    function __construct($pageId, $givenUrl, $tableName){
 
         $currentLanguage = $this->currentLanguage();
 

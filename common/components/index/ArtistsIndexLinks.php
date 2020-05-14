@@ -18,6 +18,8 @@ class ArtistsIndexLinks
             url
             from
             m_artists_first_letters
+            where
+            active = 1
             ')
             ->queryAll();
 

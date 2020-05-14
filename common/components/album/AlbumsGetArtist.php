@@ -1,11 +1,11 @@
 <?php
 
-namespace common\components\artists;
+namespace common\components\albums;
 
 use Yii;
 use yii\web\NotFoundHttpException;
 
-class ArtistsGetArtist
+class AlbumsGetArtist
 {
 
     public function artistsGetArtist($id)

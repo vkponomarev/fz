@@ -6,6 +6,7 @@ $this->title = 'My Yii Application';
 //echo $pageText['title'];
 //$artistsIndexLinksAll
 ?>
+
 <div class="container container-no-top-padding-extended text-center text-md-left">
 
 
@@ -13,7 +14,7 @@ $this->title = 'My Yii Application';
 
         <?php foreach ($artistsIndexLinksAll as $eachLink): ?>
 
-            <a href="/<?= Yii::$app->language ?>/index/artists/<?= $eachLink['url'] ?>/" class="artists-index-link">
+            <a href="/<?= Yii::$app->language ?>/artists/index/<?= $eachLink['url'] ?>/" class="artists-index-link">
                 <?= $eachLink['first_letter'] ?>
             </a>
 
@@ -21,3 +22,8 @@ $this->title = 'My Yii Application';
 
     </div>
 </div>
+
+
+<?=$this->render('/partials/breadcrumbs/_artists-index-breadcrumbs',[
+
+]);?>

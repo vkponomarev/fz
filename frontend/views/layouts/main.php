@@ -1,19 +1,15 @@
 <?php
 
 /* @var $this \yii\web\View */
+
 /* @var $content string */
 
-use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
-use common\widgets\Alert;
 
 AppAsset::register($this);
 //echo $this->params['title'];
 
-    //Url::home();
+//Url::home();
 
 ?>
 <?php $this->beginPage() ?>
@@ -21,16 +17,15 @@ AppAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
 
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <meta name="description" content="<?= Yii::$app->params['description'] ?>">
-    <?=$this->render('/partials/link-prev-next/_link-prev-next');?>
+    <?= $this->render('/partials/link-prev-next/_link-prev-next'); ?>
     <?php $this->registerCsrfMetaTags() ?>
-
 
 
     <title><?= Yii::$app->params['title'] ?></title>
@@ -44,28 +39,29 @@ AppAsset::register($this);
 <div class="wrap">
 
 
-<div class="header-top-line">
+    <div class="header-top-line">
 
-    <a href="/" rel="nofollow" class="header-top-line-site-name-link">FLOWLEZ</a>
+        <a href="/" rel="nofollow" class="header-top-line-site-name-link">FLOWLEZ</a>
 
-    <div class="header-top-line-sign-up">
+        <div class="header-top-line-sign-up">
 
-        <a href="./" rel="nofollow" class="header-top-line-sign-up-link"><?=Yii::t('app','Sign in')?></a>
+            <a href="./" rel="nofollow" class="header-top-line-sign-up-link"><?= Yii::t('app', 'Sign in') ?></a>
 
+        </div>
     </div>
-</div>
 
     <nav class="navbar-default header-nav-line">
 
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed nav-button" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed nav-button" data-toggle="collapse"
+                    data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
 
         <div id="navbar" class="navbar-collapse collapse nav-bar-collapsed ">
 
@@ -73,9 +69,9 @@ AppAsset::register($this);
 
                 <li class="nav-link navbar-li">
 
-                    <a  href="/<?= Yii::$app->language ?>/artists/" class="dropdown-toggle navbar-a-link">
+                    <a href="/<?= Yii::$app->language ?>/artists/" class="dropdown-toggle navbar-a-link">
 
-                        <?=Yii::t('app','Artists')?>
+                        <?= Yii::t('app', 'Artists') ?>
 
                     </a>
 
@@ -88,9 +84,9 @@ AppAsset::register($this);
 
 
                 <li class="dropdown navbar-li">
-                    <a  href="/<?= Yii::$app->language ?>/albums/" class="dropdown-toggle navbar-a-link">
+                    <a href="/<?= Yii::$app->language ?>/albums/" class="dropdown-toggle navbar-a-link">
 
-                        <?=Yii::t('app','Albums')?>
+                        <?= Yii::t('app', 'Albums') ?>
 
                     </a>
                 </li>
@@ -100,9 +96,9 @@ AppAsset::register($this);
                 </li>
 
                 <li class="dropdown navbar-li">
-                    <a  href="/<?= Yii::$app->language ?>/songs/" class="dropdown-toggle navbar-a-link">
+                    <a href="/<?= Yii::$app->language ?>/songs/" class="dropdown-toggle navbar-a-link">
 
-                        <?=Yii::t('app','Songs')?>
+                        <?= Yii::t('app', 'Songs') ?>
 
                     </a>
                 </li>
@@ -113,9 +109,9 @@ AppAsset::register($this);
 
 
                 <li class="dropdown navbar-li">
-                    <a  href="/<?= Yii::$app->language ?>/tech/translations/" class="dropdown-toggle navbar-a-link">
+                    <a href="/<?= Yii::$app->language ?>/tech/translations/" class="dropdown-toggle navbar-a-link">
 
-                        <?=Yii::t('app','Translation')?>
+                        <?= Yii::t('app', 'Translation') ?>
 
                     </a>
                 </li>
@@ -161,22 +157,35 @@ AppAsset::register($this);
         </div>
 
     </nav>
-    <h1><?= Yii::$app->params['h1'] ?></h1>
+
+    <div class="container">
+
+        <h1><?= Yii::$app->params['h1'] ?></h1>
 
         <?= $content ?>
 
+    </div>
+
 </div>
+<div class="container">
 
+    <?=$this->render('/partials/breadcrumbs/_breadcrumbs',[
+        //'artist' => $artist,
+    ]);?>
+</div>
 <footer>
-
-    <div class="container container-no-top-padding-extended text-center text-md-left">
-
-        <?=$this->render('/partials/first-letter-index/_first-letter-index');?>
+    <div class="container  ">
 
         <div class="row">
-        <hr class="footer-hr">
+            <div class="col-md-12 text-center">
+                <br>
+                <?= $this->render('/partials/first-letter-index/_first-letter-index'); ?>
+            </div>
         </div>
-        <div class="row">
+
+
+        <hr class="footer-hr">
+        <div class="row text-md-left text-center" >
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <span class="choose-languages">
@@ -196,11 +205,11 @@ AppAsset::register($this);
                            <li>
 
                                <?= \yii\helpers\Html::a($item['name'], array_merge(Yii::$app->request->get(),
-                                   [Yii::$app->controller->route, 'language' => $item['url']]));?>
+                                   [Yii::$app->controller->route, 'language' => $item['url']])); ?>
 
                            </li>
 
-                       <?php endforeach?>
+                       <?php endforeach ?>
 
 
                    </ul>
@@ -222,36 +231,25 @@ AppAsset::register($this);
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <ul class="contact">
-                    <span><?=Yii::t('app','Read')?></span>
+                    <span><?= Yii::t('app', 'Read') ?></span>
 
                     <li>
-                        <a href="/<?= Yii::$app->language ?>/embed/" rel="nofollow"><?=Yii::t('app','Embed calculator')?></a>
+                        <a href="/<?= Yii::$app->language ?>/embed/"
+                           rel="nofollow"><?= Yii::t('app', 'Embed calculator') ?></a>
                     </li>
-
-                     <li>
-                         <br>
-                    </li>
-
 
                     <li>
-                        <a href="/<?= Yii::$app->language ?>/cookie/" rel="nofollow"><?=Yii::t('app','Cookie info')?></a>
-                    </li>
-                    <li>
-                        <a href="/<?= Yii::$app->language ?>/policy/" rel="nofollow"><?=Yii::t('app','Privacy policy')?></a>
+                        <br>
                     </li>
 
 
-                </ul>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                <ul class="contact">
-                    <span><?=Yii::t('app','Help')?></span>
                     <li>
-                        <a href="/<?= Yii::$app->language ?>/translation/" rel="nofollow"><?=Yii::t('app','Translations')?></a>
+                        <a href="/<?= Yii::$app->language ?>/cookie/"
+                           rel="nofollow"><?= Yii::t('app', 'Cookie info') ?></a>
                     </li>
                     <li>
-                        <a href="/<?= Yii::$app->language ?>/donation/" rel="nofollow"><?=Yii::t('app','Donations')?></a>
+                        <a href="/<?= Yii::$app->language ?>/policy/"
+                           rel="nofollow"><?= Yii::t('app', 'Privacy policy') ?></a>
                     </li>
 
 
@@ -260,9 +258,26 @@ AppAsset::register($this);
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <ul class="contact">
-                    <span><?=Yii::t('app','Contacts')?></span>
+                    <span><?= Yii::t('app', 'Help') ?></span>
                     <li>
-                        <a href="/<?= Yii::$app->language ?>/contact/" rel="nofollow"><?=Yii::t('app','Write to us')?></a>
+                        <a href="/<?= Yii::$app->language ?>/translation/"
+                           rel="nofollow"><?= Yii::t('app', 'Translations') ?></a>
+                    </li>
+                    <li>
+                        <a href="/<?= Yii::$app->language ?>/donation/"
+                           rel="nofollow"><?= Yii::t('app', 'Donations') ?></a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <ul class="contact">
+                    <span><?= Yii::t('app', 'Contacts') ?></span>
+                    <li>
+                        <a href="/<?= Yii::$app->language ?>/contact/"
+                           rel="nofollow"><?= Yii::t('app', 'Write to us') ?></a>
                     </li>
 
                 </ul>

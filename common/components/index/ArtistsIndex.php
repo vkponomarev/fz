@@ -7,6 +7,10 @@ use Yii;
 class ArtistsIndex
 {
 
+    var $artistsIndexLinks; // Все ссылки на первую букву артистов
+    var $artistsIndexLinksLetter; // Все ссылки на артистов на кокретную первую букву в виде дата провайдера
+    var $artistsIndexLinksLetterName; // Название конкретной Буквы для страницы этой буквы для крошек
+
     function __construct($firstLetterId = 0, $pageSize = 0, $url = 0)
     {
 
@@ -16,7 +20,11 @@ class ArtistsIndex
 
             $this->artistsIndexLinksLetter = $this->artistsIndexLinksLetter($firstLetterId, $pageSize);
 
+            $this->artistsIndexLinksLetterName = $this->artistsIndexLinksLetterName($firstLetterId);
+
+            //Записываем в глобальную переменную текущие ссылки rel=prev и rel=next Yii::$app->params['prevNext']
             $this->letterLinkPrevNext($this->artistsIndexLinksLetter['itemsCount'], $pageSize, $this->getParams(), $url);
+
         }
 
     }
@@ -42,19 +50,7 @@ class ArtistsIndex
     function letterLinkPrevNext($itemsCount, $pageSize, $getParams, $url)
     {
 
-        $letterLinkPrevNext = (new ArtistsIndexLinksLetterLinkPrevNext())->letterLinkPrevNext($itemsCount, $pageSize, $getParams);
-
-        Yii::$app->params['prevNext'] = [
-
-            'url' => 'index/artists/' . $url,
-            'urlOne' => 'index/artists',
-            'urlTwo' => $url,
-            'pageSize' => $pageSize,
-            'prev' => $letterLinkPrevNext['prev'],
-            'next' => $letterLinkPrevNext['next'],
-
-
-        ];
+        (new ArtistsIndexLinksLetterLinkPrevNext($itemsCount, $pageSize, $getParams, $url));
 
     }
 
@@ -66,7 +62,14 @@ class ArtistsIndex
 
         return $getParams;
 
-    }
+    }    
+    
+    function artistsIndexLinksLetterName($firstLetterId)
+    {
+
+    return (new ArtistsIndexLinksLetterName())->artistsIndexLinksName($firstLetterId);
+
+}
 
 
 }

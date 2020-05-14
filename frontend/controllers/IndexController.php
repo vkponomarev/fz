@@ -26,8 +26,6 @@ class IndexController extends Controller
         $mainPagesData = new MainPagesData('1',0, 0);
 
 
-
-
         return $this->render('index', [
 
             //'showTestTable' => Artists::showTestTable(),
@@ -43,12 +41,16 @@ class IndexController extends Controller
 
         $mainPagesData = new MainPagesData('1',$url, 'm_artists_first_letters');
 
-        $artistsIndexLinksLetter = (new ArtistsIndex($mainPagesData->pageId, 50, $url))->artistsIndexLinksLetter;
+        $artistsIndex = (new ArtistsIndex($mainPagesData->pageId, 50, $url));
+
+        $artistsIndexLinksLetter = $artistsIndex->artistsIndexLinksLetter;
+
+        $artistsIndexLinksLetterName = $artistsIndex->artistsIndexLinksLetterName;
 
         return $this->render('index-page', [
 
             'artistsIndexLinksLetter' => $artistsIndexLinksLetter['artistsIndexLinksLetter'],
-            'itemsCount' => $artistsIndexLinksLetter['itemsCount']
+            'artistsIndexLinksLetterName' => $artistsIndexLinksLetterName,
 
         ]);
 

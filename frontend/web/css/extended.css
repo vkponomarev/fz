@@ -479,10 +479,10 @@ ol, ul {
 .footer-num-a-link{
 
     color: #fff6b3;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 6px;
+    margin-right: 6px;
     cursor: pointer;
-    line-height: 25px;
+    line-height: 30px;
 
 }
 .footer-num-a-link:hover{

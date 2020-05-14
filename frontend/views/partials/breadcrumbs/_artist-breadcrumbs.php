@@ -4,7 +4,26 @@
 /* @var $content string */
 
 
+/*
+ *
+ *     <li class="breadcrumbs-item" itemprop="itemListElement" itemscope
+        itemtype="http://schema.org/ListItem">
+        /  <a href="/<?= Yii::$app->language ?>/index/artists/<?= $artist->artist['url'] ?>/" itemprop="item">
+                    <span itemprop="name">
+                        <?= $artist->artist['first_letter'] ?>
+                    </span>
+        </a>
+        <meta itemprop="position" content="4" />
+    </li>
 
+    <li class="breadcrumbs-item">
+                <span >
+                       / <?= $artist->artist['name'] ?>
+                </span>
+
+    </li>
+ *
+ * **/
 
 ?>
 
@@ -37,24 +56,9 @@
                         <?=Yii::t('app','Index')?>
                     </span>
         </a>
-        <meta itemprop="position" content="2" />
-    </li>
-
-    <li class="breadcrumbs-item" itemprop="itemListElement" itemscope
-        itemtype="http://schema.org/ListItem">
-        /  <a href="/<?= Yii::$app->language ?>/index/artists/<?= $artist->artist['url'] ?>/" itemprop="item">
-                    <span itemprop="name">
-                        <?= $artist->artist['first_letter'] ?>
-                    </span>
-        </a>
         <meta itemprop="position" content="3" />
     </li>
 
-    <li class="breadcrumbs-item">
-                <span >
-                       / <?= $artist->artist['name'] ?>
-                </span>
 
-    </li>
 
 </ol>

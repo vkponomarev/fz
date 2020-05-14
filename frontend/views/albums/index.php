@@ -11,7 +11,7 @@ $this->title = 'My Yii Application';
         <h1><?=Yii::t('app', 'Congratulations')?></h1>
 
 
-        <?php foreach ($showTestTable as $one) {
+        <?php foreach ($listRandom as $one) {
 
             echo 'id = ' . $one['id'] . ' name = ' .$one['name'] . ' url =  ' . '<a href="' . $one['url'] . '/"> Перейти </a><br>';
 

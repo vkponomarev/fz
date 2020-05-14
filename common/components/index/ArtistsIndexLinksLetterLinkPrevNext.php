@@ -9,12 +9,21 @@ class ArtistsIndexLinksLetterLinkPrevNext
 {
 
 
+    function __construct($itemsCount, $pageSize, $getParams, $url){
+
+        $letterLinkPrevNext = $this->letterLinkPrevNext($itemsCount, $pageSize, $getParams);
+        $this->insertLinkPrevNextToGlobal($url, $pageSize, $letterLinkPrevNext);
+
+    }
+
     public function letterLinkPrevNext($itemsCount, $pageSize, $getParams)
     {
 
         //echo $getParams['page'];
         $pagesCount = ceil($itemsCount / $pageSize);
         //echo $pagesCount;
+        $letterLinkPrevNext['prev'] = 0;
+        $letterLinkPrevNext['next'] = 0;
 
         if ($pagesCount == 1) {
 
@@ -88,4 +97,21 @@ class ArtistsIndexLinksLetterLinkPrevNext
         return $letterLinkPrevNext;
 
     }
+
+    function insertLinkPrevNextToGlobal($url, $pageSize, $letterLinkPrevNext){
+
+        Yii::$app->params['prevNext'] = [
+
+            'url' => 'index/artists/' . $url,
+            'urlOne' => 'index/artists',
+            'urlTwo' => $url,
+            'pageSize' => $pageSize,
+            'prev' => $letterLinkPrevNext['prev'],
+            'next' => $letterLinkPrevNext['next'],
+
+        ];
+
+    }
+
+
 }
