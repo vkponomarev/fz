@@ -6,11 +6,11 @@ use Yii;
 use yii\web\NotFoundHttpException;
 
 /**
- * Class Songs
+ * Class Song
  * @package common\components\songs
  *
- * function byAlbum($id)
- * Все песни альбома
+ *
+ *
  *
  *
  */
@@ -27,6 +27,18 @@ class Song
     function data($id){
 
     return (new SongData())->data($id);
+
+    }
+
+    function byYoutube(){
+
+        return (new SongByYoutube())->song();
+
+    }
+
+    function updatePageTexts($songData){
+
+        (new SongUpdatePageTexts())->update($songData);
 
     }
 

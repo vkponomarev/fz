@@ -605,25 +605,141 @@ padding: 35px 15px 20px!important;
 
 .plates {
     min-height: 20px;
-    height: 200px;
+    height: 280px;
     padding: 19px;
    /* margin-bottom: 20px;*/
     background-color: #e4f4ff;
     border: 0.04em solid #fff;
     border-radius: 8px;
     word-break: break-all;
+    text-align: center;
 }
 
+
+.plates-outside {
+    min-height: 20px;
+    height: 280px;
+    padding: 19px;
+    background-color: #e4f4ff;
+    border: 0.04em solid #fff;
+    border-radius: 8px;
+    word-break: break-all;
+    text-align: center;
+}
+
+.plates-albums {
+    min-height: 20px;
+    height: 320px;
+    padding: 5px;
+    background-color: #d0d0d069;
+    border-radius: 1px;
+    /*word-break: break-all;*/
+    text-align: center;
+    width: 223px;
+}
+
+.plates-albums:hover{
+
+    background-color: #7bf5fe;
+
+}
+.plates-albums-outside{
+    min-height: 20px;
+    height: 330px;
+    border-radius: 8px;
+    text-align: -webkit-center;
+}
+
+.plates-albums-title{
+
+    color: #131415;
+    font-size: 14px;
+
+}
+
+.plates-songs {
+    min-height: 20px;
+    height: 110px;
+    padding: 5px;
+    background-color: #d0d0d069;
+    border-radius: 1px;
+    word-break: break-all;
+    text-align: left;
+    width: 100%;
+}
+
+.plates-songs:hover{
+
+    background-color: #fee07b;
+
+
+}
+.plates-songs-outside{
+    min-height: 20px;
+    height: 130px;
+    border-radius: 8px;
+    text-align: -webkit-center;
+    padding: 10px;
+}
+
+.plates-songs-title{
+
+    color: #131415;
+    font-size: 14px;
+
+}
+
+.plates-songs-img {
+    float: left;
+    margin-right: 10px;
+}
+
+.plates-artists {
+    min-height: 20px;
+    height: 320px;
+    padding: 5px;
+    background-color: #d0d0d069;
+    border-radius: 1px;
+    /*word-break: break-all;*/
+    text-align: center;
+    width: 223px;
+}
+
+.plates-artists:hover{
+
+    background-color: #7bfede;
+
+}
+.plates-artists-outside{
+    min-height: 20px;
+    height: 330px;
+    border-radius: 8px;
+    text-align: -webkit-center;
+}
+
+.plates-artists-title{
+
+    color: #131415;
+    font-size: 16px;
+    font-weight: bolder;
+
+}
+
+
+.main-page-h2 {
+    font-size: 40px;
+    text-align: -webkit-center;
+}
 .plates:hover {
     background-color: #f4fafe;
-    -webkit-transition: plates-img 0.2s ease;
+    /*-webkit-transition: plates-img 0.2s ease;*/
 }
 
 /* Данная конструкция позваоляет анимировать внутренний элемент*/
 
 .plates:hover > p > .plates-img{
     margin-left:4px;
-    -webkit-transition: all 0.1s 0.0s ease-in;
+    /*-webkit-transition: all 0.1s 0.0s ease-in;*/
 }
 /*
 .plates:hover ~ .plates-img {
@@ -646,6 +762,94 @@ padding: 35px 15px 20px!important;
     color: #82878f;
 }
 
+
+
+
+.artist-photo{
+
+    float: left;
+    margin-right: 20px;
+}
+
+.youtube-player-header {
+    text-align: center;
+}
+
+.artist-album-photo {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.artist-songs-links{
+
+    list-style: decimal-leading-zero;
+    margin-left: 25px;
+    padding-left: 0;
+    line-height: 1.6;
+
+}
+
+.artist-album-name {
+    font-size: 22px;
+
+}
+
+.artist-album-year {
+    font-size: 16px;
+}
+
+
+.album-artist-link {
+    font-size: 22px;
+    line-height: 2;
+}
+
+.album-songs-links{
+
+    list-style: decimal-leading-zero;
+    margin-left: 70px;
+    padding-left: 0;
+    line-height: 1.6;
+    font-size: 20px;
+
+}
+
+
+.album-name {
+
+    font-size: 30px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.album-text {
+    color: #cccccc;
+}
+
+
+.song-text{
+
+    font-size: 2rem;
+    color: #225a5e;
+
+}
+
+.song-text-title{
+
+    font-size: 1.6rem;
+    color: #7d7d7d;
+
+}
+
+.artist-other-songs-links{
+
+    list-style: decimal-leading-zero;
+    margin-left: 25px;
+    padding-left: 20px;
+    line-height: 1.6;
+
+}
 
 body {
 

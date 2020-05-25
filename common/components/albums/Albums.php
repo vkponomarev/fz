@@ -21,50 +21,18 @@ class Albums
 
     }
 
-
-    function data($id)
+    function byRandom($count)
     {
 
-        return (new AlbumsData())->albumData($id);
+        return (new AlbumsByRandom())->albums($count);
 
     }
 
-    function songs($id)
+    function byPopularity($count)
     {
 
-        return (new AlbumsSongs())->albumSongs($id);
+        return (new AlbumsByPopularity())->albums($count);
 
     }
-
-    function artists($id)
-    {
-
-        return (new AlbumsArtist())->albumsArtists($id);
-
-    }
-
-    function artist($id)
-    {
-
-        return (new AlbumsArtist())->albumArtist($id);
-
-    }
-
-    function listRandom()
-    {
-
-        return (new AlbumsListRandom())->albumsListRandom();
-
-    }
-
-
-    function breadcrumbs($id = 0, $artist = 0)
-    {
-
-        (new AlbumsBreadcrumbs($id, $artist));
-
-    }
-
-
 }
 

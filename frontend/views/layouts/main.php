@@ -23,12 +23,13 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <meta name="description" content="<?= Yii::$app->params['description'] ?>">
+    <meta name="description" content="<?= Yii::$app->params['text']['description'] ?>">
+    <?= $this->render('/partials/alternate/_alternate'); ?>
     <?= $this->render('/partials/link-prev-next/_link-prev-next'); ?>
     <?php $this->registerCsrfMetaTags() ?>
 
 
-    <title><?= Yii::$app->params['title'] ?></title>
+    <title><?= Yii::$app->params['text']['title'] ?></title>
 
     <?php $this->head() ?>
 
@@ -38,16 +39,10 @@ AppAsset::register($this);
 
 <div class="wrap">
 
-
     <div class="header-top-line">
 
         <a href="/" rel="nofollow" class="header-top-line-site-name-link">FLOWLEZ</a>
 
-        <div class="header-top-line-sign-up">
-
-            <a href="./" rel="nofollow" class="header-top-line-sign-up-link"><?= Yii::t('app', 'Sign in') ?></a>
-
-        </div>
     </div>
 
     <nav class="navbar-default header-nav-line">
@@ -74,7 +69,6 @@ AppAsset::register($this);
                         <?= Yii::t('app', 'Artists') ?>
 
                     </a>
-
 
                 </li>
 
@@ -103,55 +97,6 @@ AppAsset::register($this);
                     </a>
                 </li>
 
-                <li class="navbar-separator">
-                    |
-                </li>
-
-
-                <li class="dropdown navbar-li">
-                    <a href="/<?= Yii::$app->language ?>/tech/translations/" class="dropdown-toggle navbar-a-link">
-
-                        <?= Yii::t('app', 'Translation') ?>
-
-                    </a>
-                </li>
-
-                <!---
-                                <li class="dropdown navbar-li">
-                                    <a  href="/" class="dropdown-toggle navbar-a-link" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">
-
-                                        Переводы
-
-                                         <span class="caret">
-                                            </span>
-
-                                    </a>
-
-
-                                    <ul class="dropdown-menu dropdown-extended">
-
-                                        <li class="show-only-small-resolution dropdown-li-extended">
-                                            <a href="/"сlass="dropdown-li-a-extended">
-
-                                                Артисты 1
-
-                                            </a>
-                                        </li>
-
-                                        <li class="dropdown-li-extended">
-                                            <a href="/" class="dropdown-li-a-extended">
-
-                                                Артисты 12
-
-                                            </a>
-                                        </li>
-
-                                    </ul>
-
-
-                </li>
-                --->
-
             </ul>
 
         </div>
@@ -160,18 +105,18 @@ AppAsset::register($this);
 
     <div class="container">
 
-        <h1><?= Yii::$app->params['h1'] ?></h1>
-
         <?= $content ?>
 
     </div>
 
 </div>
+
 <div class="container">
 
-    <?=$this->render('/partials/breadcrumbs/_breadcrumbs',[
+    <?= $this->render('/partials/breadcrumbs/_breadcrumbs', [
         //'artist' => $artist,
-    ]);?>
+    ]); ?>
+
 </div>
 <footer>
     <div class="container  ">
@@ -185,9 +130,9 @@ AppAsset::register($this);
 
 
         <hr class="footer-hr">
-        <div class="row text-md-left text-center" >
+        <div class="row text-md-left text-center">
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <span class="choose-languages">
 
                    <span class="fa fa-globe globe-size">
@@ -222,63 +167,27 @@ AppAsset::register($this);
 
                 <span class="footer-brand-down-text">
 
-                    The way of music
+                    <?=Yii::t('app','True way of music')?>
 
                 </span>
 
 
             </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <ul class="contact">
                     <span><?= Yii::t('app', 'Read') ?></span>
 
-                    <li>
-                        <a href="/<?= Yii::$app->language ?>/embed/"
-                           rel="nofollow"><?= Yii::t('app', 'Embed calculator') ?></a>
-                    </li>
 
                     <li>
-                        <br>
-                    </li>
-
-
-                    <li>
-                        <a href="/<?= Yii::$app->language ?>/cookie/"
+                        <a href="/<?= Yii::$app->language ?>/cms/cookie/"
                            rel="nofollow"><?= Yii::t('app', 'Cookie info') ?></a>
                     </li>
                     <li>
-                        <a href="/<?= Yii::$app->language ?>/policy/"
+                        <a href="/<?= Yii::$app->language ?>/cms/policy/"
                            rel="nofollow"><?= Yii::t('app', 'Privacy policy') ?></a>
                     </li>
 
-
-                </ul>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                <ul class="contact">
-                    <span><?= Yii::t('app', 'Help') ?></span>
-                    <li>
-                        <a href="/<?= Yii::$app->language ?>/translation/"
-                           rel="nofollow"><?= Yii::t('app', 'Translations') ?></a>
-                    </li>
-                    <li>
-                        <a href="/<?= Yii::$app->language ?>/donation/"
-                           rel="nofollow"><?= Yii::t('app', 'Donations') ?></a>
-                    </li>
-
-
-                </ul>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                <ul class="contact">
-                    <span><?= Yii::t('app', 'Contacts') ?></span>
-                    <li>
-                        <a href="/<?= Yii::$app->language ?>/contact/"
-                           rel="nofollow"><?= Yii::t('app', 'Write to us') ?></a>
-                    </li>
 
                 </ul>
             </div>

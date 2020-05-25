@@ -2,7 +2,12 @@
 
 namespace frontend\controllers;
 
+use common\components\album\Album;
+use common\components\artist\Artist;
+use common\components\breadcrumbs\Breadcrumbs;
+use common\components\firstLetter\FirstLetter;
 use common\components\mainPagesData\MainPagesData;
+use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
 use common\components\songs\Songs;
 use yii\web\Controller;
@@ -22,14 +27,18 @@ class SongsController extends Controller
     public function actionIndex()
     {
 
-        $mainPagesData = new MainPagesData('1', 0, 0);
+        $mainPagesData = new MainPagesData('55', 0, 0);
 
         $songs = new Songs();
-        $songsByRandom = $songs->byRandom();
+        $songsByPopularity = $songs->byPopularity(20);
+
+        $song = new Song();
+        $songByYoutube = $song->byYoutube();
 
         return $this->render('index', [
 
-            'songsByRandom' => $songsByRandom,
+            'songsByPopularity' => $songsByPopularity,
+            'songByYoutube' => $songByYoutube,
 
         ]);
 
@@ -38,15 +47,32 @@ class SongsController extends Controller
     public function actionSongPage($url)
     {
 
-        $mainPagesData = new MainPagesData('1', $url, 'm_songs');
+        $mainPagesData = new MainPagesData('58', $url, 'm_songs');
 
         $song = new Song();
-
         $songData = $song->data($mainPagesData->pageId);
+
+        $album = new Album();
+        $albumData = $album->data($songData['m_albums_id']);
+
+        $artist = new Artist();
+        $artistData = $artist->data($songData['m_artists_id']);
+
+        $pageTexts = new PageTexts();
+        $pageTexts->updateBySong($songData);
+        $pageTexts->updateByArtist($artistData);
+
+        $firstLetter = new FirstLetter();
+        $firstLetterByArtist = $firstLetter->byArtist($artistData);
+
+        $breadCrumbs = new Breadcrumbs();
+        $breadCrumbs->song($artistData, $albumData, $songData, $firstLetterByArtist);
 
         return $this->render('song-page', [
 
             'songData' => $songData,
+            'albumData' => $albumData,
+            'artistData' => $artistData,
 
         ]);
 

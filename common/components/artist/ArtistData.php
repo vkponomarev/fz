@@ -8,10 +8,10 @@ use yii\web\NotFoundHttpException;
 class ArtistData
 {
 
-    public function artistData($id)
+    public function data($id)
     {
 
-        $artistData = Yii::$app->db
+        $data = Yii::$app->db
             ->createCommand('
             select
             *
@@ -22,9 +22,9 @@ class ArtistData
             ', [':id' => $id])
             ->queryOne();
 
-        (new \common\components\dump\Dump())->printR($artistData, 'artistData');
+        //(new \common\components\dump\Dump())->printR($data, 'artistData');
 
-        return $artistData;
+        return $data;
     }
 
 /**

@@ -1,71 +1,72 @@
 <?php
 
-/* @var $this yii\web\View */
-
+/* @var $this yii\web\View
+ * @var $songByYoutube \common\components\song\SongByYoutube
+ * @var $songsByPopularity \common\components\songs\SongsByPopularity
+ */
 $this->title = 'My Yii Application';
-//echo $pageText['title'];
+//echo $pageText['title'];$songByYoutube
 ?>
-<div class="site-index">
 
-    <div class="jumbotron">
-        <h1><?=Yii::t('app', 'Congratulations')?></h1>
+    <br><br><br>
 
-
-        <?php foreach ($songsByRandom as $one) {
-
-            echo 'id = ' . $one['id'] . ' name = ' .$one['name'] . ' url =  ' . '<a href="' . $one['url'] . '/"> Перейти </a><br>';
+<?= $this->render('/partials/youtube-player/youtube-player', [
+    'songByYoutube' => $songByYoutube,
+]); ?>
 
 
-        }
+    <br><br><br><br>
 
+    <h2 class="main-page-h2"><?= Yii::t('app', 'Popular songs') ?></h2>
+    <br><br>
+    <div class="row row-flex">
+        <?php //(new \common\components\dump\Dump())->printR($songsByPopularity); ?>
+        <?php foreach ($songsByPopularity as $songs): ?>
 
-        ?>
+            <a href="/<?= Yii::$app->language ?>/songs/<?= $songs['url']; ?>/"
+               class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 main-pages-extended">
+                <div class="plates-songs-outside">
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+                    <div class="plates-songs">
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+                        <?php if ($songs['albumPhoto']):?>
+                            <p>
+                                <img class="plates-songs-img"
+                                     src="/files/albums/<?= $songs['albumFirstLetter'] ?>/<?= $songs['albumPhoto'] ?>"
+                                     alt="<?= $songs['name'] ?>"
+                                     width="100">
+
+                            </p>
+                        <?php endif;?>
+
+                        <?= $songs['name']; ?>
+                        <p class="plates-songs-title">
+
+                        </p>
+
+                        <p class="plates-songs-artist-name"><?= $songs['artistName']; ?>
+                        </p>
+
+                    </div>
+                </div>
+            </a>
+        <?php endforeach; ?>
     </div>
 
-    <div class="body-content">
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+    <br><br><br><br>
+<?php
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-        <div class="row">
+/*
+ *
+<a href="/script/first-letter/">first-letter</a><br>
+<a href="/script/artists/">artists</a><br>
+<a href="/script/albums/">albums</a><br>
 
 
+ *             <?php if ($songs['year']): ?>
+                            (<?php// $songs['year']; ?>)
+                        <?php endif; ?>
+ * */
 
-
-        </div>
-
-    </div>
-</div>
+?>

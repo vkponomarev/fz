@@ -57,13 +57,13 @@ return [
                 '/songs/' => 'songs/index',
                 '/songs/<url>/' => 'songs/song-page',
 
-                '/artists/index/' => 'index/index',
-                '/artists/index/<url>' => 'index/index-page',
+                '/artists/index/' => 'index/artists-index',
+                '/artists/index/<url>' => 'index/artists-index-page',
 
                 '/artists/' => 'artists/index',
                 '/artists/<url>/' => 'artists/artist-page',
 
-                '/tech/' => 'tech-page/index',
+
 
                 '/script/first-letter' => 'scripts/first-letter',
                 '/script/genres' => 'scripts/genres',
@@ -72,12 +72,12 @@ return [
                 '/script/artists' => 'scripts/artists',
                 '/script/artists-show' => 'scripts/artists-show',
                 '/script/artists-work' => 'scripts/artists-work',
-                //'/<url>' => 'pages/one',
-                //'/print/<url>' => 'pages/print',
-                //'<action:(contact|login|logout|language|about|signup)>' => 'site/<action>',
-                //'blog/<url>' => 'blog/one',
-                //'blog' => 'blog/index',
 
+
+                //CMS
+                //'/cms/' => 'cms/index',
+                '/cms/cookie/' => 'cms/cookie-info',
+                '/cms/policy/' => 'cms/policy',
 
             ],
 

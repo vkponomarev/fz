@@ -8,10 +8,10 @@ use yii\web\NotFoundHttpException;
 class AlbumData
 {
 
-    public function albumData($id)
+    public function data($id)
     {
 
-        $albumData = Yii::$app->db
+        $data = Yii::$app->db
             ->createCommand('
             select
             *
@@ -24,7 +24,7 @@ class AlbumData
 
         //(new \common\components\dump\Dump())->printR($albumData);
 
-        return $albumData;
+        return $data;
     }
 
 }

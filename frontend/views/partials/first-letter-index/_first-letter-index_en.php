@@ -97,5 +97,5 @@ Other
 
 
     <a href="/<?= Yii::$app->language ?>/artists/index/" class="footer-num-a-link">
-        Index
+        <?=Yii::t('app','Index')?>
     </a>

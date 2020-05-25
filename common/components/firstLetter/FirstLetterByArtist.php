@@ -8,7 +8,7 @@ use yii\web\NotFoundHttpException;
 class FirstLetterByArtist
 {
 
-    public function firstLetter($id)
+    public function firstLetter($artistData)
     {
 
         $firstLetter = Yii::$app->db
@@ -19,27 +19,13 @@ class FirstLetterByArtist
             m_artists_first_letters
             where 
             m_artists_first_letters.id = :id
-            ', [':id' => $id])
+            ', [':id' => $artistData['first_letter']])
             ->queryOne();
 
-        (new \common\components\dump\Dump())->printR($firstLetter);
+        //(new \common\components\dump\Dump())->printR($firstLetter);
 
         return $firstLetter;
     }
-
-/**
-select
-m_artists.name,
-m_artists.photos,
-m_artists.first_letter,
-m_artists_first_letters.first_letter,
-m_artists_first_letters.url
-from
-m_artists
-left join m_artists_first_letters on m_artists_first_letters.id = m_artists.first_letter
-where
-m_artists.id = 30585
- */
 
 }
 

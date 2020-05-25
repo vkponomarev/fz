@@ -68,7 +68,7 @@ class MainPagesData
         }
 
         $this->pageText($pageId, $currentLanguage['id']);
-
+        $this->alternate($givenUrl);
 
     }
 
@@ -93,14 +93,19 @@ class MainPagesData
 
         $pageText = MainPagesDataPageText::pageText($currentPageId, $currentLanguageId);
         //return $pageText;
-        Yii::$app->params['title'] = $pageText['title'];
-        Yii::$app->params['h1'] = $pageText['h1'];
-        Yii::$app->params['description'] = $pageText['description'];
-        Yii::$app->params['text1'] = $pageText['text1'];
-        Yii::$app->params['text2'] = $pageText['text2'];
+        Yii::$app->params['text']['title'] = $pageText['title'];
+        Yii::$app->params['text']['h1'] = $pageText['h1'];
+        Yii::$app->params['text']['description'] = $pageText['description'];
+        Yii::$app->params['text']['text1'] = $pageText['text1'];
+        Yii::$app->params['text']['text2'] = $pageText['text2'];
 
     }
+    function alternate($givenUrl)
+    {
 
+        (new MainPagesDataAlternate())->alternate($givenUrl);
+
+    }
 
     function test(){
 

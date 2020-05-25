@@ -1,71 +1,52 @@
 <?php
 
-/* @var $this yii\web\View */
+/* @var $this yii\web\View
+ * @var $artistsByRandom \common\components\artists\ArtistsByRandom
+ * @var $artistsByPopularity \common\components\artists\ArtistsByRandom
+ * @var $songByYoutube \common\components\artists\ArtistsByRandom
+ */
 
 $this->title = 'My Yii Application';
 //echo $pageText['title'];
 ?>
-<div class="site-index">
 
-    <div class="jumbotron">
-        <h1><?=Yii::t('app', 'Congratulations')?></h1>
+<br><br><br>
 
-
-        <?php foreach ($showTestTable as $one) {
-
-                    echo 'id = ' . $one['id'] . ' name = ' .$one['name'] . ' url =  ' . '<a href="' . $one['url'] . '/"> Перейти </a><br>';
+<?= $this->render('/partials/youtube-player/youtube-player', [
+    'songByYoutube' => $songByYoutube,
+]); ?>
 
 
-                }
+<br><br><br><br>
+
+<h2 class="main-page-h2"><?= Yii::t('app', 'Popular artists') ?></h2>
 
 
-            ?>
+<?php //echo print_r($item);?>
+<br><br>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+<div class="row row-flex">
+<?php foreach ($artistsByPopularity as $artist): ?>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+    <a href="/<?= Yii::$app->language ?>/artists/<?= $artist['url']; ?>/"
+       class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-6 main-pages-extended">
+        <div class="plates-artists-outside">
+            <div class="plates-artists">
+                    <?php if ($artist['photos']=='asdsds'):?>
+                <p>
+                        <img class="plates-artists-img"
+                             src="/files/artists/<?= $artist['first_letter'] ?>/<?= $artist['photos'] ?>"
+                             alt="<?= $artist['name'] ?>"
+                             width="200">
+                </p>
+                    <?php endif;?>
+                <br><br><br><br>
+                <p class="plates-artists-title"><?= $artist['name']; ?></p>
+                <p class="plates-artists-under-title"><?php // $itemParent['short_description']; ?></p>
             </div>
         </div>
-        <div class="row">
-
-
-
-
-        </div>
-
-    </div>
+    </a>
+<?php endforeach; ?>
 </div>
+
+<br><br><br><br>

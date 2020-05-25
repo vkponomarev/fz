@@ -8,63 +8,28 @@ use yii\web\NotFoundHttpException;
 class Artists
 {
 
-    var $artist; // Основная информация об артисте.
-    var $albums; // Список альбомов.
-    var $songs; // Список песен.
-
     function __construct($id = 0)
     {
 
     }
 
-    function data($id){
+    function byRandom($count){
 
-    return (new ArtistsData())->artistsData($id);
-
-    }
-
-    function albums($id){
-
-        return (new ArtistsAlbums())->artistsAlbums($id);
+        return (new ArtistsByRandom())->artists($count);
 
     }
 
-    function songs($id){
+    function byPopularity($count){
 
-        return (new ArtistsSongs())->artistsSongs($id);
-
-    }
-
-    function breadcrumbs($id = 0, $artist = 0){
-
-        (new ArtistsBreadcrumbs($id, $artist));
+        return (new ArtistsByPopularity())->artists($count);
 
     }
 
-    public function showTestTable()
-    {
-        //echo $languageId;
-        $showTestTable = Yii::$app->db
-            ->createCommand('
-            select
-            id,
-            name,
-            url
-            from
-            m_artists
-            limit 0,30
-            ')
-            ->queryAll();
+    function byFirstLetter($firstLetterByArtist, $pageSize){
 
-        /*echo '<pre>';
-        //var_dump($texts);
-        print_r($showTestTable);
-        echo '</pre>';*/
+        return (new ArtistsByFirstLetter())->artists($firstLetterByArtist, $pageSize);
 
-        return $showTestTable;
     }
-
-
 
 }
 

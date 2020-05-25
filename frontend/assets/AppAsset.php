@@ -22,8 +22,8 @@ class AppAsset extends AssetBundle
         //'css/bootstrap-rtl.css',
         'css/site.css',
         'css/extended.css',
-        'css/calendars.css',
-        'css/forms.css',
+        //'css/calendars.css',
+        //'css/forms.css',
 
 
     ];

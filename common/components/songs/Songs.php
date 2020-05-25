@@ -38,6 +38,12 @@ class Songs
 
     }
 
+    function byPopularity($count){
+
+        return (new SongsByPopularity())->songs($count);
+
+    }
+
     function byArtist($id){
 
         return (new SongsByArtist())->songs($id);

@@ -1,9 +1,14 @@
 <?php
 namespace frontend\controllers;
 
-use common\components\index\ArtistsIndex;
-use common\components\index\ArtistsIndexLinks;
+use common\components\artists\Artists;
+use common\components\breadcrumbs\Breadcrumbs;
+use common\components\firstLetter\FirstLetter;
+use common\components\getParams\GetParams;
+use common\components\indexes\Indexes;
+use common\components\links\Links;
 use common\components\mainPagesData\MainPagesData;
+use common\components\pageTexts\PageTexts;
 use yii\web\Controller;
 
 
@@ -19,38 +24,55 @@ class IndexController extends Controller
 {
 
 
-    public function actionIndex()
+    public function actionArtistsIndex()
     {
 
+        $mainPagesData = new MainPagesData('60',0, 0);
 
-        $mainPagesData = new MainPagesData('1',0, 0);
+        $indexes = new Indexes();
+        $indexesByArtistsFirstLetter = $indexes->byArtistsFirstLetters();
 
+        $breadCrumbs = new Breadcrumbs();
+        $breadCrumbs->indexesByArtistsFirstLetters();
 
-        return $this->render('index', [
+        return $this->render('artists', [
 
             //'showTestTable' => Artists::showTestTable(),
-            'artistsIndexLinksAll' => (new ArtistsIndex())->artistsIndexLinks
+            'indexesByArtistsFirstLetter' => $indexesByArtistsFirstLetter
 
         ]);
 
     }
 
-    public function actionIndexPage($url)
+    public function actionArtistsIndexPage($url)
     {
 
+        $mainPagesData = new MainPagesData('61',$url, 'm_artists_first_letters');
 
-        $mainPagesData = new MainPagesData('1',$url, 'm_artists_first_letters');
+        $firstLetter = new FirstLetter();
+        $firstLetterData = $firstLetter->data($mainPagesData->pageId);
 
-        $artistsIndex = (new ArtistsIndex($mainPagesData->pageId, 50, $url));
+        $artists = new Artists();
+        $artistsByFirstLetter = $artists->ByFirstLetter($firstLetterData, 25);
 
-        $artistsIndexLinksLetter = $artistsIndex->artistsIndexLinksLetter;
+        $getParams = new GetParams();
+        $getParamsByLinksPrevNext = $getParams->byLinksPrevNext();
 
-        $artistsIndexLinksLetterName = $artistsIndex->artistsIndexLinksLetterName;
+        $links = new Links();
+        $linksPrevNext = $links->prevNext($artistsByFirstLetter['itemsCount'], 25, $getParamsByLinksPrevNext);
+        $links->prevNextByArtistsFirstLetter($firstLetterData['url'], 25, $linksPrevNext);
 
-        return $this->render('index-page', [
+        $breadCrumbs = new Breadcrumbs();
+        $breadCrumbs->artistsByFirstLetter($firstLetterData, $getParamsByLinksPrevNext);
 
-            'artistsIndexLinksLetter' => $artistsIndexLinksLetter['artistsIndexLinksLetter'],
-            'artistsIndexLinksLetterName' => $artistsIndexLinksLetterName,
+        $pageTexts = new PageTexts();
+        $pageTexts->updateByArtistsIndex($getParamsByLinksPrevNext, $firstLetterData);
+        
+
+        return $this->render('artists-page', [
+
+            'artistsByFirstLetter' => $artistsByFirstLetter['artists'],
+            'firstLetterData' => $firstLetterData,
 
         ]);
 

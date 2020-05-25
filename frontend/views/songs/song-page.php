@@ -1,60 +1,74 @@
 <?php
 
-/* @var $this yii\web\View */
+/* @var $this yii\web\View
+ * @var $songData \common\components\song\Song
+ * @var $albumData \common\components\album\Album
+ * @var $artistData \common\components\artist\artist
+ */
+//(new \common\components\dump\Dump())->printR($albumData);
+
 
 $this->title = 'My Yii Application';
-//echo $pageText['title'];
 ?>
+
+
+<div class="row row-flex">
+    <div>
+        <?php if ($albumData): ?>
+            <?php if (file_exists(Yii::getAlias('@webroot') . '/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
+                <img class="artist-album-photo"
+                     src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>"
+                     width="200">
+            <?php else: ?>
+                <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
+            <?php endif; ?>
+        <?php else: ?>
+            <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
+        <?php endif; ?>
+    </div>
+    <div>
+        <span class="album-text"><?= Yii::t('app', 'song') ?></span>
+
+
+        <h1 class="album-name"><?= $songData['name'] ?></h1>
+        <?php if ($albumData): ?>
+            <span class="album-text"> <?= Yii::t('app', 'album') ?></span>
+            <br>
+            <a class="album-artist-link" href="/<?= Yii::$app->language ?>/albums/<?= $albumData['url'] ?>/">
+                <?= $albumData['name'] ?>
+            </a>
+
+            <br>
+        <?php endif; ?>
+
+        <?php if ($artistData): ?>
+            <span class="album-text"> <?= Yii::t('app', 'artist') ?></span>
+            <br>
+            <a class="album-artist-link" href="/<?= Yii::$app->language ?>/artists/<?= $artistData['url'] ?>/">
+                <?= $artistData['name'] ?>
+            </a>
+        <?php endif; ?>
+
+    </div>
+</div>
+
+<hr>
+
 <div class="site-index">
 
-    <div class="jumbotron">
-        <h1><?=Yii::t('app', 'Congratulations')?></h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+    <h2 class="song-text-title"><?= Yii::t('app', 'Song lyrics') ?>
+        <?php if ($artistData): ?>
+            <?= $artistData['name'] ?> -
+        <?php endif; ?>
+        <?= $songData['name'] ?>
+    </h2>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+
+    <br>
+    <br>
+    <div class="song-text">
+        <?= $songData['text'] ?>
     </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-        <div class="row">
-
-
-
-
-        </div>
-
-    </div>
+    <br>
 </div>

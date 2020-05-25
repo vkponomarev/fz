@@ -27,7 +27,8 @@
         "fortawesome/font-awesome": "*",
         "sjaakp/yii2-dateline": "*",
         "mpdf/mpdf": "^8.0",
-        "kartik-v/yii2-widget-datepicker": "dev-master"
+        "kartik-v/yii2-widget-datepicker": "dev-master",
+        "yiisoft/yii2-elasticsearch": "~2.0.0"
 
 
     },

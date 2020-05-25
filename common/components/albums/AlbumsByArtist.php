@@ -19,6 +19,8 @@ class AlbumsByArtist
             m_albums
             where
             m_albums.m_artists_id = :id
+            and 
+            m_albums.active = 1
             order by
             year
             ', [':id' => $id])

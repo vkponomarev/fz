@@ -16,56 +16,17 @@ class FirstLetter
 
     }
 
-    function artist($id){
-
-        return (new FirstLetterByArtist())->firstLetter($id);
-
-    }
-
-
     function data($id){
 
-    return (new ArtistData())->artistData($id);
+        return (new FirstLetterData())->firstLetter($id);
 
     }
 
+    function byArtist($artistData){
 
-    function songs($id){
-
-        return (new ArtistSongs())->artistSongs($id);
-
-    }
-
-    function breadcrumbs($id = 0, $artist = 0){
-
-        (new ArtistBreadcrumbs($id, $artist));
+        return (new FirstLetterByArtist())->firstLetter($artistData);
 
     }
-
-    public function showTestTable()
-    {
-        //echo $languageId;
-        $showTestTable = Yii::$app->db
-            ->createCommand('
-            select
-            id,
-            name,
-            url
-            from
-            m_artists
-            limit 0,30
-            ')
-            ->queryAll();
-
-        /*echo '<pre>';
-        //var_dump($texts);
-        print_r($showTestTable);
-        echo '</pre>';*/
-
-        return $showTestTable;
-    }
-
-
 
 }
 

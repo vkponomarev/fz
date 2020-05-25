@@ -2,11 +2,12 @@
 
 /* @var $this \yii\web\View */
 /* @var $content string */
-
+/* @var Yii::$app->params['breadcrumbs'] \common\components\breadcrumbs\Breadcrumbs */
 
 
 ?>
-
+<br><br>
+<?php if (isset(Yii::$app->params['breadcrumbs'])): ?>
 <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
 
 
@@ -43,3 +44,5 @@
     <?php endif; ?>
 
 </ol>
+<?php endif; ?>
+<br><br>
