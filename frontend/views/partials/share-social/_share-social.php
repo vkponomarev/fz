@@ -4,24 +4,20 @@
 /* @var $content string */
 
 
-
 //AppAsset::register($this);
 //echo $this->params['title'];
 
 
-
 ?>
-<?php if (!$this->params['isEmbed']): ?>
 <br>
-<div class="social-center">
-<?php if ($currentLanguages->url=='ru'):?>
-
+<?php if (Yii::$app->language == 'ru'): ?>
 
     <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,twitter"></div>
 
-<?php else:?>
+<?php else: ?>
+
     <div class="addthis_inline_share_toolbox"></div>
-<?php endif;?>
-</div>
-<?php endif;?>
+
+<?php endif; ?>
+
 <br>

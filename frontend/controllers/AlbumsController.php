@@ -29,7 +29,7 @@ class AlbumsController extends Controller
     public function actionIndex()
     {
 
-        $mainPagesData = new MainPagesData('54',0, 0);
+        $mainPagesData = new MainPagesData('54',false, 0, 'albums');
 
         $albums = new Albums();
         $albumsByPopularity = $albums->byPopularity(8);
@@ -49,7 +49,7 @@ class AlbumsController extends Controller
     public function actionAlbumPage($url)
     {
 
-        $mainPagesData = new MainPagesData('57', $url, 'm_albums');
+        $mainPagesData = new MainPagesData('57', $url, 'm_albums','albums');
 
         $album = new Album();
         $albumData = $album->data($mainPagesData->pageId);

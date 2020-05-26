@@ -10,8 +10,6 @@ use yii\web\Controller;
  * pageText($currentPage,$pageUsingKeys)
  *
  *
- *
- *
  */
 class CmsController extends Controller
 {
@@ -20,7 +18,7 @@ class CmsController extends Controller
     public function actionCookieInfo()
     {
 
-        $mainPagesData = new MainPagesData('63','', 'pages');
+        $mainPagesData = new MainPagesData('63',false, 'pages', 'cms/cookie');
 
         return $this->render('cookie-info', [
 
@@ -31,7 +29,7 @@ class CmsController extends Controller
     public function actionPolicy()
     {
 
-        $mainPagesData = new MainPagesData('64','', 'pages');
+        $mainPagesData = new MainPagesData('64',false, 'pages', 'cms/policy');
 
         return $this->render('policy', [
 

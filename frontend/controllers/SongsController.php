@@ -27,7 +27,7 @@ class SongsController extends Controller
     public function actionIndex()
     {
 
-        $mainPagesData = new MainPagesData('55', 0, 0);
+        $mainPagesData = new MainPagesData('55', false, 0, 'songs');
 
         $songs = new Songs();
         $songsByPopularity = $songs->byPopularity(20);
@@ -47,7 +47,7 @@ class SongsController extends Controller
     public function actionSongPage($url)
     {
 
-        $mainPagesData = new MainPagesData('58', $url, 'm_songs');
+        $mainPagesData = new MainPagesData('58', $url, 'm_songs', 'songs');
 
         $song = new Song();
         $songData = $song->data($mainPagesData->pageId);

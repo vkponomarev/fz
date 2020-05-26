@@ -12,4 +12,4 @@
 
 ?>
 
-    <link rel="canonical" href="<?= $this->params['canonical'] ?>">
+    <link rel="canonical" href="<?= Yii::$app->params['canonical'] ?>">

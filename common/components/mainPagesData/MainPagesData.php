@@ -54,7 +54,7 @@ class MainPagesData
 {
 
 
-    function __construct($pageId, $givenUrl, $tableName){
+    function __construct($pageId, $givenUrl, $tableName, $mainUrl){
 
         $currentLanguage = $this->currentLanguage();
 
@@ -68,7 +68,8 @@ class MainPagesData
         }
 
         $this->pageText($pageId, $currentLanguage['id']);
-        $this->alternate($givenUrl);
+        $this->alternate($givenUrl, $mainUrl);
+        $this->canonical($givenUrl, $mainUrl);
 
     }
 
@@ -100,10 +101,17 @@ class MainPagesData
         Yii::$app->params['text']['text2'] = $pageText['text2'];
 
     }
-    function alternate($givenUrl)
+    function alternate($givenUrl, $mainUrl)
     {
 
-        (new MainPagesDataAlternate())->alternate($givenUrl);
+        (new MainPagesDataAlternate())->alternate($givenUrl, $mainUrl);
+
+    }
+
+    function canonical($givenUrl, $mainUrl)
+    {
+
+        (new MainPagesDataCanonical())->canonical($givenUrl, $mainUrl);
 
     }
 

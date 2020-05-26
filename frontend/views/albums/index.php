@@ -5,7 +5,6 @@
  * @var $albumsByPopularity common\components\albums\AlbumsByPopularity
  */
 
-$this->title = 'My Yii Application';
 //echo $pageText['title'];$songByYoutube
 ?>
 

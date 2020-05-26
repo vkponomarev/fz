@@ -9,8 +9,6 @@
  *
  */
 
-
-$this->title = 'My Yii Application';
 //echo $pageText['title'];$songByYoutube
 ?>
     <br><br><br>

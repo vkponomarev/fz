@@ -25,7 +25,7 @@ class MainPageController extends Controller
     public function actionIndex()
     {
 
-        $mainPagesData = new MainPagesData('1',0,0);
+        $mainPagesData = new MainPagesData('1',false,0, false);
 
         $artists = new Artists();
         $artistByPopularity = $artists->byPopularity(8);

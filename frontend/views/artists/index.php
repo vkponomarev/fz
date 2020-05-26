@@ -6,7 +6,6 @@
  * @var $songByYoutube \common\components\artists\ArtistsByRandom
  */
 
-$this->title = 'My Yii Application';
 //echo $pageText['title'];
 ?>
 

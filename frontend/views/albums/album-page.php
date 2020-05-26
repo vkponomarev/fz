@@ -8,7 +8,6 @@
  *
  */
 
-$this->title = 'My Yii Application';
 //echo Yii::getAlias('@webroot');
 ?>
 
@@ -22,6 +21,9 @@ $this->title = 'My Yii Application';
             <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
         <?php endif; ?>
     </div>
+
+
+
     <div>
         <span class="album-text"> <?=Yii::t('app','album')?></span>
 
@@ -35,7 +37,9 @@ $this->title = 'My Yii Application';
             </a>
         <?php endif; ?>
 
-
+        <div class="share-social">
+            <?= $this->render('/partials/share-social/_share-social'); ?>
+        </div>
     </div>
 </div>
 

@@ -9,7 +9,6 @@
 
  */
 
-$this->title = 'My Yii Application';
 //echo $pageText['title'];
 ?>
 <div class="site-index">

@@ -27,7 +27,7 @@ class IndexController extends Controller
     public function actionArtistsIndex()
     {
 
-        $mainPagesData = new MainPagesData('60',0, 0);
+        $mainPagesData = new MainPagesData('60',false, 0, 'artists/index');
 
         $indexes = new Indexes();
         $indexesByArtistsFirstLetter = $indexes->byArtistsFirstLetters();
@@ -47,7 +47,7 @@ class IndexController extends Controller
     public function actionArtistsIndexPage($url)
     {
 
-        $mainPagesData = new MainPagesData('61',$url, 'm_artists_first_letters');
+        $mainPagesData = new MainPagesData('61',$url, 'm_artists_first_letters', 'artists/index');
 
         $firstLetter = new FirstLetter();
         $firstLetterData = $firstLetter->data($mainPagesData->pageId);

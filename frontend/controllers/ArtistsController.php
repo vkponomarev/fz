@@ -30,7 +30,7 @@ class ArtistsController extends Controller
     {
 
 
-        $mainPagesData = new MainPagesData('2',0, 0);
+        $mainPagesData = new MainPagesData('2',false, 0, 'artists');
 
         $artists = new Artists();
         $artistsByPopularity = $artists->byPopularity(8);
@@ -50,7 +50,7 @@ class ArtistsController extends Controller
     public function actionArtistPage($url)
     {
 
-        $mainPagesData = new MainPagesData('56', $url, 'm_artists');
+        $mainPagesData = new MainPagesData('56', $url, 'm_artists', 'artists');
 
         $artist = new Artist();
         $artistData = $artist->data($mainPagesData->pageId);

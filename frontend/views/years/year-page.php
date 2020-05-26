@@ -8,7 +8,6 @@
  *
  */
 
-$this->title = 'My Yii Application';
 
 ?>
 <h1><?= $albumData['name'] ?> (<?= $albumData['year'] ?>)</h1>

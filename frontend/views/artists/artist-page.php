@@ -8,7 +8,6 @@
  *
  */
 
-$this->title = 'My Yii Application';
 ?>
 <div class="row row-flex">
 
@@ -25,6 +24,9 @@ $this->title = 'My Yii Application';
         <span class="album-text"> <?= Yii::t('app', 'artist') ?></span>
 
         <h1 class="album-name"><?= $artistData['name'] ?></h1>
+        <div class="share-social">
+            <?= $this->render('/partials/share-social/_share-social'); ?>
+        </div>
     </div>
 
 </div>

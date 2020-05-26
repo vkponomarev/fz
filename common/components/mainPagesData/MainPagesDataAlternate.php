@@ -9,15 +9,21 @@ use Yii;
 class MainPagesDataAlternate
 {
 
-    function alternate($givenUrl){
+    function alternate($givenUrl, $mainUrl){
 
 
-        if ($givenUrl){
+        if ($mainUrl){
 
-            if ($givenUrl <> 'index')
-                Yii::$app->params['alternate'] = $givenUrl . '/';
-            else
-                Yii::$app->params['alternate'] = '';
+            if (!$givenUrl){
+
+                Yii::$app->params['alternate'] = $mainUrl . '/';
+
+            }else{
+
+                Yii::$app->params['alternate'] = $mainUrl . '/' . $givenUrl . '/';
+
+            }
+
         }else{
 
             Yii::$app->params['alternate'] = '';

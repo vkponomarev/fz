@@ -5,6 +5,7 @@
 /* @var $content string */
 
 use frontend\assets\AppAsset;
+use yii\widgets\Pjax;
 
 AppAsset::register($this);
 //echo $this->params['title'];
@@ -22,14 +23,18 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title><?= Yii::$app->params['text']['title'] ?></title>
 
     <meta name="description" content="<?= Yii::$app->params['text']['description'] ?>">
+
     <?= $this->render('/partials/alternate/_alternate'); ?>
+
+    <?= $this->render('/partials/canonical/_canonical'); ?>
+
     <?= $this->render('/partials/link-prev-next/_link-prev-next'); ?>
     <?php $this->registerCsrfMetaTags() ?>
 
 
-    <title><?= Yii::$app->params['text']['title'] ?></title>
 
     <?php $this->head() ?>
 
@@ -119,7 +124,7 @@ AppAsset::register($this);
 
 </div>
 <footer>
-    <div class="container  ">
+    <div class="container">
 
         <div class="row">
             <div class="col-md-12 text-center">
@@ -175,8 +180,11 @@ AppAsset::register($this);
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
                 <ul class="contact">
-                    <span><?= Yii::t('app', 'Read') ?></span>
+                    <li>
+                        <span><?= Yii::t('app', 'Read') ?></span>
+                    </li>
 
 
                     <li>
@@ -201,7 +209,11 @@ AppAsset::register($this);
 <script>
 
 </script>
-
+<?php Pjax::begin(); ?>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dbbf2586b540d45"></script>
+<script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="https://yastatic.net/share2/share.js" async="async"></script>
+<?php Pjax::end(); ?>
 <?php $this->endBody() ?>
 
 </body>

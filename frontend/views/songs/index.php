@@ -4,7 +4,6 @@
  * @var $songByYoutube \common\components\song\SongByYoutube
  * @var $songsByPopularity \common\components\songs\SongsByPopularity
  */
-$this->title = 'My Yii Application';
 //echo $pageText['title'];$songByYoutube
 ?>
 

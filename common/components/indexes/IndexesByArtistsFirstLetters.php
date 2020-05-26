@@ -12,6 +12,8 @@ class IndexesByArtistsFirstLetters
     public function indexes()
     {
         //echo $languageId;
+        //where
+        //active = 1
         $indexes = Yii::$app->db
             ->createCommand('
             select
@@ -19,8 +21,7 @@ class IndexesByArtistsFirstLetters
             url
             from
             m_artists_first_letters
-            where
-            active = 1
+
             ')
             ->queryAll();
 

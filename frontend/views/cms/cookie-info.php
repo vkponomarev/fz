@@ -2,7 +2,6 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
 //echo $pageText['title'];
 ?>
 

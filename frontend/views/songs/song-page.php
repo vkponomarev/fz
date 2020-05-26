@@ -7,8 +7,6 @@
  */
 //(new \common\components\dump\Dump())->printR($albumData);
 
-
-$this->title = 'My Yii Application';
 ?>
 
 
@@ -48,7 +46,9 @@ $this->title = 'My Yii Application';
                 <?= $artistData['name'] ?>
             </a>
         <?php endif; ?>
-
+        <div class="share-social">
+            <?= $this->render('/partials/share-social/_share-social'); ?>
+        </div>
     </div>
 </div>
 

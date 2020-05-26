@@ -6,7 +6,6 @@
  *
  */
 
-$this->title = 'My Yii Application';
 //echo $pageText['title'];
 //$artistsIndexLinksAll
 ?>

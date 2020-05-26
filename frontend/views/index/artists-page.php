@@ -6,7 +6,6 @@ use yii\widgets\ListView;
  * @var $artistsByFirstLetter common\components\artists\ArtistsByFirstLetter
  *
  */
-$this->title = 'My Yii Application';
 //echo $pageText['title'];
 //$artistsIndexLinksAll
 

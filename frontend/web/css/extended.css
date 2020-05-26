@@ -851,6 +851,11 @@ padding: 35px 15px 20px!important;
 
 }
 
+
+.share-social {
+    text-align: left;
+}
+
 body {
 
     /*background-color: #ededed !important;*/
