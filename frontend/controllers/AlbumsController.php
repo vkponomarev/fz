@@ -28,7 +28,7 @@ class AlbumsController extends Controller
 
     public function actionIndex()
     {
-
+        //albums = new Albums();
         $mainPagesData = new MainPagesData('54',false, 0, 'albums');
 
         $albums = new Albums();
