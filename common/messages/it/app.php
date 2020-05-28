@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'Registrati',
-    'Artists' => 'artisti',
+    'Artists' => 'Artisti',
     'Albums' => 'Album',
     'Songs' => 'Canzoni',
     // main menu
