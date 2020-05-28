@@ -31,7 +31,7 @@
         <?php foreach ($artistByPopularity as $artist): ?>
 
             <a href="/<?= Yii::$app->language ?>/artists/<?= $artist['url']; ?>/"
-               class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-6 main-pages-extended">
+               class="col-lg-3 col-md-3 col-sm-4 col-xs-12 main-pages-extended">
                 <div class="plates-artists-outside">
                     <div class="plates-artists">
                         <?php if ($artist['photos'] == 'asdsds'): ?>
@@ -58,7 +58,7 @@
         <?php foreach ($albumsByPopularity as $album): ?>
 
             <a href="/<?= Yii::$app->language ?>/albums/<?= $album['url']; ?>/"
-               class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-6 main-pages-extended">
+               class="col-lg-3 col-md-3 col-sm-4 col-xs-12 main-pages-extended">
                 <div class="plates-albums-outside">
 
                     <div class="plates-albums">
@@ -95,7 +95,7 @@
         <?php foreach ($songsByPopularity as $songs): ?>
 
             <a href="/<?= Yii::$app->language ?>/songs/<?= $songs['url']; ?>/"
-               class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 main-pages-extended">
+               class="col-lg-3 col-md-4 col-sm-6 col-xs-12 main-pages-extended">
                 <div class="plates-songs-outside">
 
                     <div class="plates-songs">
