@@ -109,7 +109,42 @@
 
     }
 
+    .plates-albums {
+        height: 220px!important;
+        text-align: -webkit-left!important;
+        width: 100%!important;
+    }
 
+    .plates-img {
+
+        float: left!important;
+        margin-right: 10px!important;
+
+    }
+
+    .plates-albums-outside {
+        height: 230px!important;
+        text-align: -webkit-center!important;
+    }
+
+    .plates-albums-title {
+        font-size: 20px!important;
+    }
+
+    .plates-albums-artist-name {
+
+        font-size: 17px!important;
+
+    }
+
+    .plates-artists {
+        height: 220px!important;
+        width: 100%!important;
+    }
+
+    .plates-artists-outside {
+        height: 230px!important;
+    }
 }
 
 
@@ -123,6 +158,7 @@
         margin-bottom: 0px;
         padding-top: 0px!important;
     }
+
 }
 
 .nav-button{
@@ -437,6 +473,9 @@ footer .fa:hover{
     .choose-languages {
         display: none;
     }
+
+
+
 }
 
 
@@ -445,6 +484,9 @@ footer .fa:hover{
     .text-md-left {
         text-align: left!important;
     }
+
+
+
 }
 
 ol, ul {
