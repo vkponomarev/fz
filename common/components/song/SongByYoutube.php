@@ -28,6 +28,8 @@ class SongByYoutube
             m_songs.url_youtube is not null
             and 
             m_songs.id > :random
+            order by 
+            m_songs.id
             limit 1
             ', [':random' => $random])
             ->queryOne();
