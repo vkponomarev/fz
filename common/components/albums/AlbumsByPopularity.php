@@ -29,8 +29,6 @@ class AlbumsByPopularity
             m_albums.id > :id
             and 
             m_albums.active = 1
-            and 
-            m_albums.photos is not null
             limit
             :countAlbums            
             ', [':id' => $random, ':countAlbums' => $count])
