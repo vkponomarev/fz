@@ -28,7 +28,7 @@
 <?php foreach ($artistsByPopularity as $artist): ?>
 
     <a href="/<?= Yii::$app->language ?>/artists/<?= $artist['url']; ?>/"
-       class="col-lg-3 col-md-3 col-sm-4 col-xs-12 main-pages-extended">
+       class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12 plates-artists-main">
         <div class="plates-artists-outside">
             <div class="plates-artists">
                     <?php if ($artist['photos']=='asdsds'):?>
@@ -42,6 +42,7 @@
                 <br><br><br><br>
                 <p class="plates-artists-title"><?= $artist['name']; ?></p>
                 <p class="plates-artists-under-title"><?php // $itemParent['short_description']; ?></p>
+                <br><br><br><br>
             </div>
         </div>
     </a>
