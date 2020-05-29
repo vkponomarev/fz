@@ -65,13 +65,13 @@ return [
 
 
 
-                '/script/first-letter' => 'scripts/first-letter',
-                '/script/genres' => 'scripts/genres',
-                '/script/years' => 'scripts/years',
-                '/script/albums' => 'scripts/albums',
-                '/script/artists' => 'scripts/artists',
-                '/script/artists-show' => 'scripts/artists-show',
-                '/script/artists-work' => 'scripts/artists-work',
+                //'/script/first-letter' => 'scripts/first-letter',
+                //'/script/genres' => 'scripts/genres',
+                //'/script/years' => 'scripts/years',
+                //'/script/albums' => 'scripts/albums',
+                //'/script/artists' => 'scripts/artists',
+                //'/script/artists-show' => 'scripts/artists-show',
+                //'/script/artists-work' => 'scripts/artists-work',
 
 
                 //CMS
