@@ -29,7 +29,7 @@ class MainPageController extends Controller
 
         $mainPagesData = new MainPagesData('1',false,0, false);
 
-       /* $artists = new Artists();
+        $artists = new Artists();
         $artistByPopularity = $artists->byPopularity(8);
 
         $albums = new Albums();
@@ -40,7 +40,7 @@ class MainPageController extends Controller
 
         $song = new Song();
         $songByYoutube = $song->byYoutube();
-        (new \common\components\dump\Dump())->printR($songByYoutube);*/
+        //(new \common\components\dump\Dump())->printR($songByYoutube);
 /*
         $createRawData = new CreateRawData();
         $fileRaw = $createRawData->startFile();
@@ -52,27 +52,27 @@ class MainPageController extends Controller
         $fileRaw = $fileRaw . $createRawData->endFile();
         $filePath = $createRawData->path('partials/view/main-page/');
         $createRawData->save($fileRaw,$filePath,'_main-page.php');
-*/
+
         //(new \common\components\dump\Dump())->printR($rawFile);
 
         $test = ArrayHelper::htmlDecode(
             require __DIR__ . '/../../frontend/views/partials/view/main-page/_main-page.php'
         );
-
+*/
         //(new \common\components\dump\Dump())->printR($test);
 
         return $this->render('index', [
-/*
+
             'artistByPopularity' => $artistByPopularity,
             'albumsByPopularity' => $albumsByPopularity,
             'songsByPopularity' => $songsByPopularity,
             'songByYoutube' => $songByYoutube,
-*/
-            'artistByPopularity' => $test['artistByPopularity'],
-            'albumsByPopularity' => $test['albumsByPopularity'],
-            'songsByPopularity' => $test['songsByPopularity'],
-            'songByYoutube' => $test['songByYoutube'],
-
+            /*
+                        'artistByPopularity' => $test['artistByPopularity'],
+                        'albumsByPopularity' => $test['albumsByPopularity'],
+                        'songsByPopularity' => $test['songsByPopularity'],
+                        'songByYoutube' => $test['songByYoutube'],
+            */
         ]);
 
     }
