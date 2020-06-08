@@ -40,6 +40,7 @@
                 //'prefetch' => $baseUrl . '/samples/countries.json',
                 'prefetch' => \yii\helpers\Url::to(['search/search']),
                 'limit' => 10,
+                'minLength' => 3,
                 'templates' => [
                     'notFound' => '<div class="text-danger" style="padding:0 8px">' . Yii::t('app','No matches found.') . '</div>',
                     'suggestion' => new \yii\web\JsExpression("Handlebars.compile('{$template}')")
