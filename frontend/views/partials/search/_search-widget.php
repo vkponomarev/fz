@@ -9,7 +9,7 @@
         'name' => 'typeahead',
         'options' => ['placeholder' => Yii::t('app','Search ...')
         ],
-        'pluginOptions' => ['hint' => true, 'highlight' => true],
+        'pluginOptions' => ['hint' => true, 'highlight' => true, 'minLength' => 3],
         'pluginEvents' => [
             //"typeahead:select" => "function(ev, suggestion) {
             //window.location = '/artists/' + suggestion.url; }"
