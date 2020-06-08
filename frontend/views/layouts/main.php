@@ -118,8 +118,8 @@ AppAsset::register($this);
     </div>
 
 </div>
-<div class="row">
-    <div class="container">
+<div class="container">
+    <div class="row  row-flex">
 
         <?= $this->render('/partials/breadcrumbs/_breadcrumbs', [
             //'artist' => $artist,

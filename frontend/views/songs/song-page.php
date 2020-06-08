@@ -63,7 +63,7 @@
 
         <div class="row row-flex">
 
-            <div class="col-xxs-12">
+            <div class="row col-xxs-12">
                 <h2 class="song-text-title"><?= Yii::t('app', 'Song lyrics') ?>
                     <?php if ($artistData): ?>
                         <?= $artistData['name'] ?> -
@@ -83,7 +83,7 @@
         <hr>
         <div class="row row-flex">
 
-            <div class="col-xxs-12">
+            <div class="row col-xxs-12">
                 <h2 class="song-text-title"><?= Yii::t('app', 'Song translations') ?>
                     <?php if ($artistData): ?>
                         <?= $artistData['name'] ?> -
@@ -113,7 +113,7 @@
 
         <div class="row row-flex">
 
-            <div class="col-xxs-12 col-xs-6">
+            <div class="row col-xs-12 col-sm-6">
                 <h2 class="song-text-title"><?= Yii::t('app', 'Song lyrics') ?>
                     <?php if ($artistData): ?>
                         <?= $artistData['name'] ?> -
@@ -130,25 +130,26 @@
             </div>
 
 
-            <div class="col-xxs-12 col-xs-6">
-                <h2 class="song-text-title"><?= Yii::t('app', 'Song translation') ?>
+            <div class="row col-xs-12 col-sm-6">
+
+                <h2 class="song-translation-title"><?= Yii::t('app', 'Song translation') ?>
                     <?php if ($artistData): ?>
                         <?= $artistData['name'] ?> -
                     <?php endif; ?>
                     <?= $songData['name'] ?>
                 </h2>
-
                 <br>
                 <div class="song-text">
                     <?= $translationByLanguage['text'] ?>
                 </div>
+
             </div>
 
         </div>
         <hr>
         <div class="row row-flex">
 
-            <div class="col-xxs-12">
+            <div class="row col-xxs-12">
                 <h2 class="song-text-title"><?= Yii::t('app', 'Song translations') ?>
                     <?php if ($artistData): ?>
                         <?= $artistData['name'] ?> -
@@ -181,7 +182,7 @@
 
     <div class="row row-flex">
 
-        <div class="col-xxs-12">
+        <div class="row col-xxs-12">
             <h2 class="song-text-title"><?= Yii::t('app', 'Song lyrics') ?>
                 <?php if ($artistData): ?>
                     <?= $artistData['name'] ?> -
