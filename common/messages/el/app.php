@@ -45,6 +45,7 @@ return [
     'Song translation' => 'Μετάφραση τραγουδιού',
     'translation' => 'μετάφραση',
 
-
+    'Search ...' => 'Αναζήτηση ...',
+    'No matches found.' => 'Δεν βρέθηκαν αντιστοιχίες.',
 ];
 

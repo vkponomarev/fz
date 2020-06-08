@@ -44,5 +44,9 @@ return [
     'Song translations' => '歌の翻訳',
     'Song translation' => '歌の翻訳',
     'translation' => '翻訳',
+
+    'Search ...' => '探す ...',
+    'No matches found.' => '一致するものが見つかりませんでした。',
+
 ];
 

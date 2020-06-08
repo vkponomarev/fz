@@ -45,5 +45,9 @@ return [
     'Song translation' => 'การแปลเพลง',
     'translation' => 'การแปล',
 
+    'Search ...' => 'ค้นหา ...',
+    'No matches found.' => 'ไม่พบที่ตรงกัน',
+
+
 ];
 

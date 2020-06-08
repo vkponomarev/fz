@@ -44,5 +44,7 @@ return [
     'Song translation' => 'Tłumaczenie piosenki',
     'translation' => 'tłumaczenie',
 
+    'Search ...' => 'Szukaj ...',
+    'No matches found.' => 'Nie znaleziono żadnego meczu.',
 ];
 

@@ -43,5 +43,9 @@ return [
     'Song translations' => 'Переклади пісень',
     'Song translation' => 'Переклад пісні',
     'translation' => 'переклад',
+
+    'Search ...' => 'Пошук ...',
+    'No matches found.' => 'Співпадінь не знайдено.',
+
 ];
 

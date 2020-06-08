@@ -45,5 +45,7 @@ return [
     'Song translation' => 'Překlad písní',
     'translation' => 'překlad',
 
+    'Search ...' => 'Vyhledávání ...',
+    'No matches found.' => 'Nebyly nalezeny žádné zápasy.',
 ];
 

@@ -59,53 +59,56 @@
 
 <?php if ($translationByLanguage): ?>
 
-<?php if ($translationByLanguage['origin'] == 1): ?>
+    <?php if ($translationByLanguage['origin'] == 1): ?>
 
-    <div class="row row-flex">
+        <div class="row row-flex">
 
-        <div class="col-xxs-12">
-            <h2 class="song-text-title"><?= Yii::t('app', 'Song lyrics') ?>
-                <?php if ($artistData): ?>
-                    <?= $artistData['name'] ?> -
-                <?php endif; ?>
-                <?= $songData['name'] ?>
-            </h2>
+            <div class="col-xxs-12">
+                <h2 class="song-text-title"><?= Yii::t('app', 'Song lyrics') ?>
+                    <?php if ($artistData): ?>
+                        <?= $artistData['name'] ?> -
+                    <?php endif; ?>
+                    <?= $songData['name'] ?>
+                </h2>
 
 
-            <br>
-            <div class="song-text">
-                <?= $songData['text'] ?>
+                <br>
+                <div class="song-text">
+                    <?= $songData['text'] ?>
+                </div>
+
             </div>
 
         </div>
+        <hr>
+        <div class="row row-flex">
 
-    </div>
-    <hr>
-    <div class="row row-flex">
-
-        <div class="col-xxs-12">
-            <h2 class="song-text-title"><?= Yii::t('app', 'Song translations') ?>
-                <?php if ($artistData): ?>
-                    <?= $artistData['name'] ?> -
-                <?php endif; ?>
-                <?= $songData['name'] ?>
-            </h2>
-
-            <br>
-            <div class="song-translations">
-
-                <?php foreach ($translationsByLanguages as $translation): ?>
-                <?php if ($translation['origin'] <> 1): ?>
-
-                <a class="song-translations-a" title="<?= $translation['name'] ?> <?= Yii::t('app', 'translation') ?>"href="/<?= $translation['url'] ?>/songs/<?= $songData['url'] ?>/"><?= $translation['name'] ?>
-
+            <div class="col-xxs-12">
+                <h2 class="song-text-title"><?= Yii::t('app', 'Song translations') ?>
+                    <?php if ($artistData): ?>
+                        <?= $artistData['name'] ?> -
                     <?php endif; ?>
+                    <?= $songData['name'] ?>
+                </h2>
+
+                <br>
+                <div class="song-translations">
+
+                    <?php foreach ($translationsByLanguages as $translation): ?>
+                        <?php if ($translation['origin'] <> 1): ?>
+
+                            <a class="song-translations-a"
+                               title="<?= $translation['name'] ?> <?= Yii::t('app', 'translation') ?>"
+                               href="/<?= $translation['url'] ?>/songs/<?= $songData['url'] ?>/">
+                                <?= $translation['name'] ?>
+                            </a>
+                        <?php endif; ?>
                     <?php endforeach; ?>
 
 
+                </div>
             </div>
         </div>
-    </div>
     <?php else: ?>
 
         <div class="row row-flex">
@@ -157,12 +160,15 @@
                 <div class="song-translations">
 
                     <?php foreach ($translationsByLanguages as $translation): ?>
-                    <?php if ($translation['origin'] <> 1): ?>
+                        <?php if ($translation['origin'] <> 1): ?>
 
-                    <a class="song-translations-a" title="<?= $translation['name'] ?> <?= Yii::t('app', 'translation') ?>"href="/<?= $translation['url'] ?>/songs/<?= $songData['url'] ?>/"><?= $translation['name'] ?>
+                            <a class="song-translations-a"
+                               title="<?= $translation['name'] ?> <?= Yii::t('app', 'translation') ?>"
+                               href="/<?= $translation['url'] ?>/songs/<?= $songData['url'] ?>/"><?= $translation['name'] ?>
+                            </a>
 
                         <?php endif; ?>
-                        <?php endforeach; ?>
+                    <?php endforeach; ?>
 
 
                 </div>

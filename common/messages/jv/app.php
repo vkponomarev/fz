@@ -44,5 +44,8 @@ return [
     'Song translation' => 'Terjemahan lagu',
     'translation' => 'jarwan',
 
+    'Search ...' => 'Telusuri ...',
+    'No matches found.' => 'Ora ditemokake.',
+
 ];
 

@@ -7,7 +7,7 @@
 
     echo \kartik\typeahead\Typeahead::widget([
         'name' => 'typeahead',
-        'options' => ['placeholder' => 'Поиск ...',
+        'options' => ['placeholder' => Yii::t('app','Search ...')
         ],
         'pluginOptions' => ['hint' => true, 'highlight' => true],
         'pluginEvents' => [
@@ -41,7 +41,7 @@
                 'prefetch' => \yii\helpers\Url::to(['search/search']),
                 'limit' => 10,
                 'templates' => [
-                    'notFound' => '<div class="text-danger" style="padding:0 8px">Unable to find repositories for selected query.</div>',
+                    'notFound' => '<div class="text-danger" style="padding:0 8px">' . Yii::t('app','No matches found.') . '</div>',
                     'suggestion' => new \yii\web\JsExpression("Handlebars.compile('{$template}')")
                 ],
                 'remote' => [

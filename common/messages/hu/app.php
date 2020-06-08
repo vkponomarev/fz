@@ -44,5 +44,8 @@ return [
     'Song translation' => 'Dal fordítása',
     'translation' => 'fordítás',
 
+    'Search ...' => 'Keresés ...',
+    'No matches found.' => 'Nincs találat.',
+
 ];
 

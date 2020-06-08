@@ -44,6 +44,7 @@ return [
     'Song translation' => 'Dịch bài hát',
     'translation' => 'dịch',
 
-
+    'Search ...' => 'Tìm kiếm ...',
+    'No matches found.' => 'Lọc kết quả tìm thấy.',
 ];
 

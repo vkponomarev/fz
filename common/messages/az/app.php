@@ -46,5 +46,8 @@ return [
     'Song translation' => 'Mahnı tərcüməsi',
     'translation' => 'tərcümə',
 
+    'Search ...' => 'Axtarış ...',
+    'No matches found.' => 'Heç bir uyğunluq tapılmadı.',
+
 ];
 

@@ -44,5 +44,7 @@ return [
     'Song translation' => 'गीत का अनुवाद',
     'translation' => 'अनुवाद',
 
+    'Search ...' => 'खोज ...',
+    'No matches found.' => 'कोई मेल नहीं मिले।',
 ];
 

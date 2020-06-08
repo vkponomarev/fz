@@ -45,5 +45,7 @@ return [
     'Song translation' => 'Перевод песни',
     'translation' => 'перевод',
 
+    'Search ...' => 'Поиск ...',
+    'No matches found.' => 'Соответствий не обнаружено.',
 
 ];

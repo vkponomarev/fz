@@ -53,7 +53,6 @@ AppAsset::register($this);
     </div>
 
 
-
     <nav class="navbar-default header-nav-line">
 
         <div class="navbar-header">
@@ -119,13 +118,14 @@ AppAsset::register($this);
     </div>
 
 </div>
+<div class="row">
+    <div class="container">
 
-<div class="container">
+        <?= $this->render('/partials/breadcrumbs/_breadcrumbs', [
+            //'artist' => $artist,
+        ]); ?>
 
-    <?= $this->render('/partials/breadcrumbs/_breadcrumbs', [
-        //'artist' => $artist,
-    ]); ?>
-
+    </div>
 </div>
 <footer>
     <div class="container">

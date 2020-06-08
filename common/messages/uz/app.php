@@ -44,6 +44,7 @@ return [
     'Song translation' => 'Qo\'shiq tarjimasi',
     'translation' => 'tarjima',
 
-
+    'Search ...' => 'Qidirmoq ...',
+    'No matches found.' => 'Hech narsa topilmadi.',
 ];
 

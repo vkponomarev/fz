@@ -44,5 +44,8 @@ return [
     'Song translation' => '노래 번역',
     'translation' => '번역',
 
+    'Search ...' => '검색 ...',
+    'No matches found.' => '검색 결과가 없습니다.',
+
 ];
 

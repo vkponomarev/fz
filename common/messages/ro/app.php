@@ -44,5 +44,7 @@ return [
     'Song translation' => 'Traducere de cântec',
     'translation' => 'traducere',
 
+    'Search ...' => 'Căutare ...',
+    'No matches found.' => 'Nu s-a gasit nici o potrivire.',
 ];
 

@@ -44,5 +44,7 @@ return [
     'Song translation' => 'Traducción de canciones',
     'translation' => 'traducción',
 
+    'Search ...' => 'Buscar ...',
+    'No matches found.' => 'No se encontraron coincidencias.',
 ];
 

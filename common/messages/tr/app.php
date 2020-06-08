@@ -44,5 +44,8 @@ return [
     'Song translation' => 'Şarkı çevirisi',
     'translation' => 'tercüme',
 
+    'Search ...' => 'Arama ...',
+    'No matches found.' => 'Hiçbir sonuç bulunamadı.',
+
 ];
 

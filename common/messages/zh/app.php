@@ -44,5 +44,8 @@ return [
     'Song translation' => '歌曲翻譯',
     'translation' => '翻譯',
 
+    'Search ...' => '搜索 ...',
+    'No matches found.' => '找不到匹配項。',
+
 ];
 

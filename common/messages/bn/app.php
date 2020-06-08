@@ -46,5 +46,7 @@ return [
     'Song translation' => 'গানের অনুবাদ',
     'translation' => 'অনুবাদ',
 
+    'Search ...' => 'অনুসন্ধান করুন ...',
+    'No matches found.' => 'কোনও মিল খুঁজে পাওয়া যায় নি।',
 ];
 

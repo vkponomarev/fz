@@ -46,6 +46,9 @@ return [
     'Song translation' => 'Song translation',
     'translation' => 'translation',
 
+    'Search ...' => 'Search ...',
+    'No matches found.' => 'No matches found.',
+
 
 
 ];
