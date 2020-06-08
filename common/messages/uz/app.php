@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'Tizimga kirish',
-    'Artists' => 'Rassomlar',
+    'Artists' => 'Musiqachilar',
     'Albums' => 'Albomlar',
     'Songs' => 'Qo\'shiqlar',
     // main menu
@@ -32,13 +32,17 @@ return [
     'Popular albums' => 'Mashhur albomlar',
     'Popular artists' => 'Mashhur rassomlar',
     'Popular songs' => 'Ommabop qo\'shiqlar',
-    'artist' => 'rassom',
+    'artist' => 'sozanda',
     'album' => 'albom',
     'song' => 'qo\'shiq',
     'Song lyrics' => 'Qo\'shiq so\'zlari',
     'Page' => 'Sahifa',
     'Index' => 'Indeks',
     'True way of music' => 'Musiqaning haqiqiy usuli',
+
+    'Song translations' => 'Qo\'shiq tarjimalari',
+    'Song translation' => 'Qo\'shiq tarjimasi',
+    'translation' => 'tarjima',
 
 
 ];

@@ -42,5 +42,13 @@ class Song
 
     }
 
+    function insertTranslation($songData){
+
+        (new SongUpdatePageTexts())->insert($songData);
+
+    }
+
+
+
 }
 

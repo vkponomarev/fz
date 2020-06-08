@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'เข้าสู่ระบบ',
-    'Artists' => 'ศิลปิน',
+    'Artists' => 'นักดนตรี',
     'Albums' => 'อัลบัม',
     'Songs' => 'เพลง',
     // main menu
@@ -32,13 +32,18 @@ return [
     'Popular albums' => 'อัลบั้มยอดนิยม',
     'Popular artists' => 'ศิลปินยอดนิยม',
     'Popular songs' => 'เพลงยอดนิยม',
-    'artist' => 'ศิลปิน',
+    'artist' => 'นักดนตรี',
     'album' => 'อัลบั้ม',
     'song' => 'เพลง',
     'Song lyrics' => 'เนื้อเพลง',
     'Page' => 'หน้า',
     'Index' => 'ดัชนี',
     'True way of music' => 'ดนตรีที่แท้จริง',
+
+
+    'Song translations' => 'การแปลเพลง',
+    'Song translation' => 'การแปลเพลง',
+    'translation' => 'การแปล',
 
 ];
 

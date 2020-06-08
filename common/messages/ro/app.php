@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'Conectare',
-    'Artists' => 'Artiști',
+    'Artists' => 'Muzicieni',
     'Albums' => 'Albume',
     'Songs' => 'Cântece',
     // main menu
@@ -32,7 +32,7 @@ return [
     'Popular albums' => 'Albume populare',
     'Popular artists' => 'Artiști populari',
     'Popular songs' => 'Melodii populare',
-    'artist' => 'artist',
+    'artist' => 'muzician',
     'album' => 'album',
     'song' => 'cântec',
     'Song lyrics' => 'Versurile melodiei',
@@ -40,6 +40,9 @@ return [
     'Index' => 'Index',
     'True way of music' => 'Adevărat mod de muzică',
 
+    'Song translations' => 'Traduceri de melodii',
+    'Song translation' => 'Traducere de cântec',
+    'translation' => 'traducere',
 
 ];
 

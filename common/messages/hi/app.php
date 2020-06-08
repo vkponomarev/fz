@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'साइन इन करें',
-    'Artists' => 'कलाकार की',
+    'Artists' => 'संगीतकार',
     'Albums' => 'एल्बम',
     'Songs' => 'गीत',
     // main menu
@@ -32,13 +32,17 @@ return [
     'Popular albums' => 'लोकप्रिय एल्बम',
     'Popular artists' => 'लोकप्रिय कलाकार',
     'Popular songs' => 'लोकप्रिय गीत',
-    'artist' => 'कलाकार',
+    'artist' => 'संगीतकार',
     'album' => 'एल्बम',
     'song' => 'गीत',
     'Song lyrics' => 'गाने के बोल',
     'Page' => 'पृष्ठ',
     'Index' => 'सूची',
     'True way of music' => 'संगीत का सही तरीका',
+
+    'Song translations' => 'गाने का अनुवाद',
+    'Song translation' => 'गीत का अनुवाद',
+    'translation' => 'अनुवाद',
 
 ];
 

@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'Registrati',
-    'Artists' => 'Artisti',
+    'Artists' => 'Musicisti',
     'Albums' => 'Album',
     'Songs' => 'Canzoni',
     // main menu
@@ -32,13 +32,17 @@ return [
     'Popular albums' => 'Album popolari',
     'Popular artists' => 'Artisti popolari',
     'Popular songs' => 'Canzoni popolari',
-    'artist' => 'artista',
+    'artist' => 'musicista',
     'album' => 'album',
     'song' => 'canzone',
     'Song lyrics' => 'Testo della canzone',
     'Page' => 'Pagina',
     'Index' => 'Indice',
     'True way of music' => 'Vero modo di musica',
+
+    'Song translations' => 'Traduzioni di canzoni',
+    'Song translation' => 'Traduzione della canzone',
+    'translation' => 'traduzione',
 
 ];
 

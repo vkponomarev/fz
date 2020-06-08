@@ -4,6 +4,8 @@
  * @var $songData \common\components\song\Song
  * @var $albumData \common\components\album\Album
  * @var $artistData \common\components\artist\artist
+ * @var $translationByLanguage \common\components\translation\Translation
+ * @var $translationsByLanguages \common\components\translations\Translations
  */
 //(new \common\components\dump\Dump())->printR($albumData);
 
@@ -54,21 +56,143 @@
 
 <hr>
 
-<div class="site-index">
+
+<?php if ($translationByLanguage): ?>
+
+<?php if ($translationByLanguage['origin'] == 1): ?>
+
+    <div class="row row-flex">
+
+        <div class="col-xxs-12">
+            <h2 class="song-text-title"><?= Yii::t('app', 'Song lyrics') ?>
+                <?php if ($artistData): ?>
+                    <?= $artistData['name'] ?> -
+                <?php endif; ?>
+                <?= $songData['name'] ?>
+            </h2>
 
 
-    <h2 class="song-text-title"><?= Yii::t('app', 'Song lyrics') ?>
-        <?php if ($artistData): ?>
-            <?= $artistData['name'] ?> -
-        <?php endif; ?>
-        <?= $songData['name'] ?>
-    </h2>
+            <br>
+            <div class="song-text">
+                <?= $songData['text'] ?>
+            </div>
 
+        </div>
 
-    <br>
-    <br>
-    <div class="song-text">
-        <?= $songData['text'] ?>
     </div>
-    <br>
-</div>
+    <hr>
+    <div class="row row-flex">
+
+        <div class="col-xxs-12">
+            <h2 class="song-text-title"><?= Yii::t('app', 'Song translations') ?>
+                <?php if ($artistData): ?>
+                    <?= $artistData['name'] ?> -
+                <?php endif; ?>
+                <?= $songData['name'] ?>
+            </h2>
+
+            <br>
+            <div class="song-translations">
+
+                <?php foreach ($translationsByLanguages as $translation): ?>
+                <?php if ($translation['origin'] <> 1): ?>
+
+                <a class="song-translations-a" title="<?= $translation['name'] ?> <?= Yii::t('app', 'translation') ?>"href="/<?= $translation['url'] ?>/songs/<?= $songData['url'] ?>/"><?= $translation['name'] ?>
+
+                    <?php endif; ?>
+                    <?php endforeach; ?>
+
+
+            </div>
+        </div>
+    </div>
+    <?php else: ?>
+
+        <div class="row row-flex">
+
+            <div class="col-xxs-12 col-xs-6">
+                <h2 class="song-text-title"><?= Yii::t('app', 'Song lyrics') ?>
+                    <?php if ($artistData): ?>
+                        <?= $artistData['name'] ?> -
+                    <?php endif; ?>
+                    <?= $songData['name'] ?>
+                </h2>
+
+
+                <br>
+                <div class="song-text">
+                    <?= $songData['text'] ?>
+                </div>
+
+            </div>
+
+
+            <div class="col-xxs-12 col-xs-6">
+                <h2 class="song-text-title"><?= Yii::t('app', 'Song translation') ?>
+                    <?php if ($artistData): ?>
+                        <?= $artistData['name'] ?> -
+                    <?php endif; ?>
+                    <?= $songData['name'] ?>
+                </h2>
+
+                <br>
+                <div class="song-text">
+                    <?= $translationByLanguage['text'] ?>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <div class="row row-flex">
+
+            <div class="col-xxs-12">
+                <h2 class="song-text-title"><?= Yii::t('app', 'Song translations') ?>
+                    <?php if ($artistData): ?>
+                        <?= $artistData['name'] ?> -
+                    <?php endif; ?>
+                    <?= $songData['name'] ?>
+                </h2>
+
+                <br>
+                <div class="song-translations">
+
+                    <?php foreach ($translationsByLanguages as $translation): ?>
+                    <?php if ($translation['origin'] <> 1): ?>
+
+                    <a class="song-translations-a" title="<?= $translation['name'] ?> <?= Yii::t('app', 'translation') ?>"href="/<?= $translation['url'] ?>/songs/<?= $songData['url'] ?>/"><?= $translation['name'] ?>
+
+                        <?php endif; ?>
+                        <?php endforeach; ?>
+
+
+                </div>
+            </div>
+        </div>
+
+    <?php endif; ?>
+
+<?php else: ?>
+
+    <div class="row row-flex">
+
+        <div class="col-xxs-12">
+            <h2 class="song-text-title"><?= Yii::t('app', 'Song lyrics') ?>
+                <?php if ($artistData): ?>
+                    <?= $artistData['name'] ?> -
+                <?php endif; ?>
+                <?= $songData['name'] ?>
+            </h2>
+
+
+            <br>
+            <div class="song-text">
+                <?= $songData['text'] ?>
+            </div>
+
+        </div>
+
+    </div>
+
+
+<?php endif; ?>
+

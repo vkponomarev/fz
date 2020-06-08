@@ -11,6 +11,7 @@ use common\components\mainPagesData\MainPagesData;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
 use common\components\songs\Songs;
+use Yii;
 use yii\web\Controller;
 
 
@@ -57,7 +58,7 @@ class ArtistsController extends Controller
 
         $pageTexts = new PageTexts();
         $pageTexts->updateByArtist($artistData);
-
+        //(new \common\components\dump\Dump())->printR(Yii::$app->params['text']);
         $albums = new Albums();
         $albumsByArtist = $albums->byArtist($artistData['id']);
 

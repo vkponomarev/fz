@@ -53,6 +53,7 @@ use yii\web\NotFoundHttpException;
 class MainPagesData
 {
 
+    var $languageID; //ID текущего языка.
 
     function __construct($pageId, $givenUrl, $tableName, $mainUrl){
 
@@ -70,6 +71,7 @@ class MainPagesData
         $this->pageText($pageId, $currentLanguage['id']);
         $this->alternate($givenUrl, $mainUrl);
         $this->canonical($givenUrl, $mainUrl);
+        $this->languageID = $currentLanguage['id'];
 
     }
 
@@ -99,7 +101,7 @@ class MainPagesData
         Yii::$app->params['text']['description'] = $pageText['description'];
         Yii::$app->params['text']['text1'] = $pageText['text1'];
         Yii::$app->params['text']['text2'] = $pageText['text2'];
-
+        //(new \common\components\dump\Dump())->printR(Yii::$app->params['text']);
     }
     function alternate($givenUrl, $mainUrl)
     {

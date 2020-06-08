@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'Bejelentkezés',
-    'Artists' => 'Művészek',
+    'Artists' => 'Zenészek',
     'Albums' => 'Albumok',
     'Songs' => 'Dalok',
     // main menu
@@ -32,13 +32,17 @@ return [
     'Popular albums' => 'Népszerű albumok',
     'Popular artists' => 'Népszerű művészek',
     'Popular songs' => 'Népszerű dalok',
-    'artist' => 'művész',
+    'artist' => 'zenész',
     'album' => 'album',
     'song' => 'dal',
     'Song lyrics' => 'Dalszövegek',
     'Page' => 'Oldal',
     'Index' => 'Index',
     'True way of music' => 'Igazi zenei mód',
+
+    'Song translations' => 'Dal fordítások',
+    'Song translation' => 'Dal fordítása',
+    'translation' => 'fordítás',
 
 ];
 

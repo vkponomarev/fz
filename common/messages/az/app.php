@@ -25,7 +25,7 @@ return [
 
     // main menu
     'Sign in' => 'Daxil ol',
-    'Artists' => 'Rəssamlar',
+    'Artists' => 'Musiqiçilər',
     'Albums' => 'Albomlar',
     'Songs' => 'Mahnilar',
     // main menu
@@ -34,13 +34,17 @@ return [
     'Popular albums' => 'Populyar albomlar',
     'Popular artists' => 'Populyar sənətkarlar',
     'Popular songs' => 'Populyar mahnılar',
-    'artist' => 'rəssam',
+    'artist' => 'musiqiçi',
     'album' => 'albom',
     'song' => 'mahnı',
     'Song lyrics' => 'Mahnı Sözləri',
     'Page' => 'Səhifə',
     'Index' => 'İndeks',
     'True way of music' => 'Həqiqi musiqi yolu',
+
+    'Song translations' => 'Mahnı tərcümələri',
+    'Song translation' => 'Mahnı tərcüməsi',
+    'translation' => 'tərcümə',
 
 ];
 

@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'Συνδεθείτε',
-    'Artists' => 'Καλλιτέχνες',
+    'Artists' => 'Hudebníci',
     'Albums' => 'Άλμπουμ',
     'Songs' => 'Τραγούδια',
     // main menu
@@ -33,13 +33,17 @@ return [
     'Popular albums' => 'Δημοφιλή άλμπουμ',
     'Popular artists' => 'Δημοφιλείς καλλιτέχνες',
     'Popular songs' => 'Δημοφιλή τραγούδια',
-    'artist' => 'καλλιτέχνης',
+    'artist' => 'hudebník',
     'album' => 'άλμπουμ',
     'song' => 'τραγούδι',
     'Song lyrics' => 'Στίχοι τραγουδιού',
     'Page' => 'Σελίδα',
     'Index' => 'Δείκτης',
     'True way of music' => 'Αληθινός τρόπος μουσικής',
+
+    'Song translations' => 'Μεταφράσεις τραγουδιών',
+    'Song translation' => 'Μετάφραση τραγουδιού',
+    'translation' => 'μετάφραση',
 
 
 ];

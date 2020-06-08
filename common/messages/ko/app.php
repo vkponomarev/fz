@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => '로그인',
-    'Artists' => '예술가',
+    'Artists' => '음악가',
     'Albums' => '앨범',
     'Songs' => '노래',
     // main menu
@@ -32,7 +32,7 @@ return [
     'Popular albums' => '인기 앨범',
     'Popular artists' => '인기 아티스트',
     'Popular songs' => '인기있는 노래',
-    'artist' => '예술가',
+    'artist' => '음악가',
     'album' => '앨범',
     'song' => '노래',
     'Song lyrics' => '노래 가사',
@@ -40,6 +40,9 @@ return [
     'Index' => '인덱스',
     'True way of music' => '진정한 음악 방식',
 
+    'Song translations' => '노래 번역',
+    'Song translation' => '노래 번역',
+    'translation' => '번역',
 
 ];
 

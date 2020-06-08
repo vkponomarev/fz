@@ -50,6 +50,11 @@ class Songs
 
     }
 
+    function byGoogleTranslate($start, $end){
+
+        return (new SongsByGoogleTranslate())->songs($start, $end);
+
+    }
 
 }
 

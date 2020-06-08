@@ -63,8 +63,8 @@ return [
                 '/artists/' => 'artists/index',
                 '/artists/<url>/' => 'artists/artist-page',
 
-
-
+                //'/search/' => 'search/index',
+                //'/search/search' => 'search/search',
                 //'/script/first-letter' => 'scripts/first-letter',
                 //'/script/genres' => 'scripts/genres',
                 //'/script/years' => 'scripts/years',
@@ -72,7 +72,7 @@ return [
                 //'/script/artists' => 'scripts/artists',
                 //'/script/artists-show' => 'scripts/artists-show',
                 //'/script/artists-work' => 'scripts/artists-work',
-
+                '/script/songs-translation' => 'scripts/songs-translation',
 
                 //CMS
                 //'/cms/' => 'cms/index',

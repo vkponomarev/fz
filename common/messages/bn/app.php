@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'সাইন ইন করুন',
-    'Artists' => 'শিল্পী',
+    'Artists' => 'সুরকাররা',
     'Albums' => 'অ্যালবাম',
     'Songs' => 'গান',
     // main menu
@@ -33,7 +33,7 @@ return [
     'Popular albums' => 'জনপ্রিয় অ্যালবামগুলি',
     'Popular artists' => 'জনপ্রিয় শিল্পী',
     'Popular songs' => 'জনপ্রিয় গান',
-    'artist' => 'শিল্পী',
+    'artist' => 'শসুরকার',
     'album' => 'অ্যালবাম',
     'song' => 'গান',
     'Song lyrics' => 'গানের লাইন',
@@ -41,6 +41,10 @@ return [
     'Index' => 'সূচক',
     'True way of music' => 'সঙ্গীত সত্য উপায়',
 
+
+    'Song translations' => 'গানের অনুবাদ',
+    'Song translation' => 'গানের অনুবাদ',
+    'translation' => 'অনুবাদ',
 
 ];
 

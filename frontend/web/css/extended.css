@@ -37,6 +37,39 @@
     width: 74px;
 }
 
+.header-top-line-search{
+
+    position: absolute;
+    text-shadow: none;
+    color: #000;
+    left: 0;
+    top: 5px;
+    font-size: 1.5rem;
+    height: 32px;
+    width: 30%;
+    padding-left: 10px;
+}
+
+.search-value{
+
+    text-align: left;
+    display: contents;
+
+
+}
+
+.search-value-div{
+    text-align: left;
+   /* width: 300px;*/
+
+}
+
+.song-translations-a {
+    margin: 10px;
+    line-height: 25px;
+}
+
+
 .header-top-line-sign-up:hover {
     border-bottom: 5px solid #d50016;
 }
@@ -50,7 +83,7 @@
 
 .header-nav-line {
 
-    background-color: #317e84;
+    background-color: #317e84!important;
     height: 50px;
 
 }

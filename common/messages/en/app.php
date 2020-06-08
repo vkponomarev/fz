@@ -40,5 +40,13 @@ return [
     'Page' => 'Page',
     'Index' => 'Index',
     'True way of music' => 'True way of music',
+
+
+    'Song translations' => 'Song translations',
+    'Song translation' => 'Song translation',
+    'translation' => 'translation',
+
+
+
 ];
 

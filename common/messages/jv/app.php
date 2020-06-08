@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'Mlebu',
-    'Artists' => 'Artis',
+    'Artists' => 'Musicians',
     'Albums' => 'Album',
     'Songs' => 'Lagu',
     // main menu
@@ -32,13 +32,17 @@ return [
     'Popular albums' => 'Album populer',
     'Popular artists' => 'Artis populer',
     'Popular songs' => 'Lagu populer',
-    'artist' => 'artis',
+    'artist' => 'musisi',
     'album' => 'album',
     'song' => 'kidung',
     'Song lyrics' => 'Lirik lagu',
     'Page' => 'Halaman',
     'Index' => 'Indeks',
     'True way of music' => 'Cara musik sing bener',
+
+    'Song translations' => 'Terjemahan lagu',
+    'Song translation' => 'Terjemahan lagu',
+    'translation' => 'jarwan',
 
 ];
 

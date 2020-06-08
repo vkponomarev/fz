@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'Đăng nhập',
-    'Artists' => 'Nghệ sĩ',
+    'Artists' => 'Nhạc sĩ',
     'Albums' => 'Tập ảnh',
     'Songs' => 'Bài hát',
     // main menu
@@ -32,13 +32,17 @@ return [
     'Popular albums' => 'Album nổi tiếng',
     'Popular artists' => 'Nghệ sĩ nổi tiếng',
     'Popular songs' => 'Những bài hát được ưa chuộng',
-    'artist' => 'họa sĩ',
+    'artist' => 'nhạc sĩ',
     'album' => 'album',
     'song' => 'bài hát',
     'Song lyrics' => 'Lời bài hát',
     'Page' => 'Trang',
     'Index' => 'Mục lục',
     'True way of music' => 'Cách âm nhạc đích thực',
+
+    'Song translations' => 'Bản dịch bài hát',
+    'Song translation' => 'Dịch bài hát',
+    'translation' => 'dịch',
 
 
 ];

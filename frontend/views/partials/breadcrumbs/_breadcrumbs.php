@@ -21,7 +21,7 @@
     <meta itemprop="position" content="1"/>
 </li>
 <?php if (isset(Yii::$app->params['breadcrumbs']['urls'])): ?>
-    <?php $count = 0; ?>
+    <?php $count = 1; ?>
     <?php foreach (Yii::$app->params['breadcrumbs']['urls'] as $one): ?>
         <?php $count++; ?>
         <li class="breadcrumbs-item" itemprop="itemListElement" itemscope

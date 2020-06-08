@@ -34,6 +34,7 @@ class AppAsset extends AssetBundle
         //'yii\bootstrap\BootstrapAsset',
         'frontend\assets\FontAwesomeAsset',
         'frontend\assets\MyAssets',
+        'yii\jui\JuiAsset'
     ];
 
     public $cssOptions = [

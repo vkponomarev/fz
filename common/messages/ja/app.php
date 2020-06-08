@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'サインイン',
-    'Artists' => 'アーティスト',
+    'Artists' => 'ミュージシャン',
     'Albums' => 'アルバム',
     'Songs' => '曲',
     // main menu
@@ -33,7 +33,7 @@ return [
     'Popular albums' => '人気のアルバム',
     'Popular artists' => '人気のアーティスト',
     'Popular songs' => '人気の曲',
-    'artist' => 'アーティスト',
+    'artist' => '音楽家',
     'album' => 'アルバム',
     'song' => '歌',
     'Song lyrics' => '歌詞',
@@ -41,6 +41,8 @@ return [
     'Index' => '索引',
     'True way of music' => '音楽の真の方法',
 
-
+    'Song translations' => '歌の翻訳',
+    'Song translation' => '歌の翻訳',
+    'translation' => '翻訳',
 ];
 

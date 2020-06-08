@@ -43,11 +43,16 @@ AppAsset::register($this);
 
 <div class="wrap">
 
+
     <div class="header-top-line">
 
-        <a href="/" rel="nofollow" class="header-top-line-site-name-link">FLOWLEZ</a>
+        <?= $this->render('/partials/search/_search-widget', [
+        ]); ?>
 
+        <a href="/" rel="nofollow" class="header-top-line-site-name-link">FLOWLEZ</a>
     </div>
+
+
 
     <nav class="navbar-default header-nav-line">
 
@@ -171,7 +176,7 @@ AppAsset::register($this);
 
                 <span class="footer-brand-down-text">
 
-                    <?=Yii::t('app','True way of music')?>
+                    <?= Yii::t('app', 'True way of music') ?>
 
                 </span>
 
@@ -213,7 +218,9 @@ AppAsset::register($this);
 <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
 <script src="https://yastatic.net/share2/share.js" async="async"></script>
 
-<?= $this->render('/partials/counters/_counters');?>
+<?= $this->render('/partials/counters/_counters'); ?>
+
+
 
 <?php Pjax::end(); ?>
 <?php $this->endBody() ?>

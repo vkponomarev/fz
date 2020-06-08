@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => '登入',
-    'Artists' => '藝人',
+    'Artists' => '音樂家',
     'Albums' => '專輯',
     'Songs' => '歌曲',
     // main menu
@@ -32,7 +32,7 @@ return [
     'Popular albums' => '熱門專輯',
     'Popular artists' => '受歡迎的藝術家',
     'Popular songs' => '流行歌曲',
-    'artist' => '藝術家',
+    'artist' => '音樂家',
     'album' => '專輯',
     'song' => '歌曲',
     'Song lyrics' => '歌曲歌詞',
@@ -40,6 +40,9 @@ return [
     'Index' => '指數',
     'True way of music' => '音樂的真實方式',
 
+    'Song translations' => '歌曲翻譯',
+    'Song translation' => '歌曲翻譯',
+    'translation' => '翻譯',
 
 ];
 

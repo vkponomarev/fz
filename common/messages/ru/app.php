@@ -41,5 +41,9 @@ return [
     'Song lyrics' => 'Текст песни',
     'Page' => 'Страница',
 
+    'Song translations' => 'Переводы песни',
+    'Song translation' => 'Перевод песни',
+    'translation' => 'перевод',
+
 
 ];

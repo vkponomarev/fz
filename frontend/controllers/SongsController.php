@@ -10,6 +10,8 @@ use common\components\mainPagesData\MainPagesData;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
 use common\components\songs\Songs;
+use common\components\translation\Translation;
+use common\components\translations\Translations;
 use yii\web\Controller;
 
 /**
@@ -68,11 +70,23 @@ class SongsController extends Controller
         $breadCrumbs = new Breadcrumbs();
         $breadCrumbs->song($artistData, $albumData, $songData, $firstLetterByArtist);
 
+        $translations = new Translations();
+        $translationsBySong = $translations->bySong($songData['id']);
+        $translationsByLanguages = $translations->byLanguages($songData['id']);
+
+
+        $translation = new Translation();
+        $translationByLanguage = $translation->byLanguage($translationsBySong, $mainPagesData->languageID);
+        //(new \common\components\dump\Dump())->printR($translationByLanguage);
+
+
         return $this->render('song-page', [
 
             'songData' => $songData,
             'albumData' => $albumData,
             'artistData' => $artistData,
+            'translationByLanguage' => $translationByLanguage,
+            'translationsByLanguages' => $translationsByLanguages,
 
         ]);
 

@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'Увійти',
-    'Artists' => 'Артисти',
+    'Artists' => 'Музиканти',
     'Albums' => 'Альбоми',
     'Songs' => 'Пісні',
     // main menu
@@ -32,7 +32,7 @@ return [
     'Popular albums' => 'Популярні альбоми',
     'Popular artists' => 'Популярні артисти',
     'Popular songs' => 'Популярні пісні',
-    'artist' => 'артист',
+    'artist' => 'музикант',
     'album' => 'альбом',
     'song' => 'пісня',
     'Song lyrics' => 'Пісенна лірика',
@@ -40,5 +40,8 @@ return [
     'Index' => 'Покажчик',
     'True way of music' => 'Істинний шлях музики',
 
+    'Song translations' => 'Переклади пісень',
+    'Song translation' => 'Переклад пісні',
+    'translation' => 'переклад',
 ];
 

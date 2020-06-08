@@ -24,7 +24,7 @@ return [
 
     // main menu
     'Sign in' => 'Přihlásit se',
-    'Artists' => 'Umělci',
+    'Artists' => 'Hudebníci',
     'Albums' => 'Alba',
     'Songs' => 'Písně',
     // main menu
@@ -33,7 +33,7 @@ return [
     'Popular albums' => 'Oblíbená alba',
     'Popular artists' => 'Populární umělci',
     'Popular songs' => 'Populární písně',
-    'artist' => 'umělec',
+    'artist' => 'hudebník',
     'album' => 'album',
     'song' => 'píseň',
     'Song lyrics' => 'Text písně',
@@ -41,6 +41,9 @@ return [
     'Index' => 'Index',
     'True way of music' => 'Skutečný způsob hudby',
 
+    'Song translations' => 'Překlady písní',
+    'Song translation' => 'Překlad písní',
+    'translation' => 'překlad',
 
 ];
 
