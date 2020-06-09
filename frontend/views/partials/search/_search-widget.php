@@ -25,7 +25,7 @@
                     
                 } else {
                 
-                    window.location = '/artists/' + suggestion.url;
+                    window.location = '/artists/' + suggestion.url + '/';
                 
                 }
                
