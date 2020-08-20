@@ -49,5 +49,19 @@ return [
     'Search ...' => 'Axtarış ...',
     'No matches found.' => 'Heç bir uyğunluq tapılmadı.',
 
+    'Listen to music online' => 'İnternetdə musiqiyə qulaq asın',
+    'Popular music' => 'Populyar xarici musiqilər',
+    'Listen to music' => 'Musiqi dinləmək',
+    'online' => 'onlayn',
+    'Other songs:' => 'Digər mahnılar:',
+    'Lyrics' => 'Sözlər',
+    'Songs translations' => 'Mahnı tərcümələri',
+    'Music videos' => 'Musiqi videoları',
+    'watch online' => 'onlayn seyr',
+    'Song translations into English' => 'Azərbaycan dilinə mahnı tərcümələri',
+    'into English' => 'azərbaycanca',
+    'Listen to songs online for free' => 'Pulsuz mahnılara onlayn qulaq asın',
+    'Listen to the song' => 'Mahnını dinləyin',
+    'Music video clip' => 'Musiqi videoklipi',
 ];
 

@@ -48,5 +48,20 @@ return [
     'Search ...' => 'Suche ...',
     'No matches found.' => 'Keine Treffer gefunden.',
 
+    'Listen to music online' => 'Musik online hören',
+    'Popular music' => 'Populäre ausländische Musik',
+    'Listen to music' => 'Musik hören',
+    'online' => 'online',
+    'Other songs:' => 'Andere Lieder:',
+    'Lyrics' => 'Text',
+    'Songs translations' => 'Liedübersetzungen',
+    'Music videos' => 'Musikvideos',
+    'watch online' => 'Online schauen',
+    'Song translations into English' => 'Liedübersetzungen ins Deutsche',
+    'into English' => 'ins Deutsche',
+    'Listen to songs online for free' => 'Hören Sie Songs kostenlos online',
+    'Listen to the song' => 'Hör dir das Lied an',
+    'Music video clip' => 'Musikvideoclip',
+
 ];
 

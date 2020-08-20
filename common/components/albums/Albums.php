@@ -34,5 +34,22 @@ class Albums
         return (new AlbumsByPopularity())->albums($count);
 
     }
+
+    function bySiteMap()
+    {
+
+        return (new AlbumsBySiteMap())->albums();
+
+    }
+
+
+    function byStartEnd($start, $end)
+    {
+
+        return (new AlbumsByStartEnd())->albums($start, $end);
+
+    }
+
+
 }
 

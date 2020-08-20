@@ -11,15 +11,21 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'frontend\controllers',
-    'components' => [
-        'elasticsearch' => [
-            'class' => 'yii\elasticsearch\Connection',
-            'nodes' => [
-                ['http_address' => '127.0.0.1:9200'],
-                // configure more hosts if you have a cluster
-            ],
-        ],
 
+    'components' => [
+        //'elasticsearch' => [
+        //    'class' => 'yii\elasticsearch\Connection',
+        //    'nodes' => [
+        //        ['http_address' => '127.0.0.1:9200'],
+        //        // configure more hosts if you have a cluster
+        //    ],
+        //],
+        //'sphinx' => [
+        //    'class' => 'yii\sphinx\Connection',
+        //    'dsn' => 'mysql:host=127.0.0.1;port=9306;',
+        //    'username' => 'one',
+        //    'password' => 'one',
+        //],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer'
         ],
@@ -35,7 +41,7 @@ return [
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
-            'name' => 'advanced-frontend',
+            'name' => 'flowlez',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -61,6 +67,8 @@ return [
                 '/albums/' => 'albums/index',
                 '/albums/<url>/' => 'albums/album-page',
 
+                //'/youtube/index' => 'youtube/index',
+
                 '/songs/' => 'songs/index',
                 '/songs/<url>/' => 'songs/song-page',
 
@@ -70,6 +78,11 @@ return [
                 '/artists/' => 'artists/index',
                 '/artists/<url>/' => 'artists/artist-page',
 
+                '/sitemap/' => 'sitemap/index',
+                '/sitemap/<url>/' => 'sitemap/url',
+
+                '/sitemapru/' => 'sitemap/index-ru',
+                '/sitemapru/<url>/' => 'sitemap/url-ru',
                 //'/search/' => 'search/index',
                 //'/search/search' => 'search/search',
                 //'/script/first-letter' => 'scripts/first-letter',
@@ -79,8 +92,10 @@ return [
                 //'/script/artists' => 'scripts/artists',
                 //'/script/artists-show' => 'scripts/artists-show',
                 //'/script/artists-work' => 'scripts/artists-work',
-                '/script/songs-translation' => 'scripts/songs-translation',
-
+                //'/script/songs-translation' => 'scripts/songs-translation',
+                //'/script/songs-youtube' => 'scripts/songs-youtube',
+                //'/script/url-youtube' => 'scripts/url-youtube',
+                //'/script/featuring' => 'scripts/featuring',
                 //CMS
                 //'/cms/' => 'cms/index',
                 '/cms/cookie/' => 'cms/cookie-info',

@@ -11,6 +11,7 @@ use common\components\albums\Albums;
 use common\components\breadcrumbs\Breadcrumbs;
 use common\models\components\FlowPageArtists;
 use common\components\mainPagesData\MainPagesData;
+use Yii;
 use yii\web\Controller;
 
 
@@ -28,6 +29,7 @@ class AlbumsController extends Controller
 
     public function actionIndex()
     {
+
         //albums = new Albums();
         $mainPagesData = new MainPagesData('54',false, 0, 'albums');
 

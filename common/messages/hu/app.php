@@ -47,5 +47,20 @@ return [
     'Search ...' => 'Keresés ...',
     'No matches found.' => 'Nincs találat.',
 
+    'Listen to music online' => 'Hallgasson zenét online',
+    'Popular music' => 'Népszerű külföldi zene',
+    'Listen to music' => 'Zenét hallgat',
+    'online' => 'online',
+    'Other songs:' => 'Egyéb dalok:',
+    'Lyrics' => 'Dalszöveg',
+    'Songs translations' => 'Dal fordítások',
+    'Music videos' => 'Zenevideók',
+    'watch online' => 'Nézd online',
+    'Song translations into English' => 'Dalfordítások magyarra',
+    'into English' => 'magyarra',
+    'Listen to songs online for free' => 'Zenehallgatás ingyen online',
+    'Listen to the song' => 'Hallgasd a zenét',
+    'Music video clip' => 'Zenei videoklip',
+
 ];
 

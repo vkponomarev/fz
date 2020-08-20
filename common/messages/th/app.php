@@ -48,6 +48,21 @@ return [
     'Search ...' => 'ค้นหา ...',
     'No matches found.' => 'ไม่พบที่ตรงกัน',
 
+    'Listen to music online' => 'ฟังเพลงออนไลน์',
+    'Popular music' => 'เพลงต่างประเทศยอดนิยม',
+    'Listen to music' => 'ฟังเพลง',
+    'online' => 'ออนไลน์',
+    'Other songs:' => 'เพลงอื่น ๆ :',
+    'Lyrics' => 'เนื้อร้องของเพลง',
+    'Songs translations' => 'การแปลเพลง',
+    'Music videos' => 'มิวสิควิดีโอ',
+    'watch online' => 'ดูออนไลน์',
+    'Song translations into English' => 'แปลเพลงเป็นภาษาไทย',
+    'into English' => 'เป็นภาษาไทย',
+    'Listen to songs online for free' => 'ฟังเพลงออนไลน์ฟรี',
+    'Listen to the song' => 'ฟังเพลง',
+    'Music video clip' => 'คลิปวิดีโอเพลง',
+
 
 ];
 

@@ -17,7 +17,6 @@ class SongsByPopularity
             select
             m_songs.name,
             m_songs.url,
-            m_songs.year,
             m_songs.m_albums_id,
             m_artists.name as artistName,
             m_artists.url as artistUrl,

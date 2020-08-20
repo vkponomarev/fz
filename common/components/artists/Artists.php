@@ -31,5 +31,18 @@ class Artists
 
     }
 
+    function bySiteMap(){
+
+        return (new ArtistsBySiteMap())->artists();
+
+    }
+
+
+    function byAll(){
+
+        return (new ArtistsByAll())->artists();
+
+    }
+
 }
 

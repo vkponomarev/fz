@@ -1,91 +1,75 @@
 <?php
+
 namespace frontend\controllers;
 
-use common\components\albums\Albums;
 use common\components\albums\AlbumsArtist;
-use common\components\artist\Artist;
-use common\components\artists\Artists;
-use common\components\breadcrumbs\Breadcrumbs;
-use common\components\firstLetter\FirstLetter;
-use common\components\mainPagesData\MainPagesData;
-use common\components\pageTexts\PageTexts;
-use common\components\song\Song;
-use common\components\songs\Songs;
+use common\models\MSearch;
 use Yii;
 use yii\helpers\Json;
 use yii\web\Controller;
+use yii\sphinx\Query;
+use yii\sphinx\MatchExpression;
 
-
-/**
- * Main controller
- * pageText($currentPage,$pageUsingKeys)
- *
- *
- *
- *
- */
 class SearchController extends Controller
 {
 
 
-    public function actionIndex()
+    public function actionSearch($q = null)
     {
 
-        $mainPagesData = new MainPagesData('2',false, 0, 'artists');
 
-
-
-        return $this->render('search', [
-
-
-
-        ]);
-
-    }
-    public function actionSearch($q = null) {
-
-
-        //(new \common\components\dump\Dump())->printR(weewf);
-        //(new \common\components\dump\Dump())->printR(22);
-       /* $query = new Query;
-
-        $query->select('name')
-            ->from('m_artists')
-            ->where('name LIKE "%' . $q .'%"')
-            ->orderBy('name')
-            ->limit('10');;
-        $command = $query->createCommand();
-        $data = $command->queryAll();*/
-
-         $data = Yii::$app->db
+        /*$data = Yii::$app->db
             ->createCommand('
             select
             name,
             url
             from
-            m_artists
-            where 
-            name like "%' . $q .  '%"
-            order by name
+            m_search
+            where
+            name like "' . $searchWord . '"
             limit 20
-            ', [':referal' => $q])
-            ->queryAll();
+            ')
+            ->queryAll();*/
 
-       $out = [];
-        foreach ($data as $d) {
-            $out[] = [
-                'value' => $d['name'],
-                'url' => $d['url'],
-                ];
+        /*$searchWord = '';
+        if(strpos($q, 0x20) !== false){
+            $tmp = preg_replace('/[^a-zA-ZА-Яа-я0-9 ]/', '', $q);
+            $tmp = explode(' ', $tmp);
+            foreach ($tmp as $one){
+                if ($one <>'') {
+                    $searchWord .= '*' . $one . '*';
+                }
+            }
+        } else{
+            $searchWord = '*' . $q . '*';
         }
 
-        //$out[] = ['value' => '2pac'];
-        //$out[] = ['value' => 'methodman'];
-        //(new \common\components\dump\Dump())->printR($out[]);
+        $searchWord = str_replace("**", "*", $searchWord);
+        */
+
+
+        $searchWord = '*' . $q . '*';
+        $data = Yii::$app->db->createCommand('
+                    SELECT name, url
+                    FROM `m_search`
+                    WHERE
+                    MATCH(`name`)
+                    AGAINST(\'' . $searchWord .'\'  IN BOOLEAN MODE)
+                    limit 40;
+                    ')
+            ->queryAll();
+
+
+        $out = [];
+        foreach ($data as $d) {
+            $out[] = [
+                'value' => substr($d['name'], 0, 40),
+                'url' => $d['url'],
+            ];
+        }
 
         echo Json::encode($out);
 
     }
-
 
 }

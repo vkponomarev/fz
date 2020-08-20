@@ -47,5 +47,20 @@ return [
 
     'Search ...' => 'Αναζήτηση ...',
     'No matches found.' => 'Δεν βρέθηκαν αντιστοιχίες.',
+
+    'Listen to music online' => 'Ακούστε μουσική στο διαδίκτυο',
+    'Popular music' => 'Δημοφιλής ξένη μουσική',
+    'Listen to music' => 'Ακούω μουσική',
+    'online' => 'Σε σύνδεση',
+    'Other songs:' => 'Άλλα τραγούδια:',
+    'Lyrics' => 'Στίχοι',
+    'Songs translations' => 'Μεταφράσεις τραγουδιών',
+    'Music videos' => 'Μουσικά βίντεο',
+    'watch online' => 'παρακολουθήστε στο διαδίκτυο',
+    'Song translations into English' => 'Μεταφράσεις τραγουδιών στα ελληνικά',
+    'into English' => 'στα ελληνικά',
+    'Listen to songs online for free' => 'Ακούστε τραγούδια online δωρεάν',
+    'Listen to the song' => 'Ακου το τραγούδι',
+    'Music video clip' => 'Μουσικό βίντεο κλιπ',
 ];
 

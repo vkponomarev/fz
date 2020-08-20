@@ -5,10 +5,6 @@ namespace common\components\cms;
 class Cms
 {
 
-    var $album; // Основная информация об альбоме.
-    var $songs; // Список песен.
-    var $artist; // Основная информация об артисте.
-
     function __construct($id = 0)
     {
 

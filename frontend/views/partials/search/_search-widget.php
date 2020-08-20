@@ -25,7 +25,7 @@
                     
                 } else {
                 
-                    window.location = '/artists/' + suggestion.url + '/';
+                    window.location = '/" . Yii::$app->language . "/' + suggestion.url + '/';
                 
                 }
                
@@ -34,11 +34,10 @@
         ],
         'dataset' => [
             [
-                //'datumTokenizer' => "Bloodhound.tokenizers.obj.whitespace('value')",
                 'datumTokenizer' => "Bloodhound.tokenizers.obj.whitespace('value')",
                 'display' => 'value',
                 //'prefetch' => $baseUrl . '/samples/countries.json',
-                'prefetch' => \yii\helpers\Url::to(['search/search']),
+                //'prefetch' => \yii\helpers\Url::to(['search/search']),
                 'limit' => 10,
                 'templates' => [
                     'notFound' => '<div class="text-danger" style="padding:0 8px">' . Yii::t('app','No matches found.') . '</div>',
@@ -50,7 +49,8 @@
 
                 ]
 
-            ]
+            ],
+
         ]
     ]);
 

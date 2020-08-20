@@ -46,5 +46,20 @@ return [
 
     'Search ...' => 'Szukaj ...',
     'No matches found.' => 'Nie znaleziono żadnego meczu.',
+
+    'Listen to music online' => 'Słuchaj muzyki online',
+    'Popular music' => 'Popularna muzyka zagraniczna',
+    'Listen to music' => 'Posłuchać muzyki',
+    'online' => 'online',
+    'Other songs:' => 'Inne piosenki:',
+    'Lyrics' => 'tekst piosenki',
+    'Songs translations' => 'Tłumaczenia piosenek',
+    'Music videos' => 'Filmy muzyczne',
+    'watch online' => 'oglądać online',
+    'Song translations into English' => 'Tłumaczenia piosenek na język polski',
+    'into English' => 'na język polski',
+    'Listen to songs online for free' => 'Słuchaj piosenek online za darmo',
+    'Listen to the song' => 'Słuchać piosenki',
+    'Music video clip' => 'Klip muzyczny',
 ];
 

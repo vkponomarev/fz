@@ -58,7 +58,7 @@ class ArtistsController extends Controller
 
         $pageTexts = new PageTexts();
         $pageTexts->updateByArtist($artistData);
-        //(new \common\components\dump\Dump())->printR(Yii::$app->params['text']);
+
         $albums = new Albums();
         $albumsByArtist = $albums->byArtist($artistData['id']);
 

@@ -44,18 +44,35 @@
 </div>
 
 <hr>
-
-<ul class="album-songs-links">
+<br>
+<a name="listen"></a>
+<h2 class="header-2">
+    <?= Yii::t('app', 'Listen to music') ?> <?= $artistData['name'] ?> - <?= $albumData['name'] ?> (<?= $albumData['year'] ?>) <?= Yii::t('app', 'online') ?>
+</h2>
+<hr>
+<ul class="songs-links">
     <?php foreach ($songsByAlbum as $song): ?>
-        <li>
-        <a href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
-            <?= $song['name'] ?>
-        </a>
-        </li>
 
+        <li class="songs-li-artists">
+            <?php if ($song['url_youtube']): ?>
+                <span id="play-button" class="fa fa-play-circle play-button"
+                      onclick="showYoutubeModal(this)"
+                      data-url="<?= $song['url_youtube'] ?>" data-backdrop="false">
+                                </span>
+            <?php else: ?>
+                <span id="play-button" class="fa fa-play-circle play-button-false">
+                                </span>
+            <?php endif; ?>
+
+            <a class="songs-li-a" href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
+                <?= $song['name'] ?> </a>
+        </li>
     <?php endforeach; ?>
 </ul>
-<br><br>
+
+
+<?= $this->render('/partials/modal/_modal-youtube', [
+]); ?>
 
 
 

@@ -46,5 +46,21 @@ return [
 
     'Search ...' => 'Qidirmoq ...',
     'No matches found.' => 'Hech narsa topilmadi.',
+
+    'Listen to music online' => 'Internetda musiqa tinglang',
+    'Popular music' => 'Mashhur xorijiy musiqa',
+    'Listen to music' => 'Musiqa tinglamoq',
+    'online' => 'onlayn',
+    'Other songs:' => 'Boshqa qo\'shiqlar:',
+    'Lyrics' => 'Qo\'shiq so\'zlari',
+    'Songs translations' => 'Qo\'shiq tarjimalari',
+    'Music videos' => 'Musiqiy videolar',
+    'watch online' => 'onlayn tomosha qilish',
+    'Song translations into English' => 'O\'zbek tiliga qo\'shiq tarjimalari',
+    'into English' => 'o\'zbek tiliga',
+    'Listen to songs online for free' => 'Internetda qo\'shiqlarni bepul tinglang',
+    'Listen to the song' => 'Qo\'shiqni tinglang',
+    'Music video clip' => 'Videoklip',
+
 ];
 

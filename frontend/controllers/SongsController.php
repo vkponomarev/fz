@@ -34,13 +34,16 @@ class SongsController extends Controller
         $songs = new Songs();
         $songsByPopularity = $songs->byPopularity(20);
 
-        $song = new Song();
-        $songByYoutube = $song->byYoutube();
+        $songsByLyrics = $songs->byLyrics(10);
+        $songsByTranslations = $songs->byTranslations(10, $mainPagesData->languageID);
+        $songsByListen = $songs->byListen(20);
 
         return $this->render('index', [
 
             'songsByPopularity' => $songsByPopularity,
-            'songByYoutube' => $songByYoutube,
+            'songsByLyrics' => $songsByLyrics,
+            'songsByTranslations' => $songsByTranslations,
+            'songsByListen' => $songsByListen,
 
         ]);
 
@@ -59,6 +62,9 @@ class SongsController extends Controller
 
         $artist = new Artist();
         $artistData = $artist->data($songData['m_artists_id']);
+
+        $songs = new Songs();
+        $songsData = $songs->byArtist($artistData['id']);
 
         $pageTexts = new PageTexts();
         $pageTexts->updateBySong($songData);
@@ -83,6 +89,7 @@ class SongsController extends Controller
         return $this->render('song-page', [
 
             'songData' => $songData,
+            'songsData' => $songsData,
             'albumData' => $albumData,
             'artistData' => $artistData,
             'translationByLanguage' => $translationByLanguage,

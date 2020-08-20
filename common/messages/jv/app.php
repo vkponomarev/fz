@@ -47,5 +47,20 @@ return [
     'Search ...' => 'Telusuri ...',
     'No matches found.' => 'Ora ditemokake.',
 
+    'Listen to music online' => 'Rungokake musik kanthi online',
+    'Popular music' => 'Musik manca sing populer',
+    'Listen to music' => 'Rungokake musik',
+    'online' => 'online',
+    'Other songs:' => 'Lagu liyane:',
+    'Lyrics' => 'Lirik',
+    'Songs translations' => 'Terjemahan lagu',
+    'Music videos' => 'Video musik',
+    'watch online' => 'nonton online',
+    'Song translations into English' => 'Lagu terjemahan menyang basa jawa',
+    'into English' => 'menyang basa Jawa',
+    'Listen to songs online for free' => 'Rungokake lagu online kanthi gratis',
+    'Listen to the song' => 'Rungokake lagu',
+    'Music video clip' => 'Klip video musik',
+
 ];
 

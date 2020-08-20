@@ -47,5 +47,21 @@ return [
     'Search ...' => 'Arama ...',
     'No matches found.' => 'Hiçbir sonuç bulunamadı.',
 
+
+    'Listen to music online' => 'Çevrimiçi müzik dinleyin',
+    'Popular music' => 'Popüler yabancı müzik',
+    'Listen to music' => 'Müzik dinlemek',
+    'online' => 'internet üzerinden',
+    'Other songs:' => 'Diğer şarkılar:',
+    'Lyrics' => 'Şarkı sözleri',
+    'Songs translations' => 'Şarkı çevirileri',
+    'Music videos' => 'Müzik videoları',
+    'watch online' => 'Online izle',
+    'Song translations into English' => 'Türkçe şarkı çevirileri',
+    'into English' => 'Türkçeye',
+    'Listen to songs online for free' => 'Çevrimiçi şarkıları ücretsiz dinleyin',
+    'Listen to the song' => 'Şarkıyı dinle',
+    'Music video clip' => 'Müzik video klibi',
+
 ];
 

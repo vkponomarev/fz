@@ -46,5 +46,20 @@ return [
 
     'Search ...' => 'खोज ...',
     'No matches found.' => 'कोई मेल नहीं मिले।',
+
+    'Listen to music online' => 'ऑनलाइन संगीत सुनें',
+    'Popular music' => 'लोकप्रिय विदेशी संगीत',
+    'Listen to music' => 'संगीत सुनें',
+    'online' => 'ऑनलाइन',
+    'Other songs:' => 'अन्य गीत:',
+    'Lyrics' => 'बोल',
+    'Songs translations' => 'गाने का अनुवाद',
+    'Music videos' => 'संगीत चलचित्र',
+    'watch online' => 'ऑनलाइन देखो',
+    'Song translations into English' => 'गीत हिंदी में अनुवाद',
+    'into English' => 'हिंदी में',
+    'Listen to songs online for free' => 'मुफ्त में ऑनलाइन गाने सुनें',
+    'Listen to the song' => 'गीत सुनें',
+    'Music video clip' => 'संगीत वीडियो क्लिप',
 ];
 

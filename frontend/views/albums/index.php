@@ -5,20 +5,10 @@
  * @var $albumsByPopularity common\components\albums\AlbumsByPopularity
  */
 
-//echo $pageText['title'];$songByYoutube
 ?>
 
-    <br><br><br>
-
-<?= $this->render('/partials/youtube-player/youtube-player', [
-    'songByYoutube' => $songByYoutube,
-]); ?>
-
-
-    <br><br><br><br>
-
-    <br><br><br><br>
-    <h2 class="main-page-h2"><?= Yii::t('app', 'Popular albums') ?></h2>
+    <br><br>
+    <a name="popular-artists"></a><h1 class="main-page-h1"><?= Yii::t('app', 'Popular albums') ?></h1>
     <br><br>
     <div class="row row-flex">
 
@@ -58,20 +48,8 @@
         <?php endforeach; ?>
     </div>
 
-    <br><br><br><br>
+    <br><br><br>
 
-<?php
-
-/*
- *
-<a href="/script/first-letter/">first-letter</a><br>
-<a href="/script/artists/">artists</a><br>
-<a href="/script/albums/">albums</a><br>
-
-
- *             <?php if ($songs['year']): ?>
-                            (<?php// $songs['year']; ?>)
-                        <?php endif; ?>
- * */
-
-?>
+<?= $this->render('/partials/youtube-player/youtube-player', [
+    'songByYoutube' => $songByYoutube,
+]); ?>

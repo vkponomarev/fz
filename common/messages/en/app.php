@@ -50,6 +50,22 @@ return [
     'No matches found.' => 'No matches found.',
 
 
+    'Listen to music online' => 'Listen to music online',
+    'Popular music' => 'Popular music',
+    'Listen to music' => 'Listen to music',
+    'online' => 'online',
+    'Other songs:' => 'Other songs:',
+    'Lyrics' => 'Lyrics',
+    'Songs translations' => 'Songs translations',
+    'Music videos' => 'Music videos',
+    'watch online' => 'watch online',
+    'Song translations into English' => 'Song translations into English',
+    'into English' => 'into English',
+    'Listen to songs online for free' => 'Listen to songs online for free',
+    'Listen to the song' => 'Listen to the song',
+    'Music video clip' => 'Music video clip',
+
+
 
 ];
 

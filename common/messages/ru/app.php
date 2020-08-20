@@ -48,4 +48,19 @@ return [
     'Search ...' => 'Поиск ...',
     'No matches found.' => 'Соответствий не обнаружено.',
 
+    'Listen to music online' => 'Слушать музыку онлайн',
+    'Popular music' => 'Популярная зарубежная музыка',
+    'Listen to music' => 'Слушать музыку',
+    'online' => 'онлайн',
+    'Other songs:' => 'Другие песни:',
+    'Lyrics' => 'Тексты песен',
+    'Songs translations' => 'Переводы песен',
+    'Music videos' => 'Музыкальные видео клипы',
+    'watch online' => 'смотреть онлайн',
+    'Song translations into English' => 'Переводы песен на русский язык',
+    'into English' => 'на русский язык',
+    'Listen to songs online for free' => 'Слушать песни беслпатно онлайн',
+    'Listen to the song' => 'Слушать песню',
+    'Music video clip' => 'Музыкальный видео клип',
+
 ];

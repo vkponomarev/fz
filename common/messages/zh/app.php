@@ -47,5 +47,20 @@ return [
     'Search ...' => '搜索 ...',
     'No matches found.' => '找不到匹配項。',
 
+    'Listen to music online' => '在線聽音樂',
+    'Popular music' => '流行的外國音樂',
+    'Listen to music' => '聽音樂',
+    'online' => '線上',
+    'Other songs:' => '其他歌曲：',
+    'Lyrics' => '歌詞',
+    'Songs translations' => '歌曲翻譯',
+    'Music videos' => '音樂視頻',
+    'watch online' => '在線觀看',
+    'Song translations into English' => '將歌曲翻譯成中文',
+    'into English' => '變成中文',
+    'Listen to songs online for free' => '免費在線收聽歌曲',
+    'Listen to the song' => '聽這首歌',
+    'Music video clip' => '音樂視頻剪輯',
+
 ];
 

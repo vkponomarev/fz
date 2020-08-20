@@ -36,12 +36,10 @@ class MainPageController extends Controller
         $albumsByPopularity = $albums->byPopularity(8);
 
         $songs = new Songs();
+        $songsByListenMusic = $songs->byListenMusicMainPage();
         $songsByPopularity = $songs->byPopularity(20);
 
-        $song = new Song();
-        $songByYoutube = $song->byYoutube();
-        //(new \common\components\dump\Dump())->printR($songByYoutube);
-/*
+        /*
         $createRawData = new CreateRawData();
         $fileRaw = $createRawData->startFile();
         $fileRaw = $fileRaw . $createRawData->create($artistByPopularity , 'artistByPopularity');
@@ -66,13 +64,8 @@ class MainPageController extends Controller
             'artistByPopularity' => $artistByPopularity,
             'albumsByPopularity' => $albumsByPopularity,
             'songsByPopularity' => $songsByPopularity,
-            'songByYoutube' => $songByYoutube,
-            /*
-                        'artistByPopularity' => $test['artistByPopularity'],
-                        'albumsByPopularity' => $test['albumsByPopularity'],
-                        'songsByPopularity' => $test['songsByPopularity'],
-                        'songByYoutube' => $test['songByYoutube'],
-            */
+            'songsByListenMusic' => $songsByListenMusic,
+
         ]);
 
     }

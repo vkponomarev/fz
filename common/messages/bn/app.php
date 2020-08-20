@@ -48,5 +48,20 @@ return [
 
     'Search ...' => 'অনুসন্ধান করুন ...',
     'No matches found.' => 'কোনও মিল খুঁজে পাওয়া যায় নি।',
+
+    'Listen to music online' => 'অনলাইনে গান শুনুন',
+    'Popular music' => 'জনপ্রিয় বিদেশী সংগীত',
+    'Listen to music' => 'গান শোনো',
+    'online' => 'অনলাইন',
+    'Other songs:' => 'অন্যান্য গান:',
+    'Lyrics' => 'গানের কথা',
+    'Songs translations' => 'গানের অনুবাদ',
+    'Music videos' => 'সঙ্গীত ভিডিও',
+    'watch online' => 'অনলাইনে দেখো',
+    'Song translations into English' => 'বাংলা অনুবাদ',
+    'into English' => 'বাংলা ভাষায়',
+    'Listen to songs online for free' => 'অনলাইনে গান শুনুন',
+    'Listen to the song' => 'গানটি শোন',
+    'Music video clip' => 'সংগীত ভিডিও ক্লিপ',
 ];
 

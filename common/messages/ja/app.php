@@ -48,5 +48,20 @@ return [
     'Search ...' => '探す ...',
     'No matches found.' => '一致するものが見つかりませんでした。',
 
+
+    'Listen to music online' => 'オンラインで音楽を聴く',
+    'Popular music' => '人気の外国音楽',
+    'Listen to music' => '音楽を聴く',
+    'online' => 'オンライン',
+    'Other songs:' => 'その他の曲：',
+    'Lyrics' => '歌詞',
+    'Songs translations' => '歌の翻訳',
+    'Music videos' => 'ミュージックビデオ',
+    'watch online' => 'オンラインで見ます',
+    'Song translations into English' => '日本語への歌の翻訳',
+    'into English' => '日本語に',
+    'Listen to songs online for free' => 'オンラインで無料で曲を聴く',
+    'Listen to the song' => 'この曲を聴きます',
+    'Music video clip' => 'ミュージックビデオクリップ',
 ];
 

@@ -11,7 +11,7 @@ class SearchByArtists
     public function search($id)
     {
 
-        global $db;
+        //global $db;
         $search = trim(mysqli_real_escape_string($db, $_GET['term']));
         $query = "SELECT Name FROM city WHERE Name LIKE '%{$search}%' LIMIT 10";
         $res = mysqli_query($db, $query);

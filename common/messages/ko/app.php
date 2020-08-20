@@ -47,5 +47,20 @@ return [
     'Search ...' => '검색 ...',
     'No matches found.' => '검색 결과가 없습니다.',
 
+    'Listen to music online' => '온라인으로 음악 듣기',
+    'Popular music' => '인기 외국 음악',
+    'Listen to music' => '음악 듣기',
+    'online' => '온라인',
+    'Other songs:' => '다른 노래 :',
+    'Lyrics' => '가사',
+    'Songs translations' => '노래 번역',
+    'Music videos' => '뮤직 비디오들',
+    'watch online' => '온라인으로보기',
+    'Song translations into English' => '한국어로 노래 번역',
+    'into English' => '한국어로',
+    'Listen to songs online for free' => '온라인에서 무료로 노래 듣기',
+    'Listen to the song' => '그 노래를 들어 봐',
+    'Music video clip' => '뮤직 비디오 클립',
+
 ];
 

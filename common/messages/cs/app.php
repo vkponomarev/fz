@@ -47,5 +47,20 @@ return [
 
     'Search ...' => 'Vyhledávání ...',
     'No matches found.' => 'Nebyly nalezeny žádné zápasy.',
+
+    'Listen to music online' => 'Poslouchejte hudbu online',
+    'Popular music' => 'Populární zahraniční hudba',
+    'Listen to music' => 'Poslouchat hudbu',
+    'online' => 'online',
+    'Other songs:' => 'Další písně:',
+    'Lyrics' => 'Text',
+    'Songs translations' => 'Překlady písní',
+    'Music videos' => 'Hudební videa',
+    'watch online' => 'sledovat online',
+    'Song translations into English' => 'Překlady písní do češtiny',
+    'into English' => 'do češtiny',
+    'Listen to songs online for free' => 'Poslouchejte skladby online zdarma',
+    'Listen to the song' => 'Poslouchejte píseň',
+    'Music video clip' => 'Hudební videoklip',
 ];
 

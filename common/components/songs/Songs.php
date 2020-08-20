@@ -56,5 +56,43 @@ class Songs
 
     }
 
+
+    function byStartEnd($start, $end){
+
+        return (new SongsByStartEnd())->songs($start, $end);
+
+    }
+
+    function bySiteMap($start, $end){
+
+        return (new SongsBySiteMap())->songs($start, $end);
+
+    }
+
+    function byListenMusicMainPage(){
+
+        return (new SongsByListenMusicMainPage())->songs();
+
+    }
+
+    function byLyrics($count){
+
+        return (new SongsByLyrics())->songs($count);
+
+    }
+
+    function byTranslations($count, $languageID){
+
+        return (new SongsByTranslations())->songs($count, $languageID);
+
+    }
+
+    function byListen($count){
+
+        return (new SongsByListen())->songs($count);
+
+    }
+
+
 }
 

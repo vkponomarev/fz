@@ -47,5 +47,20 @@ return [
     'Search ...' => 'Пошук ...',
     'No matches found.' => 'Співпадінь не знайдено.',
 
+    'Listen to music online' => 'Слухайте музику онлайн',
+    'Popular music' => 'Популярна зарубіжна музика',
+    'Listen to music' => 'Слухати музику',
+    'online' => 'онлайн',
+    'Other songs:' => 'Інші пісні:',
+    'Lyrics' => 'Лірика',
+    'Songs translations' => 'Переклади пісень',
+    'Music videos' => 'Музичні відео',
+    'watch online' => 'дивитись онлайн',
+    'Song translations into English' => 'Переклади пісень українською мовою',
+    'into English' => 'на українську мову',
+    'Listen to songs online for free' => 'Слухайте пісні онлайн безкоштовно',
+    'Listen to the song' => 'Прослухайте пісню',
+    'Music video clip' => 'Музичний відеокліп',
+
 ];
 

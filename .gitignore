@@ -51,3 +51,4 @@ phpunit.phar
 # My Ignore
 /frontend/controllers/ScriptsController.php
 /frontend/views/scripts
+/frontend/views/gii

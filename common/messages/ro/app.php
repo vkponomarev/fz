@@ -46,5 +46,20 @@ return [
 
     'Search ...' => 'Căutare ...',
     'No matches found.' => 'Nu s-a gasit nici o potrivire.',
+
+    'Listen to music online' => 'Asculta muzica online',
+    'Popular music' => 'Muzică populară străină',
+    'Listen to music' => 'Asculta muzica',
+    'online' => 'pe net',
+    'Other songs:' => 'Alte melodii:',
+    'Lyrics' => 'Versuri',
+    'Songs translations' => 'Traduceri de melodii',
+    'Music videos' => 'Videoclipuri muzicale',
+    'watch online' => 'urmareste online',
+    'Song translations into English' => 'Traduceri de melodii în limba română',
+    'into English' => 'în limba română',
+    'Listen to songs online for free' => 'Asculta melodii online gratis',
+    'Listen to the song' => 'Asculta melodia',
+    'Music video clip' => 'Clip video muzical',
 ];
 

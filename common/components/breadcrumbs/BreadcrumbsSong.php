@@ -16,8 +16,8 @@ class BreadcrumbsSong
     {
 
         Yii::$app->params['breadcrumbs']['urls'][0] = [
-            'url' => 'artists',
-            'text' => Yii::t('app', 'Artists')
+            'url' => 'songs',
+            'text' => Yii::t('app', 'Songs')
         ];
 
         Yii::$app->params['breadcrumbs']['urls'][1] = [
