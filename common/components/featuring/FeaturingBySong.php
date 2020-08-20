@@ -17,10 +17,10 @@ class FeaturingBySong
             m_artists.name,
             m_artists.url
             from
-            m_featurting
-            left join m_artists on m_artists.id = m_featurting.m_artists_id_feature
+            m_featuring
+            left join m_artists on m_artists.id = m_featuring.m_artists_id_feature
             where
-            m_featurting.m_songs_id = :id
+            m_featuring.m_songs_id = :id
             ', [':id' => $songID])
             ->queryAll();
         //echo $id;

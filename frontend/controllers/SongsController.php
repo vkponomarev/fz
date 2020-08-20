@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use common\components\album\Album;
 use common\components\artist\Artist;
 use common\components\breadcrumbs\Breadcrumbs;
+use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
 use common\components\mainPagesData\MainPagesData;
 use common\components\pageTexts\PageTexts;
@@ -66,6 +67,9 @@ class SongsController extends Controller
         $songs = new Songs();
         $songsData = $songs->byArtist($artistData['id']);
 
+        $featuring = new Featuring();
+        $featuringBySong = $featuring->bySong($songData['id']);
+
         $pageTexts = new PageTexts();
         $pageTexts->updateBySong($songData);
         $pageTexts->updateByArtist($artistData);
@@ -85,13 +89,14 @@ class SongsController extends Controller
         $translationByLanguage = $translation->byLanguage($translationsBySong, $mainPagesData->languageID);
         //(new \common\components\dump\Dump())->printR($translationByLanguage);
 
-
+//(new \common\components\dump\Dump())->printR($featuringBySong);
         return $this->render('song-page', [
 
             'songData' => $songData,
             'songsData' => $songsData,
             'albumData' => $albumData,
             'artistData' => $artistData,
+            'featuring' => $featuringBySong,
             'translationByLanguage' => $translationByLanguage,
             'translationsByLanguages' => $translationsByLanguages,
 

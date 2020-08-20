@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use common\components\artist\Artist;
+use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
@@ -61,6 +62,12 @@ class AlbumsController extends Controller
 
         $artist = new Artist();
         $artistData = $artist->data($albumData['m_artists_id']);
+
+        $featuring = new Featuring();
+        $featuringByArtist = $featuring->byArtist($artistData['id']);
+
+        $songsByAlbum = $songs->addFeaturing($songsByAlbum, $featuringByArtist);
+
 
         $pageTexts = new PageTexts();
         $pageTexts->updateByAlbum($albumData);

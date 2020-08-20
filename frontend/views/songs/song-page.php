@@ -33,6 +33,27 @@
 
         <h1 class="album-name"><?= $songData['name'] ?></h1>
         <?php if ($albumData): ?>
+            <span class="album-text"> <?= Yii::t('app', 'featuring') ?></span>
+
+            <?php if (isset($featuring)): ?>
+                <?php $count = 0; ?>
+                &nbsp;<span class="songs-li-a">
+                    <?php foreach ($featuring as $feature): ?>
+                        <?php if ($count > 0): ?>
+                            ,<a class="album-artist-link"
+                                href="/<?= Yii::$app->language ?>/artists/<?= $feature['url'] ?>/">
+                                            <?= $feature['name'] ?></a>
+                        <?php else: ?>
+                            <a class="album-artist-link"
+                               href="/<?= Yii::$app->language ?>/artists/<?= $feature['url'] ?>/">
+                                            <?= $feature['name'] ?></a>
+                        <?php endif; ?>
+                        <?php $count++; ?>
+                    <?php endforeach; ?>
+
+                                </span>
+            <?php endif; ?>
+
             <span class="album-text"> <?= Yii::t('app', 'album') ?></span>
             <br>
             <a class="album-artist-link" href="/<?= Yii::$app->language ?>/albums/<?= $albumData['url'] ?>/">
