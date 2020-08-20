@@ -63,5 +63,8 @@ return [
     'Listen to songs online for free' => 'Pulsuz mahnılara onlayn qulaq asın',
     'Listen to the song' => 'Mahnını dinləyin',
     'Music video clip' => 'Musiqi videoklipi',
+
+    'featuring' => 'ilə xarakterizə',
+    'genres' => 'janrlar',
 ];
 

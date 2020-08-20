@@ -6,6 +6,7 @@
  * @var $albumsByArtist \common\components\albums\AlbumsByArtist
  * @var $songsByArtist \common\components\songs\SongsByArtist as array
  * @var $featuringByArtist \common\components\featuring\FeaturingByArtist
+ * @var $genres \common\components\genres\GenresByArtist
  */
 $songsByArtistTMP = $songsByArtist;
 ?>
@@ -24,6 +25,25 @@ $songsByArtistTMP = $songsByArtist;
         <span class="album-text"> <?= Yii::t('app', 'artist') ?></span>
 
         <h1 class="album-name"><?= $artistData['name'] ?></h1>
+
+        <?php if ($genres): ?>
+            <span class="album-text"> <?= Yii::t('app', 'genres') ?></span>
+            <?php $count = 0; ?>
+            &nbsp;<span class="songs-li-a">
+                    <?php foreach ($genres as $genre): ?>
+                        <?php if ($count > 0): ?>
+                            ,<span class="album-artist-link">
+                                            <?= $genre['name'] ?></span>
+                        <?php else: ?>
+                            <span class="album-artist-link">
+                                            <?= $genre['name'] ?></span>
+                        <?php endif; ?>
+                        <?php $count++; ?>
+                    <?php endforeach; ?>
+
+                                </span>
+        <?php endif; ?>
+
         <div class="share-social">
             <?= $this->render('/partials/share-social/_share-social'); ?>
         </div>

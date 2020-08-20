@@ -63,5 +63,8 @@ return [
     'Listen to the song' => 'Hör dir das Lied an',
     'Music video clip' => 'Musikvideoclip',
 
+    'featuring' => 'Mit',
+    'genres' => 'Genres',
+
 ];
 

@@ -62,5 +62,7 @@ return [
     'Listen to the song' => 'Qo\'shiqni tinglang',
     'Music video clip' => 'Videoklip',
 
+    'featuring' => 'ishtirok bilan',
+    'genres' => 'janrlari',
 ];
 

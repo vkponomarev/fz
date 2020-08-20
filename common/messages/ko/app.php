@@ -62,5 +62,7 @@ return [
     'Listen to the song' => '그 노래를 들어 봐',
     'Music video clip' => '뮤직 비디오 클립',
 
+    'featuring' => '특징',
+    'genres' => '장르',
 ];
 

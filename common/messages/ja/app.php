@@ -63,5 +63,8 @@ return [
     'Listen to songs online for free' => 'オンラインで無料で曲を聴く',
     'Listen to the song' => 'この曲を聴きます',
     'Music video clip' => 'ミュージックビデオクリップ',
+
+    'featuring' => 'フィーチャー',
+    'genres' => 'ジャンル',
 ];
 

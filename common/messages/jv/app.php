@@ -62,5 +62,7 @@ return [
     'Listen to the song' => 'Rungokake lagu',
     'Music video clip' => 'Klip video musik',
 
+    'featuring' => 'nampilake',
+    'genres' => 'genres',
 ];
 

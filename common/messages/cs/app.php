@@ -62,5 +62,8 @@ return [
     'Listen to songs online for free' => 'Poslouchejte skladby online zdarma',
     'Listen to the song' => 'Poslouchejte píseň',
     'Music video clip' => 'Hudební videoklip',
+
+    'featuring' => 'představovat',
+    'genres' => 'žánry',
 ];
 

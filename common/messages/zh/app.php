@@ -62,5 +62,8 @@ return [
     'Listen to the song' => '聽這首歌',
     'Music video clip' => '音樂視頻剪輯',
 
+    'featuring' => '特色',
+    'genres' => '體裁',
+
 ];
 

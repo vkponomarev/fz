@@ -37,6 +37,27 @@
             </a>
         <?php endif; ?>
 
+
+        <?php if ($genres): ?>
+            <br>
+            <span class="album-text"> <?= Yii::t('app', 'genres') ?></span>
+            <?php $count = 0; ?>
+            &nbsp;<span class="songs-li-a">
+                    <?php foreach ($genres as $genre): ?>
+                        <?php if ($count > 0): ?>
+                            ,<span class="album-artist-link">
+                                            <?= $genre['name'] ?></span>
+                        <?php else: ?>
+                            <span class="album-artist-link">
+                                            <?= $genre['name'] ?></span>
+                        <?php endif; ?>
+                        <?php $count++; ?>
+                    <?php endforeach; ?>
+
+                                </span>
+        <?php endif; ?>
+
+
         <div class="share-social">
             <?= $this->render('/partials/share-social/_share-social'); ?>
         </div>

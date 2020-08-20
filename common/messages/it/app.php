@@ -62,5 +62,8 @@ return [
     'Listen to songs online for free' => 'Ascolta le canzoni online gratuitamente',
     'Listen to the song' => 'Ascolta la canzone',
     'Music video clip' => 'Video clip musicale',
+
+    'featuring' => 'con',
+    'genres' => 'generi',
 ];
 

@@ -61,5 +61,9 @@ return [
     'Listen to songs online for free' => 'मुफ्त में ऑनलाइन गाने सुनें',
     'Listen to the song' => 'गीत सुनें',
     'Music video clip' => 'संगीत वीडियो क्लिप',
+
+    'featuring' => 'की विशेषता',
+    'genres' => 'शैलियों',
+
 ];
 

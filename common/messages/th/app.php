@@ -63,6 +63,9 @@ return [
     'Listen to the song' => 'ฟังเพลง',
     'Music video clip' => 'คลิปวิดีโอเพลง',
 
+    'featuring' => 'เนื้อเรื่อง',
+    'genres' => 'ประเภท',
+
 
 ];
 

@@ -7,6 +7,7 @@ use common\components\artist\Artist;
 use common\components\breadcrumbs\Breadcrumbs;
 use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
+use common\components\genres\Genres;
 use common\components\mainPagesData\MainPagesData;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
@@ -70,6 +71,9 @@ class SongsController extends Controller
         $featuring = new Featuring();
         $featuringBySong = $featuring->bySong($songData['id']);
 
+        $genres = new Genres();
+        $genresBySong = $genres->bySong($songData['id']);
+
         $pageTexts = new PageTexts();
         $pageTexts->updateBySong($songData);
         $pageTexts->updateByArtist($artistData);
@@ -97,6 +101,7 @@ class SongsController extends Controller
             'albumData' => $albumData,
             'artistData' => $artistData,
             'featuring' => $featuringBySong,
+            'genres' => $genresBySong,
             'translationByLanguage' => $translationByLanguage,
             'translationsByLanguages' => $translationsByLanguages,
 

@@ -33,9 +33,9 @@
 
         <h1 class="album-name"><?= $songData['name'] ?></h1>
         <?php if ($albumData): ?>
-            <span class="album-text"> <?= Yii::t('app', 'featuring') ?></span>
 
-            <?php if (isset($featuring)): ?>
+            <?php if ($featuring): ?>
+                <span class="album-text"> <?= Yii::t('app', 'featuring') ?></span>
                 <?php $count = 0; ?>
                 &nbsp;<span class="songs-li-a">
                     <?php foreach ($featuring as $feature): ?>
@@ -70,6 +70,27 @@
                 <?= $artistData['name'] ?>
             </a>
         <?php endif; ?>
+
+        <?php if ($genres): ?>
+            <br>
+            <span class="album-text"> <?= Yii::t('app', 'genres') ?></span>
+            <?php $count = 0; ?>
+            &nbsp;<span class="songs-li-a">
+                    <?php foreach ($genres as $genre): ?>
+                        <?php if ($count > 0): ?>
+                            ,<span class="album-artist-link">
+                                            <?= $genre['name'] ?></span>
+                        <?php else: ?>
+                            <span class="album-artist-link">
+                                            <?= $genre['name'] ?></span>
+                        <?php endif; ?>
+                        <?php $count++; ?>
+                    <?php endforeach; ?>
+
+                                </span>
+        <?php endif; ?>
+
+
         <div class="share-social">
             <?= $this->render('/partials/share-social/_share-social'); ?>
         </div>

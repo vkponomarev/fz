@@ -62,5 +62,8 @@ return [
     'Listen to songs online for free' => 'Ακούστε τραγούδια online δωρεάν',
     'Listen to the song' => 'Ακου το τραγούδι',
     'Music video clip' => 'Μουσικό βίντεο κλιπ',
+
+    'featuring' => 'χαρακτηριστικό',
+    'genres' => 'είδη',
 ];
 

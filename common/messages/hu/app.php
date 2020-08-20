@@ -62,5 +62,8 @@ return [
     'Listen to the song' => 'Hallgasd a zenét',
     'Music video clip' => 'Zenei videoklip',
 
+    'featuring' => 'közreműködő',
+    'genres' => 'műfajok',
+
 ];
 

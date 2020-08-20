@@ -63,5 +63,8 @@ return [
     'Listen to songs online for free' => 'অনলাইনে গান শুনুন',
     'Listen to the song' => 'গানটি শোন',
     'Music video clip' => 'সংগীত ভিডিও ক্লিপ',
+
+    'featuring' => 'বৈশিষ্ট্যযুক্ত',
+    'genres' => 'ঘরানার',
 ];
 

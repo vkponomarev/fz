@@ -62,5 +62,8 @@ return [
     'Listen to songs online for free' => 'Nghe các bài hát trực tuyến miễn phí',
     'Listen to the song' => 'Nghe bài hát',
     'Music video clip' => 'Video clip ca nhạc',
+
+    'featuring' => 'đặc trưng',
+    'genres' => 'thể loại',
 ];
 

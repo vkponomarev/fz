@@ -63,4 +63,7 @@ return [
     'Listen to the song' => 'Слушать песню',
     'Music video clip' => 'Музыкальный видео клип',
 
+    'featuring' => 'при участии',
+    'genres' => 'жанры',
+
 ];

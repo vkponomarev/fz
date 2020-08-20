@@ -61,5 +61,8 @@ return [
     'Listen to songs online for free' => 'Asculta melodii online gratis',
     'Listen to the song' => 'Asculta melodia',
     'Music video clip' => 'Clip video muzical',
+
+    'featuring' => 'oferind',
+    'genres' => 'genuri',
 ];
 

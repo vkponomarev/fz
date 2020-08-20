@@ -8,6 +8,7 @@ use common\components\artists\Artists;
 use common\components\breadcrumbs\Breadcrumbs;
 use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
+use common\components\genres\Genres;
 use common\components\mainPagesData\MainPagesData;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
@@ -69,9 +70,10 @@ class ArtistsController extends Controller
         $featuring = new Featuring();
         $featuringByArtist = $featuring->byArtist($artistData['id']);
 
-        $songsByArtist = $songs->addFeaturing($songsByArtist, $featuringByArtist);
-        //(new \common\components\dump\Dump())->printR($songsAddFeaturing);
+        $genres = new Genres();
+        $genresByArtist = $genres->byArtist($artistData['id']);
 
+        $songsByArtist = $songs->addFeaturing($songsByArtist, $featuringByArtist);
 
         $firstLetter = new FirstLetter();
         $firstLetterByArtist = $firstLetter->byArtist($artistData);
@@ -84,6 +86,7 @@ class ArtistsController extends Controller
             'artistData' => $artistData,
             'albumsByArtist' => $albumsByArtist,
             'songsByArtist' => $songsByArtist,
+            'genres' => $genresByArtist,
 
         ]);
 

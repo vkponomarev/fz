@@ -63,5 +63,8 @@ return [
     'Listen to the song' => 'Şarkıyı dinle',
     'Music video clip' => 'Müzik video klibi',
 
+    'featuring' => 'öne çıkan',
+    'genres' => 'türler',
+
 ];
 
