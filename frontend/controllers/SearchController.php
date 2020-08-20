@@ -47,6 +47,17 @@ class SearchController extends Controller
         $searchWord = str_replace("**", "*", $searchWord);
         */
 
+        /*$dataArtists = Yii::$app->db->createCommand('
+                    SELECT name, url
+                    FROM `m_search`
+                    WHERE
+                    MATCH(`name`)
+                    AGAINST(\'' . $searchWord .'\'  IN BOOLEAN MODE)
+                    and 
+                    m_artists_id <> 0 
+                    limit 2;
+                    ')
+            ->queryAll();*/
 
         $searchWord = '*' . $q . '*';
         $data = Yii::$app->db->createCommand('
@@ -59,7 +70,7 @@ class SearchController extends Controller
                     ')
             ->queryAll();
 
-
+        //$data = array_merge($dataArtists, $data);
         $out = [];
         foreach ($data as $d) {
             $out[] = [

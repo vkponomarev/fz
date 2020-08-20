@@ -6,6 +6,7 @@ use common\components\albums\AlbumsArtist;
 use common\components\artist\Artist;
 use common\components\artists\Artists;
 use common\components\breadcrumbs\Breadcrumbs;
+use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
 use common\components\mainPagesData\MainPagesData;
 use common\components\pageTexts\PageTexts;
@@ -64,6 +65,13 @@ class ArtistsController extends Controller
 
         $songs = new Songs();
         $songsByArtist = $songs->byArtist($artistData['id']);
+
+        $featuring = new Featuring();
+        $featuringByArtist = $featuring->byArtist($artistData['id']);
+
+        $songsByArtist = $songs->addFeaturing($songsByArtist, $featuringByArtist);
+        //(new \common\components\dump\Dump())->printR($songsAddFeaturing);
+
 
         $firstLetter = new FirstLetter();
         $firstLetterByArtist = $firstLetter->byArtist($artistData);

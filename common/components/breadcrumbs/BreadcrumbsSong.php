@@ -15,29 +15,32 @@ class BreadcrumbsSong
     public function breadcrumbs($artistData, $albumData, $songData, $firstLetterByArtist)
     {
 
-        Yii::$app->params['breadcrumbs']['urls'][0] = [
+        $count = 0;
+
+        Yii::$app->params['breadcrumbs']['urls'][$count] = [
             'url' => 'songs',
             'text' => Yii::t('app', 'Songs')
         ];
 
-        Yii::$app->params['breadcrumbs']['urls'][1] = [
-            'url' => 'artists/index/' . $firstLetterByArtist['url'],
-            'text' => $firstLetterByArtist['first_letter']
-        ];
+        if ($firstLetterByArtist) {
+            Yii::$app->params['breadcrumbs']['urls'][++$count] = [
+                'url' => 'artists/index/' . $firstLetterByArtist['url'],
+                'text' => $firstLetterByArtist['first_letter']
+            ];
 
-        Yii::$app->params['breadcrumbs']['urls'][2] = [
-            'url' => 'artists/' . $artistData['url'],
-            'text' => $artistData['name']
-        ];
-
+            Yii::$app->params['breadcrumbs']['urls'][++$count] = [
+                'url' => 'artists/' . $artistData['url'],
+                'text' => $artistData['name']
+            ];
+        }
         if ($albumData['url']) {
             if ($albumData['year']) {
-                Yii::$app->params['breadcrumbs']['urls'][3] = [
+                Yii::$app->params['breadcrumbs']['urls'][++$count] = [
                     'url' => 'albums/' . $albumData['url'],
                     'text' => $albumData['name'] . ' (' . $albumData['year'] . ')'
                 ];
             } else {
-                Yii::$app->params['breadcrumbs']['urls'][3] = [
+                Yii::$app->params['breadcrumbs']['urls'][++$count] = [
                     'url' => 'albums/' . $albumData['url'],
                     'text' => $albumData['name']
                 ];

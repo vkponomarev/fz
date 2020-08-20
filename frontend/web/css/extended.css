@@ -17,11 +17,17 @@
     outline: 0;
 }
 
+.modal-content{
+
+    border: 0!important;
+
+}
+
 
 .play-button {
 
     color: #317e84!important;
-    font-size: 30px!important;
+    font-size: 32px!important;
     vertical-align: middle;
     cursor: pointer;
 
@@ -30,7 +36,7 @@
 .play-button-false {
 
     color: #d9d9d9!important;
-    font-size: 30px!important;
+    font-size: 32px!important;
     vertical-align: middle;
     cursor: not-allowed;
 
@@ -55,6 +61,14 @@
 
     display: block;
     vertical-align: middle;
+    padding-top: 2px;
+}
+
+.songs-li-a-song {
+
+    display: block;
+    vertical-align: middle;
+    padding-top: 3px;
 }
 
 .songs-links{
@@ -88,7 +102,8 @@
 }
 
 .modal-footer {
-    padding: 0px 5px!important;
+    padding: 0 5px!important;
+    padding-bottom: 5px!important;
     border-top: none!important;
 }
 

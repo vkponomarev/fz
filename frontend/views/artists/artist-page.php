@@ -5,7 +5,7 @@
  * @var $artistData \common\components\artist\ArtistData
  * @var $albumsByArtist \common\components\albums\AlbumsByArtist
  * @var $songsByArtist \common\components\songs\SongsByArtist as array
- *
+ * @var $featuringByArtist \common\components\featuring\FeaturingByArtist
  */
 $songsByArtistTMP = $songsByArtist;
 ?>
@@ -80,7 +80,28 @@ $songsByArtistTMP = $songsByArtist;
                             <?php endif; ?>
 
                             <a class="songs-li-a" href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
-                                <?= $song['name'] ?> </a>
+                                <?= $song['name'] ?></a>
+
+                            <?php if (isset($song['featuring'])): ?>
+                                <?php $count = 0; ?>
+                                &nbsp;<span class="songs-li-a">
+                                (
+                                    <?= Yii::t('app', 'feat.') ?>
+                                    <?php foreach ($song['featuring'] as $feature): ?>
+                                        <?php if ($count > 0): ?>
+                                            ,<a class=""
+                                                href="/<?= Yii::$app->language ?>/artists/<?= $feature['url'] ?>/">
+                                            <?= $feature['name'] ?></a>
+                                        <?php else: ?>
+                                            <a class=""
+                                               href="/<?= Yii::$app->language ?>/artists/<?= $feature['url'] ?>/">
+                                            <?= $feature['name'] ?></a>
+                                        <?php endif; ?>
+                                        <?php $count++; ?>
+                                    <?php endforeach; ?>
+                                    )
+                                </span>
+                            <?php endif; ?>
                         </li>
                         <?php unset($songsByArtist[$key]); ?>
                     <?php endif; ?>
@@ -186,7 +207,6 @@ $songsByArtistTMP = $songsByArtist;
     </ul>
 
 </div>
-
 
 
 <br>

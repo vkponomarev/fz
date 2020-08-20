@@ -94,5 +94,11 @@ class Songs
     }
 
 
+    function addFeaturing($songs, $featuring){
+
+        return (new SongsAddFeaturing())->songs($songs, $featuring);
+
+    }
+
 }
 

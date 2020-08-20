@@ -3,12 +3,11 @@
 namespace common\components\breadcrumbs;
 
 use Yii;
-use yii\web\NotFoundHttpException;
 
 class BreadcrumbsAlbum
 {
 
-     function __construct()
+    function __construct()
     {
 
     }
@@ -16,29 +15,30 @@ class BreadcrumbsAlbum
     public function Breadcrumbs($albumData, $artistData, $firstLetterByArtist)
     {
 
-        Yii::$app->params['breadcrumbs']['urls'] = [
+        $count = 0;
 
-            0 => [
-                'url' => 'artists',
-                'text' => Yii::t('app','Artists')
-            ],
+        Yii::$app->params['breadcrumbs']['urls'][$count] = [
+            'url' => 'albums',
+            'text' => Yii::t('app', 'Albums')
+        ];
 
-            1 => [
+        if ($firstLetterByArtist) {
+            Yii::$app->params['breadcrumbs']['urls'][++$count] = [
                 'url' => 'artists/index/' . $firstLetterByArtist['url'],
                 'text' => $firstLetterByArtist['first_letter']
-            ],
+            ];
 
-            2 => [
+            Yii::$app->params['breadcrumbs']['urls'][++$count] = [
                 'url' => 'artists/' . $artistData['url'],
                 'text' => $artistData['name']
-            ],
-
-        ];
+            ];
+        }
 
         if ($albumData['year'])
             Yii::$app->params['breadcrumbs']['last'] = $albumData['name'] . ' (' . $albumData['year'] . ')';
         else
             Yii::$app->params['breadcrumbs']['last'] = $albumData['name'];
+
     }
 
 }

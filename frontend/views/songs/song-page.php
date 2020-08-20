@@ -75,8 +75,8 @@
                 <span id="play-button" class="fa fa-play-circle play-button-false">
                                 </span>
             <?php endif; ?>
-
-            <?= $artistData['name'] ?> - <?= $songData['name'] ?>
+            <span class="songs-li-a-song">
+            <?= $artistData['name'] ?> - <?= $songData['name'] ?></span>
         </li>
     </ul>
 </div>
