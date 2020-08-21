@@ -15,7 +15,7 @@ class ArtistsByAll
             ->createCommand('
             select
             m_artists.id,
-            m_artists.genres
+            m_artists.url
             from
             m_artists
             ORDER BY 

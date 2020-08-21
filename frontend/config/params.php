@@ -2,4 +2,5 @@
 return [
     'adminEmail' => 'admin@example.com',
     'emailto' => 'vkponomarev@gmail.com',
+    'useDB' => 1,
 ];

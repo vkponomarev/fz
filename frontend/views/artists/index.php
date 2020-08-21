@@ -43,9 +43,6 @@
 </div>
 
 <br><br><br><br>
-<?= $this->render('/partials/youtube-player/youtube-player', [
-    'songByYoutube' => $songByYoutube,
-]); ?>
 
 
 

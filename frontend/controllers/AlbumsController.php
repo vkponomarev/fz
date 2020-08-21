@@ -1,7 +1,11 @@
 <?php
+
 namespace frontend\controllers;
 
+use common\components\album\Album;
+use common\components\albums\Albums;
 use common\components\artist\Artist;
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
 use common\components\genres\Genres;
@@ -9,12 +13,8 @@ use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
 use common\components\songs\Songs;
-use common\components\album\Album;
-use common\components\albums\Albums;
-use common\components\breadcrumbs\Breadcrumbs;
 use common\components\urlCheck\UrlCheck;
 use common\models\components\FlowPageArtists;
-use common\components\mainPagesData\MainPagesData;
 use Yii;
 use yii\web\Controller;
 
@@ -50,6 +50,17 @@ class AlbumsController extends Controller
 
         $song = new Song();
         $songByYoutube = $song->byYoutube();
+
+        //$this->layout='';
+
+        /*$name = $this->renderPartial('index', [
+
+             'albumsByPopularity' => $albumsByPopularity,
+             'songByYoutube' => $songByYoutube,
+
+         ]);
+
+         return $name;*/
 
         return $this->render('index', [
 
@@ -102,7 +113,7 @@ class AlbumsController extends Controller
 
         $firstLetter = new FirstLetter();
         $firstLetterByArtist = $firstLetter->byArtist($artistByAlbum);
-        
+
         $breadCrumbs = new Breadcrumbs();
         Yii::$app->params['breadcrumbs'] = $breadCrumbs->album($albumData, $artistByAlbum, $firstLetterByArtist);
 
@@ -117,7 +128,6 @@ class AlbumsController extends Controller
         ]);
 
     }
-
 
 
 }

@@ -152,6 +152,4 @@
     <?php endforeach; ?>
 </div>
 
-<?= $this->render('/partials/modal/_modal-youtube', [
-]); ?>
 <br><br><br><br>

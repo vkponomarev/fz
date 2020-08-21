@@ -215,9 +215,9 @@ AppAsset::register($this);
     <br><br><br>
 </footer>
 
-<script>
+<?= $this->render('/partials/modal/_modal-youtube', [
+]); ?>
 
-</script>
 <?php Pjax::begin(); ?>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dbbf2586b540d45"></script>
 <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>

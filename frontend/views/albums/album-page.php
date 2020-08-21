@@ -117,8 +117,4 @@
 </ul>
 
 
-<?= $this->render('/partials/modal/_modal-youtube', [
-]); ?>
-
-
 

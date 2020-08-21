@@ -14,6 +14,7 @@ class SongsByArtist
         $songs = Yii::$app->db
             ->createCommand('
             select
+            id,
             name,
             url,
             m_albums_id,

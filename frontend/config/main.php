@@ -11,7 +11,6 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'frontend\controllers',
-
     'components' => [
         //'elasticsearch' => [
         //    'class' => 'yii\elasticsearch\Connection',
