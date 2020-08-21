@@ -16,17 +16,17 @@ class MainCanonical
 
             if (!$url){
 
-                $canonical = \yii\helpers\Url::home(true) . Yii::$app->language . '/' . $mainUrl . '/';
+                $canonical = Yii::$app->language . '/' . $mainUrl . '/';
 
             }else{
 
-                $canonical = \yii\helpers\Url::home(true) . Yii::$app->language . '/' . $mainUrl . '/' . $url . '/';
+                $canonical = Yii::$app->language . '/' . $mainUrl . '/' . $url . '/';
 
             }
 
         }else{
 
-            $canonical = \yii\helpers\Url::home(true) . Yii::$app->language . '/';
+            $canonical = Yii::$app->language . '/';
 
         }
 

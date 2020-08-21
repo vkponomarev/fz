@@ -12,4 +12,4 @@
 
 ?>
 
-    <link rel="canonical" href="<?= Yii::$app->params['canonical'] ?>">
+    <link rel="canonical" href="<?= \yii\helpers\Url::home(true) . Yii::$app->params['canonical'] ?>">
