@@ -153,12 +153,20 @@ class ArtistsController extends Controller
             $noDB = new NoDB();
             $fileDB = json_decode(file_get_contents($noDB->realPath() . $path . $array), TRUE);
 
+
+
             Yii::$app->params['language'] = $fileDB['language'];
             Yii::$app->params['text'] = $fileDB['text'];
             Yii::$app->params['canonical'] = $fileDB['canonical'];
             Yii::$app->params['alternate'] = $fileDB['alternate'];
             Yii::$app->params['breadcrumbs'] = $fileDB['breadcrumbs'];
 
+            //Перезаписываем каноникал так как допустили ошибку при генерации:
+            //После перегенерирования удалить.
+            $main = new Main();
+            Yii::$app->params['canonical'] = $main->Canonical($url, 'artists');
+            //
+            //
             return $this->render('artist-page-noDB', [
 
                 'file' => $file,
