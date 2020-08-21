@@ -16,9 +16,9 @@ class Main
 
     }
 
-    function language(){
+    function language($languageUrl){
 
-        return (new MainLanguage())->language();
+        return (new MainLanguage())->language($languageUrl);
 
     }
 

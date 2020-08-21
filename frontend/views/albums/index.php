@@ -14,7 +14,7 @@
 
         <?php foreach ($albumsByPopularity as $album): ?>
 
-            <a href="/<?= Yii::$app->language ?>/albums/<?= $album['url']; ?>/"
+            <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/albums/<?= $album['url']; ?>/"
                class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12 plates-albums-main">
                 <div class="plates-albums-outside">
 

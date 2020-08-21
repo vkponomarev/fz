@@ -14,8 +14,8 @@ class ViewGenerateFile
     function generate($content, $fileName, $filePath)
     {
 
+        //(new \common\components\dump\Dump())->printR($filePath . $fileName);
 
-        (new \common\components\dump\Dump())->printR($filePath);
         if (!is_dir($filePath)) {
 
             mkdir($filePath, 0755, true);

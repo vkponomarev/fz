@@ -41,8 +41,8 @@ class ArtistsController extends Controller
         $mainUrl = 'artists'; // Основной урл
 
         $main = new Main();
-        Yii::$app->params['language'] = $main->language();
-        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
+        Yii::$app->params['language'] = $main->language(Yii::$app->language);
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
@@ -76,8 +76,8 @@ class ArtistsController extends Controller
             $urlCheckCheck = $urlCheck->check($url, $urlCheckTrueUrl['url']);
 
             $main = new Main();
-            Yii::$app->params['language'] = $main->language();
-            Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
+            Yii::$app->params['language'] = $main->language(Yii::$app->language);
+            Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
             Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
             Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
@@ -117,9 +117,17 @@ class ArtistsController extends Controller
             ]);
         } else {
 
-            $noDB = new NoDB();
 
-            $fileDB = json_decode(file_get_contents($noDB->realPath() . '/view/artists/349/ru-array.php'), TRUE);
+            $urlCheck = new UrlCheck();
+            $urlCheckID = $urlCheck->id($url);
+
+            $folder = ceil($urlCheckID/1000);
+            $path = '/view/artists/' . $folder . '/' . $urlCheckID . '/';
+            $file = $url . '-' . Yii::$app->language . '.php';
+            $array = $url . '-' . Yii::$app->language . '-array.php';
+
+            $noDB = new NoDB();
+            $fileDB = json_decode(file_get_contents($noDB->realPath() . $path . $array), TRUE);
 
             Yii::$app->params['language'] = $fileDB['language'];
             Yii::$app->params['text'] = $fileDB['text'];
@@ -127,7 +135,10 @@ class ArtistsController extends Controller
             Yii::$app->params['alternate'] = $fileDB['alternate'];
             Yii::$app->params['breadcrumbs'] = $fileDB['breadcrumbs'];
 
-            return $this->render('artist-page-file', [
+            return $this->render('artist-page-noDB', [
+
+                'file' => $file,
+                'path' => $path,
 
             ]);
 

@@ -20,7 +20,7 @@
 <div class="row row-flex">
     <?php foreach ($artistsByPopularity as $artist): ?>
 
-        <a href="/<?= Yii::$app->language ?>/artists/<?= $artist['url']; ?>/"
+        <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $artist['url']; ?>/"
            class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12 plates-artists-main">
             <div class="plates-artists-outside">
                 <div class="plates-artists">

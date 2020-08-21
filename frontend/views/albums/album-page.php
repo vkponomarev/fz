@@ -36,7 +36,7 @@
         <?php if ($artistByAlbum): ?>
             <span class="album-text"> <?= Yii::t('app', 'artist') ?></span>
             <br>
-            <a class="album-artist-link" href="/<?= Yii::$app->language ?>/artists/<?= $artistByAlbum['url'] ?>/">
+            <a class="album-artist-link" href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $artistByAlbum['url'] ?>/">
                 <?= $artistByAlbum['name'] ?>
             </a>
         <?php endif; ?>
@@ -89,7 +89,7 @@
                                 </span>
             <?php endif; ?>
 
-            <a class="songs-li-a" href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
+            <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
                 <?= $song['name'] ?> </a>
 
             <?php if (isset($song['featuring'])): ?>
@@ -100,11 +100,11 @@
                     <?php foreach ($song['featuring'] as $feature): ?>
                         <?php if ($count > 0): ?>
                             ,<a class=""
-                                href="/<?= Yii::$app->language ?>/artists/<?= $feature['url'] ?>/">
+                                href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $feature['url'] ?>/">
                                             <?= $feature['name'] ?></a>
                         <?php else: ?>
                             <a class=""
-                               href="/<?= Yii::$app->language ?>/artists/<?= $feature['url'] ?>/">
+                               href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $feature['url'] ?>/">
                                             <?= $feature['name'] ?></a>
                         <?php endif; ?>
                         <?php $count++; ?>

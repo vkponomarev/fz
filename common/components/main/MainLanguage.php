@@ -10,7 +10,7 @@ class MainLanguage
 {
 
 
-    function language(){
+    function language($languageUrl){
 
         $languages = Yii::$app->db
             ->createCommand('
@@ -30,7 +30,7 @@ class MainLanguage
         //print_r($languageId);
         //echo '</pre>';
 
-        $key = array_search(Yii::$app->language, array_column($languages, 'url'));
+        $key = array_search($languageUrl, array_column($languages, 'url'));
 
         return [
             'all' => $languages,

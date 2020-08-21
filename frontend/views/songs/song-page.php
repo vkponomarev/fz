@@ -15,17 +15,23 @@
 
 <div class="row row-flex">
     <div>
+
         <?php if ($albumData): ?>
-            <?php if (file_exists(Yii::getAlias('@webroot') . '/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
-                <img class="artist-album-photo"
-                     src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>"
-                     width="200">
+            <?php if ($albumData['photos']): ?>
+                <?php if (file_exists(Yii::getAlias('@webroot') . '/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
+                    <img class="artist-album-photo"
+                         src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>"
+                         width="200">
+                <?php else: ?>
+                    <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
+                <?php endif; ?>
             <?php else: ?>
                 <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
             <?php endif; ?>
         <?php else: ?>
             <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
         <?php endif; ?>
+
     </div>
     <div>
         <span class="album-text"><?= Yii::t('app', 'song') ?></span>
@@ -240,24 +246,24 @@
 <br>
 <a name="music-video"></a>
 <h2 class="header-2">
-    <?= Yii::t('app', 'Music video clip') ?> <?= $artistBySong['name'] ?> - <?= $songData['name'] ?> <?= Yii::t('app', 'watch online') ?>
+    <?= Yii::t('app', 'Music video clip') ?> <?= $artistBySong['name'] ?>
+    - <?= $songData['name'] ?> <?= Yii::t('app', 'watch online') ?>
 </h2>
 <hr>
 
 <div class="row row-flex">
     <ul class="play-video-links">
-            <li class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-12 play-video-li">
+        <li class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-12 play-video-li">
                 <span id="play-button" class="fa fa-play-circle play-video-button"
                       onclick="showYoutubeModal(this)"
                       data-url="<?= $songData['url_youtube'] ?>" data-backdrop="false">
                 </span>
-                <br>
+            <br>
 
-                <?= $artistBySong['name'] ?> - <?= $songData['name'] ?>
-            </li>
+            <?= $artistBySong['name'] ?> - <?= $songData['name'] ?>
+        </li>
     </ul>
 </div>
-
 
 
 <br>
@@ -270,19 +276,20 @@
         <?php $count = 0; ?>
         <?php foreach ($songsData as $key => $song): ?>
             <?php $count++; ?>
-                <li class="songs-li-artists">
-                    <?php if ($song['url_youtube']): ?>
-                        <span id="play-button" class="fa fa-play-circle play-button"
-                              onclick="showYoutubeModal(this)"
-                              data-url="<?= $song['url_youtube'] ?>" data-backdrop="false">
+            <li class="songs-li-artists">
+                <?php if ($song['url_youtube']): ?>
+                    <span id="play-button" class="fa fa-play-circle play-button"
+                          onclick="showYoutubeModal(this)"
+                          data-url="<?= $song['url_youtube'] ?>" data-backdrop="false">
                                 </span>
-                    <?php else: ?>
-                        <span id="play-button" class="fa fa-play-circle play-button-false">
+                <?php else: ?>
+                    <span id="play-button" class="fa fa-play-circle play-button-false">
                                 </span>
-                    <?php endif; ?>
-                    <?= $artistBySong['name'] ?><span class="dash">-</span><a class="songs-li-a" href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
-                        <?= $song['name'] ?> </a>
-                </li>
+                <?php endif; ?>
+                <?= $artistBySong['name'] ?><span class="dash">-</span><a class="songs-li-a"
+                                                                          href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
+                    <?= $song['name'] ?> </a>
+            </li>
             <?php if ($count > 11) break; ?>
         <?php endforeach; ?>
     </ul>

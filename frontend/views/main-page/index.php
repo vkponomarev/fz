@@ -35,10 +35,10 @@
                     <span id="play-button" class="fa fa-play-circle play-button-false">
                 </span>
                 <?php endif; ?>
-                <a class="songs-li-a" href="/<?= Yii::$app->language ?>/artists/<?= $song['artistUrl'] ?>/">
+                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
                     <?= $song['artistName'] ?> </a>
                 <span class="dash">-</span>
-                <a class="songs-li-a" href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
+                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
                     <?= $song['name'] ?> </a>
             </li>
 
@@ -57,7 +57,7 @@
 
     <?php foreach ($artistByPopularity as $artist): ?>
 
-        <a href="/<?= Yii::$app->language ?>/artists/<?= $artist['url']; ?>/"
+        <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $artist['url']; ?>/"
            class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12 plates-artists-main">
             <div class="plates-artists-outside">
                 <div class="plates-artists">
@@ -85,7 +85,7 @@
 
     <?php foreach ($albumsByPopularity as $album): ?>
 
-        <a href="/<?= Yii::$app->language ?>/albums/<?= $album['url']; ?>/"
+        <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/albums/<?= $album['url']; ?>/"
            class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12 plates-albums-main">
             <div class="plates-albums-outside">
 
@@ -122,7 +122,7 @@
     <?php //(new \common\components\dump\Dump())->printR($songsByPopularity); ?>
     <?php foreach ($songsByPopularity as $songs): ?>
 
-        <a href="/<?= Yii::$app->language ?>/songs/<?= $songs['url']; ?>/"
+        <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $songs['url']; ?>/"
            class="col-lg-3 col-md-4 col-sm-6 col-xs-12 main-pages-extended">
             <div class="plates-songs-outside">
 

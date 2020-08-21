@@ -40,8 +40,8 @@ class SongsController extends Controller
         $mainUrl = 'songs'; // Основной урл
 
         $main = new Main();
-        Yii::$app->params['language'] = $main->language();
-        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
+        Yii::$app->params['language'] = $main->language(Yii::$app->language);
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
@@ -77,8 +77,8 @@ class SongsController extends Controller
         $urlCheckCheck = $urlCheck->check($url, $urlCheckTrueUrl['url']);
 
         $main = new Main();
-        Yii::$app->params['language'] = $main->language();
-        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
+        Yii::$app->params['language'] = $main->language(Yii::$app->language);
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 

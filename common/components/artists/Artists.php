@@ -44,5 +44,11 @@ class Artists
 
     }
 
+    function byStartEnd($start, $end){
+
+        return (new ArtistsByStartEnd())->artists($start, $end);
+
+    }
+
 }
 

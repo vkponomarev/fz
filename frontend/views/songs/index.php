@@ -25,10 +25,10 @@
                     <span id="play-button" class="fa fa-file-text-o play-button">
                         </span>
 
-                <a class="songs-li-a" href="/<?= Yii::$app->language ?>/artists/<?= $song['artistUrl'] ?>/">
+                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
                     <?= $song['artistName'] ?> </a>
                 <span class="dash">-</span>
-                <a class="songs-li-a" href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
+                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
                     <?= $song['name'] ?> </a>
             </li>
 
@@ -50,10 +50,10 @@
                     <span id="play-button" class="fa fa-pencil-square play-button">
                         </span>
 
-                <a class="songs-li-a" href="/<?= Yii::$app->language ?>/artists/<?= $song['artistUrl'] ?>/">
+                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
                     <?= $song['artistName'] ?> </a>
                 <span class="dash">-</span>
-                <a class="songs-li-a" href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
+                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
                     <?= $song['name'] ?> </a>
             </li>
 
@@ -81,10 +81,10 @@
                 <span id="play-button" class="fa fa-play-circle play-button-false">
                 </span>
             <?php endif; ?>
-            <a class="songs-li-a" href="/<?= Yii::$app->language ?>/artists/<?= $song['artistUrl'] ?>/">
+            <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
                 <?= $song['artistName'] ?> </a>
             <span class="dash">-</span>
-            <a class="songs-li-a" href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
+            <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
                 <?= $song['name'] ?> </a>
         </li>
 
@@ -99,7 +99,7 @@
     <?php //(new \common\components\dump\Dump())->printR($songsByPopularity); ?>
     <?php foreach ($songsByPopularity as $songs): ?>
 
-        <a href="/<?= Yii::$app->language ?>/songs/<?= $songs['url']; ?>/"
+        <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $songs['url']; ?>/"
            class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 main-pages-extended">
             <div class="plates-songs-outside">
 

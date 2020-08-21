@@ -11,7 +11,7 @@
 //echo Yii::getAlias('@webroot');
 ?>
 
-<?= $this->render('/gii/view/artists/349/ru.php', [
+<?= $this->render('/gii' . $path . $file, [
 ]); ?>
 
 
