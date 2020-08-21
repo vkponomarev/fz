@@ -14,7 +14,13 @@ class AlbumData
         $data = Yii::$app->db
             ->createCommand('
             select
-            *
+            id,
+            m_artists_id,
+            first_letter,
+            photos,
+            name,
+            url,
+            year
             from
             m_albums
             where 

@@ -5,22 +5,17 @@ namespace common\components\breadcrumbs;
 class Breadcrumbs
 {
 
-    function __construct()
-    {
-
-    }
-
     public function album($albumData, $artistData, $firstLetterByArtist)
     {
 
-        (new BreadcrumbsAlbum())->breadcrumbs($albumData, $artistData, $firstLetterByArtist);
+        return (new BreadcrumbsAlbum())->breadcrumbs($albumData, $artistData, $firstLetterByArtist);
 
     }
 
     public function artist($artistData, $firstLetterData)
     {
 
-        (new BreadcrumbsArtist())->breadcrumbs($artistData, $firstLetterData);
+        return (new BreadcrumbsArtist())->breadcrumbs($artistData, $firstLetterData);
 
     }
 
@@ -28,14 +23,14 @@ class Breadcrumbs
     public function artistsByFirstLetter($firstLetterByArtist, $getParamsByLinksPrevNext)
     {
 
-        (new BreadcrumbsArtistsByFirstLetter())->breadcrumbs($firstLetterByArtist, $getParamsByLinksPrevNext);
+        return (new BreadcrumbsArtistsByFirstLetter())->breadcrumbs($firstLetterByArtist, $getParamsByLinksPrevNext);
 
     }
 
     public function indexesByArtistsFirstLetters()
     {
 
-        (new BreadcrumbsIndexesByArtistsFirstLetters())->breadcrumbs();
+        return (new BreadcrumbsIndexesByArtistsFirstLetters())->breadcrumbs();
 
     }
 
@@ -43,7 +38,7 @@ class Breadcrumbs
     public function song($artistData, $albumData, $songData, $firstLetterByArtist)
     {
 
-        (new BreadcrumbsSong())->breadcrumbs($artistData, $albumData, $songData, $firstLetterByArtist);
+        return (new BreadcrumbsSong())->breadcrumbs($artistData, $albumData, $songData, $firstLetterByArtist);
 
     }
 

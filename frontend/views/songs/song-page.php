@@ -4,7 +4,7 @@
  * @var $songData \common\components\song\Song
  * @var $songsData \common\components\songs\SongsByArtist
  * @var $albumData \common\components\album\Album
- * @var $artistData \common\components\artist\artist
+ * @var $artistBySong \common\components\artist\ArtistBySong
  * @var $translationByLanguage \common\components\translation\Translation
  * @var $translationsByLanguages \common\components\translations\Translations
  */
@@ -63,11 +63,11 @@
             <br>
         <?php endif; ?>
 
-        <?php if ($artistData): ?>
+        <?php if ($artistBySong): ?>
             <span class="album-text"> <?= Yii::t('app', 'artist') ?></span>
             <br>
-            <a class="album-artist-link" href="/<?= Yii::$app->language ?>/artists/<?= $artistData['url'] ?>/">
-                <?= $artistData['name'] ?>
+            <a class="album-artist-link" href="/<?= Yii::$app->language ?>/artists/<?= $artistBySong['url'] ?>/">
+                <?= $artistBySong['name'] ?>
             </a>
         <?php endif; ?>
 
@@ -101,7 +101,7 @@
 <br>
 <a name="listen"></a>
 <h2 class="header-2">
-    <?= Yii::t('app', 'Listen to the song') ?> <?= $artistData['name'] ?>
+    <?= Yii::t('app', 'Listen to the song') ?> <?= $artistBySong['name'] ?>
     - <?= $songData['name'] ?> <?= Yii::t('app', 'online') ?>
 </h2>
 <hr>
@@ -118,7 +118,7 @@
                                 </span>
             <?php endif; ?>
             <span class="songs-li-a-song">
-            <?= $artistData['name'] ?> - <?= $songData['name'] ?></span>
+            <?= $artistBySong['name'] ?> - <?= $songData['name'] ?></span>
         </li>
     </ul>
 </div>
@@ -132,8 +132,8 @@
             <div class="row col-xxs-12">
                 <a name="lyrics"></a>
                 <h2 class="header-2-song"><?= Yii::t('app', 'Song lyrics') ?>
-                    <?php if ($artistData): ?>
-                        <?= $artistData['name'] ?> -
+                    <?php if ($artistBySong): ?>
+                        <?= $artistBySong['name'] ?> -
                     <?php endif; ?>
                     <?= $songData['name'] ?>
                 </h2>
@@ -154,8 +154,8 @@
             <div class="row col-xxs-12">
                 <a name="translation"></a>
                 <h2 class="header-translation-2"><?= Yii::t('app', 'Song translations') ?>
-                    <?php if ($artistData): ?>
-                        <?= $artistData['name'] ?> -
+                    <?php if ($artistBySong): ?>
+                        <?= $artistBySong['name'] ?> -
                     <?php endif; ?>
                     <?= $songData['name'] ?>
 
@@ -184,8 +184,8 @@
             <div class="row col-xs-12 col-sm-6">
                 <a name="lyrics"></a>
                 <h2 class="header-2-song"><?= Yii::t('app', 'Song lyrics') ?>
-                    <?php if ($artistData): ?>
-                        <?= $artistData['name'] ?> -
+                    <?php if ($artistBySong): ?>
+                        <?= $artistBySong['name'] ?> -
                     <?php endif; ?>
                     <?= $songData['name'] ?>
                 </h2>
@@ -199,8 +199,8 @@
             <div class="row col-xs-12 col-sm-6">
                 <a name="translation"></a>
                 <h2 class="header-translation-2"><?= Yii::t('app', 'Song translation') ?>
-                    <?php if ($artistData): ?>
-                        <?= $artistData['name'] ?> -
+                    <?php if ($artistBySong): ?>
+                        <?= $artistBySong['name'] ?> -
                     <?php endif; ?>
                     <?= $songData['name'] ?>
                     <?= Yii::t('app', 'into English') ?>
@@ -220,8 +220,8 @@
             <div class="row col-xxs-12">
                 <a name="lyrics"></a>
                 <h2 class="header-2-song"><?= Yii::t('app', 'Song lyrics') ?>
-                    <?php if ($artistData): ?>
-                        <?= $artistData['name'] ?> -
+                    <?php if ($artistBySong): ?>
+                        <?= $artistBySong['name'] ?> -
                     <?php endif; ?>
                     <?= $songData['name'] ?>
                 </h2>
@@ -240,7 +240,7 @@
 <br>
 <a name="music-video"></a>
 <h2 class="header-2">
-    <?= Yii::t('app', 'Music video clip') ?> <?= $artistData['name'] ?> - <?= $songData['name'] ?> <?= Yii::t('app', 'watch online') ?>
+    <?= Yii::t('app', 'Music video clip') ?> <?= $artistBySong['name'] ?> - <?= $songData['name'] ?> <?= Yii::t('app', 'watch online') ?>
 </h2>
 <hr>
 
@@ -253,7 +253,7 @@
                 </span>
                 <br>
 
-                <?= $artistData['name'] ?> - <?= $songData['name'] ?>
+                <?= $artistBySong['name'] ?> - <?= $songData['name'] ?>
             </li>
     </ul>
 </div>
@@ -261,7 +261,7 @@
 
 
 <br>
-<a name="popular-songs"></a><h2 class="header-2"><?= Yii::t('app', 'Popular songs') ?> <?= $artistData['name'] ?></h2>
+<a name="popular-songs"></a><h2 class="header-2"><?= Yii::t('app', 'Popular songs') ?> <?= $artistBySong['name'] ?></h2>
 <hr>
 
 <div class="row row-flex">
@@ -280,7 +280,7 @@
                         <span id="play-button" class="fa fa-play-circle play-button-false">
                                 </span>
                     <?php endif; ?>
-                    <?= $artistData['name'] ?><span class="dash">-</span><a class="songs-li-a" href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
+                    <?= $artistBySong['name'] ?><span class="dash">-</span><a class="songs-li-a" href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
                         <?= $song['name'] ?> </a>
                 </li>
             <?php if ($count > 11) break; ?>

@@ -50,6 +50,12 @@ class Songs
 
     }
 
+    function byArtistLimit($id){
+
+        return (new SongsByArtistLimit())->songs($id);
+
+    }
+
     function byGoogleTranslate($start, $end){
 
         return (new SongsByGoogleTranslate())->songs($start, $end);

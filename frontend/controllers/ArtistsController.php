@@ -9,10 +9,12 @@ use common\components\breadcrumbs\Breadcrumbs;
 use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
 use common\components\genres\Genres;
+use common\components\main\Main;
 use common\components\mainPagesData\MainPagesData;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
 use common\components\songs\Songs;
+use common\components\urlCheck\UrlCheck;
 use Yii;
 use yii\web\Controller;
 
@@ -33,7 +35,16 @@ class ArtistsController extends Controller
     {
 
 
-        $mainPagesData = new MainPagesData('2',false, 0, 'artists');
+        $url = false;
+        $textID = '2'; // ID из таблицы pages
+        $table = 0; // К какой таблице отностся данная страница
+        $mainUrl = 'artists'; // Основной урл
+
+        $main = new Main();
+        Yii::$app->params['language'] = $main->language();
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
+        Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
+        Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
         $artists = new Artists();
         $artistsByPopularity = $artists->byPopularity(8);
@@ -53,10 +64,25 @@ class ArtistsController extends Controller
     public function actionArtistPage($url)
     {
 
-        $mainPagesData = new MainPagesData('56', $url, 'm_artists', 'artists');
+        $textID = '56'; // ID из таблицы pages
+        $table = 'm_artists'; // К какой таблице отностся данная страница
+        $mainUrl = 'artists'; // Основной урл
+
+        $urlCheck = new UrlCheck();
+        $urlCheckID = $urlCheck->id($url);
+        $urlCheckTrueUrl = $urlCheck->trueUrl($urlCheckID, $table);
+        $urlCheckCheck = $urlCheck->check($url, $urlCheckTrueUrl['url']);
+
+        $main = new Main();
+        Yii::$app->params['language'] = $main->language();
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
+        Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
+        Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
+
+
 
         $artist = new Artist();
-        $artistData = $artist->data($mainPagesData->pageId);
+        $artistData = $artist->data($urlCheckID);
 
         $pageTexts = new PageTexts();
         $pageTexts->updateByArtist($artistData);
@@ -79,7 +105,7 @@ class ArtistsController extends Controller
         $firstLetterByArtist = $firstLetter->byArtist($artistData);
 
         $breadCrumbs = new Breadcrumbs();
-        $breadCrumbs->artist($artistData, $firstLetterByArtist);
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->artist($artistData, $firstLetterByArtist);
 
         return $this->render('artist-page', [
 

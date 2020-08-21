@@ -152,14 +152,14 @@ AppAsset::register($this);
                    <span class="fa fa-globe globe-size">
                    </span>
 
-                        <?= Yii::$app->params['currentLanguageName'] ?>
+                        <?= Yii::$app->params['language']['current']['name'] ?>
 
                    <span class="fa fa-sort-down sort-down-languages">
                    </span>
                    <ul class="languages-dropdown">
 
 
-                       <?php foreach (Yii::$app->params['languageSelection'] as $item): ?>
+                       <?php foreach (Yii::$app->params['language']['all'] as $item): ?>
 
                            <li>
 

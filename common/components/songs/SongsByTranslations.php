@@ -22,8 +22,7 @@ class SongsByTranslations
             m_songs.url_youtube,   
             m_songs.m_artists_id,
             m_artists.url as artistUrl,
-            m_artists.name as artistName,
-            m_songs_translations.text as translationText
+            m_artists.name as artistName
             from
             m_songs
             left join m_artists on m_artists.id = m_songs.m_artists_id

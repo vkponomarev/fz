@@ -69,7 +69,7 @@ $songsByArtistTMP = $songsByArtist;
                      src="/files/albums/<?= $album['first_letter'] ?>/<?= $album['photos'] ?>"
                      width="200">
             <?php else: ?>
-                <img class="artist-album-photo" src="/files/no-albums-photo.png" width="200">
+                <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
             <?php endif; ?>
 
 
@@ -200,13 +200,9 @@ $songsByArtistTMP = $songsByArtist;
         <?php foreach ($songsByArtistTMP as $key => $song): ?>
             <?php $count++; ?>
             <li class="songs-li">
-                <?php if ($song['text']): ?>
+
                     <span id="play-button" class="fa fa-file-text-o play-button">
                         </span>
-                <?php else: ?>
-                    <span id="play-button" class="fa fa-file-text-o play-button-false">
-                        </span>
-                <?php endif; ?>
 
                 <?= $artistData['name'] ?>
                 <span class="dash">-</span>

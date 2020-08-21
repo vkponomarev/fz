@@ -2,7 +2,9 @@
 namespace frontend\controllers;
 
 
+use common\components\main\Main;
 use common\components\mainPagesData\MainPagesData;
+use Yii;
 use yii\web\Controller;
 
 /**
@@ -18,7 +20,17 @@ class CmsController extends Controller
     public function actionCookieInfo()
     {
 
-        $mainPagesData = new MainPagesData('63',false, 'pages', 'cms/cookie');
+        $url = false;
+        $textID = '63'; // ID из таблицы pages
+        $table = 'pages'; // К какой таблице отностся данная страница
+        $mainUrl = 'cms/cookie'; // Основной урл
+
+        $main = new Main();
+        Yii::$app->params['language'] = $main->language();
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
+        Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
+        Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
+
 
         return $this->render('cookie-info', [
 
@@ -29,7 +41,17 @@ class CmsController extends Controller
     public function actionPolicy()
     {
 
-        $mainPagesData = new MainPagesData('64',false, 'pages', 'cms/policy');
+        $url = false;
+        $textID = '64'; // ID из таблицы pages
+        $table = 'pages'; // К какой таблице отностся данная страница
+        $mainUrl = 'cms/policy'; // Основной урл
+
+        $main = new Main();
+        Yii::$app->params['language'] = $main->language();
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
+        Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
+        Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
+
 
         return $this->render('policy', [
 

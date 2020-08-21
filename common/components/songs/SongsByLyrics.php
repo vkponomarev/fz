@@ -18,7 +18,6 @@ class SongsByLyrics
             select
             m_songs.id,
             m_songs.name,
-            m_songs.text,
             m_songs.url,
             m_songs.url_youtube,   
             m_songs.m_artists_id,

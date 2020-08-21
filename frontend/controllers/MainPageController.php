@@ -5,9 +5,11 @@ namespace frontend\controllers;
 use common\components\albums\Albums;
 use common\components\artists\Artists;
 use common\components\gii\createViewPartials\CreateRawData;
+use common\components\main\Main;
 use common\components\mainPagesData\MainPagesData;
 use common\components\song\Song;
 use common\components\songs\Songs;
+use Yii;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 
@@ -27,7 +29,16 @@ class MainPageController extends Controller
     public function actionIndex()
     {
 
-        $mainPagesData = new MainPagesData('1',false,0, false);
+        $url = false;
+        $textID = '1'; // ID из таблицы pages
+        $table = 'pages'; // К какой таблице отностся данная страница
+        $mainUrl = false; // Основной урл
+
+        $main = new Main();
+        Yii::$app->params['language'] = $main->language();
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
+        Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
+        Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
         $artists = new Artists();
         $artistByPopularity = $artists->byPopularity(8);
@@ -38,9 +49,6 @@ class MainPageController extends Controller
         $songs = new Songs();
         $songsByListenMusic = $songs->byListenMusicMainPage();
         $songsByPopularity = $songs->byPopularity(20);
-
-
-
 
         /*
         $createRawData = new CreateRawData();

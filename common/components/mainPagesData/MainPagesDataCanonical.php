@@ -12,7 +12,6 @@ class MainPagesDataCanonical
     function canonical($givenUrl, $mainUrl){
 
 
-
         if ($mainUrl){
 
             if (!$givenUrl){

@@ -57,9 +57,6 @@ class MainPagesData
 
     function __construct($pageId, $givenUrl, $tableName, $mainUrl){
 
-        $currentLanguage = $this->currentLanguage();
-
-        $this->languageSelection();
 
         if ($givenUrl) {
 
@@ -68,6 +65,9 @@ class MainPagesData
 
         }
 
+        $currentLanguage = $this->currentLanguage();
+
+        $this->languageSelection();
         $this->pageText($pageId, $currentLanguage['id']);
         $this->alternate($givenUrl, $mainUrl);
         $this->canonical($givenUrl, $mainUrl);

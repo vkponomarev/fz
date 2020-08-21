@@ -22,6 +22,18 @@ class Artist
 
     }
 
+    function byAlbum($id){
+
+        return (new ArtistByAlbum())->artist($id);
+
+    }
+
+    function bySong($id){
+
+        return (new ArtistBySong())->artist($id);
+
+    }
+
     function updatePageTexts($artistData){
 
         (new ArtistUpdatePageTexts())->update($artistData);

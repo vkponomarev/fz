@@ -5,19 +5,19 @@ namespace common\components\artist;
 use Yii;
 use yii\web\NotFoundHttpException;
 
-class ArtistData
+class ArtistBySong
 {
 
-    public function data($id)
+    public function artist($id)
     {
 
-        $data = Yii::$app->db
+        $artist = Yii::$app->db
             ->createCommand('
             select
             id,
             name,
-            first_letter,
-            photos
+            url,
+            first_letter
             from
             m_artists
             where 
@@ -27,7 +27,7 @@ class ArtistData
 
         //(new \common\components\dump\Dump())->printR($data, 'artistData');
 
-        return $data;
+        return $artist;
     }
 
 /**

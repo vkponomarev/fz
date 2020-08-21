@@ -5,7 +5,7 @@ namespace common\components\songs;
 use Yii;
 use yii\web\NotFoundHttpException;
 
-class SongsByArtist
+class SongsByArtistLimit
 {
 
     public function songs($id)
@@ -16,12 +16,13 @@ class SongsByArtist
             select
             name,
             url,
-            m_albums_id,
             url_youtube
             from
             m_songs
             where 
             m_songs.m_artists_id = :id
+            limit
+            12
             ', [':id' => $id])
             ->queryAll();
 

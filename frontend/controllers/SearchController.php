@@ -65,7 +65,7 @@ class SearchController extends Controller
                     FROM `m_search`
                     WHERE
                     MATCH(`name`)
-                    AGAINST(\'' . $searchWord .'\'  IN BOOLEAN MODE)
+                    AGAINST("' . $searchWord .'"  IN BOOLEAN MODE)
                     limit 40;
                     ')
             ->queryAll();

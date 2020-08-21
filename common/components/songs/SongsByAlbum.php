@@ -14,7 +14,9 @@ class SongsByAlbum
         $songs = Yii::$app->db
             ->createCommand('
             select
-            *
+            name,
+            url,
+            url_youtube
             from
             m_songs
             where 

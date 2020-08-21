@@ -15,18 +15,20 @@ class BreadcrumbsArtist
     public function breadcrumbs($artistData, $firstLetterData)
     {
 
-        Yii::$app->params['breadcrumbs']['urls'][0] =
+        $breadcrumbs['urls'][0] =
             [
                 'url' => 'artists',
                 'text' => Yii::t('app', 'Artists')
             ];
-        Yii::$app->params['breadcrumbs']['urls'][2] =
+        $breadcrumbs['urls'][2] =
             [
                 'url' => 'artists/index/' . $firstLetterData['url'],
                 'text' => $firstLetterData['first_letter']
             ];
 
-        Yii::$app->params['breadcrumbs']['last'] = $artistData['name'];
+        $breadcrumbs['last'] = $artistData['name'];
+
+        return $breadcrumbs;
 
     }
 

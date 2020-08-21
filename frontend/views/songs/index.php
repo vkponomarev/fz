@@ -22,13 +22,9 @@
         <?php foreach ($songsByLyrics as $key => $song): ?>
 
             <li class="songs-li">
-                <?php if ($song['text']): ?>
                     <span id="play-button" class="fa fa-file-text-o play-button">
                         </span>
-                <?php else: ?>
-                    <span id="play-button" class="fa fa-file-text-o play-button-false">
-                        </span>
-                <?php endif; ?>
+
                 <a class="songs-li-a" href="/<?= Yii::$app->language ?>/artists/<?= $song['artistUrl'] ?>/">
                     <?= $song['artistName'] ?> </a>
                 <span class="dash">-</span>
@@ -51,13 +47,9 @@
         <?php foreach ($songsByTranslations as $key => $song): ?>
 
             <li class="songs-li">
-                <?php if ($song['translationText']): ?>
                     <span id="play-button" class="fa fa-pencil-square play-button">
                         </span>
-                <?php else: ?>
-                    <span id="play-button" class="fa fa-pencil-square play-button-false">
-                        </span>
-                <?php endif; ?>
+
                 <a class="songs-li-a" href="/<?= Yii::$app->language ?>/artists/<?= $song['artistUrl'] ?>/">
                     <?= $song['artistName'] ?> </a>
                 <span class="dash">-</span>

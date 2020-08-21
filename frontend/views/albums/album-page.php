@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View
  *
- * @var $artistData \common\components\artist\Artist
+ * @var $artistByAlbum \common\components\artist\ArtistByAlbum
  * @var $albumData \common\components\album\Album
  * @var $songsByAlbum \common\components\songs\SongsByAlbum
  *
@@ -13,10 +13,14 @@
 
 <div class="row row-flex">
     <div>
+        <?php if ($albumData['photos']): ?>
         <?php if (file_exists(Yii::getAlias('@webroot') . '/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
             <img class="artist-album-photo"
                  src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>"
                  width="200">
+        <?php else: ?>
+            <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
+        <?php endif; ?>
         <?php else: ?>
             <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
         <?php endif; ?>
@@ -29,11 +33,11 @@
 
         <h1 class="album-name" ><?= $albumData['name'] ?> (<?= $albumData['year'] ?>)</h1>
 
-        <?php if ($artistData): ?>
+        <?php if ($artistByAlbum): ?>
             <span class="album-text"> <?= Yii::t('app', 'artist') ?></span>
             <br>
-            <a class="album-artist-link" href="/<?= Yii::$app->language ?>/artists/<?= $artistData['url'] ?>/">
-                <?= $artistData['name'] ?>
+            <a class="album-artist-link" href="/<?= Yii::$app->language ?>/artists/<?= $artistByAlbum['url'] ?>/">
+                <?= $artistByAlbum['name'] ?>
             </a>
         <?php endif; ?>
 
@@ -68,7 +72,7 @@
 <br>
 <a name="listen"></a>
 <h2 class="header-2">
-    <?= Yii::t('app', 'Listen to music') ?> <?= $artistData['name'] ?> - <?= $albumData['name'] ?> (<?= $albumData['year'] ?>) <?= Yii::t('app', 'online') ?>
+    <?= Yii::t('app', 'Listen to music') ?> <?= $artistByAlbum['name'] ?> - <?= $albumData['name'] ?> (<?= $albumData['year'] ?>) <?= Yii::t('app', 'online') ?>
 </h2>
 <hr>
 <ul class="songs-links">

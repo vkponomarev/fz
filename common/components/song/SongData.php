@@ -14,7 +14,13 @@ class SongData
         $data = Yii::$app->db
             ->createCommand('
             select
-            *
+            id,
+            name,
+            url,
+            text,
+            url_youtube,
+            m_albums_id,
+            m_artists_id
             from
             m_songs
             where 

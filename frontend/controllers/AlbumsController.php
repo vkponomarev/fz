@@ -5,12 +5,14 @@ use common\components\artist\Artist;
 use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
 use common\components\genres\Genres;
+use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
 use common\components\songs\Songs;
 use common\components\album\Album;
 use common\components\albums\Albums;
 use common\components\breadcrumbs\Breadcrumbs;
+use common\components\urlCheck\UrlCheck;
 use common\models\components\FlowPageArtists;
 use common\components\mainPagesData\MainPagesData;
 use Yii;
@@ -32,8 +34,16 @@ class AlbumsController extends Controller
     public function actionIndex()
     {
 
-        //albums = new Albums();
-        $mainPagesData = new MainPagesData('54',false, 0, 'albums');
+        $url = false;
+        $textID = '54'; // ID из таблицы pages
+        $table = 0; // К какой таблице отностся данная страница
+        $mainUrl = 'albums'; // Основной урл
+
+        $main = new Main();
+        Yii::$app->params['language'] = $main->language();
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
+        Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
+        Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
         $albums = new Albums();
         $albumsByPopularity = $albums->byPopularity(8);
@@ -53,19 +63,33 @@ class AlbumsController extends Controller
     public function actionAlbumPage($url)
     {
 
-        $mainPagesData = new MainPagesData('57', $url, 'm_albums','albums');
+        $textID = '57'; // ID из таблицы pages
+        $table = 'm_albums'; // К какой таблице отностся данная страница
+        $mainUrl = 'albums'; // Основной урл
+
+        $urlCheck = new UrlCheck();
+        $urlCheckID = $urlCheck->id($url);
+        $urlCheckTrueUrl = $urlCheck->trueUrl($urlCheckID, $table);
+        $urlCheckCheck = $urlCheck->check($url, $urlCheckTrueUrl['url']);
+
+        $main = new Main();
+        Yii::$app->params['language'] = $main->language();
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
+        Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
+        Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
+
 
         $album = new Album();
-        $albumData = $album->data($mainPagesData->pageId);
+        $albumData = $album->data($urlCheckID);
 
         $songs = new Songs();
         $songsByAlbum = $songs->byAlbum($albumData['id']);
 
         $artist = new Artist();
-        $artistData = $artist->data($albumData['m_artists_id']);
+        $artistByAlbum = $artist->byAlbum($albumData['m_artists_id']);
 
         $featuring = new Featuring();
-        $featuringByArtist = $featuring->byArtist($artistData['id']);
+        $featuringByArtist = $featuring->byArtist($artistByAlbum['id']);
 
         $songsByAlbum = $songs->addFeaturing($songsByAlbum, $featuringByArtist);
 
@@ -74,20 +98,20 @@ class AlbumsController extends Controller
 
         $pageTexts = new PageTexts();
         $pageTexts->updateByAlbum($albumData);
-        $pageTexts->updateByArtist($artistData);
+        $pageTexts->updateByArtist($artistByAlbum);
 
         $firstLetter = new FirstLetter();
-        $firstLetterByArtist = $firstLetter->byArtist($artistData);
+        $firstLetterByArtist = $firstLetter->byArtist($artistByAlbum);
         
         $breadCrumbs = new Breadcrumbs();
-        $breadCrumbs->album($albumData, $artistData, $firstLetterByArtist);
-        
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->album($albumData, $artistByAlbum, $firstLetterByArtist);
+
 
         return $this->render('album-page', [
 
             'albumData' => $albumData,
             'songsByAlbum' => $songsByAlbum,
-            'artistData' => $artistData,
+            'artistByAlbum' => $artistByAlbum,
             'genres' => $genresByAlbum,
 
         ]);
