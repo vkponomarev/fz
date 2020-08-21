@@ -25,7 +25,7 @@ class ViewGenerateArtists
 
     function generate($valueOne, $valueTwo, $languagesData)
     {
-
+        set_time_limit(500000);
         $artists = new Artists();
         $artistsByStartEnd =  $artists->byStartEnd($valueOne, $valueTwo);
         $count = $valueOne;
