@@ -10,6 +10,7 @@ use common\components\firstLetter\FirstLetter;
 use common\components\genres\Genres;
 use common\components\main\Main;
 use common\components\mainPagesData\MainPagesData;
+use common\components\noDB\NoDB;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
 use common\components\songs\Songs;
@@ -33,6 +34,9 @@ class SongsController extends Controller
 
     public function actionIndex()
     {
+
+        if (Yii::$app->params['usePagesDB']) {
+
 
         $url = 0;
         $textID = '55'; // ID из таблицы pages
@@ -61,6 +65,29 @@ class SongsController extends Controller
             'songsByListen' => $songsByListen,
 
         ]);
+
+        } else {
+
+            $path = '/view/pages/songs/';
+            $file = Yii::$app->language . '.php';
+            $array = Yii::$app->language . '-array.php';
+
+            $noDB = new NoDB();
+            $fileDB = json_decode(file_get_contents($noDB->realPath() . $path . $array), TRUE);
+
+            Yii::$app->params['language'] = $fileDB['language'];
+            Yii::$app->params['text'] = $fileDB['text'];
+            Yii::$app->params['canonical'] = $fileDB['canonical'];
+            Yii::$app->params['alternate'] = $fileDB['alternate'];
+
+            return $this->render('index-noDB', [
+
+                'file' => $file,
+                'path' => $path,
+
+            ]);
+
+        }
 
     }
 

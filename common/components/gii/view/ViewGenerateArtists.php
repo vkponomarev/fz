@@ -92,7 +92,6 @@ class ViewGenerateArtists
 
                 $folder = ceil($id/1000);
 
-
                 $view = New View();
                 $fileName = $url . '-' . $language['url'] . '.php';
                 $filePath = $view->realPath() . '/view/artists/' . $folder . '/' . $id . '/';

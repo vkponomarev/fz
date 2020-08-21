@@ -83,6 +83,12 @@ sitemap-ru
                 $view->cleanPath($view->realPath() . '/view/songs/');
 
             }
+
+            if ($name == 'pages-delete') {
+
+                $view->cleanPath($view->realPath() . '/view/pages/');
+
+            }
             //<option value="artists-create">Создание файлов Артистов</option>
             if ($name == 'artists-create') {
 
@@ -102,6 +108,13 @@ sitemap-ru
                 //(new \common\components\dump\Dump())->printR($name);
                 //$siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/ru/songs/');
                 //$siteMap->generateSongsRU(2200000, 2300000,$languagesData);
+
+            }
+
+            if ($name == 'pages-create') {
+
+                
+                $view->generatePages($languagesData);
 
             }
 

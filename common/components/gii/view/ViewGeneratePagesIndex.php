@@ -1,33 +1,31 @@
 <?php
 
-namespace frontend\controllers;
+namespace common\components\gii\view;
 
 
 use common\components\albums\Albums;
+use common\components\artist\Artist;
 use common\components\artists\Artists;
+use common\components\breadcrumbs\Breadcrumbs;
+use common\components\featuring\Featuring;
+use common\components\firstLetter\FirstLetter;
+use common\components\genres\Genres;
 use common\components\main\Main;
-use common\components\noDB\NoDB;
+use common\components\pageTexts\PageTexts;
 use common\components\songs\Songs;
 use Yii;
-use yii\web\Controller;
 
-
-/**
- * Main controller
- * pageText($currentPage,$pageUsingKeys)
- *
- *
- *
- *
- */
-class MainPageController extends Controller
+class ViewGeneratePagesIndex
 {
 
 
-    public function actionIndex()
+    function generate($languagesData)
     {
+        set_time_limit(500000);
 
-        if (Yii::$app->params['usePagesDB']) {
+        foreach ($languagesData as $language) {
+
+            Yii::$app->language = $language['url'];
 
             $url = false;
             $textID = '1'; // ID из таблицы pages
@@ -50,8 +48,8 @@ class MainPageController extends Controller
             $songsByListenMusic = $songs->byListenMusicMainPage();
             $songsByPopularity = $songs->byPopularity(20);
 
-            return $this->render('index', [
 
+            $file = Yii::$app->controller->renderPartial('page-index', [
                 'artistByPopularity' => $artistByPopularity,
                 'albumsByPopularity' => $albumsByPopularity,
                 'songsByPopularity' => $songsByPopularity,
@@ -59,29 +57,25 @@ class MainPageController extends Controller
 
             ]);
 
-        } else {
 
-            $path = '/view/pages/index/';
-            $file = Yii::$app->language . '.php';
-            $array = Yii::$app->language . '-array.php';
+            $view = New View();
+            $fileName = $language['url'] . '.php';
+            $filePath = $view->realPath() . '/view/pages/index/';
 
-            $noDB = new NoDB();
-            $fileDB = json_decode(file_get_contents($noDB->realPath() . $path . $array), TRUE);
+            $view->generateFile($file, $fileName, $filePath);
 
-            Yii::$app->params['language'] = $fileDB['language'];
-            Yii::$app->params['text'] = $fileDB['text'];
-            Yii::$app->params['canonical'] = $fileDB['canonical'];
-            Yii::$app->params['alternate'] = $fileDB['alternate'];
+            $arrayName = $language['url'] . '-array.php';
+            $array = [
+                'language' => Yii::$app->params['language'],
+                'text' => Yii::$app->params['text'],
+                'canonical' => Yii::$app->params['canonical'],
+                'alternate' => Yii::$app->params['alternate'],
+            ];
 
-            return $this->render('index-noDB', [
-
-                'file' => $file,
-                'path' => $path,
-
-            ]);
+            $view->generateFileArray($array, $arrayName, $filePath);
 
         }
-    }
 
+    }
 
 }

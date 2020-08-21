@@ -20,10 +20,12 @@ $this->params['breadcrumbs'][] = $this->title;
             <option value="artists-delete">Удаление всех файлов Артистов</option>
             <option value="albums-delete">Удаление всех файлов Альбомов</option>
             <option value="songs-delete">Удаление всех файлов Песен</option>
-
+            <option value="pages-delete">Удаление всех Одинарных страниц</option>
             <option value="artists-create">Создание файлов Артистов</option>
             <option value="albums-create">Создание файлов Альбомов</option>
             <option value="songs-create">Создание файлов Песен</option>
+            <option value="pages-create">Создание всех Одинарных страниц</option>
+
 
         </select>
 

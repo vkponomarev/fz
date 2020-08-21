@@ -19,53 +19,38 @@ class View
     }
 
 
-    function generate($name){
-
-        (new SiteMapGenerate())->generate($name);
-
-    }
-
     function generateArtists($valueOne, $valueTwo, $languagesData){
 
         (new ViewGenerateArtists())->generate($valueOne, $valueTwo, $languagesData);
 
     }
 
-    function generateArtistsRU($languagesData){
+    function generatePages($languagesData){
 
-        (new SiteMapGenerateArtistsRU())->generate($languagesData);
-
-    }
-
-
-    function generateAlbums($start, $end, $languagesData){
-
-        (new SiteMapGenerateAlbums())->generate($start, $end, $languagesData);
+        (new ViewGeneratePages())->generate($languagesData);
 
     }
 
+    function generatePagesIndex($languagesData){
 
-    function generateAlbumsRU($languagesData){
-
-        (new SiteMapGenerateAlbumsRU())->generate($languagesData);
-
-    }
-
-    function generateSongs($start, $end, $languagesData){
-
-        (new SiteMapGenerateSongs())->generate($start, $end, $languagesData);
+        (new ViewGeneratePagesIndex())->generate($languagesData);
 
     }
 
-    function generateSongsRU($start, $end, $languagesData){
+    function generatePagesArtists($languagesData){
 
-        (new SiteMapGenerateSongsRU())->generate($start, $end, $languagesData);
+        (new ViewGeneratePagesArtists())->generate($languagesData);
 
     }
 
-    function generateMainFiles(){
+    function generatePagesAlbums($languagesData){
 
-        (new SiteMapGenerateMainFiles())->generate();
+        (new ViewGeneratePagesAlbums())->generate($languagesData);
+
+    }
+    function generatePagesSongs($languagesData){
+
+        (new ViewGeneratePagesSongs())->generate($languagesData);
 
     }
 

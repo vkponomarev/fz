@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\controllers;
 
 use common\components\albums\Albums;
@@ -9,7 +10,6 @@ use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
 use common\components\genres\Genres;
 use common\components\main\Main;
-use common\components\mainPagesData\MainPagesData;
 use common\components\noDB\NoDB;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
@@ -34,30 +34,54 @@ class ArtistsController extends Controller
     public function actionIndex()
     {
 
+        if (Yii::$app->params['usePagesDB']) {
 
-        $url = false;
-        $textID = '2'; // ID из таблицы pages
-        $table = 0; // К какой таблице отностся данная страница
-        $mainUrl = 'artists'; // Основной урл
+            $url = false;
+            $textID = '2'; // ID из таблицы pages
+            $table = 0; // К какой таблице отностся данная страница
+            $mainUrl = 'artists'; // Основной урл
 
-        $main = new Main();
-        Yii::$app->params['language'] = $main->language(Yii::$app->language);
-        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
-        Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
-        Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
+            $main = new Main();
+            Yii::$app->params['language'] = $main->language(Yii::$app->language);
+            Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
+            Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
+            Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
-        $artists = new Artists();
-        $artistsByPopularity = $artists->byPopularity(8);
+            $artists = new Artists();
+            $artistsByPopularity = $artists->byPopularity(8);
 
-        $song = new Song();
-        $songByYoutube = $song->byYoutube();
+            $song = new Song();
+            $songByYoutube = $song->byYoutube();
 
-        return $this->render('index', [
+            return $this->render('index', [
 
-            'artistsByPopularity' => $artistsByPopularity,
-            'songByYoutube' => $songByYoutube,
+                'artistsByPopularity' => $artistsByPopularity,
+                'songByYoutube' => $songByYoutube,
 
-        ]);
+            ]);
+
+        } else {
+
+            $path = '/view/pages/artists/';
+            $file = Yii::$app->language . '.php';
+            $array = Yii::$app->language . '-array.php';
+
+            $noDB = new NoDB();
+            $fileDB = json_decode(file_get_contents($noDB->realPath() . $path . $array), TRUE);
+
+            Yii::$app->params['language'] = $fileDB['language'];
+            Yii::$app->params['text'] = $fileDB['text'];
+            Yii::$app->params['canonical'] = $fileDB['canonical'];
+            Yii::$app->params['alternate'] = $fileDB['alternate'];
+
+            return $this->render('index-noDB', [
+
+                'file' => $file,
+                'path' => $path,
+
+            ]);
+
+        }
 
     }
 
@@ -121,7 +145,7 @@ class ArtistsController extends Controller
             $urlCheck = new UrlCheck();
             $urlCheckID = $urlCheck->id($url);
 
-            $folder = ceil($urlCheckID/1000);
+            $folder = ceil($urlCheckID / 1000);
             $path = '/view/artists/' . $folder . '/' . $urlCheckID . '/';
             $file = $url . '-' . Yii::$app->language . '.php';
             $array = $url . '-' . Yii::$app->language . '-array.php';

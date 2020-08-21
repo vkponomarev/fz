@@ -10,6 +10,7 @@ use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
 use common\components\genres\Genres;
 use common\components\main\Main;
+use common\components\noDB\NoDB;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
 use common\components\songs\Songs;
@@ -34,40 +35,66 @@ class AlbumsController extends Controller
     public function actionIndex()
     {
 
-        $url = false;
-        $textID = '54'; // ID из таблицы pages
-        $table = 0; // К какой таблице отностся данная страница
-        $mainUrl = 'albums'; // Основной урл
+        if (Yii::$app->params['usePagesDB']) {
 
-        $main = new Main();
-        Yii::$app->params['language'] = $main->language(Yii::$app->language);
-        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
-        Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
-        Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
+            $url = false;
+            $textID = '54'; // ID из таблицы pages
+            $table = 0; // К какой таблице отностся данная страница
+            $mainUrl = 'albums'; // Основной урл
 
-        $albums = new Albums();
-        $albumsByPopularity = $albums->byPopularity(8);
+            $main = new Main();
+            Yii::$app->params['language'] = $main->language(Yii::$app->language);
+            Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
+            Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
+            Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
-        $song = new Song();
-        $songByYoutube = $song->byYoutube();
+            $albums = new Albums();
+            $albumsByPopularity = $albums->byPopularity(8);
 
-        //$this->layout='';
+            $song = new Song();
+            $songByYoutube = $song->byYoutube();
 
-        /*$name = $this->renderPartial('index', [
+            //$this->layout='';
 
-             'albumsByPopularity' => $albumsByPopularity,
-             'songByYoutube' => $songByYoutube,
+            /*$name = $this->renderPartial('index', [
 
-         ]);
+                 'albumsByPopularity' => $albumsByPopularity,
+                 'songByYoutube' => $songByYoutube,
 
-         return $name;*/
+             ]);
 
-        return $this->render('index', [
+             return $name;*/
 
-            'albumsByPopularity' => $albumsByPopularity,
-            'songByYoutube' => $songByYoutube,
+            return $this->render('index', [
 
-        ]);
+                'albumsByPopularity' => $albumsByPopularity,
+                'songByYoutube' => $songByYoutube,
+
+            ]);
+
+
+        } else {
+
+            $path = '/view/pages/albums/';
+            $file = Yii::$app->language . '.php';
+            $array = Yii::$app->language . '-array.php';
+
+            $noDB = new NoDB();
+            $fileDB = json_decode(file_get_contents($noDB->realPath() . $path . $array), TRUE);
+
+            Yii::$app->params['language'] = $fileDB['language'];
+            Yii::$app->params['text'] = $fileDB['text'];
+            Yii::$app->params['canonical'] = $fileDB['canonical'];
+            Yii::$app->params['alternate'] = $fileDB['alternate'];
+
+            return $this->render('index-noDB', [
+
+                'file' => $file,
+                'path' => $path,
+
+            ]);
+
+        }
 
     }
 
