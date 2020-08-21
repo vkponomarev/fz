@@ -64,7 +64,7 @@ class ArtistsController extends Controller
     public function actionArtistPage($url)
     {
 
-        if (Yii::$app->params['useDB']) {
+        if (Yii::$app->params['useArtistsDB']) {
 
             $textID = '56'; // ID из таблицы pages
             $table = 'm_artists'; // К какой таблице отностся данная страница

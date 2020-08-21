@@ -25,6 +25,7 @@ class ViewGenerateArtists
 
     function generate($valueOne, $valueTwo, $languagesData)
     {
+
         $artists = new Artists();
         $artistsByStartEnd =  $artists->byStartEnd($valueOne, $valueTwo);
         $count = $valueOne;
@@ -36,6 +37,7 @@ class ViewGenerateArtists
 
             foreach ($languagesData as $language) {
 
+                Yii::$app->language = $language['url'];
                 $id = $one['id'];
                 $url = $one['url'];
                 $textID = '56'; // ID из таблицы pages
@@ -97,6 +99,8 @@ class ViewGenerateArtists
 
                 //(new \common\components\dump\Dump())->printR($filePath);
 
+                //(new \common\components\dump\Dump())->printR(Yii::$app->params['language']['current']['url']);
+                //die;
                 $view->generateFile($file, $fileName, $filePath);
 
                 $arrayName = $url . '-' . $language['url'] . '-array.php';
