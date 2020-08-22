@@ -19,20 +19,22 @@ class SiteMapGenerateMainFiles
         $siteMap = new SiteMap();
         $dir = $siteMap->realPath();
 
-        $siteMapArtistsAll = array_slice(scandir($dir . '/gii/sitemap/artists/'), 2);
-        $siteMapAlbumsAll = array_slice(scandir($dir . '/gii/sitemap/albums/'), 2);
-        $siteMapSongsAll = array_slice(scandir($dir . '/gii/sitemap/songs/'), 2);
+        //$siteMapArtistsAll = array_slice(scandir($dir . '/gii/sitemap/all/'), 2);
+        //$siteMapAlbumsAll = array_slice(scandir($dir . '/gii/sitemap/all/'), 2);
+        //$siteMapSongsAll = array_slice(scandir($dir . '/gii/sitemap/all/'), 2);
 
-        $siteMapListAll = array_merge($siteMapArtistsAll, $siteMapAlbumsAll);
-        $siteMapListAll = array_merge($siteMapListAll, $siteMapSongsAll);
+        $siteMapListAll = array_slice(scandir($dir . '/gii/sitemap/all/'), 2);
+
+        //$siteMapListAll = array_merge($siteMapArtistsAll, $siteMapAlbumsAll);
+        //$siteMapListAll = array_merge($siteMapListAll, $siteMapSongsAll);
         //array_slice(scandir('/path/to/directory/'), 2);
 
-        $siteMapArtistsRu = array_slice(scandir($dir . '/gii/sitemap/ru/artists/'), 2);
-        $siteMapAlbumsRu = array_slice(scandir($dir . '/gii/sitemap/ru/albums/'), 2);
-        $siteMapSongsRu = array_slice(scandir($dir . '/gii/sitemap/ru/songs/'), 2);
+        //$siteMapArtistsRu = array_slice(scandir($dir . '/gii/sitemap/ru/artists/'), 2);
+        //$siteMapAlbumsRu = array_slice(scandir($dir . '/gii/sitemap/ru/albums/'), 2);
+        //$siteMapSongsRu = array_slice(scandir($dir . '/gii/sitemap/ru/songs/'), 2);
 
-        $siteMapListRu = array_merge($siteMapArtistsRu, $siteMapAlbumsRu);
-        $siteMapListRu = array_merge($siteMapListRu, $siteMapSongsRu);
+        //$siteMapListRu = array_merge($siteMapArtistsRu, $siteMapAlbumsRu);
+        //$siteMapListRu = array_merge($siteMapListRu, $siteMapSongsRu);
 
         //(new \common\components\dump\Dump())->printR($siteMapListRu);
 
@@ -40,7 +42,6 @@ class SiteMapGenerateMainFiles
         $countFiles = 0;
         $count = 0;
         $siteMapUrls = '';
-
 
         foreach ($siteMapListAll as $one) {
             $count++;
@@ -53,7 +54,7 @@ class SiteMapGenerateMainFiles
 
             $siteMapUrls .= '
 <sitemap>
-      <loc>https://flowlez.com/en/sitemap/' . $one . '/</loc>
+      <loc>https://flowlez.com/' . $one . '</loc>
 </sitemap>
 ';
 
@@ -68,7 +69,7 @@ class SiteMapGenerateMainFiles
         $siteMap = new SiteMap();
         $fileName = 'sitemap_all.xml';
         //(new \common\components\dump\Dump())->printR($siteMap->realPath());
-        $siteMap->generateFile($siteMapContent, $fileName, $siteMap->realPath() . 'gii/sitemap/main-files/');
+        $siteMap->generateFile($siteMapContent, $fileName, $siteMap->realPath() . 'gii/sitemap/all/');
 
         unset($siteMapContent);
         unset($siteMapUrls);
@@ -83,7 +84,7 @@ class SiteMapGenerateMainFiles
 //////////////////////////
 /// //////////////////////
 ///
-
+/*
         foreach ($siteMapListRu as $one) {
             $count++;
             $bigData = new BigData();
@@ -122,7 +123,7 @@ class SiteMapGenerateMainFiles
         $fileName = '';
         $countLimit = 0;
 
-
+*/
     }
 
 }

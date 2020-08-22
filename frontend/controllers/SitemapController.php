@@ -33,17 +33,19 @@ class SitemapController extends Controller
 
     public function actionIndex()
     {
-
+/*
         $frontend = Yii::getAlias('@frontend') ;
         $file = $frontend . '/views/gii/sitemap/main-files/sitemap_all.xml';
-
-        return Yii::$app->response->sendFile($file);
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_XML;
+        return Yii::$app->response->sendFile($file, null, ['mimeType' => 'xml']);
+        //return $this->renderPartial($file);
+*/
     }
 
 
     public function actionUrl($url)
     {
-
+/*
         if (stripos($url, 'artists') !== false) {
             $path = 'artists';
         }
@@ -63,24 +65,24 @@ class SitemapController extends Controller
             return Yii::$app->response->sendFile($file);
         }
         throw new \Exception('File not found');
-
+*/
 
 
     }
 
     public function actionIndexRu()
     {
-
+/*
         $frontend = Yii::getAlias('@frontend') ;
         $file = $frontend . '/views/gii/sitemap/main-files/sitemap_ru.xml';
 
-        return Yii::$app->response->sendFile($file);
+        return Yii::$app->response->sendFile($file);*/
     }
 
 
     public function actionUrlRu($url)
     {
-
+/*
         if (stripos($url, 'artists') !== false) {
             $path = 'artists';
         }
@@ -101,7 +103,7 @@ class SitemapController extends Controller
         }
 
         throw new \Exception('File not found');
-
+*/
 
 
     }

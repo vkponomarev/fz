@@ -153,8 +153,6 @@ class ArtistsController extends Controller
             $noDB = new NoDB();
             $fileDB = json_decode(file_get_contents($noDB->realPath() . $path . $array), TRUE);
 
-
-
             Yii::$app->params['language'] = $fileDB['language'];
             Yii::$app->params['text'] = $fileDB['text'];
             Yii::$app->params['canonical'] = $fileDB['canonical'];

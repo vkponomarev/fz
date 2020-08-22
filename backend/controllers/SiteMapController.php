@@ -48,16 +48,7 @@ sitemap-ru
     public function actionIndex()
     {
 
-        /**
-         * 1. Создаем файлы для артистов
-         * 2. Создаем файлы для альбомов
-         * 3. Создаем файлы для песен
-         * 4. Создаем файл индекса карты сайтов
-         */
         if ($name = Yii::$app->request->post('name')) {
-
-
-            //echo 'Есть ID' . '<br>';
 
             $siteMap = new SiteMap();
 
@@ -66,7 +57,7 @@ sitemap-ru
 
             if ($name == 'sitemap-artists-all') {
 
-                //$siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/artists/');
+                //$siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/all/');
                 //$siteMap->generateArtists($languagesData);
 
             }
@@ -112,7 +103,7 @@ sitemap-ru
 
             if (($name == 'sitemap-all') or ($name == 'sitemap-ru')) {
 
-                $siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/main-files/');
+               // $siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/all/');
                 $siteMap->generateMainFiles();
 
             }

@@ -272,7 +272,3 @@ $songsByArtistTMP = $songsByArtist;
     </ul>
 
 </div>
-
-
-
-

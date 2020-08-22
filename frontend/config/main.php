@@ -12,26 +12,11 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        //'elasticsearch' => [
-        //    'class' => 'yii\elasticsearch\Connection',
-        //    'nodes' => [
-        //        ['http_address' => '127.0.0.1:9200'],
-        //        // configure more hosts if you have a cluster
-        //    ],
-        //],
-        //'sphinx' => [
-        //    'class' => 'yii\sphinx\Connection',
-        //    'dsn' => 'mysql:host=127.0.0.1;port=9306;',
-        //    'username' => 'one',
-        //    'password' => 'one',
-        //],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer'
         ],
         'request' => [
-           // 'csrfParam' => '_csrf-frontend',
             'baseUrl' => '', //убрать frontend/web
-           // 'class' => 'codemix\localeurls\UrlManager',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -77,11 +62,11 @@ return [
                 '/artists/' => 'artists/index',
                 '/artists/<url>/' => 'artists/artist-page',
 
-                '/sitemap/' => 'sitemap/index',
-                '/sitemap/<url>/' => 'sitemap/url',
+                //'/sitemap/' => 'sitemap/index',
+                //'/sitemap/<url>/' => 'sitemap/url',
 
-                '/sitemapru/' => 'sitemap/index-ru',
-                '/sitemapru/<url>/' => 'sitemap/url-ru',
+                //'/sitemapru/' => 'sitemap/index-ru',
+                //'/sitemapru/<url>/' => 'sitemap/url-ru',
                 //'/search/' => 'search/index',
                 //'/search/search' => 'search/search',
                 //'/script/first-letter' => 'scripts/first-letter',

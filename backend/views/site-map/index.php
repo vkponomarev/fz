@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <form action="" method="post">
 
-        <div class="form-left-title"><?= Yii::t('app', 'Выберите что будет создавать:') ?></div>
+        <div class="form-left-title"><?= Yii::t('app', 'Выберите что будете создавать:') ?></div>
 
         <select id="cycle-length-from" name="name" class="form-control select-extended">
 
