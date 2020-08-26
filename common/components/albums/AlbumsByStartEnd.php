@@ -15,8 +15,8 @@ class AlbumsByStartEnd
             ->createCommand('
             select
             m_albums.id,
-            m_albums.m_artists_id,
-            m_albums.m_genres_id
+            m_albums.name,
+            m_albums.url
             from
             m_albums
             where 

@@ -8,13 +8,15 @@
  *
  */
 
-//echo Yii::getAlias('@webroot');
+//echo Yii::getAlias('@frontend');
+//echo Yii::getAlias('@frontend') . '/web/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'];
+//die;
 ?>
 
 <div class="rflex album-header">
     <div>
         <?php if ($albumData['photos']): ?>
-            <?php if (file_exists(Yii::getAlias('@webroot') . '/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
+            <?php if (file_exists(Yii::getAlias('@frontend') . '/web/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
                 <img
                         src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>">
             <?php else: ?>
@@ -27,7 +29,7 @@
 
     <div>
         <div>
-            <span> <?= Yii::t('app', 'album') ?></span>
+            <span><?= Yii::t('app', 'album') ?></span>
             <h1><?= $albumData['name'] ?><?=' ';?>(<?= $albumData['year'] ?>)</h1>
         </div>
         <?php if ($artistByAlbum): ?>
@@ -63,7 +65,7 @@
         <?php endif; ?>
 
         <div class="share-social">
-            <?= $this->render('/partials/share-social/_share-social'); ?>
+            <?= Yii::$app->view->render('@frontend/views/partials/share-social/_share-social.min.php'); ?>
         </div>
     </div>
 </div>

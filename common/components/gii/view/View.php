@@ -31,6 +31,13 @@ class View
 
     }
 
+    function generateAlbums($valueOne, $valueTwo, $languagesData){
+
+        (new ViewGenerateAlbums())->generate($valueOne, $valueTwo, $languagesData);
+
+    }
+
+
     function generateLanguages($languagesData){
 
         (new ViewGenerateLanguages())->generate($languagesData);

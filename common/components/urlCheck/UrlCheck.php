@@ -37,4 +37,10 @@ class UrlCheck
 
     }
 
+    function checkNoDB($realPath, $path, $file){
+
+        return (new UrlCheckCheckNoDB())->check($realPath, $path, $file);
+
+    }
+
 }

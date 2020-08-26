@@ -98,8 +98,7 @@ sitemap-ru
             //<option value="albums-create">Создание файлов Альбомов</option>
             if ($name == 'albums-create') {
 
-                //$siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/songs/');
-                //$siteMap->generateSongs(2200000, 2300000, $languagesData);
+                $view->generateAlbums($valueOne, $valueTwo, $languagesData);
 
             }
             //<option value="songs-create">Создание файлов Песен</option>

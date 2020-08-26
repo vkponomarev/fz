@@ -44,7 +44,7 @@ $songsByArtistTMP = $songsByArtist;
         <?php endif; ?>
 
         <div>
-            <?= $this->render('/partials/share-social/_share-social'); ?>
+            <?= Yii::$app->view->render('@frontend/views/partials/share-social/_share-social.min.php'); ?>
         </div>
     </div>
 

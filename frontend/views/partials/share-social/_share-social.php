@@ -3,11 +3,6 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-
-//AppAsset::register($this);
-//echo $this->params['title'];
-
-
 ?>
 <br>
 <?php if (Yii::$app->language == 'ru'): ?>

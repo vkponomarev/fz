@@ -607,6 +607,9 @@ footer div div div > a:hover {
     width: 380px !important;
   }
 }
+.artist {
+  word-break: break-word;
+}
 .artist div img {
   float: left;
   margin-right: 20px;
@@ -721,10 +724,19 @@ li.disabled {
   font-size: 19px;
 }
 
+.album-header {
+  word-break: break-word;
+}
 .album-header div img {
   float: left;
   margin-right: 20px;
   width: 200px;
+}
+@media (max-width: 479px) {
+  .album-header div img {
+    width: 100%;
+    padding-bottom: 10px;
+  }
 }
 .album-header div div span {
   color: #cacaca;
@@ -905,6 +917,12 @@ li.disabled {
   float: left;
   margin-right: 20px;
   width: 200px;
+}
+@media (max-width: 479px) {
+  .song-header div img {
+    width: 100%;
+    padding-bottom: 10px;
+  }
 }
 .song-header div div span {
   color: #cacaca;
