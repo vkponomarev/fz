@@ -105,9 +105,13 @@ sitemap-ru
             //<option value="songs-create">Создание файлов Песен</option>
             if ($name == 'songs-create') {
 
-                //(new \common\components\dump\Dump())->printR($name);
-                //$siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/ru/songs/');
-                //$siteMap->generateSongsRU(2200000, 2300000,$languagesData);
+                $view->generateSongs($valueOne, $valueTwo, $languagesData);
+
+            }
+
+            if ($name == 'languages-create') {
+
+                $view->generateLanguages($languagesData);
 
             }
 

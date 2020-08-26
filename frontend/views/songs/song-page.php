@@ -7,93 +7,106 @@
  * @var $artistBySong \common\components\artist\ArtistBySong
  * @var $translationByLanguage \common\components\translation\Translation
  * @var $translationsByLanguages \common\components\translations\Translations
+ * @var $featuring \common\components\featuring\FeaturingBySong
  */
 //(new \common\components\dump\Dump())->printR($albumData);
 
 ?>
 
 
-<div class="row row-flex">
+<div class="rflex song-header">
     <div>
 
         <?php if ($albumData): ?>
             <?php if ($albumData['photos']): ?>
                 <?php if (file_exists(Yii::getAlias('@webroot') . '/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
-                    <img class="artist-album-photo"
-                         src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>"
-                         width="200">
+                    <img
+                            src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>"
+                            width="200">
                 <?php else: ?>
-                    <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
+                    <img src="/files/no-album-photo.png">
                 <?php endif; ?>
             <?php else: ?>
-                <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
+                <img src="/files/no-album-photo.png">
             <?php endif; ?>
         <?php else: ?>
-            <img class="artist-album-photo" src="/files/no-album-photo.png" width="200">
+            <img src="/files/no-album-photo.png">
         <?php endif; ?>
 
     </div>
     <div>
-        <span class="album-text"><?= Yii::t('app', 'song') ?></span>
+        <div>
+            <span><?= Yii::t('app', 'song') ?></span>
 
 
-        <h1 class="album-name"><?= $songData['name'] ?></h1>
+            <h1><?= $songData['name'] ?></h1>
+        </div>
         <?php if ($albumData): ?>
 
-            <?php if ($featuring): ?>
-                <span class="album-text"> <?= Yii::t('app', 'featuring') ?></span>
-                <?php $count = 0; ?>
-                &nbsp;<span class="songs-li-a">
+                <?php if ($featuring): ?>
+                <div>
+                    <span> <?= Yii::t('app', 'featuring') ?></span>
+                    <?php $count = 0; ?>
+                    <div>
                     <?php foreach ($featuring as $feature): ?>
                         <?php if ($count > 0): ?>
-                            ,<a class="album-artist-link"
+                            ,<?=' ';?><a
                                 href="/<?= Yii::$app->language ?>/artists/<?= $feature['url'] ?>/">
                                             <?= $feature['name'] ?></a>
                         <?php else: ?>
-                            <a class="album-artist-link"
+                            <a
                                href="/<?= Yii::$app->language ?>/artists/<?= $feature['url'] ?>/">
                                             <?= $feature['name'] ?></a>
                         <?php endif; ?>
                         <?php $count++; ?>
                     <?php endforeach; ?>
 
-                                </span>
-            <?php endif; ?>
+                        </div>
+                </div>
+                <?php endif; ?>
+            <div>
+                <span> <?= Yii::t('app', 'album') ?></span>
+                <div>
+                <a href="/<?= Yii::$app->language ?>/albums/<?= $albumData['url'] ?>/">
+                    <?= $albumData['name'] ?>
+                </a>
+                </div>
 
-            <span class="album-text"> <?= Yii::t('app', 'album') ?></span>
-            <br>
-            <a class="album-artist-link" href="/<?= Yii::$app->language ?>/albums/<?= $albumData['url'] ?>/">
-                <?= $albumData['name'] ?>
-            </a>
-
-            <br>
+            </div>
         <?php endif; ?>
 
         <?php if ($artistBySong): ?>
-            <span class="album-text"> <?= Yii::t('app', 'artist') ?></span>
-            <br>
-            <a class="album-artist-link" href="/<?= Yii::$app->language ?>/artists/<?= $artistBySong['url'] ?>/">
+            <div>
+            <span> <?= Yii::t('app', 'artist') ?></span>
+                <div>
+            <a href="/<?= Yii::$app->language ?>/artists/<?= $artistBySong['url'] ?>/">
                 <?= $artistBySong['name'] ?>
             </a>
+                </div>
+            </div>
         <?php endif; ?>
 
         <?php if ($genres): ?>
-            <br>
-            <span class="album-text"> <?= Yii::t('app', 'genres') ?></span>
+
+            <div>
+            <span> <?= Yii::t('app', 'genres') ?></span>
             <?php $count = 0; ?>
-            &nbsp;<span class="songs-li-a">
+                <div>
+
                     <?php foreach ($genres as $genre): ?>
                         <?php if ($count > 0): ?>
-                            ,<span class="album-artist-link">
-                                            <?= $genre['name'] ?></span>
+                            ,<?=' ';?>
+                                            <?= $genre['name'] ?>
                         <?php else: ?>
-                            <span class="album-artist-link">
-                                            <?= $genre['name'] ?></span>
+
+                                            <?= $genre['name'] ?>
                         <?php endif; ?>
                         <?php $count++; ?>
                     <?php endforeach; ?>
 
-                                </span>
+
+                </div>
+            </div>
         <?php endif; ?>
 
 
@@ -107,192 +120,203 @@
 <br>
 <a name="listen"></a>
 <h2 class="header-2">
-    <?= Yii::t('app', 'Listen to the song') ?> <?= $artistBySong['name'] ?>
-    - <?= $songData['name'] ?> <?= Yii::t('app', 'online') ?>
+    <?= Yii::t('app', 'Listen to the song') ?><?= ' '; ?><?php if ($artistBySong): ?>
+        <?=' ';?><?= $artistBySong['name'] ?><?=' ';?>-
+    <?php endif; ?><?=' ';?><?= $songData['name'] ?><?=' ';?><?= Yii::t('app', 'online') ?>
 </h2>
 <hr>
-<div class="row row-flex">
-    <ul class="songs-links">
-        <li class="songs-li-artists">
+<div class="rflex song">
+    <ul>
+        <li>
             <?php if ($songData['url_youtube']): ?>
-                <span id="play-button" class="fa fa-play-circle play-button"
-                      onclick="showYoutubeModal(this)"
-                      data-url="<?= $songData['url_youtube'] ?>" data-backdrop="false">
+                <span
+                      onclick="sYM(this)"
+                      data-url="<?= $songData['url_youtube'] ?>">
                                 </span>
             <?php else: ?>
-                <span id="play-button" class="fa fa-play-circle play-button-false">
+                <span class="false">
                                 </span>
             <?php endif; ?>
-            <span class="songs-li-a-song">
-            <?= $artistBySong['name'] ?> - <?= $songData['name'] ?></span>
+            <div>
+                <?php if ($artistBySong): ?>
+                    <?=' ';?><?= $artistBySong['name'] ?><?=' ';?>-
+                <?php endif; ?><?= ' '; ?><?= $songData['name'] ?></div>
         </li>
     </ul>
 </div>
 <hr>
 <br>
-<?php if ($translationByLanguage): ?>
-    <?php if ($translationByLanguage['origin'] == 1): ?>
-
-        <div class="row row-flex">
-
-            <div class="row col-xxs-12">
-                <a name="lyrics"></a>
-                <h2 class="header-2-song"><?= Yii::t('app', 'Song lyrics') ?>
-                    <?php if ($artistBySong): ?>
-                        <?= $artistBySong['name'] ?> -
-                    <?php endif; ?>
-                    <?= $songData['name'] ?>
-                </h2>
-
-
-                <hr>
-                <div class="song-text">
-                    <?= $songData['text'] ?>
-                </div>
-
-            </div>
-
-        </div>
-        <hr>
-
-        <div class="row row-flex">
-
-            <div class="row col-xxs-12">
-                <a name="translation"></a>
-                <h2 class="header-translation-2"><?= Yii::t('app', 'Song translations') ?>
-                    <?php if ($artistBySong): ?>
-                        <?= $artistBySong['name'] ?> -
-                    <?php endif; ?>
-                    <?= $songData['name'] ?>
-
-                </h2>
-
-                <hr>
-                <div class="song-translations">
-
-                    <?php foreach ($translationsByLanguages as $translation): ?>
-                        <?php if ($translation['origin'] <> 1): ?>
-                            <a class="song-translations-a"
-                               title="<?= $translation['name'] ?> <?= Yii::t('app', 'translation') ?>"
-                               href="/<?= $translation['url'] ?>/songs/<?= $songData['url'] ?>/">
-                                <?= $translation['name'] ?>
-                            </a>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-
-
-                </div>
+<?php // Если есть текст и нет перевода?>
+<?php if (($songData['text']) and (!$translationByLanguage)): ?>
+    <div class="rflex song-text">
+        <div>
+            <a name="lyrics"></a>
+            <h2><?= Yii::t('app', 'Song lyrics') ?>
+                <?php if ($artistBySong): ?>
+                    <?=' ';?><?= $artistBySong['name'] ?><?=' ';?>-
+                <?php endif; ?>
+                <?=' ';?><?= $songData['name'] ?>
+            </h2>
+            <hr>
+            <div>
+                <?= $songData['text'] ?>
             </div>
         </div>
-    <?php else: ?>
-
-        <div class="row row-flex">
-            <div class="row col-xs-12 col-sm-6">
-                <a name="lyrics"></a>
-                <h2 class="header-2-song"><?= Yii::t('app', 'Song lyrics') ?>
-                    <?php if ($artistBySong): ?>
-                        <?= $artistBySong['name'] ?> -
-                    <?php endif; ?>
-                    <?= $songData['name'] ?>
-                </h2>
-                <hr>
-                <div class="song-text">
-                    <?= $songData['text'] ?>
-                </div>
-            </div>
-
-
-            <div class="row col-xs-12 col-sm-6">
-                <a name="translation"></a>
-                <h2 class="header-translation-2"><?= Yii::t('app', 'Song translation') ?>
-                    <?php if ($artistBySong): ?>
-                        <?= $artistBySong['name'] ?> -
-                    <?php endif; ?>
-                    <?= $songData['name'] ?>
-                    <?= Yii::t('app', 'into English') ?>
-                </h2>
-                <hr>
-                <div class="song-text">
-                    <?= $translationByLanguage['text'] ?>
-                </div>
-            </div>
-
-        </div>
-        <hr>
-    <?php endif; ?>
-<?php else: ?>
-    <?php if ($songData['text']): ?>
-        <div class="row row-flex">
-            <div class="row col-xxs-12">
-                <a name="lyrics"></a>
-                <h2 class="header-2-song"><?= Yii::t('app', 'Song lyrics') ?>
-                    <?php if ($artistBySong): ?>
-                        <?= $artistBySong['name'] ?> -
-                    <?php endif; ?>
-                    <?= $songData['name'] ?>
-                </h2>
-                <hr>
-                <div class="song-text">
-                    <?= $songData['text'] ?>
-                </div>
-            </div>
-        </div>
-        <hr>
-
-    <?php endif; ?>
+    </div>
+    <hr>
 <?php endif; ?>
 
+<?php // Если есть текст Есть переводы и это НЕ оригинальный перевод?>
+<?php if (($songData['text']) and ($translationByLanguage) and ($translationByLanguage['origin'] <> 1)): ?>
+<div class="rflex song-text-translation">
+    <div class="col-xs-12 col-sm-6">
+        <a name="lyrics"></a>
+        <h2><?= Yii::t('app', 'Song lyrics') ?>
+            <?php if ($artistBySong): ?>
+                <?=' ';?><?= $artistBySong['name'] ?><?=' ';?>-
+            <?php endif; ?>
+            <?=' ';?><?= $songData['name'] ?>
+        </h2>
+        <hr>
+        <div class="song-text">
+            <?= $songData['text'] ?>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 translation">
+        <a name="translation"></a>
+        <h2 class="header-translation-2"><?= Yii::t('app', 'Song translation') ?>
+            <?php if ($artistBySong): ?>
+                <?=' ';?><?= $artistBySong['name'] ?><?=' ';?>-
+            <?php endif; ?>
+            <?=' ';?><?= $songData['name'] ?>
+            <?=' ';?><?= Yii::t('app', 'into English') ?>
+        </h2>
+        <hr>
+        <div class="song-text">
+            <?= $translationByLanguage['text'] ?>
+        </div>
+    </div>
+
+</div>
+<hr>
+<?php endif; ?>
+
+<?php // Если есть текст Есть переводы и это оригинальный язык песни?>
+<?php if (($songData['text']) and ($translationByLanguage['origin'] == 1)): ?>
+    <div class="rflex song-text">
+        <div>
+            <a name="lyrics"></a>
+            <h2><?= Yii::t('app', 'Song lyrics') ?>
+                <?php if ($artistBySong): ?>
+                    <?=' ';?><?= $artistBySong['name'] ?><?=' ';?>-<?=' ';?>
+                <?php endif; ?>
+                <?=' ';?><?= $songData['name'] ?>
+            </h2>
+            <hr>
+            <div>
+                <?= $songData['text'] ?>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="rflex song-translations">
+
+        <div>
+            <a name="translations"></a>
+            <h2><?= Yii::t('app', 'Song translations') ?>
+                <?php if ($artistBySong): ?>
+                    <?=' ';?><?= $artistBySong['name'] ?><?=' ';?>-
+                <?php endif; ?>
+                <?=' ';?><?= $songData['name'] ?>
+
+            </h2>
+
+            <hr>
+            <div>
+                <?php $count=0;?>
+                <?php foreach ($translationsByLanguages as $translation): ?>
+
+                    <?php if ($translation['origin'] <> 1): ?>
+                        <?php if ($count>0): ?>
+                            <?=', ';?>
+                        <?php endif;?>
+                        <?php $count++?>
+                        <a
+
+                           href="/<?= $translation['url'] ?>/songs/<?= $songData['url'] ?>/">
+                            <?= $translation['name'] ?>
+                        </a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+
+
+            </div>
+        </div>
+    </div>
+
+<?php endif; ?>
 
 <br>
 <a name="music-video"></a>
 <h2 class="header-2">
-    <?= Yii::t('app', 'Music video clip') ?> <?= $artistBySong['name'] ?>
-    - <?= $songData['name'] ?> <?= Yii::t('app', 'watch online') ?>
+    <?= Yii::t('app', 'Music video clip') ?><?=' ';?><?php if ($artistBySong): ?>
+        <?=' ';?><?= $artistBySong['name'] ?><?=' ';?>-
+    <?php endif; ?><?=' ';?><?= $songData['name'] ?><?=' ';?><?= Yii::t('app', 'watch online') ?>
 </h2>
 <hr>
 
-<div class="row row-flex">
-    <ul class="play-video-links">
-        <li class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-12 play-video-li">
-                <span id="play-button" class="fa fa-play-circle play-video-button"
-                      onclick="showYoutubeModal(this)"
-                      data-url="<?= $songData['url_youtube'] ?>" data-backdrop="false">
-                </span>
+<div class="rflex video">
+    <ul>
+        <li>
+            <?php if ($songData['url_youtube']): ?>
+                <span
+                        onclick="sYM(this)"
+                        data-url="<?= $songData['url_youtube'] ?>">
+                                </span>
+            <?php else: ?>
+                <span class="false">
+                                </span>
+            <?php endif; ?>
             <br>
 
-            <?= $artistBySong['name'] ?> - <?= $songData['name'] ?>
+            <?php if ($artistBySong): ?>
+                <?=' ';?><?= $artistBySong['name'] ?><?=' ';?>-
+            <?php endif; ?><?=' ';?><?= $songData['name'] ?>
         </li>
     </ul>
 </div>
+<?php if ($songsData):?>
+    <br>
+    <a name="popular-songs"></a>
+    <h2 class="header-2"><?= Yii::t('app', 'Popular songs') ?><?=' ';?><?= $artistBySong['name'] ?></h2>
+    <hr>
 
+    <div class="rflex songs">
 
-<br>
-<a name="popular-songs"></a><h2 class="header-2"><?= Yii::t('app', 'Popular songs') ?> <?= $artistBySong['name'] ?></h2>
-<hr>
-
-<div class="row row-flex">
-
-    <ul class="songs-links">
-        <?php $count = 0; ?>
-        <?php foreach ($songsData as $key => $song): ?>
-            <?php $count++; ?>
-            <li class="songs-li-artists">
-                <?php if ($song['url_youtube']): ?>
-                    <span id="play-button" class="fa fa-play-circle play-button"
-                          onclick="showYoutubeModal(this)"
-                          data-url="<?= $song['url_youtube'] ?>" data-backdrop="false">
+        <ul>
+            <?php $count = 0; ?>
+            <?php foreach ($songsData as $key => $song): ?>
+                <?php $count++; ?>
+                <li>
+                    <?php if ($song['url_youtube']): ?>
+                        <span
+                                onclick="sYM(this)"
+                                data-url="<?= $song['url_youtube'] ?>">
                                 </span>
-                <?php else: ?>
-                    <span id="play-button" class="fa fa-play-circle play-button-false">
+                    <?php else: ?>
+                        <span class="false">
                                 </span>
-                <?php endif; ?>
-                <?= $artistBySong['name'] ?><span class="dash">-</span><a class="songs-li-a"
-                                                                          href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
-                    <?= $song['name'] ?> </a>
-            </li>
-            <?php if ($count > 11) break; ?>
-        <?php endforeach; ?>
-    </ul>
+                    <?php endif; ?>
+                    <?= $artistBySong['name'] ?><?=' ';?>-&nbsp;<a href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
+                        <?= $song['name'] ?> </a>
+                </li>
+                <?php if ($count > 11) break; ?>
+            <?php endforeach; ?>
+        </ul>
 
-</div>
+    </div>
+<?php endif;?>
+
+
 

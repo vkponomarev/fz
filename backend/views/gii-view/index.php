@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <option value="albums-create">Создание файлов Альбомов</option>
             <option value="songs-create">Создание файлов Песен</option>
             <option value="pages-create">Создание всех Одинарных страниц</option>
-
+            <option value="languages-create">Создание массива языков</option>
 
         </select>
 

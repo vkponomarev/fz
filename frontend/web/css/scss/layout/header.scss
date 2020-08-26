@@ -1,0 +1,41 @@
+.top {
+  background-color: #f8f8f8;
+  text-align: -webkit-center;
+  height: 45px;
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 1.7rem;
+
+  > div {
+    position: absolute;
+    text-shadow: none;
+    color: #000;
+    left: 0;
+    top: 5px;
+    font-size: 1.5rem;
+    height: 32px;
+    width: 30%;
+    padding-left: 10px;
+  }
+
+  > a {
+
+    color: $colorLogo;
+    font-weight: 600;
+
+    &:hover {
+
+      color: $colorLogoHover;
+
+    }
+
+  }
+
+}
+
+.tt-menu .tt-suggestion {
+
+  white-space: break-spaces !important;
+  text-align: left;
+}
+

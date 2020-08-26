@@ -4,7 +4,6 @@
 /* @var $content string */
 /* @var Yii::$app->params['breadcrumbs'] \common\components\breadcrumbs\Breadcrumbs */
 
-
 ?>
 <br><br>
 <?php if (isset(Yii::$app->params['breadcrumbs'])): ?>

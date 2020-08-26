@@ -1,0 +1,165 @@
+footer {
+
+  background-color: $colorMain;
+  padding: 0;
+
+  div {
+
+    hr {
+
+      border-color: $colorHRFooter !important;
+
+    }
+
+    .fmy {
+
+
+      @media (min-width: 768px) {
+        text-align-last: left;
+      }
+
+      div {
+
+        >ul {
+
+          li {
+
+            > a {
+
+              color: $colorAWhite;
+              margin-left: 0px;
+              &:hover {
+
+                color: $colorAWhiteHover;
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+
+    }
+
+    div {
+
+      div {
+
+        text-align: center;
+        width: 100%;
+
+        >a {
+
+          color: $colorAYellow;
+          margin-left: 6px;
+          margin-right: 6px;
+          cursor: pointer;
+          line-height: 30px;
+
+          &:hover {
+
+            color: $colorAYellowHover;
+
+          }
+
+
+        }
+
+      }
+
+
+    }
+
+  }
+
+}
+
+.cl{
+  .fa-globe{
+    font-size: 20px;
+    color: #f7f7f7;
+    margin-right: 6px;
+
+  }
+
+
+  &:hover ul {
+    display: block;
+    line-height: 25px;
+  }
+
+  .globe-size{
+
+    font-size: 20px;
+    color: #f7f7f7;
+    margin-right: 6px;
+
+  }
+
+  .fa-sort-down{
+    padding-bottom: 6px;
+    padding-left: 8px;
+
+  }
+
+  ul{
+
+
+
+    position: absolute;
+    bottom: 106px;
+    left: 0;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    z-index: 9;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .35);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .35);
+    background-color: #fff;
+    padding: 12px 14px 12px;
+    border-radius: 6px;
+    display: none;
+    font-size: 13px;
+    max-height: 80vh;
+    width: 350px;
+    overflow: auto;
+    margin-left: 16px;
+    column-count: 3;
+
+  }
+
+  cursor: pointer;
+  padding-top: 25px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  width: 90px;
+  color: #f7f7f7;
+
+}
+
+.footer-brand {
+  line-height: 30px;
+  color: #fff6b3;
+  font-size: 18px;
+}
+
+.footer-brand-down-text {
+  color: #fff6b3;
+  font-size: 18px;
+}
+
+.contact span {
+  color: #fff6b3;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: block;
+  font-size: 20px;
+}

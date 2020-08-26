@@ -11,34 +11,29 @@
  * @var $songsByListenMusic common\components\songs\SongsByListenMusicMainPage
  */
 
-//echo $pageText['title'];$songByYoutube
 ?>
-
-
-
-
 
 <br><br>
 <a name="listen-music"></a><h1 class="main-page-h1"><?= Yii::t('app', 'Listen to music online') ?></h1>
 <br><br>
 
-<div class="row row-flex">
+<div class="rflex songs">
 
-    <ul class="songs-links">
+    <ul>
         <?php foreach ($songsByListenMusic as $song): ?>
 
-            <li class="songs-li">
+            <li>
                 <?php if ($song['url_youtube']): ?>
-                    <span id="play-button" class="fa fa-play-circle play-button" onclick="showYoutubeModal(this)" data-url="<?= $song['url_youtube'] ?>" data-backdrop="false">
+                    <span onclick="sYM(this)" data-url="<?= $song['url_youtube'] ?>">
                 </span>
                 <?php else: ?>
-                    <span id="play-button" class="fa fa-play-circle play-button-false">
+                    <span class="false">
                 </span>
                 <?php endif; ?>
-                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
+                <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
                     <?= $song['artistName'] ?> </a>
-                <span class="dash">-</span>
-                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
+                &nbsp;-&nbsp;
+                <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
                     <?= $song['name'] ?> </a>
             </li>
 
@@ -53,7 +48,7 @@
 
 <?php //echo print_r($item);?>
 <br><br>
-<div class="row row-flex">
+<div class="rflex pop-artist">
 
     <?php foreach ($artistByPopularity as $artist): ?>
 
@@ -81,24 +76,24 @@
 <br><br><br><br>
 <h2 class="main-page-h2"><?= Yii::t('app', 'Popular albums') ?></h2>
 <br><br>
-<div class="row row-flex">
+<div class="rflex pop-albums">
 
     <?php foreach ($albumsByPopularity as $album): ?>
 
         <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/albums/<?= $album['url']; ?>/"
-           class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12 plates-albums-main">
-            <div class="plates-albums-outside">
+           class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+            <div>
 
-                <div class="plates-albums">
+                <div>
                     <p>
-                        <img class="plates-img"
+                        <img
                              src="/files/albums/<?= $album['first_letter'] ?>/<?= $album['photos'] ?>"
                              alt="<?= $album['name'] ?>"
-                             width="210">
+                             >
 
                     </p>
 
-                    <p class="plates-albums-title"><?= $album['name']; ?>
+                    <p><?= $album['name']; ?><?=' ';?>
 
                         <?php if ($album['year']): ?>
                             (<?= $album['year']; ?>)
@@ -106,7 +101,7 @@
 
                     </p>
 
-                    <p class="plates-albums-artist-name"><?= $album['artistName']; ?>
+                    <p><?= $album['artistName']; ?>
                     </p>
 
                 </div>
@@ -118,30 +113,28 @@
 <br><br><br><br>
 <h2 class="main-page-h2"><?= Yii::t('app', 'Popular songs') ?></h2>
 <br><br>
-<div class="row row-flex">
+<div class="rflex pop-songs">
     <?php //(new \common\components\dump\Dump())->printR($songsByPopularity); ?>
     <?php foreach ($songsByPopularity as $songs): ?>
 
         <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $songs['url']; ?>/"
-           class="col-lg-3 col-md-4 col-sm-6 col-xs-12 main-pages-extended">
-            <div class="plates-songs-outside">
+           class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div>
 
-                <div class="plates-songs">
+                <div>
 
                     <?php if ($songs['albumPhoto']): ?>
                         <p>
-                            <img class="plates-songs-img"
+                            <img
                                  src="/files/albums/<?= $songs['albumFirstLetter'] ?>/<?= $songs['albumPhoto'] ?>"
                                  alt="<?= $songs['name'] ?>"
-                                 width="100">
+                                 >
 
                         </p>
                     <?php endif; ?>
 
-                    <?= $songs['name']; ?>
-                    <p class="plates-songs-title">
+                    <p><?= $songs['name']; ?></p>
 
-                    </p>
 
                     <p class="plates-songs-artist-name"><?= $songs['artistName']; ?>
                     </p>

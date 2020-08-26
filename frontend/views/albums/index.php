@@ -7,46 +7,41 @@
 
 ?>
 
-    <br><br>
-    <a name="popular-artists"></a><h1 class="main-page-h1"><?= Yii::t('app', 'Popular albums') ?></h1>
-    <br><br>
-    <div class="row row-flex">
+<br><br>
+<a name="popular-artists"></a><h1 class="main-page-h1"><?= Yii::t('app', 'Popular albums') ?></h1>
+<br><br>
+<div class="row pop-albums">
 
-        <?php foreach ($albumsByPopularity as $album): ?>
+    <?php foreach ($albumsByPopularity as $album): ?>
 
-            <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/albums/<?= $album['url']; ?>/"
-               class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12 plates-albums-main">
-                <div class="plates-albums-outside">
+        <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/albums/<?= $album['url']; ?>/"
+           class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+            <div>
 
-                    <div class="plates-albums">
-                        <?php if ($album['photos']):?>
-                            <p>
-                                <img class="plates-img"
-                                     src="/files/albums/<?= $album['first_letter'] ?>/<?= $album['photos'] ?>"
-                                     alt="<?= $album['name'] ?>"
-                                     width="210">
+                <div>
+                    <p>
+                        <img
+                                src="/files/albums/<?= $album['first_letter'] ?>/<?= $album['photos'] ?>"
+                                alt="<?= $album['name'] ?>"
+                        >
 
-                            </p>
-                        <?php endif;?>
+                    </p>
 
+                    <p><?= $album['name']; ?><?=' ';?>
 
+                        <?php if ($album['year']): ?>
+                            (<?= $album['year']; ?>)
+                        <?php endif; ?>
 
-                        <p class="plates-albums-title"><?= $album['name']; ?>
+                    </p>
 
-                            <?php if ($album['year']): ?>
-                                (<?= $album['year']; ?>)
-                            <?php endif; ?>
+                    <p><?= $album['artistName']; ?>
+                    </p>
 
-                        </p>
-
-                        <p class="plates-albums-artist-name"><?= $album['artistName']; ?>
-                        </p>
-
-                    </div>
                 </div>
-            </a>
-        <?php endforeach; ?>
-    </div>
-
-    <br><br><br>
+            </div>
+        </a>
+    <?php endforeach; ?>
+</div>
+<br><br><br>
 

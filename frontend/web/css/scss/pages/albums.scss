@@ -1,0 +1,276 @@
+.album-header {
+
+  div {
+
+    img {
+
+      float: left;
+      margin-right: 20px;
+      width: 200px;
+
+    }
+
+    div {
+
+      span {
+
+        color: $colorTextLighterMore;
+
+      }
+
+      h1 {
+
+        margin-top: 8px;
+        margin-bottom: 5px;
+
+      }
+
+      div {
+
+
+        font-size: $sizeHeaderTwo;
+        margin-top: 8px;
+        margin-bottom: 5px;
+
+      }
+
+      a{
+
+        font-size: $sizeHeaderTwo;
+        margin-top: 8px;
+        margin-bottom: 5px;
+
+      }
+
+    }
+
+
+  }
+
+}
+
+
+
+.album {
+
+  div {
+
+    img {
+
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      width: $sizeAlbumPic;
+
+      @media (max-width: 479px) {
+        width:100%;
+
+      }
+
+    }
+
+
+    a {
+
+      font-size: $sizeAlbumLink;
+
+    }
+
+    span {
+
+      color: $colorTextLighter;
+      font-size: $sizeAlbumYear;
+
+    }
+
+    ul{
+
+      padding-left: 0;
+      width: 100%;
+
+      li{
+        display: flex;
+        padding-top: 10px;
+        word-break: break-word;
+
+        div{
+          color: $colorTextLighter;
+          font-size: $sizeSongFeat;
+          padding-left: 10px;
+        }
+
+        >span{
+          color: $colorIconPlay;
+          font-size: $sizeIconPLay;
+          vertical-align: middle;
+          cursor: pointer;
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          margin-right: 10px;
+
+          &:before{
+            content: "\f144";
+          }
+
+          &:hover{
+
+            color: $colorIconPlayHover;
+
+          }
+
+          &.false{
+
+            color: $colorIconFalse;
+            font-size: $sizeIconPLay;
+            vertical-align: middle;
+            cursor: pointer;
+
+          }
+
+        }
+
+        >a{
+          font-size: $sizeSongLink;
+          display: block;
+          vertical-align: middle;
+
+        }
+
+        div{
+
+          display: block;
+          vertical-align: middle;
+
+          a{
+
+            font-size: $sizeSongLink;
+
+          }
+
+        }
+
+      }
+
+    }
+
+    h1 {
+
+      margin-top: 8px;
+      margin-bottom: 5px;
+
+    }
+
+    div {
+
+
+
+    }
+
+
+  }
+
+}
+
+
+.pop-albums {
+
+  width:100%;
+  word-break: break-word;
+  a {
+
+
+    /* margin-bottom: 20px; */
+    padding-left: 0px;
+    padding-right: 0px;
+    position: static;
+
+
+    @media (max-width: 479px) {
+      margin-bottom: 20px !important;
+      padding-left: 0px!important;
+      padding-right: 0px!important;
+
+    }
+
+    @media (max-width: 768px){
+      margin-bottom: 20px!important;
+    }
+
+    div {
+
+      min-height: 20px;
+      height: 330px;
+      border-radius: 8px;
+      text-align: -webkit-center;
+
+      @media (max-width: 479px) {
+        height: 100% !important;
+      }
+
+      @media (max-width: 768px) {
+        height: 100% !important;
+      }
+
+      div {
+
+        min-height: 20px;
+        height: 320px;
+        padding: 5px;
+        background-color: #d0d0d069;
+        border-radius: 1px;
+        /* word-break: break-all; */
+        text-align: center;
+        width: 223px;
+
+        &:hover{
+
+          background-color: #7bfede;
+
+        }
+
+        @media (max-width: 768px) {
+          width: 100% !important;
+          height: 100% !important;
+
+        }
+
+        p{
+
+          color: #131415;
+          font-size: 16px;
+          font-weight: bolder;
+
+          @media (max-width: 479px){
+            font-size: 20px!important;
+          }
+
+          img{
+
+            width:210px;
+
+            @media (max-width: 768px){
+              width:100%;
+            }
+            @media (max-width: 479px){
+              width: 100%!important;
+            }
+
+
+
+          }
+
+
+        }
+
+      }
+
+
+    }
+
+  }
+
+}

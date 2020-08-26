@@ -1,7 +1,5 @@
-<div class="header-top-line-search">
-
+<div>
     <?php
-
 
     $template = '<div class="search-value-div"><p class="search-value">{{value}}</p>';
 

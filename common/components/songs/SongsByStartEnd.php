@@ -15,6 +15,7 @@ class SongsByStartEnd
             ->createCommand('
             select
             m_songs.id,
+            m_songs.url,
             m_songs.m_genres_id,
             m_songs.m_artists_id,
             m_songs.m_albums_id

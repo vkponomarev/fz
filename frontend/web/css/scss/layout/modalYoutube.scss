@@ -1,0 +1,41 @@
+.modal-open {
+  overflow: overlay!important;
+}
+
+.modal {
+  position: fixed;
+  top: auto!important;
+  right: 0;
+  bottom: 0;
+  left: auto!important;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+.modal-content{
+
+  border: 0!important;
+
+}
+
+.modal-body {
+
+  padding: 0px!important;
+}
+
+.modal-footer {
+  padding: 0 5px!important;
+  padding-bottom: 5px!important;
+  border-top: none!important;
+}
+
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 380px !important;
+
+  }
+}

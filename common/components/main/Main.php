@@ -22,6 +22,12 @@ class Main
 
     }
 
+    function languages(){
+
+        return (new MainLanguage())->languages();
+
+    }
+
     function text($textID, $languageID){
 
         return (new MainText())->text($textID, $languageID);

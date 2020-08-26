@@ -1,0 +1,64 @@
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif;
+}
+
+
+.wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+.wrap > .container {
+  padding: 70px 10px 20px;
+}
+
+.rflex{
+
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+
+.footer {
+
+  height: 70px;
+  background-color: $colorMain;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+h1 {
+  font-size: $sizeH1;
+  color: $colorH1;
+  word-break: break-word;
+
+}
+
+h2 {
+  font-size: $sizeH2;
+  color: $colorH2;
+  word-break: break-word;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a{
+
+  color:$colorA;
+
+  &:hover{
+
+    color:$colorAHover;
+    text-decoration: none;
+
+  }
+
+
+}
+

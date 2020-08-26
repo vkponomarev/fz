@@ -25,6 +25,18 @@ class View
 
     }
 
+    function generateSongs($valueOne, $valueTwo, $languagesData){
+
+        (new ViewGenerateSongs())->generate($valueOne, $valueTwo, $languagesData);
+
+    }
+
+    function generateLanguages($languagesData){
+
+        (new ViewGenerateLanguages())->generate($languagesData);
+
+    }
+
     function generatePages($languagesData){
 
         (new ViewGeneratePages())->generate($languagesData);

@@ -25,11 +25,11 @@ class YoutubeController extends Controller
 
         if(\Yii::$app->request->isAjax){
 
-            $youtubeUrl = \Yii::$app->request->post('youtubeUrl');
-            $youtubeUrl = explode('=', $youtubeUrl);
+            $youtubeUrl = \Yii::$app->request->post('url');
+            //$youtubeUrl = explode('=', $youtubeUrl);
 
             return $this->renderAjax('index', [
-                'youtubeUrl'  => $youtubeUrl[1],
+                'youtubeUrl'  => $youtubeUrl,
             ]);
         }
 

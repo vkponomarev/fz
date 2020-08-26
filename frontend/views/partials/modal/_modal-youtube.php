@@ -1,5 +1,5 @@
-<div class="modal fade" id="youtubeModal" data-backdrop="false" tabindex="-1" role="dialog"
-     aria-labelledby="exampleModalLabel">
+
+<div class="modal fade" id="yM" data-backdrop="false">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
@@ -11,28 +11,21 @@
     </div>
 </div>
 <script>
-    let youtubeModal = $('#youtubeModal').modal({'show': false});
+    let youtubeModal = $('#yM').modal({'show': false});
     youtubeModal.on('show.bs.modal', function (event) {
         let button = $(event.relatedTarget);
-        let youtubeUrl = button.data('url');
-
+        let url = button.data('url');
         $.ajax({
             url: '<?= \yii\helpers\Url::toRoute(['youtube/index'])?>',
             type: 'post',
-            data: {youtubeUrl: youtubeUrl},
+            data: {url: url},
             success(response) {
-                // Add response in Modal body
                 $('.modal-body').html(response);
-                //$('#exampleModal').html(response);
-                // Display Modal
-                //$('#exampleModal').modal('show');
             }
         });
     });
-
-    function showYoutubeModal(trigger) {
-        // here you can call modal function programmatically
-        // depending on your needs
+    function sYM(trigger) {
         youtubeModal.modal('show', $(trigger));
     }
 </script>
+

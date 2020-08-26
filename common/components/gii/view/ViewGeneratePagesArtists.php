@@ -35,6 +35,7 @@ class ViewGeneratePagesArtists
 
             $main = new Main();
             Yii::$app->params['language'] = $main->language(Yii::$app->language);
+            Yii::$app->params['language']['all'] = $main->languages();
             Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
             Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
             Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
@@ -46,11 +47,12 @@ class ViewGeneratePagesArtists
             $songByYoutube = $song->byYoutube();
 
 
-            $file = Yii::$app->controller->renderPartial('page-artists', [
+            $file = Yii::$app->view->render('@frontend/views/artists/index.min.php', [
                 'artistsByPopularity' => $artistsByPopularity,
                 'songByYoutube' => $songByYoutube,
 
             ]);
+
 
 
             $view = New View();
@@ -61,7 +63,6 @@ class ViewGeneratePagesArtists
 
             $arrayName = $language['url'] . '-array.php';
             $array = [
-                'language' => Yii::$app->params['language'],
                 'text' => Yii::$app->params['text'],
                 'canonical' => Yii::$app->params['canonical'],
                 'alternate' => Yii::$app->params['alternate'],

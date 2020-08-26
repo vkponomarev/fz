@@ -15,6 +15,7 @@ use common\components\gii\view\View;
 use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\songs\Songs;
+use common\components\translation\Translation;
 use common\components\urlCheck\UrlCheck;
 use Yii;
 use yii\web\Controller;
@@ -50,7 +51,8 @@ class ViewGenerateArtists
                 //$urlCheckCheck = $urlCheck->check($url, $urlCheckTrueUrl['url']);
 
                 $main = new Main();
-                Yii::$app->params['language'] = $main->language($language['url']);
+                Yii::$app->params['language'] = $main->language(Yii::$app->language);
+                Yii::$app->params['language']['all'] = $main->languages();
                 Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
                 Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
                 Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
@@ -67,6 +69,13 @@ class ViewGenerateArtists
                 $songs = new Songs();
                 $songsByArtist = $songs->byArtist($artistData['id']);
 
+                if ($songsByArtist) {
+                    $translation = new Translation();
+                    $translationCheckOrigin = $translation->checkOrigin($songsByArtist[0]['id'], Yii::$app->params['language']['current']['id']);
+                } else {
+                    $translationCheckOrigin = false;
+                }
+
                 $featuring = new Featuring();
                 $featuringByArtist = $featuring->byArtist($artistData['id']);
 
@@ -81,17 +90,18 @@ class ViewGenerateArtists
                 $breadCrumbs = new Breadcrumbs();
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->artist($artistData, $firstLetterByArtist);
 
+                $file = Yii::$app->view->render('@frontend/views/artists/artist-page.min.php', [
 
-                $file = Yii::$app->controller->renderPartial('artist-page', [
                     'artistData' => $artistData,
                     'albumsByArtist' => $albumsByArtist,
                     'songsByArtist' => $songsByArtist,
                     'genres' => $genresByArtist,
+                    'translationCheckOrigin' => $translationCheckOrigin,
+                    
 
                 ]);
 
                 $folder = ceil($id/1000);
-
                 $view = New View();
                 $fileName = $url . '-' . $language['url'] . '.php';
                 $filePath = $view->realPath() . '/view/artists/' . $folder . '/' . $id . '/';
@@ -104,7 +114,6 @@ class ViewGenerateArtists
 
                 $arrayName = $url . '-' . $language['url'] . '-array.php';
                 $array = [
-                    'language' => Yii::$app->params['language'],
                     'text' => Yii::$app->params['text'],
                     'canonical' => Yii::$app->params['canonical'],
                     'alternate' => Yii::$app->params['alternate'],

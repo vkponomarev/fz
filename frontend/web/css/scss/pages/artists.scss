@@ -1,0 +1,130 @@
+.artist {
+
+  div {
+
+    img {
+
+      float: left;
+      margin-right: 20px;
+      width: 200px;
+
+    }
+
+    div {
+
+      span {
+
+        color: $colorTextLighterMore;
+
+      }
+
+      h1 {
+
+        margin-top: 8px;
+        margin-bottom: 5px;
+
+      }
+
+      div {
+
+        font-size: $sizeHeaderTwo;
+        margin-top: 8px;
+        margin-bottom: 5px;
+
+      }
+
+    }
+
+
+  }
+
+}
+
+.pop-artist {
+
+
+  a {
+
+
+    /* margin-bottom: 20px; */
+    padding-left: 0px;
+    padding-right: 0px;
+    position: static;
+
+
+    @media (max-width: 479px) {
+      margin-bottom: 20px !important;
+
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 20px !important;
+
+    }
+
+
+
+    div {
+
+      min-height: 20px;
+      height: 330px;
+      border-radius: 8px;
+      text-align: -webkit-center;
+
+      @media (max-width: 479px) {
+        height: 100% !important;
+      }
+
+
+      div {
+
+        min-height: 20px;
+        height: 320px;
+        padding: 5px;
+        background-color: #d0d0d069;
+        border-radius: 1px;
+        /* word-break: break-all; */
+        text-align: center;
+        width: 223px;
+
+        &:hover{
+
+          background-color: #7bfede;
+
+        }
+
+        @media (max-width: 768px) {
+          width: 100% !important;
+          height: 100% !important;
+
+        }
+
+        p{
+
+          color: #131415;
+          font-size: 16px;
+          font-weight: bolder;
+
+          @media (max-width: 479px){
+            font-size: 20px!important;
+          }
+
+        }
+
+      }
+
+
+    }
+
+  }
+
+}
+
+
+
+
+
+
+
+
+

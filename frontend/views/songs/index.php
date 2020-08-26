@@ -16,19 +16,19 @@
 <a name="lyrics"></a><h1 class="main-page-h1"><?= Yii::t('app', 'Lyrics') ?></h1>
 <br><br>
 
-<div class="row row-flex">
+<div class="rflex lyrics">
 
-    <ul class="songs-links">
+    <ul>
         <?php foreach ($songsByLyrics as $key => $song): ?>
 
-            <li class="songs-li">
-                    <span id="play-button" class="fa fa-file-text-o play-button">
+            <li>
+                    <span>
                         </span>
 
-                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
+                <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
                     <?= $song['artistName'] ?> </a>
-                <span class="dash">-</span>
-                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
+                &nbsp;-&nbsp;
+                <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
                     <?= $song['name'] ?> </a>
             </li>
 
@@ -41,19 +41,19 @@
 
 <a name="song-translations"></a><h2 class="main-page-h1"><?= Yii::t('app', 'Song translations into English') ?></h2>
 <br><br>
-<div class="row row-flex">
+<div class="rflex translations">
 
-    <ul class="songs-links">
+    <ul>
         <?php foreach ($songsByTranslations as $key => $song): ?>
 
-            <li class="songs-li">
-                    <span id="play-button" class="fa fa-pencil-square play-button">
+            <li>
+                    <span>
                         </span>
 
-                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
+                <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
                     <?= $song['artistName'] ?> </a>
-                <span class="dash">-</span>
-                <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
+                &nbsp;-&nbsp;
+                <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
                     <?= $song['name'] ?> </a>
             </li>
 
@@ -68,57 +68,55 @@
 <br><br><br><br>
 <a name="listen-songs"></a><h2 class="main-page-h1"><?= Yii::t('app', 'Listen to songs online for free') ?></h2>
 <br><br>
-
-<ul class="songs-links">
+<div class="rflex songs">
+<ul>
     <?php foreach ($songsByListen as $song): ?>
 
-        <li class="songs-li">
+        <li>
             <?php if ($song['url_youtube']): ?>
-                <span id="play-button" class="fa fa-play-circle play-button" onclick="showYoutubeModal(this)"
-                      data-url="<?= $song['url_youtube'] ?>" data-backdrop="false">
+                <span onclick="sYM(this)"
+                      data-url="<?= $song['url_youtube'] ?>">
                 </span>
             <?php else: ?>
-                <span id="play-button" class="fa fa-play-circle play-button-false">
+                <span class="false">
                 </span>
             <?php endif; ?>
-            <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
+            <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
                 <?= $song['artistName'] ?> </a>
-            <span class="dash">-</span>
-            <a class="songs-li-a" href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
+            &nbsp;-&nbsp;
+            <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
                 <?= $song['name'] ?> </a>
         </li>
 
     <?php endforeach; ?>
 </ul>
-
+</div>
 
 <br><br><br><br>
 <a name="popular-songs"></a><h2 class="main-page-h2"><?= Yii::t('app', 'Popular songs') ?></h2>
 <br><br>
-<div class="row row-flex">
+<div class="rflex pop-songs">
     <?php //(new \common\components\dump\Dump())->printR($songsByPopularity); ?>
     <?php foreach ($songsByPopularity as $songs): ?>
 
         <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $songs['url']; ?>/"
-           class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 main-pages-extended">
-            <div class="plates-songs-outside">
+           class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div>
 
-                <div class="plates-songs">
+                <div>
 
                     <?php if ($songs['albumPhoto']): ?>
                         <p>
-                            <img class="plates-songs-img"
-                                 src="/files/albums/<?= $songs['albumFirstLetter'] ?>/<?= $songs['albumPhoto'] ?>"
-                                 alt="<?= $songs['name'] ?>"
-                                 width="100">
+                            <img
+                                    src="/files/albums/<?= $songs['albumFirstLetter'] ?>/<?= $songs['albumPhoto'] ?>"
+                                    alt="<?= $songs['name'] ?>"
+                            >
 
                         </p>
                     <?php endif; ?>
 
-                    <?= $songs['name']; ?>
-                    <p class="plates-songs-title">
+                    <p><?= $songs['name']; ?></p>
 
-                    </p>
 
                     <p class="plates-songs-artist-name"><?= $songs['artistName']; ?>
                     </p>
@@ -128,5 +126,4 @@
         </a>
     <?php endforeach; ?>
 </div>
-
 <br><br><br><br>

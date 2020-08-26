@@ -36,6 +36,7 @@ class MainPageController extends Controller
 
             $main = new Main();
             Yii::$app->params['language'] = $main->language(Yii::$app->language);
+            Yii::$app->params['language']['all'] = $main->languages();
             Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
             Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
             Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
@@ -50,7 +51,7 @@ class MainPageController extends Controller
             $songsByListenMusic = $songs->byListenMusicMainPage();
             $songsByPopularity = $songs->byPopularity(20);
 
-            return $this->render('index', [
+            return $this->render('index.min.php', [
 
                 'artistByPopularity' => $artistByPopularity,
                 'albumsByPopularity' => $albumsByPopularity,
@@ -68,12 +69,16 @@ class MainPageController extends Controller
             $noDB = new NoDB();
             $fileDB = json_decode(file_get_contents($noDB->realPath() . $path . $array), TRUE);
 
-            Yii::$app->params['language'] = $fileDB['language'];
+            $languagesPath = '/view/languages/';
+            $languagesArray = Yii::$app->language . '-array.php';
+            $fileDBLanguages = json_decode(file_get_contents($noDB->realPath() . $languagesPath . $languagesArray), TRUE);
+
+            Yii::$app->params['language'] = $fileDBLanguages['language'];
             Yii::$app->params['text'] = $fileDB['text'];
             Yii::$app->params['canonical'] = $fileDB['canonical'];
             Yii::$app->params['alternate'] = $fileDB['alternate'];
 
-            return $this->render('index-noDB', [
+            return $this->render('index-noDB.min.php', [
 
                 'file' => $file,
                 'path' => $path,

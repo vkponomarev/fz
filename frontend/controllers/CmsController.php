@@ -27,6 +27,7 @@ class CmsController extends Controller
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
+        Yii::$app->params['language']['all'] = $main->languages();
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
@@ -48,6 +49,7 @@ class CmsController extends Controller
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
+        Yii::$app->params['language']['all'] = $main->languages();
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);

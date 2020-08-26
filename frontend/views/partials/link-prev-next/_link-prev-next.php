@@ -1,6 +1,5 @@
 <?php
 
-
 ?>
 <?php if (isset(Yii::$app->params['prevNext'])):?>
 <?php if (Yii::$app->params['prevNext']['prev'] or Yii::$app->params['prevNext']['next']):?>

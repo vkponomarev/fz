@@ -35,6 +35,7 @@ class ViewGeneratePagesAlbums
 
             $main = new Main();
             Yii::$app->params['language'] = $main->language(Yii::$app->language);
+            Yii::$app->params['language']['all'] = $main->languages();
             Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
             Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
             Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
@@ -45,7 +46,7 @@ class ViewGeneratePagesAlbums
             $song = new Song();
             $songByYoutube = $song->byYoutube();
 
-            $file = Yii::$app->controller->renderPartial('page-albums', [
+            $file = Yii::$app->view->render('@frontend/views/albums/index.min.php', [
                 'albumsByPopularity' => $albumsByPopularity,
                 'songByYoutube' => $songByYoutube,
 
@@ -59,7 +60,6 @@ class ViewGeneratePagesAlbums
 
             $arrayName = $language['url'] . '-array.php';
             $array = [
-                'language' => Yii::$app->params['language'],
                 'text' => Yii::$app->params['text'],
                 'canonical' => Yii::$app->params['canonical'],
                 'alternate' => Yii::$app->params['alternate'],

@@ -11,6 +11,7 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'frontend\controllers',
+    'layout' => 'main.min.php',
     'components' => [
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer'

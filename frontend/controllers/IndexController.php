@@ -37,6 +37,7 @@ class IndexController extends Controller
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
+        Yii::$app->params['language']['all'] = $main->languages();
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
@@ -47,7 +48,7 @@ class IndexController extends Controller
         $breadCrumbs = new Breadcrumbs();
         Yii::$app->params['breadcrumbs'] = $breadCrumbs->indexesByArtistsFirstLetters();
 
-        return $this->render('artists', [
+        return $this->render('artists.min.php', [
 
             //'showTestTable' => Artists::showTestTable(),
             'indexesByArtistsFirstLetter' => $indexesByArtistsFirstLetter
@@ -70,6 +71,7 @@ class IndexController extends Controller
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
+        Yii::$app->params['language']['all'] = $main->languages();
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
@@ -95,7 +97,7 @@ class IndexController extends Controller
         $pageTexts->updateByArtistsIndex($getParamsByLinksPrevNext, $firstLetterData);
         
 
-        return $this->render('artists-page', [
+        return $this->render('artists-page.min.php', [
 
             'artistsByFirstLetter' => $artistsByFirstLetter['artists'],
             'firstLetterData' => $firstLetterData,

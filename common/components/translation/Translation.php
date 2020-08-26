@@ -41,6 +41,12 @@ class Translation
 
     }
 
+    function checkOrigin($songsID, $languageID)
+    {
+
+        return (new TranslationCheckOrigin())->check($songsID, $languageID);
+
+    }
 
     function proxy()
     {

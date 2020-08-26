@@ -1,13 +1,6 @@
 <?php
-
 /* @var $this \yii\web\View */
 /* @var $content string */
-
-
-//AppAsset::register($this);
-//echo $this->params['title'];
-
-
 ?>
 <?php foreach (Yii::$app->params['language']['all'] as $one): ?>
 <?php if ($one['url'] <> Yii::$app->language):?>

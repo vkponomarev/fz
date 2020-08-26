@@ -1,55 +1,41 @@
 <?php
-
-/* @var $this \yii\web\View */
-
-/* @var $content string */
-
 use frontend\assets\AppAsset;
 use yii\widgets\Pjax;
-
 AppAsset::register($this);
-//echo $this->params['title'];
-
-//Url::home();
-
 ?>
-<?php $this->beginPage() ?>
+<?php $this->beginPage()?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?=Yii::$app->language ?>">
 <head>
-
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-    <meta charset="<?= Yii::$app->charset ?>">
+    <meta charset="<?=Yii::$app->charset?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= Yii::$app->params['text']['title'] ?></title>
+    <title><?=Yii::$app->params['text']['title']?></title>
 
-    <meta name="description" content="<?= Yii::$app->params['text']['description'] ?>">
+    <meta name="description" content="<?=Yii::$app->params['text']['description']?>">
 
-    <?= $this->render('/partials/alternate/_alternate'); ?>
+    <?=$this->render('/partials/alternate/_alternate.min.php')?>
 
-    <?= $this->render('/partials/canonical/_canonical'); ?>
+    <?=$this->render('/partials/canonical/_canonical.min.php')?>
 
-    <?= $this->render('/partials/link-prev-next/_link-prev-next'); ?>
-    <?php $this->registerCsrfMetaTags() ?>
+    <?=$this->render('/partials/link-prev-next/_link-prev-next.min.php')?>
+    <?php $this->registerCsrfMetaTags()?>
+    <?php $this->head()?>
 
-
-
-    <?php $this->head() ?>
 
 </head>
 <body role="document">
-<?php $this->beginBody() ?>
+<?php $this->beginBody()?>
 
 <div class="wrap">
 
 
-    <div class="header-top-line">
+    <div class="top">
 
-        <?= $this->render('/partials/search/_search-widget', [
-        ]); ?>
+        <?=$this->render('/partials/search/_search-widget.min.php')?>
 
-        <a href="/" rel="nofollow" class="header-top-line-site-name-link">FLOWLEZ</a>
+        <a href="/" rel="nofollow">FLOWLEZ</a>
     </div>
 
 
@@ -72,9 +58,9 @@ AppAsset::register($this);
 
                 <li class="nav-link navbar-li">
 
-                    <a href="/<?= Yii::$app->language ?>/artists/" class="dropdown-toggle navbar-a-link">
+                    <a href="/<?=Yii::$app->language?>/artists/" class="dropdown-toggle navbar-a-link">
 
-                        <?= Yii::t('app', 'Artists') ?>
+                        <?=Yii::t('app', 'Artists')?>
 
                     </a>
 
@@ -86,9 +72,9 @@ AppAsset::register($this);
 
 
                 <li class="dropdown navbar-li">
-                    <a href="/<?= Yii::$app->language ?>/albums/" class="dropdown-toggle navbar-a-link">
+                    <a href="/<?=Yii::$app->language?>/albums/" class="dropdown-toggle navbar-a-link">
 
-                        <?= Yii::t('app', 'Albums') ?>
+                        <?=Yii::t('app', 'Albums')?>
 
                     </a>
                 </li>
@@ -98,9 +84,9 @@ AppAsset::register($this);
                 </li>
 
                 <li class="dropdown navbar-li">
-                    <a href="/<?= Yii::$app->language ?>/songs/" class="dropdown-toggle navbar-a-link">
+                    <a href="/<?=Yii::$app->language?>/songs/" class="dropdown-toggle navbar-a-link">
 
-                        <?= Yii::t('app', 'Songs') ?>
+                        <?=Yii::t('app', 'Songs')?>
 
                     </a>
                 </li>
@@ -113,7 +99,7 @@ AppAsset::register($this);
 
     <div class="container">
 
-        <?= $content ?>
+        <?=$content?>
 
     </div>
 
@@ -121,11 +107,9 @@ AppAsset::register($this);
 
 
 <div class="container">
-    <div class="row  row-flex">
+    <div class="rflex">
 
-        <?= $this->render('/partials/breadcrumbs/_breadcrumbs', [
-            //'artist' => $artist,
-        ]); ?>
+        <?=$this->render('/partials/breadcrumbs/_breadcrumbs.min.php')?>
 
     </div>
 </div>
@@ -135,40 +119,39 @@ AppAsset::register($this);
 <footer>
     <div class="container">
 
-        <div class="row">
-            <div class="col-md-12 text-center">
+        <div class="rflex">
+            <div>
                 <br>
-                <?= $this->render('/partials/first-letter-index/_first-letter-index'); ?>
+                <?=$this->render('/partials/first-letter-index/_first-letter-index.min.php')?>
             </div>
         </div>
 
 
-        <hr class="footer-hr">
-        <div class="row text-md-left text-center">
+        <hr>
+        <div class="rflex fmy">
 
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <span class="choose-languages">
+            <div class="col-xs-12 col-sm-6">
+                <span class="cl">
 
-                   <span class="fa fa-globe globe-size">
+                   <span class="fa fa-globe">
                    </span>
 
-                        <?= Yii::$app->params['language']['current']['name'] ?>
+                        <?= Yii::$app->params['language']['current']['name']?>
 
-                   <span class="fa fa-sort-down sort-down-languages">
+                   <span class="fa fa-sort-down">
                    </span>
-                   <ul class="languages-dropdown">
+                   <ul>
 
 
-                       <?php foreach (Yii::$app->params['language']['all'] as $item): ?>
+                       <?php foreach (Yii::$app->params['language']['all'] as $item):?>
 
                            <li>
 
-                               <?= \yii\helpers\Html::a($item['name'], array_merge(Yii::$app->request->get(),
-                                   [Yii::$app->controller->route, 'language' => $item['url']])); ?>
+                               <?= \yii\helpers\Html::a($item['name'], array_merge(Yii::$app->request->get(), [Yii::$app->controller->route, 'language' => $item['url']]))?>
 
                            </li>
 
-                       <?php endforeach ?>
+                       <?php endforeach?>
 
 
                    </ul>
@@ -188,7 +171,7 @@ AppAsset::register($this);
 
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-xs-12 col-sm-6">
 
                 <ul class="contact">
                     <li>
@@ -215,15 +198,14 @@ AppAsset::register($this);
     <br><br><br>
 </footer>
 
-<?= $this->render('/partials/modal/_modal-youtube', [
-]); ?>
+<?= $this->render('/partials/modal/_modal-youtube.min.php'); ?>
 
 <?php Pjax::begin(); ?>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dbbf2586b540d45"></script>
 <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
 <script src="https://yastatic.net/share2/share.js" async="async"></script>
 
-<?= $this->render('/partials/counters/_counters'); ?>
+<?= $this->render('/partials/counters/_counters.min.php'); ?>
 
 
 

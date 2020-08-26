@@ -20,8 +20,10 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         //'css/bootstrap-rtl.css',
-        'css/site.css',
-        'css/extended.css',
+        //'css/main.css',
+        'css/scss/main.min.css',
+        //'css/extended.css',
+
         //'css/calendars.css',
         //'css/forms.css',
 
@@ -31,9 +33,9 @@ class AppAsset extends AssetBundle
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapPluginAsset',
-        'yii\bootstrap\BootstrapAsset',
-        'frontend\assets\FontAwesomeAsset',
         //'frontend\assets\MyAssets',
+        //'yii\bootstrap\BootstrapAsset',
+        'frontend\assets\FontAwesomeAsset',
 
         //'yii\jui\JuiAsset'
     ];
