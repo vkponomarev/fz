@@ -97,69 +97,104 @@ class SongsController extends Controller
     public function actionSongPage($url)
     {
 
-        $textID = '58'; // ID из таблицы pages
-        $table = 'm_songs'; // К какой таблице относится данная страница
-        $mainUrl = 'songs'; // Основной урл https://flowlez.com/ru/songs/
+        if (Yii::$app->params['useSongsDB']) {
 
-        $urlCheck = new UrlCheck();
-        $urlCheckID = $urlCheck->id($url);
-        $urlCheckTrueUrl = $urlCheck->trueUrl($urlCheckID, $table);
-        $urlCheckCheck = $urlCheck->check($url, $urlCheckTrueUrl['url']);
+            $textID = '58'; // ID из таблицы pages
+            $table = 'm_songs'; // К какой таблице относится данная страница
+            $mainUrl = 'songs'; // Основной урл https://flowlez.com/ru/songs/
 
-        $main = new Main();
-        Yii::$app->params['language'] = $main->language(Yii::$app->language);
-        Yii::$app->params['language']['all'] = $main->languages();
-        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
-        Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
-        Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
+            $urlCheck = new UrlCheck();
+            $urlCheckID = $urlCheck->id($url);
+            $urlCheckTrueUrl = $urlCheck->trueUrl($urlCheckID, $table);
+            $urlCheckCheck = $urlCheck->check($url, $urlCheckTrueUrl['url']);
+
+            $main = new Main();
+            Yii::$app->params['language'] = $main->language(Yii::$app->language);
+            Yii::$app->params['language']['all'] = $main->languages();
+            Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
+            Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
+            Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
 
-        $song = new Song();
-        $songData = $song->data($urlCheckID);
+            $song = new Song();
+            $songData = $song->data($urlCheckID);
 
-        $album = new Album();
-        $albumData = $album->data($songData['m_albums_id']);
+            $album = new Album();
+            $albumData = $album->data($songData['m_albums_id']);
 
-        $artist = new Artist();
-        $artistBySong = $artist->bySong($songData['m_artists_id']);
+            $artist = new Artist();
+            $artistBySong = $artist->bySong($songData['m_artists_id']);
 
-        $songs = new Songs();
-        $songsData = $songs->byArtistLimit($artistBySong['id']);
+            $songs = new Songs();
+            $songsData = $songs->byArtistLimit($artistBySong['id']);
 
-        $featuring = new Featuring();
-        $featuringBySong = $featuring->bySong($songData['id']);
+            $featuring = new Featuring();
+            $featuringBySong = $featuring->bySong($songData['id']);
 
-        $genres = new Genres();
-        $genresBySong = $genres->bySong($songData['id']);
+            $genres = new Genres();
+            $genresBySong = $genres->bySong($songData['id']);
 
-        $pageTexts = new PageTexts();
-        $pageTexts->updateBySong($songData);
-        $pageTexts->updateByArtist($artistBySong);
+            $pageTexts = new PageTexts();
+            $pageTexts->updateBySong($songData);
+            $pageTexts->updateByArtist($artistBySong);
 
-        $firstLetter = new FirstLetter();
-        $firstLetterByArtist = $firstLetter->byArtist($artistBySong);
+            $firstLetter = new FirstLetter();
+            $firstLetterByArtist = $firstLetter->byArtist($artistBySong);
 
-        $breadCrumbs = new Breadcrumbs();
-        Yii::$app->params['breadcrumbs'] = $breadCrumbs->song($artistBySong, $albumData, $songData, $firstLetterByArtist);
+            $breadCrumbs = new Breadcrumbs();
+            Yii::$app->params['breadcrumbs'] = $breadCrumbs->song($artistBySong, $albumData, $songData, $firstLetterByArtist);
 
-        $translations = new Translations();
-        $translationsByLanguages = $translations->byLanguages($songData['id']);
+            $translations = new Translations();
+            $translationsByLanguages = $translations->byLanguages($songData['id']);
 
-        $translation = new Translation();
-        $translationByLanguage = $translation->byLanguage($songData['id'], Yii::$app->params['language']['id']);
+            $translation = new Translation();
+            $translationByLanguage = $translation->byLanguage($songData['id'], Yii::$app->params['language']['id']);
 
-        return $this->render('song-page.min.php', [
+            return $this->render('song-page.min.php', [
 
-            'songData' => $songData,
-            'songsData' => $songsData,
-            'albumData' => $albumData,
-            'artistBySong' => $artistBySong,
-            'featuring' => $featuringBySong,
-            'genres' => $genresBySong,
-            'translationByLanguage' => $translationByLanguage,
-            'translationsByLanguages' => $translationsByLanguages,
+                'songData' => $songData,
+                'songsData' => $songsData,
+                'albumData' => $albumData,
+                'artistBySong' => $artistBySong,
+                'featuring' => $featuringBySong,
+                'genres' => $genresBySong,
+                'translationByLanguage' => $translationByLanguage,
+                'translationsByLanguages' => $translationsByLanguages,
 
-        ]);
+            ]);
+
+        } else {
+
+            $urlCheck = new UrlCheck();
+            $urlCheckID = $urlCheck->id($url);
+
+            $folder = ceil($urlCheckID / 1000);
+            $path = '/view/songs/' . $folder . '/' . $urlCheckID . '/';
+            $file = $url . '-' . Yii::$app->language . '.php';
+            $array = $url . '-' . Yii::$app->language . '-array.php';
+
+            $noDB = new NoDB();
+            $urlCheckNoDB = $urlCheck->checkNoDB($noDB->realPath(), $path, $file);
+            $fileDB = json_decode(file_get_contents($noDB->realPath() . $path . $array), TRUE);
+
+            $languagesPath = '/view/languages/';
+            $languagesArray = Yii::$app->language . '-array.php';
+            $fileDBLanguages = json_decode(file_get_contents($noDB->realPath() . $languagesPath . $languagesArray), TRUE);
+
+            Yii::$app->params['language'] = $fileDBLanguages['language'];
+            Yii::$app->params['text'] = $fileDB['text'];
+            Yii::$app->params['canonical'] = $fileDB['canonical'];
+            Yii::$app->params['alternate'] = $fileDB['alternate'];
+            Yii::$app->params['breadcrumbs'] = $fileDB['breadcrumbs'];
+
+            return $this->render('song-page-noDB.min.php', [
+
+                'file' => $file,
+                'path' => $path,
+
+            ]);
+
+        }
 
     }
 

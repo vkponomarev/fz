@@ -35,10 +35,6 @@ class ViewGenerateSongs
         $count = $valueOne;
         foreach ($songsByStartEnd as $one) {
 
-
-
-
-
             $count++;
             $bigData = new \common\components\bigData\BigData();
             $bigData->saveData($count, 'work');
@@ -59,6 +55,7 @@ class ViewGenerateSongs
 
                 $main = new Main();
                 Yii::$app->params['language'] = $main->language(Yii::$app->language);
+                Yii::$app->params['language']['all'] = $main->languages();
                 Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
                 Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
                 Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
@@ -119,16 +116,10 @@ class ViewGenerateSongs
                 $fileName = $url . '-' . $language['url'] . '.php';
                 $filePath = $view->realPath() . '/view/songs/' . $folder . '/' . $id . '/';
 
-                //(new \common\components\dump\Dump())->printR($filePath);
-
-                //(new \common\components\dump\Dump())->printR(Yii::$app->params['language']['current']['url']);
-                //die;
-
                 $view->generateFile($file, $fileName, $filePath);
 
                 $arrayName = $url . '-' . $language['url'] . '-array.php';
                 $array = [
-                    'language' => Yii::$app->params['language'],
                     'text' => Yii::$app->params['text'],
                     'canonical' => Yii::$app->params['canonical'],
                     'alternate' => Yii::$app->params['alternate'],
@@ -139,10 +130,6 @@ class ViewGenerateSongs
                 $view->generateFileArray($array, $arrayName, $filePath);
 
             }
-
-            $arrayName = $url . '-' . $language['url'] . '-languages.php';
-            Yii::$app->params['language']['all'] = $main->languages();
-            $view->generateFileArray(Yii::$app->params['language']['all'], $arrayName, $filePath);
 
         }
     }

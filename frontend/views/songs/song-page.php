@@ -19,7 +19,7 @@
 
         <?php if ($albumData): ?>
             <?php if ($albumData['photos']): ?>
-                <?php if (file_exists(Yii::getAlias('@webroot') . '/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
+                <?php if (file_exists(Yii::getAlias('@frontend') . '/web/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
                     <img
                             src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>"
                             width="200">
