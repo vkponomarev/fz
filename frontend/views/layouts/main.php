@@ -114,8 +114,6 @@ AppAsset::register($this);
     </div>
 </div>
 
-
-
 <footer>
     <div class="container">
 
@@ -196,6 +194,9 @@ AppAsset::register($this);
         </div>
     </div>
     <br><br><br>
+
+
+
 </footer>
 
 <?= $this->render('/partials/modal/_modal-youtube.min.php'); ?>

@@ -9,7 +9,6 @@
  * @var $translationsByLanguages \common\components\translations\Translations
  * @var $featuring \common\components\featuring\FeaturingBySong
  */
-//(new \common\components\dump\Dump())->printR($albumData);
 
 ?>
 

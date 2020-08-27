@@ -3,12 +3,9 @@
 namespace frontend\controllers;
 
 use common\components\albums\AlbumsArtist;
-use common\models\MSearch;
 use Yii;
 use yii\helpers\Json;
 use yii\web\Controller;
-use yii\sphinx\Query;
-use yii\sphinx\MatchExpression;
 
 class SearchController extends Controller
 {
@@ -46,7 +43,21 @@ class SearchController extends Controller
 
         $searchWord = str_replace("**", "*", $searchWord);
         */
-        $searchWord = '*' . $q . '*';
+        //$searchWord = '*' . $q . '*';
+
+        /*$dataArtists = Yii::$app->db->createCommand('
+                    SELECT 
+                    name, 
+                    url
+                    FROM 
+                    `m_search_artists`
+                    where 
+                    name 
+                    like "%$q%"
+
+                    ')
+        ->queryAll();*/
+
         /*$dataArtists = Yii::$app->db->createCommand('
                     SELECT name, url
                     FROM `m_search_artists`
@@ -58,22 +69,44 @@ class SearchController extends Controller
             ->queryAll();*/
 
 
+        $dataArtists = Yii::$app->db->createCommand('
+                    SELECT 
+                    name, 
+                    url
+                    FROM 
+                    `m_search_artists`
+                    where 
+                    name 
+                    like "%' . $q . '%"
+                    ORDER BY name DESC
+                    limit 4
+                    ')
+            ->queryAll();
+
+
         $data = Yii::$app->db->createCommand('
                     SELECT name, url
                     FROM `m_search`
                     WHERE
                     MATCH(`name`)
-                    AGAINST("' . $searchWord .'"  IN BOOLEAN MODE)
-                    limit 40;
+                    AGAINST("*' . $q . '*"  IN BOOLEAN MODE)
+                    
+                    limit 30;
                     ')
             ->queryAll();
-        /*if ($dataArtists){
-            $data = array_merge($dataArtists, $data);
-        }*/
+        if ($dataArtists) {
+            if ($data)
+                $data = array_merge($dataArtists, $data);
+            else
+                $data = $dataArtists;
+        }
+
+
+        //$data = $dataArtists;
         $out = [];
         foreach ($data as $d) {
             $out[] = [
-                'value' => substr($d['name'], 0, 40),
+                'value' => $d['name'],
                 'url' => $d['url'],
             ];
         }
