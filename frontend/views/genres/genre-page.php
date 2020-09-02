@@ -6,7 +6,7 @@
  */
 
 use yii\widgets\ListView; ?>
-
+<br><br>
 <a name="genre"></a>
 <h1 class="main-page-h1"">
     <?= Yii::$app->params['text']['h1'] ?>
@@ -25,13 +25,11 @@ use yii\widgets\ListView; ?>
             </a>
             <?php $count++ ?>
         <?php endforeach;?>
-
     </div>
 </div>
 <?php endif;?>
 
 <div class="rflex genre-songs">
-
         <?= ListView::widget([
             'dataProvider' => $songsByGenre,
 

@@ -20,7 +20,7 @@ $songsByArtistTMP = $songsByArtist;
     </div>
     <div>
         <div>
-            <span> <?= Yii::t('app', 'artist') ?></span>
+            <span><?= Yii::t('app', 'artist') ?></span>
 
             <h1><?= $artistData['name'] ?></h1>
         </div>
@@ -33,9 +33,9 @@ $songsByArtistTMP = $songsByArtist;
                     <?php foreach ($genres as $genre): ?>
                         <?php if ($count > 0): ?>
                             ,<?=' ';?>
-                            <?= $genre['name'] ?>
+                            <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/genres/<?= $genre['url'] ?>/"><?= $genre['name'] ?></a>
                         <?php else: ?>
-                            <?= $genre['name'] ?>
+                            <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/genres/<?= $genre['url'] ?>/"><?= $genre['name'] ?></a>
                         <?php endif; ?>
                         <?php $count++; ?>
                     <?php endforeach; ?>

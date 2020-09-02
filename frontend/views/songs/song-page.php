@@ -95,10 +95,9 @@
                     <?php foreach ($genres as $genre): ?>
                         <?php if ($count > 0): ?>
                             ,<?=' ';?>
-                                            <?= $genre['name'] ?>
+                            <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/genres/<?= $genre['url'] ?>/"><?= $genre['name'] ?></a>
                         <?php else: ?>
-
-                                            <?= $genre['name'] ?>
+                            <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/genres/<?= $genre['url'] ?>/"><?= $genre['name'] ?></a>
                         <?php endif; ?>
                         <?php $count++; ?>
                     <?php endforeach; ?>
