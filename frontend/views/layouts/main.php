@@ -6,6 +6,16 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?=Yii::$app->language ?>">
 <head>
+
+    <style>
+        @font-face {
+            font-family: 'Arial';
+            font-display: swap;
+            src: local('Arial');
+            font-weight: 400;
+        }
+    </style>
+
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
     <meta charset="<?=Yii::$app->charset?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +31,8 @@ AppAsset::register($this);
     <?=$this->render('/partials/link-prev-next/_link-prev-next.min.php')?>
     <?php $this->registerCsrfMetaTags()?>
     <?php $this->head()?>
+
+
 
 
 </head>
