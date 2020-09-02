@@ -32,7 +32,7 @@ class GenresController extends Controller
         $url = false;
         $textID = '65'; // ID из таблицы pages
         $table = 0; // К какой таблице отностся данная страница
-        $mainUrl = 'artists'; // Основной урл
+        $mainUrl = 'genres'; // Основной урл
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);

@@ -114,7 +114,7 @@ return [
             ],
         ],
 
-        'view' => [
+        /*'view' => [
             'class' => '\rmrevin\yii\minify\View',
             'enableMinify' => !YII_DEBUG,
             'concatCss' => true, // concatenate css
@@ -136,7 +136,7 @@ return [
             //'excludeBundles' => [
             //    \app\helloworld\AssetBundle::class, // exclude this bundle from minification
             //],
-        ],
+        ],*/
 
 
     ],
