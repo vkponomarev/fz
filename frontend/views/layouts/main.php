@@ -9,10 +9,8 @@ AppAsset::register($this);
 
     <style>
         @font-face {
-            font-family: 'Arial';
+            font-family: 'Arial', arial verdana;
             font-display: swap;
-            src: local('Arial');
-            font-weight: 400;
         }
     </style>
 
