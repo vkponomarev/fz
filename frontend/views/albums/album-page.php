@@ -17,13 +17,15 @@
     <div>
         <?php if ($albumData['photos']): ?>
             <?php if (file_exists(Yii::getAlias('@frontend') . '/web/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
-                <img
-                        src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>">
+                <img src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>"
+                     alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - '?><?=$albumData['name']?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')'?>">
             <?php else: ?>
-                <img src="/files/no-album-photo.png">
+                <img src="/files/no-album-photo.png"
+                     alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - '?><?=$albumData['name']?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')'?>">
             <?php endif; ?>
         <?php else: ?>
-            <img src="/files/no-album-photo.png">
+            <img src="/files/no-album-photo.png"
+                 alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - '?><?=$albumData['name']?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')'?>">
         <?php endif; ?>
     </div>
 

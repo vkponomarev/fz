@@ -21,15 +21,22 @@
                 <?php if (file_exists(Yii::getAlias('@frontend') . '/web/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
                     <img
                             src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>"
-                            width="200">
+                            alt="<?php if ($artistBySong['name']) echo $artistBySong['name'] . ' - '?><?=$albumData['name']?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')'?>"
+                    >
                 <?php else: ?>
-                    <img src="/files/no-album-photo.png">
+                    <img src="/files/no-album-photo.png"
+                         alt="<?php if ($artistBySong['name']) echo $artistBySong['name'] . ' - '?><?=$albumData['name']?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')'?>"
+                    >
                 <?php endif; ?>
             <?php else: ?>
-                <img src="/files/no-album-photo.png">
+                <img src="/files/no-album-photo.png"
+                     alt="<?php if ($artistBySong['name']) echo $artistBySong['name'] . ' - '?><?=$albumData['name']?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')'?>"
+                >
             <?php endif; ?>
         <?php else: ?>
-            <img src="/files/no-album-photo.png">
+            <img src="/files/no-album-photo.png"
+                 alt="<?php if ($artistBySong['name']) echo $artistBySong['name'] . ' - '?><?=$albumData['name']?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')'?>"
+            >
         <?php endif; ?>
 
     </div>

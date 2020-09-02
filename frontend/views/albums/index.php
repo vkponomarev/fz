@@ -22,8 +22,9 @@
                     <p>
                         <img
                                 src="/files/albums/<?= $album['first_letter'] ?>/<?= $album['photos'] ?>"
-                                alt="<?= $album['name'] ?>"
-                        >
+                                alt="<?php if ($album['artistName']) echo $album['artistName'] . ' - '?><?= $album['name'] ?><?php if ($album['year']) echo ' (' . $album['year'] . ')'?>"
+
+                          >
 
                     </p>
 

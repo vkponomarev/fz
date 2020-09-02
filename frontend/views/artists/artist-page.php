@@ -13,9 +13,13 @@ $songsByArtistTMP = $songsByArtist;
 
     <div>
         <?php if (file_exists('/files/artists/' . $artistData['first_letter'] . '/' . $artistData['photos'])): ?>
-            <img src="/files/artists/<?= $artistData['first_letter'] ?>/<?= $artistData['photos'] ?>">
+            <img src="/files/artists/<?= $artistData['first_letter'] ?>/<?= $artistData['photos'] ?>"
+                 alt="<?= $artistData['name'] ?>"
+            >
         <?php else: ?>
-            <img src="/files/no-photo.png">
+            <img src="/files/no-photo.png"
+                 alt="<?= $artistData['name'] ?>"
+            >
         <?php endif; ?>
     </div>
     <div>
@@ -63,9 +67,13 @@ $songsByArtistTMP = $songsByArtist;
     <div class="rflex album">
         <div>
             <?php if ($album['photos']): ?>
-                <img src="/files/albums/<?= $album['first_letter'] ?>/<?= $album['photos'] ?>">
+                <img src="/files/albums/<?= $album['first_letter'] ?>/<?= $album['photos'] ?>"
+                     alt="<?= $artistData['name'] . ' - '?><?=$album['name']?><?php if ($album['year']) echo ' (' . $album['year'] . ')'?>"
+                >
             <?php else: ?>
-                <img src="/files/no-album-photo.png">
+                <img src="/files/no-album-photo.png"
+                     alt="<?= $artistData['name'] . ' - '?><?=$album['name']?><?php if ($album['year']) echo ' (' . $album['year'] . ')'?>"
+                >
             <?php endif; ?>
         </div>
         <div>

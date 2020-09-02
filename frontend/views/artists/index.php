@@ -22,20 +22,21 @@
     <?php foreach ($artistsByPopularity as $artist): ?>
 
         <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $artist['url']; ?>/"
-           class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12 plates-artists-main">
-            <div class="plates-artists-outside">
-                <div class="plates-artists">
+           class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12"
+        >
+            <div>
+                <div>
                     <?php if ($artist['photos'] == 'asdsds'): ?>
                         <p>
-                            <img class="plates-artists-img"
+                            <img
                                  src="/files/artists/<?= $artist['first_letter'] ?>/<?= $artist['photos'] ?>"
                                  alt="<?= $artist['name'] ?>"
-                                 width="200">
+                                 >
                         </p>
                     <?php endif; ?>
                     <br><br><br><br>
-                    <p class="plates-artists-title"><?= $artist['name']; ?></p>
-                    <p class="plates-artists-under-title"><?php // $itemParent['short_description']; ?></p>
+                    <p><?= $artist['name']; ?></p>
+
                     <br><br><br><br>
                 </div>
             </div>

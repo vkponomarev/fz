@@ -42,6 +42,7 @@ class SongsByGenre
             m_albums.name as albumName,
             m_albums.url as albumUrl,
             m_albums.photos as albumPhoto,
+            m_albums.year as albumYear,
             m_albums.first_letter as albumFirstLetter
             from
             m_songs_genres
