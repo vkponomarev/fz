@@ -101,6 +101,7 @@
         padding-top: 10px;
         word-break: break-word;
 
+
         div {
           color: $colorTextLighter;
           font-size: $sizeSongFeat;
@@ -145,14 +146,14 @@
           font-size: $sizeSongLink;
           display: block;
           vertical-align: middle;
-
+          align-self: center;
         }
 
         div {
 
           display: block;
           vertical-align: middle;
-
+          align-self: center;
           a {
 
             font-size: $sizeSongLink;

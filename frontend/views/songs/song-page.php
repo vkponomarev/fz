@@ -289,7 +289,6 @@
     <a name="popular-songs"></a>
     <h2 class="header-2"><?= Yii::t('app', 'Popular songs') ?><?=' ';?><?= $artistBySong['name'] ?></h2>
     <hr>
-
     <div class="rflex songs">
 
         <ul>
@@ -306,8 +305,10 @@
                         <span class="false">
                                 </span>
                     <?php endif; ?>
+                    <div>
                     <?= $artistBySong['name'] ?><?=' ';?>-&nbsp;<a href="/<?= Yii::$app->language ?>/songs/<?= $song['url'] ?>/">
                         <?= $song['name'] ?> </a>
+                    </div>
                 </li>
                 <?php if ($count > 11) break; ?>
             <?php endforeach; ?>

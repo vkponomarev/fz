@@ -99,6 +99,21 @@
         }
 
 
+        &.false {
+
+          color: $colorIconFalse;
+          font-size: $sizeIconPLay;
+          vertical-align: middle;
+          cursor: pointer;
+
+        }
+
+      }
+
+      div{
+
+        align-self: center;
+
       }
 
       a {
@@ -157,12 +172,26 @@
 
         }
 
+        &.false {
+
+          color: $colorIconFalse;
+          font-size: $sizeIconPLay;
+          vertical-align: middle;
+          cursor: pointer;
+
+        }
+
+
+      }
+
+      div{
+
+        align-self: center;
 
       }
 
       a {
 
-        vertical-align: middle;
 
 
       }
@@ -231,14 +260,14 @@
         font-size: $sizeSongLink;
         display: block;
         vertical-align: middle;
-
+        align-self: center;
       }
 
       div {
 
         display: block;
         vertical-align: middle;
-
+        align-self: center;
         a {
 
           font-size: $sizeSongLink;
@@ -410,6 +439,15 @@
 
         }
 
+        &.false {
+
+          color: $colorIconFalse;
+          font-size: $sizeIconPLay;
+          vertical-align: middle;
+          cursor: pointer;
+
+        }
+
 
       }
 
@@ -467,6 +505,14 @@
 
         }
 
+        &.false {
+
+          color: $colorIconFalse;
+          font-size: $sizeIconPLay;
+          vertical-align: middle;
+          cursor: pointer;
+
+        }
 
       }
 

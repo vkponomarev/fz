@@ -30,11 +30,13 @@
                     <span class="false">
                 </span>
                 <?php endif; ?>
+                <div>
                 <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
                     <?= $song['artistName'] ?> </a>
                 &nbsp;-&nbsp;
                 <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
                     <?= $song['name'] ?> </a>
+                </div>
             </li>
 
         <?php endforeach; ?>

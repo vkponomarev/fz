@@ -823,10 +823,12 @@ li.disabled {
   font-size: 19px;
   display: block;
   vertical-align: middle;
+  align-self: center;
 }
 .album div ul li div {
   display: block;
   vertical-align: middle;
+  align-self: center;
 }
 .album div ul li div a {
   font-size: 19px;
@@ -980,6 +982,15 @@ li.disabled {
 .song ul li > span:hover {
   color: #4cbc64 !important;
 }
+.song ul li > span.false {
+  color: #b1b1b1 !important;
+  font-size: 28px !important;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.song ul li div {
+  align-self: center;
+}
 .song ul li a {
   vertical-align: middle;
 }
@@ -1017,10 +1028,15 @@ li.disabled {
 .songs ul li > span:hover {
   color: #4cbc64 !important;
 }
-.songs ul li a {
+.songs ul li > span.false {
+  color: #b1b1b1 !important;
+  font-size: 28px !important;
   vertical-align: middle;
+  cursor: pointer;
 }
-
+.songs ul li div {
+  align-self: center;
+}
 .album-songs ul {
   padding-left: 0;
   width: 100%;
@@ -1064,10 +1080,12 @@ li.disabled {
   font-size: 19px;
   display: block;
   vertical-align: middle;
+  align-self: center;
 }
 .album-songs ul li div {
   display: block;
   vertical-align: middle;
+  align-self: center;
 }
 .album-songs ul li div a {
   font-size: 19px;
@@ -1178,6 +1196,12 @@ li.disabled {
 .videos ul li > span:before {
   content: "";
 }
+.videos ul li > span.false {
+  color: #b1b1b1 !important;
+  font-size: 28px !important;
+  vertical-align: middle;
+  cursor: pointer;
+}
 .videos ul li a {
   vertical-align: middle;
 }
@@ -1218,6 +1242,12 @@ li.disabled {
 }
 .video ul li > span:before {
   content: "";
+}
+.video ul li > span.false {
+  color: #b1b1b1 !important;
+  font-size: 28px !important;
+  vertical-align: middle;
+  cursor: pointer;
 }
 .video ul li a {
   vertical-align: middle;

@@ -87,6 +87,7 @@ $songsByArtistTMP = $songsByArtist;
                                 <span class="false">
                                 </span>
                             <?php endif; ?>
+
                             <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
                                 <?= $song['name'] ?></a><?=' ';?>
                             <?php if (isset($song['featuring'])): ?>
@@ -108,6 +109,7 @@ $songsByArtistTMP = $songsByArtist;
                                     <?php endforeach; ?>)
                                 </div>
                             <?php endif; ?>
+
                         </li>
                         <?php unset($songsByArtist[$key]); ?>
                     <?php endif; ?>
@@ -138,7 +140,7 @@ $songsByArtistTMP = $songsByArtist;
                                         data-url="<?= $song['url_youtube'] ?>">
                                 </span>
                             <?php else: ?>
-                                <span>
+                                <span class="false">
                                 </span>
                             <?php endif; ?>
 
@@ -245,8 +247,14 @@ $songsByArtistTMP = $songsByArtist;
         <?php foreach ($songsByArtistTMP as $key => $song): ?>
             <?php $count++; ?>
             <li>
-                <span onclick="sYM(this)" data-url="<?= $song['url_youtube'] ?>">
-                </span>
+                <?php if ($song['url_youtube']): ?>
+                    <span onclick="sYM(this)" data-url="<?= $song['url_youtube'] ?>">
+                                </span>
+                <?php else: ?>
+                    <span class="false">
+                                </span>
+                <?php endif; ?>
+
                 <br>
                 <div>
                 <?= $artistData['name'] ?><?=' ';?>-<?=' ';?><?= $song['name'] ?>
