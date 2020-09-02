@@ -7,13 +7,6 @@ AppAsset::register($this);
 <html lang="<?=Yii::$app->language ?>">
 <head>
 
-    <style>
-        @font-face {
-            font-family: 'Arial', arial verdana;
-            font-display: swap;
-        }
-    </style>
-
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
     <meta charset="<?=Yii::$app->charset?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -230,8 +223,6 @@ AppAsset::register($this);
 <?php endif; ?>
 
 <?= $this->render('/partials/counters/_counters.min.php'); ?>
-
-
 
 
 <?php $this->endBody() ?>

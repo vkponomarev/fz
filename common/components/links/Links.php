@@ -28,7 +28,12 @@ class Links
 
     }
 
+    function prevNextByGenre($url, $pageSize, $letterLinkPrevNext)
+    {
 
+        (new LinksPrevNextByGenre())->links($url, $pageSize, $letterLinkPrevNext);
+
+    }
 
 
 }

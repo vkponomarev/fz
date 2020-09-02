@@ -10,6 +10,8 @@ use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
 use common\components\genre\Genre;
 use common\components\genres\Genres;
+use common\components\getParams\GetParams;
+use common\components\links\Links;
 use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
@@ -79,21 +81,26 @@ class GenresController extends Controller
         $genres = new Genres();
         $genresByParent = $genres->byParent($urlCheckID);
 
-        $pageTexts = new PageTexts();
-        $pageTexts->updateByGenre($genreData);
-
         $songs = new Songs();
         $songsByGenre = $songs->byGenre($genreData['id'],40);
 
-        //Если $genresByParent
+        $getParams = new GetParams();
+        $getParamsByLinksPrevNext = $getParams->byLinksPrevNext();
+
+        $links = new Links();
+        $linksPrevNext = $links->prevNext($songsByGenre['itemsCount'], 40, $getParamsByLinksPrevNext);
+        $links->prevNextByGenre($genreData['url'], 40, $linksPrevNext);
+
+        $pageTexts = new PageTexts();
+        $pageTexts->updateByGenreIndex($getParamsByLinksPrevNext, $genreData);
 
         $breadCrumbs = new Breadcrumbs();
         Yii::$app->params['breadcrumbs'] = $breadCrumbs->genre($genreData);
 
         return $this->render('genre-page.min.php', [
 
-            'genreData' => $genreData,
-            'songsByGenre' => $songsByGenre,
+            //'genreData' => $genreData,
+            'songsByGenre' => $songsByGenre['songs'],
             'genresByParent' => $genresByParent,
 
 

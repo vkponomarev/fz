@@ -17,6 +17,14 @@ class PageTexts
 
     }
 
+    function updateByGenreIndex($getParamsByLinksPrevNext, $genreData)
+    {
+
+        (new PageTextsUpdateByGenreIndex())->update($getParamsByLinksPrevNext, $genreData);
+
+    }
+
+
     function updateByAlbum($albumData)
     {
 

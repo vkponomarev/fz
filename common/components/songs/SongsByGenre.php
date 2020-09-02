@@ -65,10 +65,12 @@ class SongsByGenre
             //],
         ]);
 
+        return [
 
+            'songs' => $songs,
+            'itemsCount' => $count['count_songs'],
 
-
-        return $songs;
+        ];
     }
 
 }
