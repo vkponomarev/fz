@@ -102,7 +102,7 @@ AppAsset::register($this);
                     </a>
                 </li>
 
-               </ul>
+            </ul>
 
         </div>
 
@@ -212,9 +212,7 @@ AppAsset::register($this);
 
 <?= $this->render('/partials/modal/_modal-youtube.min.php'); ?>
 
-<script src="/js/addthis_widget.js#pubid=ra-5dbbf2586b540d45"></script>
-<script src="/js/sharemin.js"></script>
-<script src="/js/share.js"></script>
+
 
 <?= $this->render('/partials/counters/_counters.min.php'); ?>
 
