@@ -212,7 +212,12 @@ AppAsset::register($this);
 
 <?= $this->render('/partials/modal/_modal-youtube.min.php'); ?>
 
-
+<?php if (Yii::$app->language == 'ru'): ?>
+    <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+    <script src="https://yastatic.net/share2/share.js" async="async"></script>
+<?php else: ?>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dbbf2586b540d45"></script>
+<?php endif; ?>
 
 <?= $this->render('/partials/counters/_counters.min.php'); ?>
 
