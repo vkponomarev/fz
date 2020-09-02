@@ -67,7 +67,7 @@ return [
 
     'featuring' => 'featuring',
     'genres' => 'genres',
-
+    'Genres' => 'Genres',
 
 
 ];

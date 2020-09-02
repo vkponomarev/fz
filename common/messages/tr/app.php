@@ -65,6 +65,7 @@ return [
 
     'featuring' => 'öne çıkan',
     'genres' => 'türler',
+    'Genres' => 'Türler',
 
 ];
 

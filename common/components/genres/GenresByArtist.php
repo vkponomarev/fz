@@ -14,6 +14,7 @@ class GenresByArtist
         $genres = Yii::$app->db
             ->createCommand('
             select
+            m_genres.id,
             m_genres.name,
             m_genres.url
             from

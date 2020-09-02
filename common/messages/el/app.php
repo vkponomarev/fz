@@ -65,5 +65,6 @@ return [
 
     'featuring' => 'χαρακτηριστικό',
     'genres' => 'είδη',
+    'Genres' => 'Είδη',
 ];
 

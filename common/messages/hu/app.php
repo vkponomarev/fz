@@ -64,6 +64,7 @@ return [
 
     'featuring' => 'közreműködő',
     'genres' => 'műfajok',
+    'Genres' => 'Műfajok',
 
 ];
 

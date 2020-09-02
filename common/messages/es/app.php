@@ -64,6 +64,6 @@ return [
 
     'featuring' => 'presentando',
     'genres' => 'géneros',
-
+    'Genres' => 'Géneros',
 ];
 

@@ -64,5 +64,6 @@ return [
 
     'featuring' => 'ishtirok bilan',
     'genres' => 'janrlari',
+    'Genres' => 'Janrlari',
 ];
 

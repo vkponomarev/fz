@@ -38,6 +38,12 @@ class PageTexts
 
     }
 
+    function updateByGenre($genreData)
+    {
+
+        (new PageTextsUpdateByGenre())->update($genreData);
+
+    }
 
 }
 

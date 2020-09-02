@@ -65,5 +65,6 @@ return [
 
     'featuring' => 'đặc trưng',
     'genres' => 'thể loại',
+    'Genres' => 'Thể loại',
 ];
 

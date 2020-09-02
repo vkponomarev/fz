@@ -64,6 +64,6 @@ return [
 
     'featuring' => 'показуючи',
     'genres' => 'жанри',
-
+    'Genres' => 'Жанри',
 ];
 

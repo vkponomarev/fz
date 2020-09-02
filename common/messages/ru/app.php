@@ -65,5 +65,6 @@ return [
 
     'featuring' => 'при участии',
     'genres' => 'жанры',
+    'Genres' => 'Жанры',
 
 ];

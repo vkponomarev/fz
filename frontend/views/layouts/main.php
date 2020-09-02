@@ -1,6 +1,5 @@
 <?php
 use frontend\assets\AppAsset;
-use yii\widgets\Pjax;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage()?>
@@ -87,6 +86,18 @@ AppAsset::register($this);
                     <a href="/<?=Yii::$app->language?>/songs/" class="dropdown-toggle navbar-a-link">
 
                         <?=Yii::t('app', 'Songs')?>
+
+                    </a>
+                </li>
+
+                <li class="navbar-separator">
+                    |
+                </li>
+
+                <li class="dropdown navbar-li">
+                    <a href="/<?=Yii::$app->language?>/genres/" class="dropdown-toggle navbar-a-link">
+
+                        <?=Yii::t('app', 'Genres')?>
 
                     </a>
                 </li>
@@ -201,16 +212,10 @@ AppAsset::register($this);
 
 <?= $this->render('/partials/modal/_modal-youtube.min.php'); ?>
 
-<?php Pjax::begin(); ?>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dbbf2586b540d45"></script>
-<script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
-<script src="https://yastatic.net/share2/share.js" async="async"></script>
 
 <?= $this->render('/partials/counters/_counters.min.php'); ?>
 
 
-
-<?php Pjax::end(); ?>
 <?php $this->endBody() ?>
 
 </body>

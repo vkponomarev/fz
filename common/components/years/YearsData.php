@@ -8,7 +8,7 @@ use yii\web\NotFoundHttpException;
 class YearsData
 {
 
-    public function data($id)
+    public function data()
     {
 
         $data = Yii::$app->db
@@ -16,11 +16,9 @@ class YearsData
             select
             *
             from
-            m_songs
-            where 
-            id = :id
-            ', [':id' => $id])
-            ->queryOne();
+            m_years
+            ')
+            ->queryAll();
 
         //(new \common\components\dump\Dump())->printR($data);
 

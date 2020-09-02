@@ -501,6 +501,7 @@ footer div div div > a:hover {
 }
 
 .cl {
+  text-align: left;
   cursor: pointer;
   padding-top: 25px;
   display: inline-flex;
@@ -571,6 +572,11 @@ footer div div div > a:hover {
   font-size: 20px;
 }
 
+@media (max-width: 768px) {
+  .contact {
+    padding-left: 0px !important;
+  }
+}
 .modal-open {
   overflow: overlay !important;
 }
@@ -1303,6 +1309,127 @@ li.disabled {
 .main-page-h2 {
   font-size: 40px;
   text-align: -webkit-center;
+}
+
+@media (min-width: 768px) {
+  .text-md-left {
+    text-align: left !important;
+  }
+}
+.genres-index {
+  margin-top: 30px;
+  word-break: break-word;
+}
+.genres-index div {
+  width: 100%;
+  text-align: center;
+  line-height: 35px;
+}
+.genres-index div a {
+  padding-right: 0px;
+  margin-bottom: 20px;
+  font-size: 19px;
+}
+
+.genre-songs {
+  margin-top: 30px;
+}
+.genre-songs > ul {
+  width: 100%;
+  text-align: left;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.genre-songs > ul > .genre-pager {
+  border-bottom: 0px !important;
+}
+.genre-songs > ul > li {
+  display: flex;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ededed;
+}
+.genre-songs > ul > li > div {
+  width: 100%;
+  display: block;
+}
+.genre-songs > ul > li > div > a {
+  font-size: 16px;
+}
+.genre-songs > ul > li > div div {
+  margin-bottom: 5px;
+  font-size: 19px;
+}
+.genre-songs > ul > li > span {
+  color: #317e84 !important;
+  font-size: 35px !important;
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-right: 18px;
+  align-self: center;
+}
+.genre-songs > ul > li > span:before {
+  content: "";
+}
+.genre-songs > ul > li > span:hover {
+  color: #4cbc64 !important;
+}
+.genre-songs > ul > li img {
+  width: 50px;
+  margin-right: 10px;
+  align-self: center;
+}
+.genre-songs > ul > li li {
+  font-size: 19px;
+}
+
+li.disabled {
+  font-size: 19px;
+}
+
+@media (min-width: 768px) {
+  .text-md-left {
+    text-align: left !important;
+  }
+}
+.artists-index {
+  margin-top: 30px;
+}
+.artists-index div {
+  width: 100%;
+  text-align: center;
+  word-break: break-all;
+  line-height: 35px;
+}
+.artists-index div a {
+  padding-right: 15px;
+  margin-bottom: 20px;
+  font-size: 19px;
+}
+
+.artists-index-letter {
+  margin-top: 30px;
+}
+.artists-index-letter div {
+  width: 100%;
+  text-align: center;
+  word-break: break-all;
+  line-height: 25px;
+}
+.artists-index-letter div a {
+  padding-right: 15px;
+  margin-bottom: 20px;
+  font-size: 19px;
+}
+
+li.disabled {
+  font-size: 19px;
 }
 
 /*# sourceMappingURL=main.css.map */

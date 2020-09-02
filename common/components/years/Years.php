@@ -17,30 +17,14 @@ use yii\web\NotFoundHttpException;
 class Years
 {
 
-    var $songs; // Список песен.
-
-
-
-    function __construct($id = 0)
+    function __construct()
     {
 
     }
 
-    function byAlbum($id){
+    function data(){
 
-        return (new SongsByAlbum())->songs($id);
-
-    }
-
-    function byRandom(){
-
-        return (new SongsByRandom())->songs();
-
-    }
-
-    function byArtist($id){
-
-        return (new SongsByArtist())->songs($id);
+        return (new YearsData())->data();
 
     }
 

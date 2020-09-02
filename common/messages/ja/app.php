@@ -66,5 +66,6 @@ return [
 
     'featuring' => 'フィーチャー',
     'genres' => 'ジャンル',
+    'Genres' => 'ジャンル',
 ];
 

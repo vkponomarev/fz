@@ -64,5 +64,6 @@ return [
 
     'featuring' => 'wyposażony',
     'genres' => 'gatunki',
+    'Genres' => 'Gatunki',
 ];
 

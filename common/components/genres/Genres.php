@@ -20,6 +20,21 @@ class Genres
     }
 
 
+    function data($songID)
+    {
+
+        return (new GenresData())->genres();
+
+    }
+
+    function dataByMain()
+    {
+
+        return (new GenresDataByMain())->genres();
+
+    }
+
+
     function bySong($songID)
     {
 
@@ -40,6 +55,14 @@ class Genres
         return (new GenresByAlbum())->genres($artistID);
 
     }
+
+    function byParent($genreID)
+    {
+
+        return (new GenresByParent())->genres($genreID);
+
+    }
+
 
 
 }

@@ -65,5 +65,6 @@ return [
 
     'featuring' => 'con',
     'genres' => 'generi',
+    'Genres' => 'Generi',
 ];
 

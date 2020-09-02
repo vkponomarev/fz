@@ -99,6 +99,12 @@ class Songs
 
     }
 
+    function byGenre($genreID, $pageSize){
+
+        return (new SongsByGenre())->songs($genreID, $pageSize);
+
+    }
+
 
     function addFeaturing($songs, $featuring){
 

@@ -2,7 +2,6 @@
 
 namespace frontend\controllers;
 
-use common\components\albums\AlbumsArtist;
 use Yii;
 use yii\helpers\Json;
 use yii\web\Controller;
@@ -13,8 +12,6 @@ class SearchController extends Controller
 
     public function actionSearch($q = null)
     {
-
-
         /*$data = Yii::$app->db
             ->createCommand('
             select
@@ -100,7 +97,6 @@ class SearchController extends Controller
             else
                 $data = $dataArtists;
         }
-
 
         //$data = $dataArtists;
         $out = [];

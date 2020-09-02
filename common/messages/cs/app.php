@@ -65,5 +65,6 @@ return [
 
     'featuring' => 'představovat',
     'genres' => 'žánry',
+    'Genres' => 'Žánry',
 ];
 

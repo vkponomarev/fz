@@ -64,6 +64,7 @@ return [
 
     'featuring' => '特色',
     'genres' => '體裁',
+    'Genres' => '體裁',
 
 ];
 

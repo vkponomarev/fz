@@ -79,6 +79,8 @@ footer {
 }
 
 .cl{
+
+  text-align: left;
   .fa-globe{
     font-size: 20px;
     color: #f7f7f7;
@@ -163,3 +165,12 @@ footer {
   display: block;
   font-size: 20px;
 }
+
+
+
+@media (max-width: 768px) {
+  .contact {
+    padding-left: 0px!important;
+  }
+}
+

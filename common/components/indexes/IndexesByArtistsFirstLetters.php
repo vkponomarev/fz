@@ -21,7 +21,6 @@ class IndexesByArtistsFirstLetters
             url
             from
             m_artists_first_letters
-
             ')
             ->queryAll();
 

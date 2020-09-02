@@ -65,6 +65,7 @@ return [
 
     'featuring' => 'Mit',
     'genres' => 'Genres',
+    'Genres' => 'Genres',
 
 ];
 

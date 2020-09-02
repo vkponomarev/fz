@@ -7,43 +7,17 @@ use Yii;
 class BreadcrumbsSong
 {
 
-    public function breadcrumbs($artistData, $albumData, $songData, $firstLetterByArtist)
+    public function breadcrumbs($genreData)
     {
 
         $count = 0;
 
         $breadcrumbs['urls'][$count] = [
-            'url' => 'songs',
-            'text' => Yii::t('app', 'Songs')
+            'url' => 'genres',
+            'text' => Yii::t('app', 'Genres')
         ];
 
-        if ($firstLetterByArtist) {
-            $breadcrumbs['urls'][++$count] = [
-                'url' => 'artists/index/' . $firstLetterByArtist['url'],
-                'text' => $firstLetterByArtist['first_letter']
-            ];
-
-            $breadcrumbs['urls'][++$count] = [
-                'url' => 'artists/' . $artistData['url'],
-                'text' => $artistData['name']
-            ];
-        }
-        if ($albumData['url']) {
-            if ($albumData['year']) {
-                $breadcrumbs['urls'][++$count] = [
-                    'url' => 'albums/' . $albumData['url'],
-                    'text' => $albumData['name'] . ' (' . $albumData['year'] . ')'
-                ];
-            } else {
-                $breadcrumbs['urls'][++$count] = [
-                    'url' => 'albums/' . $albumData['url'],
-                    'text' => $albumData['name']
-                ];
-            }
-
-        }
-
-        $breadcrumbs['last'] = $songData['name'];
+         $breadcrumbs['last'] = $genreData['name'];
 
         return $breadcrumbs;
 

@@ -66,5 +66,6 @@ return [
 
     'featuring' => 'ilə xarakterizə',
     'genres' => 'janrlar',
+    'Genres' => 'Janrlar',
 ];
 

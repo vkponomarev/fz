@@ -64,5 +64,6 @@ return [
 
     'featuring' => 'nampilake',
     'genres' => 'genres',
+    'Genres' => 'Genres',
 ];
 

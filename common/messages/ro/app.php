@@ -64,5 +64,6 @@ return [
 
     'featuring' => 'oferind',
     'genres' => 'genuri',
+    'Genres' => 'Genuri',
 ];
 

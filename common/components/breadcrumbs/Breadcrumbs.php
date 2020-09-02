@@ -42,6 +42,13 @@ class Breadcrumbs
 
     }
 
+    public function genre($genreData)
+    {
+
+        return (new BreadcrumbsSong())->breadcrumbs($genreData);
+
+    }
+
 
 
 }

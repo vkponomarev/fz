@@ -64,5 +64,6 @@ return [
 
     'featuring' => '특징',
     'genres' => '장르',
+    'Genres' => '장르',
 ];
 
