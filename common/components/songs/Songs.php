@@ -105,6 +105,12 @@ class Songs
 
     }
 
+    function byYear($yearID, $pageSize){
+
+        return (new SongsByYear())->songs($yearID, $pageSize);
+
+    }
+
 
     function addFeaturing($songs, $featuring){
 

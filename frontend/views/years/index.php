@@ -1,22 +1,19 @@
 <?php
 
-/* @var $this yii\web\View
-
- * @var $AlbumsByRandom \common\components\albums\AlbumsByRandom
+/* @var $this frontend\controllers\YearsController
+ * @var $yearsData common\components\years\YearsData
  *
  *
- *
-
  */
 
 //echo $pageText['title'];
 ?>
-<h1 class="main-page-h1"> <?= Yii::$app->params['text']['h1'] ?></h1>
-<div class="rflex artists-index">
+<h1 class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
+<div class="rflex years-index">
     <div>
-        <?php foreach ($genresData as $eachLink): ?>
+        <?php foreach ($yearsData as $eachLink): ?>
 
-            <a href="/<?= Yii::$app->language ?>/genres/<?= $eachLink['url'] ?>/">
+            <a href="/<?= Yii::$app->language ?>/years/<?= $eachLink['url'] ?>/">
                 <?= $eachLink['name'] ?>
             </a>
 

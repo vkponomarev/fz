@@ -1,24 +1,54 @@
-@media (min-width: 768px){
-.text-md-left {
-  text-align: left!important;
-}}
-
-.artists-index{
+.years-index{
 
   margin-top: 30px;
-
+  word-break: break-word;
   div{
 
     width:100%;
-    text-align: center;
-    word-break: break-all;
-    line-height: 35px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    list-style: none;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    text-align: left;
 
     a{
-
-      padding-right: 15px;
+      padding-right: 0px;
       margin-bottom: 20px;
       font-size:19px;
+      -ms-flex-preferred-size: 45%;
+      flex-basis: 20%;
+      margin-bottom: 10px;
+
+      @media (min-width: 0px) {
+        flex-basis: 100%!important;
+
+      }
+
+      @media (min-width: 350px) {
+        flex-basis: 50%!important;
+
+      }
+
+      @media (min-width: 479px) {
+        flex-basis: 33%!important;
+
+      }
+
+      @media (min-width: 768px) {
+        flex-basis: 20%!important;
+
+      }
+
+      @media (min-width: 1024px) {
+        flex-basis: 10%!important;
+
+      }
 
     }
 
@@ -27,30 +57,98 @@
 
 }
 
-
-.artists-index-letter{
+.year-songs{
 
   margin-top: 30px;
 
-  div{
-
+  >ul{
     width:100%;
-    text-align: center;
-    word-break: break-all;
-    line-height: 25px;
+    text-align: left;
+    margin-left: 0px;
+    padding-left: 0px;
 
-    a{
-
-      padding-right: 15px;
-      margin-bottom: 20px;
-      font-size:19px;
+    >.genre-pager{
+      border-bottom: 0px!important;
 
     }
 
+    >li {
+
+      display: flex;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ededed;
+
+      >div{
+        width: 100%;
+        display: block;
+
+        >a{
+
+          font-size:16px;
+
+        }
+
+        div{
+
+          margin-bottom: 5px;
+          font-size:19px;
+
+        }
+
+      }
+
+      > span {
+
+        color: $colorIconPlay;
+        font-size:35px!important;
+        vertical-align: middle;
+        cursor: pointer;
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        padding-right: 18px;
+        align-self: center;
+
+        &:before {
+
+          content: "\f144";
+
+        }
+
+        &:hover {
+
+          color: $colorIconPlayHover;
+
+        }
+
+
+      }
+
+      img {
+
+        width: 50px;
+        margin-right: 10px;
+        align-self: center
+      }
+
+      li{
+
+        font-size:19px;
+
+      }
+
+
+    }
+
+
   }
 
-
 }
+
 
 li.disabled{
 

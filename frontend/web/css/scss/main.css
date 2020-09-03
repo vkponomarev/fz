@@ -1341,24 +1341,56 @@ li.disabled {
   text-align: -webkit-center;
 }
 
-@media (min-width: 768px) {
-  .text-md-left {
-    text-align: left !important;
-  }
-}
 .genres-index {
   margin-top: 30px;
   word-break: break-word;
 }
 .genres-index div {
   width: 100%;
-  text-align: center;
-  line-height: 35px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  list-style: none;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  text-align: left;
 }
 .genres-index div a {
   padding-right: 0px;
   margin-bottom: 20px;
   font-size: 19px;
+  -ms-flex-preferred-size: 45%;
+  flex-basis: 20%;
+  margin-bottom: 10px;
+}
+@media (min-width: 0px) {
+  .genres-index div a {
+    flex-basis: 100% !important;
+  }
+}
+@media (min-width: 350px) {
+  .genres-index div a {
+    flex-basis: 100% !important;
+  }
+}
+@media (min-width: 479px) {
+  .genres-index div a {
+    flex-basis: 50% !important;
+  }
+}
+@media (min-width: 768px) {
+  .genres-index div a {
+    flex-basis: 33% !important;
+  }
+}
+@media (min-width: 1024px) {
+  .genres-index div a {
+    flex-basis: 20% !important;
+  }
 }
 
 .genre-songs {
@@ -1423,38 +1455,113 @@ li.disabled {
   font-size: 19px;
 }
 
-@media (min-width: 768px) {
-  .text-md-left {
-    text-align: left !important;
-  }
-}
-.artists-index {
+.years-index {
   margin-top: 30px;
+  word-break: break-word;
 }
-.artists-index div {
+.years-index div {
   width: 100%;
-  text-align: center;
-  word-break: break-all;
-  line-height: 35px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  list-style: none;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  text-align: left;
 }
-.artists-index div a {
-  padding-right: 15px;
+.years-index div a {
+  padding-right: 0px;
   margin-bottom: 20px;
   font-size: 19px;
+  -ms-flex-preferred-size: 45%;
+  flex-basis: 20%;
+  margin-bottom: 10px;
+}
+@media (min-width: 0px) {
+  .years-index div a {
+    flex-basis: 100% !important;
+  }
+}
+@media (min-width: 350px) {
+  .years-index div a {
+    flex-basis: 50% !important;
+  }
+}
+@media (min-width: 479px) {
+  .years-index div a {
+    flex-basis: 33% !important;
+  }
+}
+@media (min-width: 768px) {
+  .years-index div a {
+    flex-basis: 20% !important;
+  }
+}
+@media (min-width: 1024px) {
+  .years-index div a {
+    flex-basis: 10% !important;
+  }
 }
 
-.artists-index-letter {
+.year-songs {
   margin-top: 30px;
 }
-.artists-index-letter div {
+.year-songs > ul {
   width: 100%;
-  text-align: center;
-  word-break: break-all;
-  line-height: 25px;
+  text-align: left;
+  margin-left: 0px;
+  padding-left: 0px;
 }
-.artists-index-letter div a {
-  padding-right: 15px;
-  margin-bottom: 20px;
+.year-songs > ul > .genre-pager {
+  border-bottom: 0px !important;
+}
+.year-songs > ul > li {
+  display: flex;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ededed;
+}
+.year-songs > ul > li > div {
+  width: 100%;
+  display: block;
+}
+.year-songs > ul > li > div > a {
+  font-size: 16px;
+}
+.year-songs > ul > li > div div {
+  margin-bottom: 5px;
+  font-size: 19px;
+}
+.year-songs > ul > li > span {
+  color: #317e84 !important;
+  font-size: 35px !important;
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-right: 18px;
+  align-self: center;
+}
+.year-songs > ul > li > span:before {
+  content: "";
+}
+.year-songs > ul > li > span:hover {
+  color: #4cbc64 !important;
+}
+.year-songs > ul > li img {
+  width: 50px;
+  margin-right: 10px;
+  align-self: center;
+}
+.year-songs > ul > li li {
   font-size: 19px;
 }
 

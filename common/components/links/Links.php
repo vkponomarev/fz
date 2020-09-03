@@ -35,6 +35,13 @@ class Links
 
     }
 
+    function prevNextByYear($url, $pageSize, $letterLinkPrevNext)
+    {
+
+        (new LinksPrevNextByYear())->links($url, $pageSize, $letterLinkPrevNext);
+
+    }
+
 
 }
 

@@ -13,20 +13,19 @@ use yii\widgets\ListView; ?>
 </h1>
 <br>
 
-<?php $count=0; ?>
+
 <?php if ($genresByParent):?>
 <div class="rflex genres-index">
     <div>
         <?php foreach ($genresByParent as $eachLink): ?>
-            <?php if ($count >0):?>,<?=' '?><?=' '?>
-            <?php endif;?>
             <a href="/<?= Yii::$app->language ?>/genres/<?= $eachLink['url'] ?>/">
                 <?= $eachLink['name'] ?>
             </a>
-            <?php $count++ ?>
+
         <?php endforeach;?>
     </div>
 </div>
+<hr>
 <?php endif;?>
 
 <div class="rflex genre-songs">

@@ -24,6 +24,13 @@ class PageTexts
 
     }
 
+    function updateByYearIndex($getParamsByLinksPrevNext, $yearData)
+    {
+
+        (new PageTextsUpdateByYearIndex())->update($getParamsByLinksPrevNext, $yearData);
+
+    }
+
 
     function updateByAlbum($albumData)
     {

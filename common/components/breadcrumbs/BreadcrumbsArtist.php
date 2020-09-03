@@ -7,11 +7,6 @@ use Yii;
 class BreadcrumbsArtist
 {
 
-    function __construct()
-    {
-
-    }
-
     public function breadcrumbs($artistData, $firstLetterData)
     {
 

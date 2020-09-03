@@ -10,12 +10,16 @@ use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
 use common\components\genre\Genre;
 use common\components\genres\Genres;
+use common\components\getParams\GetParams;
+use common\components\links\Links;
 use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
 use common\components\songs\Songs;
 use common\components\translation\Translation;
 use common\components\urlCheck\UrlCheck;
+use common\components\year\Year;
+use common\components\years\Years;
 use Yii;
 use yii\web\Controller;
 
@@ -37,9 +41,9 @@ class YearsController extends Controller
 
 
         $url = false;
-        $textID = '65'; // ID из таблицы pages
+        $textID = '67'; // ID из таблицы pages
         $table = 0; // К какой таблице отностся данная страница
-        $mainUrl = 'artists'; // Основной урл
+        $mainUrl = 'years'; // Основной урл
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
@@ -48,12 +52,12 @@ class YearsController extends Controller
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
-        $genres = new Genres();
-        $genresData = $genres->dataByMain();
+        $years = new Years();
+        $yearsData = $years->data();
 
         return $this->render('index.min.php', [
 
-            'genresData' => $genresData,
+            'yearsData' => $yearsData,
 
         ]);
 
@@ -64,9 +68,9 @@ class YearsController extends Controller
     {
 
 
-        $textID = '66'; // ID из таблицы pages
-        $table = 'm_genres'; // К какой таблице отностся данная страница
-        $mainUrl = 'genres'; // Основной урл
+        $textID = '68'; // ID из таблицы pages
+        $table = 'm_years'; // К какой таблице отностся данная страница
+        $mainUrl = 'years'; // Основной урл
 
         $urlCheck = new UrlCheck();
         $urlCheckID = $urlCheck->id($url);
@@ -80,45 +84,29 @@ class YearsController extends Controller
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
-        $genre = new Genre();
-        $genreData = $genre->data($urlCheckID);
-
-        /*$artist = new Artist();
-        $artistData = $artist->data($urlCheckID);*/
-
-        $pageTexts = new PageTexts();
-        $pageTexts->updateByGenre($genreData);
-
-        /*$albums = new Albums();
-        $albumsByArtist = $albums->byArtist($artistData['id']);
+        $year = new Year();
+        $yearData = $year->data($urlCheckID);
 
         $songs = new Songs();
-        $songsByArtist = $songs->byArtist($artistData['id']);
+        $songsByYear = $songs->byYear($yearData['id'], 40);
 
-        if ($songsByArtist) {
-            $translation = new Translation();
-            $translationCheckOrigin = $translation->checkOrigin($songsByArtist[0]['id'], Yii::$app->params['language']['current']['id']);
-        } else {
-            $translationCheckOrigin = false;
-        }
-        $featuring = new Featuring();
-        $featuringByArtist = $featuring->byArtist($artistData['id']);
+        $getParams = new GetParams();
+        $getParamsByLinksPrevNext = $getParams->byLinksPrevNext();
 
-        $genres = new Genres();
-        $genresByArtist = $genres->byArtist($artistData['id']);
+        $links = new Links();
+        $linksPrevNext = $links->prevNext($songsByYear['itemsCount'], 40, $getParamsByLinksPrevNext);
+        $links->prevNextByYear($yearData['url'], 40, $linksPrevNext);
 
-        $songsByArtist = $songs->addFeaturing($songsByArtist, $featuringByArtist);
-
-        $firstLetter = new FirstLetter();
-        $firstLetterByArtist = $firstLetter->byArtist($artistData);*/
+        $pageTexts = new PageTexts();
+        $pageTexts->updateByYearIndex($getParamsByLinksPrevNext, $yearData);
 
         $breadCrumbs = new Breadcrumbs();
-        Yii::$app->params['breadcrumbs'] = $breadCrumbs->genre($genreData);
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
 
         return $this->render('year-page.min.php', [
 
-            'genreData' => $genreData,
 
+            'songsByYear' => $songsByYear['songs']
 
         ]);
 

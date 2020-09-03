@@ -45,11 +45,16 @@ class Breadcrumbs
     public function genre($genreData)
     {
 
-        return (new BreadcrumbsSong())->breadcrumbs($genreData);
+        return (new BreadcrumbsGenre())->breadcrumbs($genreData);
 
     }
 
+    public function year($yearData)
+    {
 
+        return (new BreadcrumbsYear())->breadcrumbs($yearData);
+
+    }
 
 }
 
