@@ -15,6 +15,7 @@ use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
 use common\components\songs\Songs;
 use common\components\urlCheck\UrlCheck;
+use common\components\year\Year;
 use common\models\components\FlowPageArtists;
 use Yii;
 use yii\web\Controller;

@@ -52,3 +52,5 @@ phpunit.phar
 /frontend/controllers/ScriptsController.php
 /frontend/views/scripts
 /frontend/views/gii
+/frontend/web/files/albums
+/frontend/web/files/artists
