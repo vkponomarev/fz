@@ -67,5 +67,11 @@ return [
     'featuring' => 'フィーチャー',
     'genres' => 'ジャンル',
     'Genres' => 'ジャンル',
+
+    'Years' => '年',
+    'Languages' => '言語',
+
+    'year' => '年',
+    'language' => '言語',
 ];
 

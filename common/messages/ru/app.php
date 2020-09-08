@@ -67,4 +67,10 @@ return [
     'genres' => 'жанры',
     'Genres' => 'Жанры',
 
+    'Years' => 'Года',
+    'Languages' => 'Языки',
+
+    'year' => 'год',
+    'language' => 'язык',
+
 ];

@@ -14,15 +14,17 @@ class AlbumData
         $data = Yii::$app->db
             ->createCommand('
             select
-            id,
-            m_artists_id,
-            first_letter,
-            photos,
-            name,
-            url,
-            year
+            m_albums.id,
+            m_albums.m_artists_id,
+            m_albums.first_letter,
+            m_albums.photos,
+            m_albums.name,
+            m_albums.url,
+            m_albums.year,
+            m_years.url as mYearUrl
             from
             m_albums
+            left join m_years on m_years.id = m_albums.m_years_id
             where 
             m_albums.id = :id
             ', [':id' => $id])

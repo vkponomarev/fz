@@ -111,6 +111,11 @@ class Songs
 
     }
 
+    function byLanguage($languageID, $pageSize){
+
+        return (new SongsByLanguage())->songs($languageID, $pageSize);
+
+    }
 
     function addFeaturing($songs, $featuring){
 

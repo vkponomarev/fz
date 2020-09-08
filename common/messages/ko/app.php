@@ -65,5 +65,11 @@ return [
     'featuring' => '특징',
     'genres' => '장르',
     'Genres' => '장르',
+
+    'Years' => '연령',
+    'Languages' => '언어',
+
+    'year' => '년',
+    'language' => '언어',
 ];
 

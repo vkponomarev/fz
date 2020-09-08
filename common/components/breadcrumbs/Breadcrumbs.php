@@ -56,5 +56,13 @@ class Breadcrumbs
 
     }
 
+    public function language($languageData)
+    {
+
+        return (new BreadcrumbsLanguage())->breadcrumbs($languageData);
+
+    }
+
+
 }
 

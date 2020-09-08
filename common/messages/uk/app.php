@@ -65,5 +65,11 @@ return [
     'featuring' => 'показуючи',
     'genres' => 'жанри',
     'Genres' => 'Жанри',
+
+    'Years' => 'Роки',
+    'Languages' => 'Мови',
+
+    'year' => 'рік',
+    'language' => 'мова',
 ];
 

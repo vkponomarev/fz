@@ -105,6 +105,30 @@ AppAsset::register($this);
                     </a>
                 </li>
 
+
+                <li class="navbar-separator">
+                    |
+                </li>
+
+                <li class="dropdown navbar-li">
+                    <a href="/<?=Yii::$app->language?>/years/" class="dropdown-toggle navbar-a-link">
+
+                        <?=Yii::t('app', 'Years')?>
+
+                    </a>
+                </li>
+
+                <li class="navbar-separator">
+                    |
+                </li>
+
+                <li class="dropdown navbar-li">
+                    <a href="/<?=Yii::$app->language?>/languages/" class="dropdown-toggle navbar-a-link">
+
+                        <?=Yii::t('app', 'Languages')?>
+
+                    </a>
+                </li>
             </ul>
 
         </div>

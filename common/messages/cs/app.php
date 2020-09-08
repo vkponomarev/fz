@@ -66,5 +66,11 @@ return [
     'featuring' => 'představovat',
     'genres' => 'žánry',
     'Genres' => 'Žánry',
+
+    'Years' => 'Let',
+    'Languages' => 'Jazyky',
+
+    'year' => 'rok',
+    'language' => 'jazyk',
 ];
 

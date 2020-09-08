@@ -86,8 +86,20 @@
 
     span {
 
-      color: $colorTextLighter;
-      font-size: $sizeAlbumYear;
+      a{
+
+        color: $colorLinkLight;
+        font-size: $sizeAlbumYear;
+
+        &:hover {
+
+          color: $colorLinkLightHover;
+
+        }
+
+      }
+
+
 
     }
 

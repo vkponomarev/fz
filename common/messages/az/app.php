@@ -67,5 +67,11 @@ return [
     'featuring' => 'ilə xarakterizə',
     'genres' => 'janrlar',
     'Genres' => 'Janrlar',
+
+    'Years' => 'İllər',
+    'Languages' => 'Dillər',
+
+    'year' => 'il',
+    'language' => 'dil',
 ];
 

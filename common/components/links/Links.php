@@ -5,10 +5,6 @@ namespace common\components\links;
 class Links
 {
 
-    var $artistsIndexLinks; // Все ссылки на первую букву артистов
-    var $artistsIndexLinksLetter; // Все ссылки на артистов на кокретную первую букву в виде дата провайдера
-    var $artistsIndexLinksLetterName; // Название конкретной Буквы для страницы этой буквы для крошек
-
     function __construct()
     {
 
@@ -42,6 +38,12 @@ class Links
 
     }
 
+    function prevNextByLanguage($url, $pageSize, $letterLinkPrevNext)
+    {
+
+        (new LinksPrevNextByLanguage())->links($url, $pageSize, $letterLinkPrevNext);
+
+    }
 
 }
 

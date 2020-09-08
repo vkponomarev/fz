@@ -8,6 +8,7 @@
 
 //echo $pageText['title'];
 ?>
+<br><br>
 <h1 class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
 <div class="rflex years-index">
     <div>

@@ -66,5 +66,11 @@ return [
     'genres' => 'műfajok',
     'Genres' => 'Műfajok',
 
+    'Years' => 'Évek',
+    'Languages' => 'Nyelvek',
+
+    'year' => 'év',
+    'language' => 'nyelv',
+
 ];
 

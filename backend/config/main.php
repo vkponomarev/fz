@@ -13,10 +13,12 @@ return [
     'bootstrap' => ['log','gii'],
     'modules' => [
         'gii' => [
-            'class' => 'yii\gii\Module'
+            'class' => 'yii\gii\Module',
+            'allowedIPs' => ['*']
         ],
 
     ],
+
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',

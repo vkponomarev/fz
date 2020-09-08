@@ -69,6 +69,11 @@ return [
     'genres' => 'genres',
     'Genres' => 'Genres',
 
+    'Years' => 'Years',
+    'Languages' => 'Languages',
+
+    'year' => 'year',
+    'language' => 'language',
 
 ];
 

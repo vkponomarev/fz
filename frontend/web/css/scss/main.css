@@ -776,9 +776,12 @@ li.disabled {
 .album div a {
   font-size: 24px;
 }
-.album div span {
+.album div span a {
   color: #989898;
   font-size: 18px;
+}
+.album div span a:hover {
+  color: #1d1d1d;
 }
 .album div ul {
   padding-left: 0;
@@ -1562,6 +1565,120 @@ li.disabled {
   align-self: center;
 }
 .year-songs > ul > li li {
+  font-size: 19px;
+}
+
+li.disabled {
+  font-size: 19px;
+}
+
+.mLanguages-index {
+  margin-top: 30px;
+  word-break: break-word;
+}
+.mLanguages-index div {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  list-style: none;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  text-align: left;
+}
+.mLanguages-index div a {
+  padding-right: 0px;
+  margin-bottom: 20px;
+  font-size: 19px;
+  -ms-flex-preferred-size: 45%;
+  flex-basis: 20%;
+  margin-bottom: 10px;
+}
+@media (min-width: 0px) {
+  .mLanguages-index div a {
+    flex-basis: 100% !important;
+  }
+}
+@media (min-width: 350px) {
+  .mLanguages-index div a {
+    flex-basis: 100% !important;
+  }
+}
+@media (min-width: 479px) {
+  .mLanguages-index div a {
+    flex-basis: 50% !important;
+  }
+}
+@media (min-width: 768px) {
+  .mLanguages-index div a {
+    flex-basis: 33% !important;
+  }
+}
+@media (min-width: 1024px) {
+  .mLanguages-index div a {
+    flex-basis: 20% !important;
+  }
+}
+
+.genre-songs {
+  margin-top: 30px;
+}
+.genre-songs > ul {
+  width: 100%;
+  text-align: left;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.genre-songs > ul > .genre-pager {
+  border-bottom: 0px !important;
+}
+.genre-songs > ul > li {
+  display: flex;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ededed;
+}
+.genre-songs > ul > li > div {
+  width: 100%;
+  display: block;
+}
+.genre-songs > ul > li > div > a {
+  font-size: 16px;
+}
+.genre-songs > ul > li > div div {
+  margin-bottom: 5px;
+  font-size: 19px;
+}
+.genre-songs > ul > li > span {
+  color: #317e84 !important;
+  font-size: 35px !important;
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-right: 18px;
+  align-self: center;
+}
+.genre-songs > ul > li > span:before {
+  content: "";
+}
+.genre-songs > ul > li > span:hover {
+  color: #4cbc64 !important;
+}
+.genre-songs > ul > li img {
+  width: 50px;
+  margin-right: 10px;
+  align-self: center;
+}
+.genre-songs > ul > li li {
   font-size: 19px;
 }
 

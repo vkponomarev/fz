@@ -35,8 +35,8 @@
                 'items' => [
                     ['label' => 'Основное меню', 'options' => ['class' => 'header']],
                     ['label' => 'Страницы', 'icon' => 'file-code-o', 'url' => ['/pages']],
-                    ['label' => 'Недели беременности', 'icon' => 'file-code-o', 'url' => ['/pregnancy-weeks']],
                     ['label' => 'Языки', 'icon' => 'file-code-o', 'url' => ['/languages']],
+                    ['label' => 'Языки Песен', 'icon' => 'file-code-o', 'url' => ['/m-languages']],
                     ['label' => 'Реклама', 'icon' => 'file-code-o', 'url' => ['/advertising']],
                     ['label' => 'Сообщения', 'icon' => 'file-code-o', 'url' => ['/mail']],
                     ['label' => 'Карта сайта', 'icon' => 'file-code-o', 'url' => ['/site-map/index']],

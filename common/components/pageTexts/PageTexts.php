@@ -32,6 +32,14 @@ class PageTexts
     }
 
 
+    function updateByLanguageIndex($getParamsByLinksPrevNext, $yearData)
+    {
+
+        (new PageTextsUpdateByLanguageIndex())->update($getParamsByLinksPrevNext, $yearData);
+
+    }
+
+
     function updateByAlbum($albumData)
     {
 

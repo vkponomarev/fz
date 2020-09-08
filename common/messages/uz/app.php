@@ -65,5 +65,11 @@ return [
     'featuring' => 'ishtirok bilan',
     'genres' => 'janrlari',
     'Genres' => 'Janrlari',
+
+    'Years' => 'Yillar',
+    'Languages' => 'Tillar',
+
+    'year' => 'yil',
+    'language' => 'til',
 ];
 

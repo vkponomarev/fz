@@ -18,21 +18,21 @@
         <?php if ($albumData['photos']): ?>
             <?php if (file_exists(Yii::getAlias('@frontend') . '/web/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
                 <img src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>"
-                     alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - '?><?=$albumData['name']?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')'?>">
+                     alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - ' ?><?= $albumData['name'] ?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')' ?>">
             <?php else: ?>
                 <img src="/files/no-album-photo.png"
-                     alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - '?><?=$albumData['name']?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')'?>">
+                     alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - ' ?><?= $albumData['name'] ?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')' ?>">
             <?php endif; ?>
         <?php else: ?>
             <img src="/files/no-album-photo.png"
-                 alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - '?><?=$albumData['name']?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')'?>">
+                 alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - ' ?><?= $albumData['name'] ?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')' ?>">
         <?php endif; ?>
     </div>
 
     <div>
         <div>
             <span><?= Yii::t('app', 'album') ?></span>
-            <h1><?= $albumData['name'] ?><?=' ';?>(<?= $albumData['year'] ?>)</h1>
+            <h1><?= $albumData['name'] ?><?= ' '; ?>(<?= $albumData['year'] ?>)</h1>
         </div>
         <?php if ($artistByAlbum): ?>
             <div>
@@ -40,7 +40,7 @@
                 <br>
                 <div>
                     <a
-                       href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $artistByAlbum['url'] ?>/">
+                            href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $artistByAlbum['url'] ?>/">
                         <?= $artistByAlbum['name'] ?>
                     </a>
                 </div>
@@ -65,6 +65,15 @@
             </div>
         <?php endif; ?>
 
+        <?php if ($albumData['year']): ?>
+            <div>
+                <span> <?= Yii::t('app', 'year') ?></span>
+                <div>
+                    <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/years/<?= $albumData['mYearUrl'] ?>/"><?= $albumData['year'] ?></a>
+                </div>
+            </div>
+        <?php endif; ?>
+
         <div class="share-social">
             <?= Yii::$app->view->render('@frontend/views/partials/share-social/_share-social.min.php'); ?>
         </div>
@@ -75,56 +84,57 @@
 <br>
 <a name="listen"></a>
 <h2>
-    <?= Yii::t('app', 'Listen to music') ?><?=' ';?><?= $artistByAlbum['name'] ?><?=' ';?>-<?=' ';?><?= $albumData['name'] ?>
+    <?= Yii::t('app', 'Listen to music') ?><?= ' '; ?><?= $artistByAlbum['name'] ?><?= ' '; ?>
+    -<?= ' '; ?><?= $albumData['name'] ?>
     <?php if ($albumData['year']): ?>
-    <?=' ';?>
-    (<?= $albumData['year'] ?>)
-    <?php endif;?>
-    <?=' ';?>
+        <?= ' '; ?>
+        (<?= $albumData['year'] ?>)
+    <?php endif; ?>
+    <?= ' '; ?>
     <?= Yii::t('app', 'online') ?>
 </h2>
 <hr>
 <div class="rflex album-songs">
-<ul>
-    <?php foreach ($songsByAlbum as $song): ?>
-        <li>
-            <?php if ($song['url_youtube']): ?>
-                <span
-                      onclick="sYM(this)"
-                      data-url="<?= $song['url_youtube'] ?>">
+    <ul>
+        <?php foreach ($songsByAlbum as $song): ?>
+            <li>
+                <?php if ($song['url_youtube']): ?>
+                    <span
+                            onclick="sYM(this)"
+                            data-url="<?= $song['url_youtube'] ?>">
                                 </span>
-            <?php else: ?>
-                <span class="false">
+                <?php else: ?>
+                    <span class="false">
                                 </span>
-            <?php endif; ?>
+                <?php endif; ?>
 
-            <a
-               href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
-                <?= $song['name'] ?> </a>
+                <a
+                        href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
+                    <?= $song['name'] ?> </a>
 
-            <?php if (isset($song['featuring'])): ?>
-                <?php $count = 0; ?>
-                <div>
-                                (
-                                    <?= Yii::t('app', 'feat.') ?><?=' ';?>
-                    <?php foreach ($song['featuring'] as $feature): ?>
-                        <?php if ($count > 0): ?>
-                            ,<?=' ';?><a
+                <?php if (isset($song['featuring'])): ?>
+                    <?php $count = 0; ?>
+                    <div>
+                        (
+                        <?= Yii::t('app', 'feat.') ?><?= ' '; ?>
+                        <?php foreach ($song['featuring'] as $feature): ?>
+                            <?php if ($count > 0): ?>
+                                ,<?= ' '; ?><a
                                 href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $feature['url'] ?>/">
-                                            <?= $feature['name'] ?></a>
-                        <?php else: ?>
-                            <a
-                               href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $feature['url'] ?>/">
-                                            <?= $feature['name'] ?></a>
-                        <?php endif; ?>
-                        <?php $count++; ?>
-                    <?php endforeach; ?>
-                                    )
-                                </div>
-            <?php endif; ?>
-        </li>
-    <?php endforeach; ?>
-</ul>
+                                <?= $feature['name'] ?></a>
+                            <?php else: ?>
+                                <a
+                                        href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $feature['url'] ?>/">
+                                    <?= $feature['name'] ?></a>
+                            <?php endif; ?>
+                            <?php $count++; ?>
+                        <?php endforeach; ?>
+                        )
+                    </div>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 </div>
 
 

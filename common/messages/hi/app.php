@@ -65,5 +65,11 @@ return [
     'featuring' => 'की विशेषता',
     'genres' => 'शैलियों',
     'Genres' => 'शैलियां',
+
+    'Years' => 'वर्षों',
+    'Languages' => 'बोली',
+
+    'year' => 'साल',
+    'language' => 'भाषा',
 ];
 

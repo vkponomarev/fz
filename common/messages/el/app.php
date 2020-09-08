@@ -66,5 +66,11 @@ return [
     'featuring' => 'χαρακτηριστικό',
     'genres' => 'είδη',
     'Genres' => 'Είδη',
+
+    'Years' => 'Χρόνια',
+    'Languages' => 'Γλώσσες',
+
+    'year' => 'έτος',
+    'language' => 'γλώσσα',
 ];
 

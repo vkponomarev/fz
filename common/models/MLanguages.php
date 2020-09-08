@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "pages_text_second".
@@ -65,4 +66,53 @@ class MLanguages extends \yii\db\ActiveRecord
             'text' => Yii::t('app', 'Text'),
         ];
     }*/
+
+
+
+
+    public function translateButtons($model){
+
+        $text='';
+        $allLanguages=ArrayHelper::map(Languages::getAllLanguages(),'id','url');
+        $allLanguagesInverse=ArrayHelper::map(Languages::getAllLanguages(),'url','id');
+        $onLanguages=ArrayHelper::map($model->languages,'url','id');
+        $onPagesText=ArrayHelper::map($model->languagesTextId,'languages_id','id');
+
+        foreach ($allLanguages as $one) {
+
+
+            if (isset($onLanguages[$one])) {
+
+                $text .= '<a class="btn btn-success" href="/m-languages-text/update?id=' . $onPagesText[$onLanguages[$one]] . '&languages=' .$onLanguages[$one]. '&m-languages=' .$model->id. '"><span class="fa fa-check"></span> ' . $one . ' </a> ';
+
+            } else {
+
+                $text .= '<a class="btn btn-primary" href="/m-languages-text/create?languages=' . $allLanguagesInverse[$one] . '&m-languages='. $model->id .'"><span class="fa fa-times"></span> ' . $one . ' </a> ';
+            }
+
+        }
+
+        return $text;
+
+    }
+
+
+    public function getLanguages(){
+        return $this->hasMany(Languages::className(),['id'=>'languages_id'])->via('languagesText');
+    }
+
+    public function getLanguagesText(){
+        return $this->hasMany(MLanguagesText::className(),['m_languages_id'=>'id']);
+    }
+
+
+    public function getLanguagesTextId(){
+        return $this->hasMany(MLanguagesText::className(),['m_languages_id'=>'id']);
+    }
+
 }
+
+
+
+
+

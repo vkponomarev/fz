@@ -9,6 +9,7 @@ use common\components\featuring\Featuring;
 use common\components\firstLetter\FirstLetter;
 use common\components\genres\Genres;
 use common\components\main\Main;
+use common\components\mLanguage\MLanguage;
 use common\components\noDB\NoDB;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
@@ -16,6 +17,7 @@ use common\components\songs\Songs;
 use common\components\translation\Translation;
 use common\components\translations\Translations;
 use common\components\urlCheck\UrlCheck;
+use common\components\year\Year;
 use Yii;
 use yii\web\Controller;
 
@@ -119,6 +121,12 @@ class SongsController extends Controller
             $song = new Song();
             $songData = $song->data($urlCheckID);
 
+            $year = new Year();
+            $yearBySong = $year->bySong($songData['m_years_id']);
+
+            $mLanguage = new MLanguage();
+            $mLanguageBySong = $mLanguage->bySong(Yii::$app->params['language']['current']['id'], $songData['m_languages_id']);
+
             $album = new Album();
             $albumData = $album->data($songData['m_albums_id']);
 
@@ -156,10 +164,13 @@ class SongsController extends Controller
                 'songsData' => $songsData,
                 'albumData' => $albumData,
                 'artistBySong' => $artistBySong,
+                'yearBySong' => $yearBySong,
+                'mLanguageBySong' => $mLanguageBySong,
                 'featuring' => $featuringBySong,
                 'genres' => $genresBySong,
                 'translationByLanguage' => $translationByLanguage,
                 'translationsByLanguages' => $translationsByLanguages,
+
 
             ]);
 

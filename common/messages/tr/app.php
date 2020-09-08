@@ -67,5 +67,11 @@ return [
     'genres' => 'türler',
     'Genres' => 'Türler',
 
+    'Years' => 'Yıllar',
+    'Languages' => 'Diller',
+
+    'year' => 'yıl',
+    'language' => 'dil',
+
 ];
 

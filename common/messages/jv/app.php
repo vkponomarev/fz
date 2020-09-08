@@ -65,5 +65,11 @@ return [
     'featuring' => 'nampilake',
     'genres' => 'genres',
     'Genres' => 'Genres',
+
+    'Years' => 'Taun',
+    'Languages' => 'Basa',
+
+    'year' => 'taun',
+    'language' => 'basa',
 ];
 

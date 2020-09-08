@@ -66,5 +66,11 @@ return [
     'genres' => '體裁',
     'Genres' => '體裁',
 
+    'Years' => '年份',
+    'Languages' => '語言能力',
+
+    'year' => '年',
+    'language' => '語言',
+
 ];
 

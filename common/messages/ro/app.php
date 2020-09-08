@@ -65,5 +65,11 @@ return [
     'featuring' => 'oferind',
     'genres' => 'genuri',
     'Genres' => 'Genuri',
+
+    'Years' => 'Ani',
+    'Languages' => 'Limbi',
+
+    'year' => 'an',
+    'language' => 'limba',
 ];
 

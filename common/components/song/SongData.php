@@ -20,7 +20,9 @@ class SongData
             text,
             url_youtube,
             m_albums_id,
-            m_artists_id
+            m_artists_id,
+            m_years_id,
+            m_languages_id
             from
             m_songs
             where 

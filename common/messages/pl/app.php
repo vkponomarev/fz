@@ -65,5 +65,11 @@ return [
     'featuring' => 'wyposażony',
     'genres' => 'gatunki',
     'Genres' => 'Gatunki',
+
+    'Years' => 'Lata',
+    'Languages' => 'Języki',
+
+    'year' => 'rok',
+    'language' => 'język',
 ];
 

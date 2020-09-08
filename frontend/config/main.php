@@ -65,8 +65,11 @@ return [
                 '/genres/' => 'genres/index',
                 '/genres/<url>/' => 'genres/genre-page',
 
-                //'/years/' => 'years/index',
-                //'/years/<url>/' => 'years/year-page',
+                '/years/' => 'years/index',
+                '/years/<url>/' => 'years/year-page',
+
+                '/languages/' => 'languages/index',
+                '/languages/<url>/' => 'languages/language-page',
 
                 //'/sitemap/' => 'sitemap/index',
                 //'/sitemap/<url>/' => 'sitemap/url',

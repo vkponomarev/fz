@@ -67,5 +67,11 @@ return [
     'genres' => 'Genres',
     'Genres' => 'Genres',
 
+    'Years' => 'Jahre',
+    'Languages' => 'Sprachen',
+
+    'year' => 'Jahr',
+    'language' => 'Sprache',
+
 ];
 

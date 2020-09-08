@@ -28,7 +28,11 @@ class Year
 
     }
 
+    function bySong($yearID){
 
+        return (new YearBySong())->data($yearID);
+
+    }
 
 
 }

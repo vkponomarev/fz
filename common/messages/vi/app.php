@@ -66,5 +66,11 @@ return [
     'featuring' => 'đặc trưng',
     'genres' => 'thể loại',
     'Genres' => 'Thể loại',
+
+    'Years' => 'Năm',
+    'Languages' => 'Ngôn ngữ',
+
+    'year' => 'năm',
+    'language' => 'ngôn ngữ',
 ];
 

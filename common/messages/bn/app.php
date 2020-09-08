@@ -67,5 +67,11 @@ return [
     'featuring' => 'বৈশিষ্ট্যযুক্ত',
     'genres' => 'ঘরানার',
     'Genres' => 'ঘরানার',
+
+    'Years' => 'বছর',
+    'Languages' => 'ভাষা',
+
+    'year' => 'বছর',
+    'language' => 'ভাষা',
 ];
 

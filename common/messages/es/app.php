@@ -65,5 +65,11 @@ return [
     'featuring' => 'presentando',
     'genres' => 'géneros',
     'Genres' => 'Géneros',
+
+    'Years' => 'Años',
+    'Languages' => 'Idiomas',
+
+    'year' => 'año',
+    'language' => 'idioma',
 ];
 
