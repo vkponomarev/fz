@@ -75,5 +75,7 @@ return [
     'year' => 'year',
     'language' => 'language',
 
+    'User agreement' => 'User agreement',
+    'Copyright holders' => 'Copyright holders',
 ];
 

@@ -72,5 +72,8 @@ return [
 
     'year' => 'năm',
     'language' => 'ngôn ngữ',
+
+    'User agreement' => 'Sự thỏa thuận của người dùng',
+    'Copyright holders' => 'Chủ sở hữu bản quyền',
 ];
 

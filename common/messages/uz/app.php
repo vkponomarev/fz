@@ -71,5 +71,8 @@ return [
 
     'year' => 'yil',
     'language' => 'til',
+
+    'User agreement' => 'Foydalanuvchi shartnomasi',
+    'Copyright holders' => 'Mualliflik huquqi egalari',
 ];
 

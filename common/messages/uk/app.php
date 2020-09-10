@@ -71,5 +71,8 @@ return [
 
     'year' => 'рік',
     'language' => 'мова',
+
+    'User agreement' => 'Угода користувача',
+    'Copyright holders' => 'Власники авторських прав',
 ];
 

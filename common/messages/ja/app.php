@@ -73,5 +73,8 @@ return [
 
     'year' => '年',
     'language' => '言語',
+
+    'User agreement' => 'ユーザー規約',
+    'Copyright holders' => '著作権者',
 ];
 

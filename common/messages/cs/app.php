@@ -72,5 +72,8 @@ return [
 
     'year' => 'rok',
     'language' => 'jazyk',
+
+    'User agreement' => 'Souhlas uživatele',
+    'Copyright holders' => 'Držitelé autorských práv',
 ];
 

@@ -10,7 +10,6 @@
 
 //echo Yii::getAlias('@frontend');
 //echo Yii::getAlias('@frontend') . '/web/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'];
-//die;
 ?>
 
 <div class="rflex album-header">
@@ -18,21 +17,21 @@
         <?php if ($albumData['photos']): ?>
             <?php if (file_exists(Yii::getAlias('@frontend') . '/web/files/albums/' . $albumData['first_letter'] . '/' . $albumData['photos'])): ?>
                 <img src="/files/albums/<?= $albumData['first_letter'] ?>/<?= $albumData['photos'] ?>"
-                     alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - ' ?><?= $albumData['name'] ?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')' ?>">
+                     alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - ' ?><?= $albumData['name'] ?><?php if ($albumData['year']) {echo ' (' . $albumData['year'] . ')';} ?>">
             <?php else: ?>
                 <img src="/files/no-album-photo.png"
-                     alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - ' ?><?= $albumData['name'] ?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')' ?>">
+                     alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - ' ?><?= $albumData['name'] ?><?php if ($albumData['year']) {echo ' (' . $albumData['year'] . ')';} ?>">
             <?php endif; ?>
         <?php else: ?>
             <img src="/files/no-album-photo.png"
-                 alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - ' ?><?= $albumData['name'] ?><?php if ($albumData['year']) echo ' (' . $albumData['year'] . ')' ?>">
+                 alt="<?php if ($artistByAlbum) echo $artistByAlbum['name'] . ' - ' ?><?= $albumData['name'] ?><?php if ($albumData['year']) {echo ' (' . $albumData['year'] . ')';} ?>">
         <?php endif; ?>
     </div>
 
     <div>
         <div>
             <span><?= Yii::t('app', 'album') ?></span>
-            <h1><?= $albumData['name'] ?><?= ' '; ?>(<?= $albumData['year'] ?>)</h1>
+            <h1><?= $albumData['name'] ?><?php if ($albumData['year']) {echo ' (' . $albumData['year'] . ')';} ?></h1>
         </div>
         <?php if ($artistByAlbum): ?>
             <div>

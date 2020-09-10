@@ -71,5 +71,8 @@ return [
 
     'year' => 'साल',
     'language' => 'भाषा',
+
+    'User agreement' => 'उपयोगकर्ता समझौता',
+    'Copyright holders' => 'कॉपीराइट धारकों',
 ];
 

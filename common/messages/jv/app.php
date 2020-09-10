@@ -71,5 +71,8 @@ return [
 
     'year' => 'taun',
     'language' => 'basa',
+
+    'User agreement' => 'Kesepakatan pangguna',
+    'Copyright holders' => 'Sing duwe hak cipta',
 ];
 

@@ -71,5 +71,9 @@ return [
 
     'year' => 'an',
     'language' => 'limba',
+
+    'User agreement' => 'Acordul Utilizatorului',
+    'Copyright holders' => 'Deținătorii drepturilor de autor',
+
 ];
 

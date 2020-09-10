@@ -73,4 +73,6 @@ return [
     'year' => 'год',
     'language' => 'язык',
 
+    'User agreement' => 'Пользовательское соглашение',
+    'Copyright holders' => 'Правообладателям',
 ];

@@ -73,5 +73,7 @@ return [
     'year' => 'ปี',
     'language' => 'ภาษา',
 
+    'User agreement' => 'ข้อตกลงการใช้',
+    'Copyright holders' => 'ผู้ถือลิขสิทธิ์',
 ];
 

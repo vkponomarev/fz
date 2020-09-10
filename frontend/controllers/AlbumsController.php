@@ -125,7 +125,6 @@ class AlbumsController extends Controller
             Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
             Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
-
             $album = new Album();
             $albumData = $album->data($urlCheckID);
 

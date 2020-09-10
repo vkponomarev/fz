@@ -72,5 +72,8 @@ return [
 
     'year' => 'έτος',
     'language' => 'γλώσσα',
+
+    'User agreement' => 'Συμφωνία Χρήστη',
+    'Copyright holders' => 'Κάτοχοι πνευματικών δικαιωμάτων',
 ];
 

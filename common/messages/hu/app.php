@@ -72,5 +72,8 @@ return [
     'year' => 'év',
     'language' => 'nyelv',
 
+    'User agreement' => 'Felhasználói Szerződés',
+    'Copyright holders' => 'Szerzői jogok tulajdonosai',
+
 ];
 

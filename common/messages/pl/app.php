@@ -71,5 +71,8 @@ return [
 
     'year' => 'rok',
     'language' => 'język',
+
+    'User agreement' => 'Zgoda użytkownika',
+    'Copyright holders' => 'Posiadacze praw autorskich',
 ];
 

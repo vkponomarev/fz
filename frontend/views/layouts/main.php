@@ -216,6 +216,16 @@ AppAsset::register($this);
 
 
                     <li>
+                        <a href="/<?= Yii::$app->language ?>/cms/user-agreement/"
+                           rel="nofollow"><?= Yii::t('app', 'User agreement') ?></a>
+                    </li>
+
+                    <li>
+                        <a href="/<?= Yii::$app->language ?>/cms/copyright/"
+                           rel="nofollow"><?= Yii::t('app', 'Copyright holders') ?></a>
+                    </li>
+
+                    <li>
                         <a href="/<?= Yii::$app->language ?>/cms/cookie/"
                            rel="nofollow"><?= Yii::t('app', 'Cookie info') ?></a>
                     </li>

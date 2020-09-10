@@ -73,5 +73,8 @@ return [
     'year' => 'yıl',
     'language' => 'dil',
 
+    'User agreement' => 'Kullanıcı Sözleşmesi',
+    'Copyright holders' => 'Telif hakkı sahipleri',
+
 ];
 
