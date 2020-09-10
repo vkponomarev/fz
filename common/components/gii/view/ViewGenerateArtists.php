@@ -27,6 +27,7 @@ class ViewGenerateArtists
     function generate($valueOne, $valueTwo, $languagesData)
     {
         set_time_limit(500000);
+        ini_set("memory_limit", "8000M");
         $artists = new Artists();
         $artistsByStartEnd =  $artists->byStartEnd($valueOne, $valueTwo);
         $count = $valueOne;
@@ -96,7 +97,7 @@ class ViewGenerateArtists
                     'songsByArtist' => $songsByArtist,
                     'genres' => $genresByArtist,
                     'translationCheckOrigin' => $translationCheckOrigin,
-                    
+
 
                 ]);
 
