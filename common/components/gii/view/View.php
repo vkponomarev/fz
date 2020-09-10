@@ -73,6 +73,24 @@ class View
 
     }
 
+    function generatePagesGenres($languagesData){
+
+        (new ViewGeneratePagesGenres())->generate($languagesData);
+
+    }
+
+    function generatePagesLanguages($languagesData){
+
+        (new ViewGeneratePagesLanguages())->generate($languagesData);
+
+    }
+
+    function generatePagesYears($languagesData){
+
+        (new ViewGeneratePagesYears())->generate($languagesData);
+
+    }
+
 
     function cleanPath($path){
 

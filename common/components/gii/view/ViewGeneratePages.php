@@ -15,6 +15,9 @@ class ViewGeneratePages
         $view->generatePagesArtists($languagesData);
         $view->generatePagesAlbums($languagesData);
         $view->generatePagesSongs($languagesData);
+        $view->generatePagesYears($languagesData);
+        $view->generatePagesGenres($languagesData);
+        $view->generatePagesLanguages($languagesData);
 
     }
 

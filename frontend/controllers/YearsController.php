@@ -13,6 +13,7 @@ use common\components\genres\Genres;
 use common\components\getParams\GetParams;
 use common\components\links\Links;
 use common\components\main\Main;
+use common\components\noDB\NoDB;
 use common\components\pageTexts\PageTexts;
 use common\components\song\Song;
 use common\components\songs\Songs;
@@ -39,7 +40,7 @@ class YearsController extends Controller
     public function actionIndex()
     {
 
-
+        if (Yii::$app->params['usePagesDB']) {
         $url = false;
         $textID = '67'; // ID из таблицы pages
         $table = 0; // К какой таблице отностся данная страница
@@ -61,6 +62,32 @@ class YearsController extends Controller
 
         ]);
 
+        } else {
+
+            $path = '/view/pages/years/';
+            $file = Yii::$app->language . '.php';
+            $array = Yii::$app->language . '-array.php';
+
+            $noDB = new NoDB();
+            $fileDB = json_decode(file_get_contents($noDB->realPath() . $path . $array), TRUE);
+
+            $languagesPath = '/view/languages/';
+            $languagesArray = Yii::$app->language . '-array.php';
+            $fileDBLanguages = json_decode(file_get_contents($noDB->realPath() . $languagesPath . $languagesArray), TRUE);
+
+            Yii::$app->params['language'] = $fileDBLanguages['language'];
+            Yii::$app->params['text'] = $fileDB['text'];
+            Yii::$app->params['canonical'] = $fileDB['canonical'];
+            Yii::$app->params['alternate'] = $fileDB['alternate'];
+
+            return $this->render('index-noDB.min.php', [
+
+                'file' => $file,
+                'path' => $path,
+
+            ]);
+
+        }
 
     }
 
