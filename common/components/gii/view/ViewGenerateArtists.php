@@ -75,7 +75,6 @@ class ViewGenerateArtists
                 } else {
                     $translationCheckOrigin = false;
                 }
-
                 $featuring = new Featuring();
                 $featuringByArtist = $featuring->byArtist($artistData['id']);
 
