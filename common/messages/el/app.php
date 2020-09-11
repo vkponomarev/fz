@@ -75,5 +75,6 @@ return [
 
     'User agreement' => 'Συμφωνία Χρήστη',
     'Copyright holders' => 'Κάτοχοι πνευματικών δικαιωμάτων',
+    'Listen to music from the album' => 'Ακούστε μουσική από το άλμπουμ',
 ];
 

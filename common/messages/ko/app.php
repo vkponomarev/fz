@@ -74,5 +74,6 @@ return [
 
     'User agreement' => '사용자 동의',
     'Copyright holders' => '저작권 보유자',
+    'Listen to music from the album' => '앨범에서 음악 듣기',
 ];
 

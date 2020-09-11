@@ -75,5 +75,6 @@ return [
 
     'User agreement' => 'ข้อตกลงการใช้',
     'Copyright holders' => 'ผู้ถือลิขสิทธิ์',
+    'Listen to music from the album' => 'ฟังเพลงจากอัลบั้ม',
 ];
 

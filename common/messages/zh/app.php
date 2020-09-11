@@ -74,6 +74,7 @@ return [
 
     'User agreement' => '用戶協議',
     'Copyright holders' => '版權持有人',
+    'Listen to music from the album' => '聆聽專輯中的音樂',
 
 ];
 

@@ -76,5 +76,6 @@ return [
 
     'User agreement' => 'ユーザー規約',
     'Copyright holders' => '著作権者',
+    'Listen to music from the album' => 'アルバムの音楽を聴く',
 ];
 

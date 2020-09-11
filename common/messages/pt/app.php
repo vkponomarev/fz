@@ -74,6 +74,7 @@ return [
 
     'User agreement' => 'Termo de Acordo do Usuário',
     'Copyright holders' => 'Detentores de direitos autorais',
+    'Listen to music from the album' => 'Ouça a música do álbum',
     ];
 
 

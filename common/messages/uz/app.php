@@ -74,5 +74,6 @@ return [
 
     'User agreement' => 'Foydalanuvchi shartnomasi',
     'Copyright holders' => 'Mualliflik huquqi egalari',
+    'Listen to music from the album' => 'Albomdan musiqa tinglang',
 ];
 

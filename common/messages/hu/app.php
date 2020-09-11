@@ -74,6 +74,7 @@ return [
 
     'User agreement' => 'Felhasználói Szerződés',
     'Copyright holders' => 'Szerzői jogok tulajdonosai',
+    'Listen to music from the album' => 'Hallgasson zenét az albumról',
 
 ];
 

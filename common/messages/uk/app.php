@@ -74,5 +74,6 @@ return [
 
     'User agreement' => 'Угода користувача',
     'Copyright holders' => 'Власники авторських прав',
+    'Listen to music from the album' => 'Слухайте музику з альбому',
 ];
 

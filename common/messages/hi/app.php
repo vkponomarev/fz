@@ -74,5 +74,6 @@ return [
 
     'User agreement' => 'उपयोगकर्ता समझौता',
     'Copyright holders' => 'कॉपीराइट धारकों',
+    'Listen to music from the album' => 'एल्बम से संगीत सुनें',
 ];
 

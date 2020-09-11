@@ -83,7 +83,7 @@
 <br>
 <a name="listen"></a>
 <h2>
-    <?= Yii::t('app', 'Listen to music') ?><?= ' '; ?><?= $artistByAlbum['name'] ?><?= ' '; ?>
+    <?= Yii::t('app', 'Listen to music from the album') ?><?= ' '; ?><?= $artistByAlbum['name'] ?><?= ' '; ?>
     -<?= ' '; ?><?= $albumData['name'] ?>
     <?php if ($albumData['year']): ?>
         <?= ' '; ?>

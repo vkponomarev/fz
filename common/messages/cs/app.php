@@ -75,5 +75,6 @@ return [
 
     'User agreement' => 'Souhlas uživatele',
     'Copyright holders' => 'Držitelé autorských práv',
+    'Listen to music from the album' => 'Poslouchejte hudbu z alba',
 ];
 

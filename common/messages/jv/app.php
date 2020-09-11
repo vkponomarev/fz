@@ -74,5 +74,6 @@ return [
 
     'User agreement' => 'Kesepakatan pangguna',
     'Copyright holders' => 'Sing duwe hak cipta',
+    'Listen to music from the album' => 'Rungokake musik saka album iki',
 ];
 

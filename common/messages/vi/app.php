@@ -75,5 +75,6 @@ return [
 
     'User agreement' => 'Sự thỏa thuận của người dùng',
     'Copyright holders' => 'Chủ sở hữu bản quyền',
+    'Listen to music from the album' => 'Nghe nhạc từ album',
 ];
 
