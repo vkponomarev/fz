@@ -68,5 +68,13 @@ class PageTexts
 
     }
 
+
+    function songCondition($languageID, $songData, $translationByLanguage)
+    {
+
+        (new PageTextsSongCondition())->condition($languageID, $songData, $translationByLanguage);
+
+    }
+
 }
 

@@ -101,7 +101,7 @@ class SongsController extends Controller
 
         if (Yii::$app->params['useSongsDB']) {
 
-            $textID = '58'; // ID из таблицы pages
+
             $table = 'm_songs'; // К какой таблице относится данная страница
             $mainUrl = 'songs'; // Основной урл https://flowlez.com/ru/songs/
 
@@ -113,7 +113,6 @@ class SongsController extends Controller
             $main = new Main();
             Yii::$app->params['language'] = $main->language(Yii::$app->language);
             Yii::$app->params['language']['all'] = $main->languages();
-            Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
             Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
             Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
@@ -142,9 +141,6 @@ class SongsController extends Controller
             $genres = new Genres();
             $genresBySong = $genres->bySong($songData['id']);
 
-            $pageTexts = new PageTexts();
-            $pageTexts->updateBySong($songData);
-            $pageTexts->updateByArtist($artistBySong);
 
             $firstLetter = new FirstLetter();
             $firstLetterByArtist = $firstLetter->byArtist($artistBySong);
@@ -157,6 +153,18 @@ class SongsController extends Controller
 
             $translation = new Translation();
             $translationByLanguage = $translation->byLanguage($songData['id'], Yii::$app->params['language']['id']);
+
+            //(new \common\components\dump\Dump())->printR($translationByLanguage);
+
+            $pageTexts = new PageTexts();
+            $pageTexts->songCondition(
+                Yii::$app->params['language']['current']['id'],
+                $songData,
+                $translationByLanguage
+                );
+            $pageTexts->updateBySong($songData);
+            $pageTexts->updateByArtist($artistBySong);
+
 
             return $this->render('song-page.min.php', [
 
