@@ -43,6 +43,23 @@ class PageTextsSongCondition
 
         }
 
+        // Если есть текст песни есть перевод нет ссылки на ютуб и этот язык не оригинальный
+        if ($songData['text'] && !$translationByLanguage['origin'] && !isset($songData['url_youtube'])) {
+
+            $textID = '78'; // ID из таблицы pages
+            Yii::$app->params['text'] = $main->text($textID, $languageID);
+
+        }
+
+        // Если есть текст песни есть перевод нет ссылки на ютуб и этот язык оригинальный
+        if ($songData['text'] && $translationByLanguage['origin'] && !isset($songData['url_youtube'])) {
+
+            $textID = '79'; // ID из таблицы pages
+            Yii::$app->params['text'] = $main->text($textID, $languageID);
+
+        }
+
+
         // Если есть текст песни есть перевод и есть ссылка на ютуб и этот язык оригинальный
         if ($songData['text'] && $translationByLanguage['origin'] && $songData['url_youtube']) {
 
@@ -53,7 +70,7 @@ class PageTextsSongCondition
 
 
         // Если есть текст песни нет перевода и есть ссылка на ютуб
-        if ($songData['text'] && !$translationByLanguage && $songData['url_youtube']) {
+        if ($songData['text'] && !$translationByLanguage && isset($songData['url_youtube'])) {
 
             $textID = '74'; // ID из таблицы pages
             Yii::$app->params['text'] = $main->text($textID, $languageID);
