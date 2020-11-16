@@ -89,7 +89,7 @@ return [
                 //'/script/songs-youtube' => 'scripts/songs-youtube',
                 //'/script/url-youtube' => 'scripts/url-youtube',
                 //'/script/featuring' => 'scripts/featuring',
-                '/script/source' => 'scripts/source',
+                //'/script/source' => 'scripts/source',
                 //CMS
                 //'/cms/' => 'cms/index',
                 '/cms/cookie/' => 'cms/cookie-info',
