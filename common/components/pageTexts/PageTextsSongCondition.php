@@ -85,11 +85,9 @@ class PageTextsSongCondition
         }
 
         // Если ни одно из условий не сработало
-        if (!Yii::$app->params['text']) {
+        if (!isset(Yii::$app->params['text'])) {
             $textID = '77';
             Yii::$app->params['text'] = $main->text($textID, $languageID);
-
-
         }
 
 

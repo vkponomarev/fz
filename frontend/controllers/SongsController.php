@@ -101,9 +101,8 @@ class SongsController extends Controller
 
         if (Yii::$app->params['useSongsDB']) {
 
-
             $table = 'm_songs'; // К какой таблице относится данная страница
-            $mainUrl = 'songs'; // Основной урл https://flowlez.com/ru/songs/
+            $mainUrl = 'songs'; // Основной урл https://flowlez.com/ru/songs/$url
 
             $urlCheck = new UrlCheck();
             $urlCheckID = $urlCheck->id($url);
