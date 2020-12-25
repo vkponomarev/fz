@@ -148,3 +148,30 @@
 </div>
 
 <br><br><br><br>
+
+<?php if (Yii::$app->language == 'ru'):?>
+    <div class="row" style="text-align: -webkit-center;display: flex; flex-wrap: wrap;">
+
+        <div class="col-xs-12" style="/*max-width:400px;*/text-align: center;padding: 20px;background-color: #f4e1dd;">
+            <h2 style="color:#255e62;font-size: 28px;">Онлайн калькуляторы для женщин</h2>
+            <p>Кальуляторы беременности, пола ребенка, калькуляторы овуляции и другие калькуляторы.</p>
+            <h2 style="color:#255e62;font-size: 28px;">Календарь месячных</h2>
+            <p>Календари месячных, календари овуляции и безопасных дней.</p>
+            <a href="https://womencalc.com/ru/">womencalc.com</a>
+        </div>
+
+    </div>
+<?php else: ?>
+
+    <div class="row" style="text-align: -webkit-center;display: flex; flex-wrap: wrap;">
+        <div class="col-xs-12" style="text-align: center;padding: 20px;background-color: #f4e1dd;">
+            <h2 style="color:#255e62;font-size: 28px;">Online calculators for women</h2>
+            <p>Pregnancy calculators, baby gender, ovulation calculators and other calculators.</p>
+            <h2 style="color:#255e62;font-size: 28px;">Period calendar</h2>
+            <p>Period calendars, ovulation calendars and safe days.</p>
+            <a href="https://womencalc.com/en/">womencalc.com</a>
+        </div>
+    </div>
+
+<?php endif;?>
+
