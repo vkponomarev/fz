@@ -136,6 +136,7 @@ AppAsset::register($this);
     </nav>
 
     <div class="container">
+        <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(1)?>
 
         <?=$content?>
 

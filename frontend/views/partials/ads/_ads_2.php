@@ -6,7 +6,7 @@
 
 //Страницы правая колонка
 
-echo \common\models\Advertising::showAdvertising(2,$allAdvertising);
+echo \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(2);
 
 ?>
 

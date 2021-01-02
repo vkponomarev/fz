@@ -177,6 +177,7 @@
     <div class="rflex song-text">
         <div>
             <a name="lyrics"></a>
+
             <h2><?= Yii::t('app', 'Song lyrics') ?>
                 <?php if ($artistBySong): ?>
                     <?= ' '; ?><?= $artistBySong['name'] ?><?= ' '; ?>-
@@ -184,6 +185,7 @@
                 <?= ' '; ?><?= $songData['name'] ?>
             </h2>
             <hr>
+            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(2)?>
             <div>
                 <?= $songData['text'] ?>
             </div>
@@ -197,6 +199,7 @@
     <div class="rflex song-text-translation">
         <div class="col-xs-12 col-sm-6">
             <a name="lyrics"></a>
+
             <h2><?= Yii::t('app', 'Song lyrics') ?>
                 <?php if ($artistBySong): ?>
                     <?= ' '; ?><?= $artistBySong['name'] ?><?= ' '; ?>-
@@ -204,6 +207,7 @@
                 <?= ' '; ?><?= $songData['name'] ?>
             </h2>
             <hr>
+            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(2)?>
             <div class="song-text">
                 <?= $songData['text'] ?>
             </div>
@@ -219,6 +223,7 @@
                 <?= ' '; ?><?= Yii::t('app', 'into English') ?>
             </h2>
             <hr>
+            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(3)?>
             <div class="song-text">
                 <?= $translationByLanguage['text'] ?>
             </div>
@@ -240,6 +245,7 @@
                 <?= ' '; ?><?= $songData['name'] ?>
             </h2>
             <hr>
+            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(2)?>
             <div>
                 <?= $songData['text'] ?>
             </div>

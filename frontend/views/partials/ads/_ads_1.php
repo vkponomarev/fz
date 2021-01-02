@@ -6,7 +6,7 @@
 
 // Страницы после текста 1
 
-echo \common\models\Advertising::showAdvertising(1,$allAdvertising);
+echo \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(1);
 
 ?>
 

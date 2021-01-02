@@ -6,7 +6,7 @@
 
 //Страницы перед текстом 2
 
-echo \common\models\Advertising::showAdvertising(3,$allAdvertising);
+echo \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(3);
 
 ?>
 
