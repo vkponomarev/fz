@@ -23,7 +23,7 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags()?>
     <?php $this->head()?>
 
-
+    <script data-ad-client="ca-pub-6533211636627045" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 </head>
