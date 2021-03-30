@@ -31,11 +31,11 @@
                 </span>
                 <?php endif; ?>
                 <div>
-                <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
-                    <?= $song['artistName'] ?> </a>
-                &nbsp;-&nbsp;
-                <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
-                    <?= $song['name'] ?> </a>
+                    <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/artists/<?= $song['artistUrl'] ?>/">
+                        <?= $song['artistName'] ?> </a>
+                    &nbsp;-&nbsp;
+                    <a href="/<?= Yii::$app->params['language']['current']['url'] ?>/songs/<?= $song['url'] ?>/">
+                        <?= $song['name'] ?> </a>
                 </div>
             </li>
 
@@ -89,13 +89,13 @@
                 <div>
                     <p>
                         <img
-                             src="/files/albums/<?= $album['first_letter'] ?>/<?= $album['photos'] ?>"
-                             alt="<?= $album['name'] ?>"
-                             >
+                                src="/files/albums/<?= $album['first_letter'] ?>/<?= $album['photos'] ?>"
+                                alt="<?= $album['name'] ?>"
+                        >
 
                     </p>
 
-                    <p><?= $album['name']; ?><?=' ';?>
+                    <p><?= $album['name']; ?><?= ' '; ?>
 
                         <?php if ($album['year']): ?>
                             (<?= $album['year']; ?>)
@@ -128,9 +128,9 @@
                     <?php if ($songs['albumPhoto']): ?>
                         <p>
                             <img
-                                 src="/files/albums/<?= $songs['albumFirstLetter'] ?>/<?= $songs['albumPhoto'] ?>"
-                                 alt="<?= $songs['name'] ?>"
-                                 >
+                                    src="/files/albums/<?= $songs['albumFirstLetter'] ?>/<?= $songs['albumPhoto'] ?>"
+                                    alt="<?= $songs['name'] ?>"
+                            >
 
                         </p>
                     <?php endif; ?>
@@ -149,9 +149,8 @@
 
 <br><br><br><br>
 
-<?php if (Yii::$app->language == 'ru'):?>
+<?php if (Yii::$app->language == 'ru'): ?>
     <div class="row" style="text-align: -webkit-center;display: flex; flex-wrap: wrap;">
-
         <div class="col-xs-12" style="/*max-width:400px;*/text-align: center;padding: 20px;background-color: #f4e1dd;">
             <h2 style="color:#255e62;font-size: 28px;">Онлайн калькуляторы для женщин</h2>
             <p>Кальуляторы беременности, пола ребенка, калькуляторы овуляции и другие калькуляторы.</p>
@@ -159,7 +158,16 @@
             <p>Календари месячных, календари овуляции и безопасных дней.</p>
             <a href="https://womencalc.com/ru/">womencalc.com</a>
         </div>
-
+    </div>
+    <br>
+    <div class="row" style="text-align: -webkit-center;display: flex; flex-wrap: wrap;">
+        <div class="col-xs-12" style="/*max-width:400px;*/text-align: center;padding: 20px;background-color: #c8e9ff;">
+            <h2 style="color:#255e62;font-size: 28px;">Календарь онлайн</h2>
+            <p>Календарь на год.</p>
+            <h2 style="color:#255e62;font-size: 28px;">Праздники</h2>
+            <p>Производственный календарь. Праздники онлайн.</p>
+            <a href="https://timesles.com/ru/">timesles.com</a>
+        </div>
     </div>
 <?php else: ?>
 
@@ -172,6 +180,15 @@
             <a href="https://womencalc.com/en/">womencalc.com</a>
         </div>
     </div>
-
-<?php endif;?>
+    <br>
+    <div class="row" style="text-align: -webkit-center;display: flex; flex-wrap: wrap;">
+        <div class="col-xs-12" style="text-align: center;padding: 20px;background-color:  #c8e9ff;">
+            <h2 style="color:#255e62;font-size: 28px;">Calendar online</h2>
+            <p>Calendar for a year.</p>
+            <h2 style="color:#255e62;font-size: 28px;">Holidays</h2>
+            <p>Business days calendar. Holidays calendar.</p>
+            <a href="https://timesles.com/en/">timesles.com</a>
+        </div>
+    </div>
+<?php endif; ?>
 

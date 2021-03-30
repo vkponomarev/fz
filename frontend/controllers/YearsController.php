@@ -132,7 +132,6 @@ class YearsController extends Controller
 
         return $this->render('year-page.min.php', [
 
-
             'songsByYear' => $songsByYear['songs']
 
         ]);

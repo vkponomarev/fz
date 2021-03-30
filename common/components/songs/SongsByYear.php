@@ -4,7 +4,6 @@ namespace common\components\songs;
 
 use Yii;
 use yii\data\SqlDataProvider;
-use yii\web\NotFoundHttpException;
 
 class SongsByYear
 {
