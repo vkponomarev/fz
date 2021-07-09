@@ -29,7 +29,6 @@ AppAsset::register($this);
 </head>
 <body role="document">
 <?php $this->beginBody()?>
-
 <div class="wrap">
 
 

@@ -1344,6 +1344,10 @@ li.disabled {
   text-align: -webkit-center;
 }
 
+.ads-div {
+  max-width: 400px;
+}
+
 .genres-index {
   margin-top: 30px;
   word-break: break-word;
