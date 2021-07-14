@@ -155,6 +155,36 @@
             </div>
         <?php endif; ?>
 
+        <div class="ads-div">
+            <script>
+                /* In-Read - Liveforlivemusic.com */
+
+                (function () {
+                    var opts = {
+                        artist: "<?= $artistBySong['name'] ?>",
+                        song: "<?= $songData['name'] ?>",
+                        adunit_id: 100001433,
+                        div_id: "cf_async_" + Math.floor((Math.random() * 999999999))
+                    };
+                    document.write('<div id="' + opts.div_id + '"></div>');
+                    var c = function () {
+                        cf.showAsyncAd(opts)
+                    };
+                    if (typeof window.cf !== 'undefined') c(); else {
+                        cf_async = !0;
+                        var r = document.createElement("script"), s = document.getElementsByTagName("script")[0];
+                        r.async = !0;
+                        r.src = "//srv.clickfuse.com/showads/showad.js";
+                        r.readyState ? r.onreadystatechange = function () {
+                            if ("loaded" == r.readyState || "complete" == r.readyState) r.onreadystatechange = null, c()
+                        } : r.onload = c;
+                        s.parentNode.insertBefore(r, s)
+                    }
+                    ;
+                })();
+            </script>
+        </div>
+
         <div class="share-social">
             <?= Yii::$app->view->render('@frontend/views/partials/share-social/_share-social.min.php'); ?>
         </div>
@@ -204,7 +234,7 @@
                 <?= ' '; ?><?= $songData['name'] ?>
             </h2>
             <hr>
-            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(2)?>
+            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(2) ?>
             <div>
                 <?= $songData['text'] ?>
             </div>
@@ -226,7 +256,7 @@
                 <?= ' '; ?><?= $songData['name'] ?>
             </h2>
             <hr>
-            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(2)?>
+            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(2) ?>
             <div class="song-text">
                 <?= $songData['text'] ?>
             </div>
@@ -242,7 +272,7 @@
                 <?= ' '; ?><?= Yii::t('app', 'into English') ?>
             </h2>
             <hr>
-            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(3)?>
+            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(3) ?>
             <div class="song-text">
                 <?= $translationByLanguage['text'] ?>
             </div>
@@ -264,7 +294,7 @@
                 <?= ' '; ?><?= $songData['name'] ?>
             </h2>
             <hr>
-            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(2)?>
+            <?= \common\components\mainPagesData\MainPagesDataAdvertising::showAdvertising(2) ?>
             <div>
                 <?= $songData['text'] ?>
             </div>
